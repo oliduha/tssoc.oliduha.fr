@@ -61,9 +61,9 @@ Ils sont aussi serveurs DNS externes.
 Les bonnes pratiques :
 
 - Ce sont deux serveurs par site. Un contrôleur de domaine ne doit rien faire d'autre.  
-- Ils doivent être physiques. À la limite, un des deux peut être virtualisé (par exemple, sur une infra VMware qui crash et que les deux serveur sont virtualisé, c'est la misère)  
+- Ils doivent être physiques. À la limite, un des deux peut être virtualisé (au cas ou l'infra VMware crash)  
 - Le principal doit rester en physique. Il héberge les rôles FSMO.
-- La réplication AD permet de se synchroniser dans les 15 minutes tous les contrôleurs de domaine.  
+- La réplication AD permet de synchroniser dans les 15 minutes tous les contrôleurs de domaine.  
 
 Dans le cas d'un multi site :
 

@@ -15,6 +15,6 @@ Installation des équipements sur les positions de travail avec raccordement au 
 
 Blanchiment du disque des machines sortant de production avec une solution maison basée sur diskpart résidant sur une clé USB bootable et consistant en un formatage de bas niveau en 5 passes.
 
-Mise en service d’un switch Aruba neuf via son interface d’administration web accessible par son adresse IP par défaut (192.168.1.1) pour le site de Saumur (sans vlan car petite structure et une seule activité).
+Mise en service d’un switch Aruba neuf via son interface d’administration web accessible par son adresse IP par défaut (192.168.1.1) pour le site de Saumur (sans vlan car petite structure et une seule activité). 
 
 ---

@@ -23,15 +23,15 @@ Dans les locaux du CEFIM, le réseau WiFi CEFIM_PEDAGO est utilisé par la major
 L'accès courant au réseau est autorisé par un système de filtrage MAC au niveau du portail captif de la passerelle/pare-feu (pfSense).
 Les adresses MAC des machines CEFIM (pc/mac) fournies aux étudiants et formateurs internes sont enregistrées dans la configuration du portail captif.
 
-Pour autoriser la connexion d'une machine inconnue du portail captif, un système d'authentification par vouchers est mis en place au niveau du portail captif.
+Pour autoriser la connexion d'une machine inconnue, un système d'authentification par vouchers est mis en place au niveau du portail captif.
 Il s'agit de séries (appelées Rolls) de codes d'accès temporaires générés manuellement dans l'interface web du pfSense (menu 'Services' > 'Captive Portal' > 'Edit Zone' > 'Vouchers').
 
 En général, une série de 1000 vouchers valides pendant cinq jours est générée par l'administrateur quand la série précédente arrive à épuisement.
 La série générée est téléchargée depuis l'interface web du pfSense au format .csv puis importée dans un google sheet partagé.
 
-Lorsqu'un groupe d'utilisateur a besoin de se connecter temporairement à Internet avec des machines non connues du portail captif, il faut lui fournir une liste de vouchers (1 par personne).
+Lorsqu'un groupe d'utilisateurs a besoin de se connecter temporairement à Internet avec des machines non connues du portail captif, il faut lui fournir une liste de vouchers (1 par personne).
 Pour cela, un opérateur doit renseigner les divers éléments du tableau (le statut réservé, son nom, la date et le nom du groupe ou de la personne) pour chaque voucher, puis copier le nombre de codes souhaités depuis le tableau partagé et les coller dans un autre document (tableur ou texte) qu'il doit ensuite imprimer.
-L'utilisateur final peut ainsi se connecter au réseau en renseignant le voucher qui lui est ainsi fourni lorsque le portail captif lui demande.
+L'utilisateur final peut ainsi se connecter au réseau en renseignant le voucher qui lui est fourni lorsque le portail captif lui demande.
 
 ---
 
@@ -60,7 +60,7 @@ Développer un script 'Apps Script' (le langage de script Google Workspace - une
 
 - Afficher un formulaire simplifiant la saisie des informations nécessaires à l'extraction par les opérateurs.
 - Extraire et réserver le nombre de vouchers nécessaires de la liste.
-- Créer un Google Document présentant les vouchers mis en page, pret à être imprimé (mais éditable si besoin).
+- Créer un Google Document présentant les vouchers mis en page, prêt à être imprimé (si besoin).
 - Envoyer un email d'alerte à l'administrateur lorsque la liste de vouchers disponibles arrive à épuisement.
 
 Fonctionnalité supplémentaire : Disposer d'une liste de secours afin de simplifier l'ajout de vouchers par l'admin s'il n'est pas présent sur site (en congés, en déplacement, etc.) lorsque la liste courante arrive à épuisement.
@@ -114,11 +114,11 @@ Un script serveur attaché à la liste courante qui implémente les fonctionnali
   - Extraction du nombre de vouchers demandés vers une autre feuille de calcul avec les infos de réservation.
   - Mise en forme des données déplacées.
   - Création d'un Google Document à partir d'un modèle.
-  - Insertions des données dans le Document.
+  - Insertion des données dans le Document.
   - Suppression des éléments inutiles.
-  - enregistrement du Document dans un sous-dossier spécifique du Drive.
+  - Enregistrement du Document dans un sous-dossier spécifique du Drive.
   - Affichage du lien vers le Document généré.
-- Envoie d'un email d'alerte à l'administrateur lorsque le nombre de vouchers disponibles est en dessous du seuil défini, avec :
+- Envoi d'un email d'alerte à l'administrateur lorsque le nombre de vouchers disponibles est en dessous du seuil défini, avec :
   - 1 lien vers l'interface web du pfSense pour générer un nouveau roll.
   - 1 lien pour ouvrir la liste de secours.
   - 1 lien vers la liste courante.
@@ -128,7 +128,7 @@ Un script serveur attaché à la liste de secours qui implémente ces fonctionna
 - Ajout d'un menu permettant de lancer la procédure d'ajout de vouchers de secours à la liste courante.
 - Le chargement de la configuration contenue dans une feuille spécifique du classeur.
 - La procédure d'ajout de vouchers de secours à la liste courante avec demande de confirmation préalable et gestion des erreurs (authentification, ouverture de fichier).
-- Envoi d'un email indiquant le succès ou l'échec éventuel de l'opération et indiquant le nombre de vouchers de secours restants.
+- Envoi d'un email indiquant le succès ou l'échec éventuel de l'opération ainsi que le nombre de vouchers de secours restants.
 
 ### Coté client
 
@@ -213,7 +213,7 @@ Le document Google Sheet contenant les vouchers de secours doit être, quant-à-
 
 ## Améliorations ultérieures éventuelles
 
-- Création et gestions de plusieurs rolls avec des durées de validité différentes (1/2 journée - 1 jour - 2 jours - 3 jours - 4 jours - 1 semaine - 2 semaines - 1 mois) pour correspondre aux durées des différentes formations dispensées. Autant de rolls de secours devront être prévus.
+- Création et gestion de plusieurs rolls avec des durées de validité différentes (1/2 journée - 1 jour - 2 jours - 3 jours - 4 jours - 1 semaine - 2 semaines - 1 mois) pour correspondre aux durées des différentes formations dispensées. Autant de rolls de secours devront être prévus.
 
 - Dans le cas où l'opérateur renseigne les noms/prénoms des utilisateurs avant impression, disposer d'un script attaché au document permettant de reporter automatiquement ces infos dans le tableau des vouchers utilisés.
 
@@ -227,7 +227,7 @@ Le document Google Sheet contenant les vouchers de secours doit être, quant-à-
 
 - Ils comportent un numéro unique parmi les rolls actifs.
 - On leur affecte un nombre de vouchers (1023 maximum avec le nombre de bits de ticket par défaut).
-- On leur défini une durée de validité en heures.
+- On leur définit une durée de validité en heures.
 - Une description leur est associée.
 
 **Attention : Tout changement dans les champs de nombre de bits (roll, ticket ou somme de contrôle - voir ci-après) invalide immédiatement tout roll créé précédemment.**

@@ -31,7 +31,7 @@ Sur chaque machine, le déploiement de l'image souche s'effectue par boot PXE, p
 - **[F9]]** pour le menu de boot
     - `Démarrer sur PXE IPV4`
 - Dans le menu de CloneZilla qui s'affiche, choisir `TAUX - Direct Restore HP Universal`
-    - Sur certaine machine (les plus récentes) une demande de confirmation apparaît après environ 1 minute => [Entrée]
+    - Sur certaines machines (les plus récentes) une demande de confirmation apparaît après environ 1 minute => [Entrée]
 
 *Cette étape dure environ 1/2 heure.*
 

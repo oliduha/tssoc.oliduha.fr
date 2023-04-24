@@ -16,7 +16,7 @@ show mac address-table address xxxx.xxxx.xxxx
 ```
 
 - Si la réponse indique que l'adresse MAC a été trouvée sur un port Gi0/x, cela signifie que la machine est connectée à un autre switch (lien inter-switch).
-- Si la réponse indique un port du type Fa0/x, nous somme sur le bon switch et nous savons donc sur quel port.
+- Si la réponse indique un port du type Fa0/x, nous sommes sur le bon switch et nous savons donc sur quel port.
 - Si la commande ne trouve pas cette adresse MAC, c'est que la prise Ethernet n'est pas brassée. Il faut alors :
     1. Relever le numéro de la prise réseau du poste
     2. Aller en salle blanche contrôler le brassage en suivant le cable correspondant au numéro de prise relevé vers le switch
@@ -38,11 +38,11 @@ On différencie 2 cas :
     - 30 adresses Mac
     - pas de sticky
 
-En effet, le TAD structurel mis en place chez Armatis consiste en une alternance de 2 jour à domicile et 3 jours sur site. Les téléconseillé concerné se voient donc attribués une UC qu'ils emmènent chez eux et rapportent avec eux lorsqu'ils travail sur site. Des postes sont donc aménagés spécifiquement avec une sécurité réseau permettant d'accepter différentes machines (contrairement à une poste de travail fixe).
+En effet, le TAD structurel mis en place chez Armatis consiste en une alternance de 2 jours à domicile et 3 jours sur site. Les téléconseillers concernés se voient donc attribuée une UC qu'ils emmènent chez eux et rapportent avec eux lorsqu'ils travaillent sur site. Des postes sont donc aménagés spécifiquement avec une sécurité réseau permettant d'accepter différentes machines (contrairement à un poste de travail fixe).
 
 On va reconfigurer tous les ports du switch durant la manipulation. On sait déjà quels ports correspondent à quels cas :
 
-1. Pour accéder a switch, il faut préalablement se connecter sur un poste en admin et créer une règle temporaire de contournement du pare-feu autorisant tous les ports en sortie.
+1. Pour accéder à switch, il faut préalablement se connecter sur un poste en admin et créer une règle temporaire de contournement du pare-feu autorisant tous les ports en sortie.
 2. On accède ensuite au switch via Putty et en utilisant le CLI Cisco
 3. On vérifie l'état des interfaces : `sh int status`
 4. Puis l'état des vlan : `sh vlan`

@@ -36,7 +36,7 @@ Doc : [Installation d'IPFire](https://wiki.ipfire.org/installation) ou sur [nept
 
 ![IPFire](01_ipfire.png)
 
->En cas de besoin, on peux entrer dans la configuration d'IPFire à posteriori via la commande :
+>En cas de besoin, on peut entrer dans la configuration d'IPFire à posteriori via la commande :
 
 ```bash
 setup
@@ -123,7 +123,7 @@ Récap. + validation => le script d'install se lance...
 
 Lorque c'est terminé, il affiche une URL qu'il demande d'ouvrir dans le navigateur avant de pouvoir finaliser l'install : `https://ip_du_serveur/fog/management`
 
-Une fois l'url ouverte dans le navigateur de notre hôte (la machine qui fait tourner VMWare) on doit cliquer ``Install/Update Database``. 
+Une fois l'url ouverte dans le navigateur de notre hôte (la machine qui fait tourner VMWare) on doit cliquer sur ``Install/Update Database``. 
 
 ![Fog_Validate_Database](02_1_Fog_Validate_Database.png)
 
@@ -185,7 +185,7 @@ Lors du boot PXE, la machine est interceptée par FOG et arrive sur un menu spé
 
 ![Menu_Fog_unregistered](04_1_vwm_master_fog_menu_1.png)
 
-Sélectionner **``Quick Registration and Inventory``** pour lancer la procédure d'enregistrement de la machine qui va se dérouler sans autre intervention, et après un reboot, revenir à ce menu en indiquant le nom qui lui a été affecté par FOG, en en-têtte *(peut être son adresse MAC)* :
+Sélectionner **``Quick Registration and Inventory``** pour lancer la procédure d'enregistrement de la machine qui va se dérouler sans autre intervention, et après un reboot, revenir à ce menu en indiquant le nom qui lui a été affecté par FOG, en en-tête *(peut être son adresse MAC)* :
 
 ![Menu_fog_registered](04_2_vwm_master_fog_menu_2.png)
 
@@ -217,7 +217,7 @@ Ce qui donne :
 
 ![Imges](06_2_fog_images_master.png)
 
-Nous pouvons à présent créer une tâche de capture assignée à notre master : de retours sur la page **Host Management** cliquer sur le nom du master pour lui indiquer le conteneur où stocker l'image à la ligne **Host image**. Sélectionner ensuite **Basic Tasks** dans les onglets juste au-dessus et enfin l'icone **Capture** :
+Nous pouvons à présent créer une tâche de capture assignée à notre master : de retour sur la page **Host Management** cliquer sur le nom du master pour lui indiquer le conteneur où stocker l'image à la ligne **Host image**. Sélectionner ensuite **Basic Tasks** dans les onglets juste au-dessus et enfin l'icone **Capture** :
 
 ![Master_Capture](07_1_fog_host_task.png)
 
@@ -271,7 +271,7 @@ On (re)démarre la machine cliente et le déploiement démarre automatiquement :
 
 ** Pour déployer une machine sans avoir créé de tâche au préalable :**
 
-On (re)démarre la machine à déployer et on choisi **Deploy Image** dans le menu FOG pour démarrer la tâche de déploiement. Le processus demande alors un login/mot de passe qu'on renseigne avec ``fog/pqsszord`` (pour fog/password, le clavier étant en disposition QWERTY à ce moment là).
+On (re)démarre la machine à déployer et on choisit **Deploy Image** dans le menu FOG pour démarrer la tâche de déploiement. Le processus demande alors un login/mot de passe qu'on renseigne avec ``fog/pqsszord`` (pour fog/password, le clavier étant en disposition QWERTY à ce moment là).
 
 ![VMW_Client_Deploy_Menu](11_1_Client_VMW_Menu_Deploy.png)
 
@@ -500,7 +500,7 @@ Puis l'affecter à notre hôte cible comme un snapin simple.
 
 ![Affect_Office_Snapin](15_4_Affect_Office_Snapin.png)
 
-Et elle doit figurer dans la liste des tâches active.
+Et elle doit figurer dans la liste des tâches actives.
 
 Avec la configuration choisie, une barre de progression doit apparaître sur le poste client durant l'installation d'Office *(n'a pas fonctionné lors de ce test)*.
 

@@ -6,7 +6,7 @@ weight = 1
 
 ---
 
-Préparation et mise en place de postes de travail dans le cadre d’un renouvellement de matériel ou d’une modification d’affectation pour des télé-conseillés et configuration d’un switch Aruba neuf.
+Préparation et mise en place de postes de travail dans le cadre d’un renouvellement de matériel ou d’une modification d’affectation pour des téléconseillers et configuration d’un switch Aruba neuf.
 
 Mise à jour des équipements dans BMC Noumara (entrer le nouveau matériel et passer l’ancien en « spare ») avec une nomenclature normalisée reprenant le numéro de série de la machine.
 Préparation des nouvelles machines par déploiement de l’image souche (l’hôte) via Clonezilla en PXE puis déploiement de l’image de la VM (VMWare Workstation) spécifique à l’activité ciblée via un script faisant appel à MDT et un ensemble de scripts (Powershell) de configuration.

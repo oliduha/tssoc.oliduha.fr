@@ -28,7 +28,7 @@ C'est grâce à l'AD qu'on peut faire du SSO (jeton pour la "journée" d'authent
 Les enregistrements sont les mêmes pour les zones DNS internes et externes.
 
 **PROGRAMME:**
-- Monter une AD unique à nous tous, faire tout ce qu'on vas retrouver en entreprise (ex: comptes, groupes, mdp, OU); les bonnes pratiques.
+- Monter une AD unique à nous tous, faire tout ce qu'on va retrouver en entreprise (ex: comptes, groupes, mdp, OU); les bonnes pratiques.
 - On fera des GPO qui sont le plus utilisées en entreprise.
 - Sécurité NTFS (sécurité sur les dossiers et les fichiers). 
 
@@ -40,11 +40,11 @@ Port AD 389 / Port LDAS 636
 
 ![](002-schemaAD1.png)
 
-AD => c'est une forêt => la forêt c'est le schéma qui est remplie d'attributs.
-Dans cette forêt, il peut y avoir des domaines, voir des sous-domaines des domaines.
-En entreprise, pour éviter de complexifier son AD, on ne fait qu'un domaine, voir deux sous-domaines (messagerie et compte). On peut même simuler des sous-domaines pour ne pas complexifier l'AD. Grâce à cela on n'as qu'un seul et unique domaine à gérer.
+AD => c'est une forêt => la forêt c'est le schéma qui est rempli d'attributs.
+Dans cette forêt, il peut y avoir des domaines, voire des sous-domaines des domaines.
+En entreprise, pour éviter de complexifier son AD, on ne fait qu'un domaine, voir deux sous-domaines (messagerie et compte). On peut même simuler des sous-domaines pour ne pas complexifier l'AD. Grâce à cela on n'a qu'un seul et unique domaine à gérer.
 Le login côté AD s'apelle l'UPN (équivalent de l'adresse mail)  
-AD permet de gérer: les comptes génériques, les mdp, les groupes de sécurité, listes de diffusion, machines, serveur, GPO, BALS (implicitement c'est un compte / BALS: Boite aux lettres) générique, BALS équipements, BALS Salle.  
+AD permet de gérer: les comptes génériques, mdp, groupes de sécurité, listes de diffusion, machines, serveurs, GPO, BALS (implicitement c'est un compte / BALS: Boite aux lettres) générique, BALS équipements, BALS Salle.  
 
 ![](003-schemaForetAD.png)
 
@@ -60,10 +60,10 @@ Les 5 étapes de l'installtion d'un magnifique serveur neuf :
 Ils sont aussi serveurs DNS externes.  
 Les bonnes pratiques :
 
-- Ce sont deux serveurs par site. Un contrôleur de domaine ne doit rien faire d'autres.  
-- Ils doivent être physique. À la limite, un des deux peut être virtualisé (par exemple, sur une infra VMware qui crash et que les deux serveur sont virtualisé, c'est la misère)  
+- Ce sont deux serveurs par site. Un contrôleur de domaine ne doit rien faire d'autre.  
+- Ils doivent être physiques. À la limite, un des deux peut être virtualisé (par exemple, sur une infra VMware qui crash et que les deux serveur sont virtualisé, c'est la misère)  
 - Le principal doit rester en physique. Il héberge les rôles FSMO.
-- La réplication AD permet de se synchroniser dans les 15 minutes entre tout les contrôleurs de domaine.  
+- La réplication AD permet de se synchroniser dans les 15 minutes tous les contrôleurs de domaine.  
 
 Dans le cas d'un multi site :
 
@@ -75,8 +75,8 @@ Dans le cas d'un multi site :
 
 **Bonne pratique** :  
 Les 4 sites sont reliés en VPN IPSEC site à site.  
-Sur de l'intersite, faire passer la réplication AD dans le tunel.  
-Tout les Firewalls proposent le VPN IPSEC site à site. Les configurer exterieurements (sur Paris, mettre l'Ip publique de Marseille, ainsi que les méthodes d'encryption. Il faut qu'elle soit égale des 2 côtés. Idem pour la clé secrete partagée).  
+Sur de l'intersite, faire passer la réplication AD dans le tunnel.  
+Tout les Firewalls proposent le VPN IPSEC site à site. Les configurer exterieurement (sur Paris, mettre l'Ip publique de Marseille, ainsi que les méthodes d'encryption. Il faut qu'elle soit égale des 2 côtés. Idem pour la clé secrete partagée).  
 Mettre la même marque de firewall sur tout ces sites*
 
 ## AD SUR WINDOWS SERVEUR 2019
@@ -88,7 +88,7 @@ Mettre la même marque de firewall sur tout ces sites*
   - Rôles de serveurs
   - Cocher Service AD DS (Gestion de Stratégie de Groupe déjà coché)
   - Lancer l'installation du rôle
-- Drapeau Orange en haut à droite "Promouvoir se serveur en contrôleur de domaine"
+- Drapeau Orange en haut à droite "Promouvoir ce serveur en contrôleur de domaine"
 - Assistant de Configuration des services de domaines AD
   - Configuration de déploiement
     - "Ajouter une nouvelle forêt"
@@ -117,8 +117,8 @@ Sur un contrôleur de domaine, lorsque le domaine est crée, la notion d'Admin l
      On a les 3 rôles FSMO
 
 - **Outils Administration, DNS**
-  - On vérifie que notre domaine est crée en zone directe.
-  - Notre zone reverse n'est pas crée, il faut la créer.
+  - On vérifie que notre domaine est créé en zone directe.
+  - Si notre zone reverse n'est pas créée, il faut la créer.
     - clique-droit, ajouter une nouvelle zone.  
     - Ajouter le pointeur PTR du Record A de la zone directe.  
   - Clique-droit, Propriété sur le serveur DNS
@@ -128,11 +128,11 @@ Sur un contrôleur de domaine, lorsque le domaine est crée, la notion d'Admin l
 - **Outils Administration, Sites et Services Active Directory**
   - Default-First-Site-Name
     - C'est le site sur lequel vous avez mis le controleur de domaine principal.  
-    - On retrouve les contrôleurs de domaine ratachés à ce site.  
+    - On retrouve les contrôleurs de domaine rattachés à ce site.  
   - Inter-Site-Transports
     - IP => DEFAULTIPSITELINK : C'est le moteur de réplication entre les contrôleurs de domaine. 
       - Clique-droit, Propriété et mettre la réplication à 15 min.  
-  - Subnets (Le plus important ! Il faut déclarer le réseau du site et le ratacher au site.)
+  - Subnets (Le plus important ! Il faut déclarer le réseau du site et le rattacher au site.)
     - Clique-droit, Nouveau sous-réseau
       - Préfixe: 192.168.20.0/24 et séléctionner le site
   - Clique-droit sur Sites, Ajouter un nouveau site. (Par exemple Marseille). Penser à créer le subnet du réseau de Marseille.
@@ -140,7 +140,7 @@ Sur un contrôleur de domaine, lorsque le domaine est crée, la notion d'Admin l
 - **Outils Administration, Domaine et Approbation Active Directory**
   - Clique-droit, Propriété sur le Domaine et approbation AD.
     - On peut simuler des créations de sous-domaines ou des domaines.  
-    - ***Si on ajoute un nouvel utilisateur, on peut lui crée son identifiant avec la partie mail que l'on veut.***
+    - ***Si on ajoute un nouvel utilisateur, on peut lui créer son identifiant avec la partie mail que l'on veut.***
 
 - **Outils Administration, Modèles ADSI**
   - Ici on a la retranscritpion de notre AD coté Forêt (CN = attribut)
@@ -158,12 +158,12 @@ Sur un contrôleur de domaine, lorsque le domaine est crée, la notion d'Admin l
 
 - 1ère chose : mettre l'IP du contrôleur principal dans les paramêtres de cartes réseau.  
 ![](004-ping.png)
-- 2éme chose : ajouter le domaine (On arrive dans les "computers" sur le controleur principal)  
+- 2éme chose : ajouter le domaine (On arrive dans les "computers" sur le contrôleur principal)  
 ![](005-ajout_domaine.png)
 - Enfin se connecter en tant qu'administrateur du serveur (dans notre cas, login: OM\Administrateur)
-- Désactiver le pare-feu qui vient se rajouter suite à la rentrée dans le domaine.
+- Désactiver le pare-feu qui vient se rajouter suite à l'entrée dans le domaine.
 
-*On clique sur le drapeau orange et on lance "promouvoir en controleur de domaine" :*
+*On clique sur le drapeau orange et on lance "promouvoir en contrôleur de domaine" :*
 
 - Ajout contrôleur de domaine au domaine existant
 - Verifier qu'on est sur le bon domaine (om.lan)
@@ -173,18 +173,18 @@ Sur un contrôleur de domaine, lorsque le domaine est crée, la notion d'Admin l
 
 *Une fois installé, voilà quelques checks et réglages à faire:*
 
-- Carte Réseau: Vérifier les paramêtres de carte. Mettre en DNS primaire nous (192.168.20.51) et en DNS secondaire celle du contrôleur principale (192.168.20.201).
-- Vérifier dans l'AD, que tout les domaines controlleurs secondaires sont bien présents.  
+- Carte Réseau: Vérifier les paramêtres de carte. Mettre la nôtre en DNS primaire (192.168.20.51) et en DNS secondaire celle du contrôleur principal (192.168.20.201).
+- Vérifier dans l'AD, que tous les domaines controleurs secondaires sont bien présents.  
 - DNS: Vérifier qu'on a bien récuperé om.lan, om.fr et la zone reverse. Supprimer les records inutiles.
 - Créer un alias ldapjbf qui pointe sur notre serveur secondaire sur om.lan
 - Créer un host A ldapjbf qui pointe sur notre serveur secondaire sur om.fr
 - Allez dans Domaines et Approbation AD et vérifier qu'on a bien récuperé les suffixes de noms de domaine.  
-- Allez dans Sites et services AD Sites/Paris/Servers, on doit tous y être. Si on dévellope notre serveur, on doit avoir notre *NTDS Settings* et enfin à droite on retrouve nos partenaires de réplications.  
+- Allez dans Sites et services AD Sites/Paris/Servers, on doit tous y être. Si on développe notre serveur, on doit avoir notre *NTDS Settings* et enfin à droite on retrouve nos partenaires de réplications.  
 
 Utilisateurs et ordinateurs AD :
 
 - Builtin : on s'en sert assez peu au quotidien
-- Computer : OU d'arrivée des PC et des servers dans l'AD
+- Computer : OU d'arrivée des PC et des serveurs dans l'AD
 - Domain Controller : AD secondaire
 - Users : Compte admin + autres comptes par défaut (structures d'OU/sous-OU)
   - Administrateur du domaine = niveau le plus bas (accès domaine pour l'usage quotidien)
@@ -195,10 +195,10 @@ Utilisateurs et ordinateurs AD :
 
 Une arborescence AD, ses OU et ses sous-OU, dépendent de l'entreprise dans laquelle on se trouve.
 
-**Un exemple d'organistaion (les bonnes pratiques) :**
+**Un exemple d'organisation (les bonnes pratiques) :**
 
 - Côté machine:
-  - Création OU Serveurs (donc tous serveurs qui arrive dans computers doit être déplacé dans cette OU)
+  - Création OU Serveurs (donc tout serveur qui arrive dans computers doit être déplacé dans cette OU)
   - Création OU Machines
     - Création sous-OU: Fixes
     - Création sous-OU: Portables
@@ -229,20 +229,20 @@ Créer une OU principale par personne pour éviter les conflits (Delegue).
 | Mettre le nom en majuscule et le mettre avant le prénom | ![](007-ajout-user.png)|
 
 Clique-droit Propriétés sur l'user :
-  - Mettre le plus de renseignement possibles pour avoir quelque chose de complet, fortement apprécié des users.
+  - Mettre le plus de renseignements possibles pour avoir quelque chose de complet, fortement apprécié des users.
 
 | Créer un groupe de sécurité | |
 |:-:|:-:|
 | Créer un groupe DSI et un groupe ServiceIT. Mettre ServiceIT dépendant du groupe DSI | ![](008-groupes.png)|
 | Ajouter l'utilisateur dans le groupe ServiceIT | ![](009-petit-groupe.png)
 
-*AzureAD vas aspirer le compte d'Arthur PENDRAGON et le synchroniser avant sa boite mail*
+*AzureAD va aspirer le compte d'Arthur PENDRAGON et le synchroniser avant sa boite mail*
 
 ## GPO ET TRANSFERTS DE FICHIER
 
 ![](010-annuaire-AD.png)
 
-*Tout ce dont on parle n'est valable que si l'entreprise n'a pa Teams ou Sharepoint*
+*Tout ce dont on parle n'est valable que si l'entreprise ne peut pas utiliser Teams ou Sharepoint*
 
 **PC Portables ou Fixes**
 
@@ -262,7 +262,7 @@ Côté GPO :
     - GPO = du bureau (va prendre le bureau local et le transposer sur le serveur de fichiers/réseau etc.)
     - Nécessite gros serveurs de fichiers (baie de stockage) = disques VM pointés vers baie de stockage 
     - VM branchées sur baies en ESX (derrière le cluster ESX il n'y a que des baies de stockage) = baie connectée aux ESX
-        - Avenir = hyperconvergence (on s'affranchit des baies) = VMWare sait embarquer le stockage dans son noyau, stockage embarqué dans les clusters VSAN qui deviennent aussi baie (baie de stockahe imbriquée à VMWare, disques en full flash)
+        - Avenir = hyperconvergence (on s'affranchit des baies) = VMWare sait embarquer le stockage dans son noyau, stockage embarqué dans les clusters VSAN qui deviennent aussi baie (baie de stockage imbriquée à VMWare, disques en full flash)
 - Attention : les GPO ne proposent pas la redirection des ressources partagées
     - (1) nécessite script powershell pour reconnecter le lecteur réseau (script de connexion dans une GPO)
     - (2) vous connectez sur le compte de l'user directement le lecteur reseau des partages collectifs avec l'onglet ...
@@ -271,16 +271,16 @@ Côté GPO :
 
 Grosse bête pointe vers une baie de stockage. Elle projète des volumes directement sur le serveur. Et le serveur dans l'explorateur Windows va présenter la baie.
 
-Sur le server de fichier: Arborescence dossiers  
+Sur le serveur de fichier: Arborescence dossiers  
 D: Dossiers Ultisateurs --> partagé --> Sécurité NTFS
 
   - Dossier individuel des utilisateurs --> Pas de partage --> Sécurité NTFS
-  - Le dossier pour qu'il redescende en GPO doit s'appeller avec le SAM (S. Acompte Mail.) --> %UserName%
+  - Le dossier pour qu'il redescende en GPO doit s'appeler avec le SAM (S. Acompte Mail.) --> %UserName%
   - Partages --> partagé --> Sécurité NTFS
 
 **Première GPO**
 
-Toujours faire ses GPO sur la dernières sous-OU.  
+Toujours faire ses GPO sur la dernière sous-OU.  
 Outilis / Gestion des stratégies de Groupes.  
 
 |Creer une GPO|
@@ -299,7 +299,7 @@ Création de notre arborescence de fichier sur le lecteur C:
 
 ### Sur le dossier parent DossiersUtilisateurs
 
-Clique-droit sur le dossier Partages/Propriétés bouton "Partage avancé" pui cocher "Partager ce dossier". Puis bouton "Authorisations" et Autoriser le contrôle total. Les vrais droits sont gérés par l'onglet "Sécurité".
+Clique-droit sur le dossier Partages/Propriétés bouton "Partage avancé" pui cocher "Partager ce dossier". Puis bouton "Autorisations" et Autoriser le contrôle total. Les vrais droits sont gérés par l'onglet "Sécurité".
 ![](013-partage-GPO.png)
 *Ne pas oublier l'autorisation partage sinon pas de partage*
   
@@ -322,7 +322,7 @@ Dans l'onglet "Sécurité", donc, cliquez le bouton "Avancé" puis le bouton "D�
 
 ![](017-GPO-dsi-secu.png)
 
-**Ne pas laisser le *CONTROLE TOTAL* pour les utilisateurs car cela leur donne accès à l'onglet de sécurité ce qui est une faille de sécuité énorme.**
+**Ne pas laisser le *CONTROLE TOTAL* pour les utilisateurs car cela leur donne accès à l'onglet de sécurité, ce qui est une faille de sécurité énorme.**
 
 ### Faire la même procédure pour le dossier enfant Service_IT
 
@@ -335,7 +335,7 @@ On vas s'occuper de l'arborescence des dossiers utisateurs :
   - On désactive l'héritage (comme vu précédemment).
   - On active la sécurité système, administrateur du domaine et utilisateurs authentifiés.
 - Dans le dossier parent, on crée un dossier enfant avec le SAM de l'utilisateur (apendragon).  
-  - On gère la sécurité (comme vu précedemment) mais on enlève l'utilisateur authentifié et qu'on remplace par l'user, avec les rêgles qui vont bien (tout sauf *contrôle total*)
+  - On gère la sécurité (comme vu précedemment) mais on enlève l'utilisateur authentifié que l'on remplace par l'user, avec les rêgles adéquates (tout sauf *contrôle total*)
 
 ![](018-secu-user-GPO.png)
 
@@ -400,7 +400,7 @@ Pour le partage colléctif :
 Vérification du bon fonctionnement des GPO :
 
 - Monter un W10
-- Créer un user à rattaché au domaine (check dans computer dans l'AD pour l'arrivée)
+- Créer un user à rattacher au domaine (check dans computer dans l'AD pour l'arrivée)
 - Mettre un fichier dans un des dossiers Documents/Images/...
 - Check dans l'AD s'il apparait bien dans l'arborescence de l'AD par DossierUser
 
@@ -442,14 +442,14 @@ Vérification du bon fonctionnement des GPO :
 
 Faire venir une forêt 2019 dans une forêt 2016 = trois étapes exclusives au prinicpal (puisque possède les FSMO) pour préparation :
 
-  1. couper les réplications AD entre contollers (1 ligne de commande à passer) 
+  1. couper les réplications AD entre contrôleurs (1 ligne de commande à passer) 
   2. préparer la forêt (1 ligne de commande à passer)
   3. préparer le domaine (1 ligne de commande à passer)
 
 **Première étape de migration**
 
 - Préparation d'un WServer 2019 : NIC, antivirus etc.
-- Insérer le WServer 2019 en controller de domaine secondaire dans la forêt 2016
+- Insérer le WServer 2019 en contrôleur de domaine secondaire dans la forêt 2016
   - Va se coller à la forêt 2016
   - Mode dit "mixte" (possible de rester ainsi plusieus mois)
 
@@ -470,18 +470,18 @@ Faire venir une forêt 2019 dans une forêt 2016 = trois étapes exclusives au p
 
 **Troisième étape de migration**
 
-- Rétrogradation du second controller secondaires
+- Rétrogradation du second contrôleur secondaire
     - Plus DNS ni AD
-    - Redevient server simple
+    - Redevient serveur simple
 
-| DC secondaire | Server simple | DC principal
+| DC secondaire | Serveur simple | DC principal
 |:-:|:-:|:-:|
 | - | - | Rôle FSMO |
 |AD WServer 2016| AD WServer 2016| AD WServer 2019|
 
 **Quatrième étape de migration**
 
-- On crash/réinstalle le server simple en WServer2019
+- On crash/réinstalle le serveur simple en WServer2019
 - On le fait venir en secondaire en 2019
 
 | DC secondaire | DC secondaire | DC principal
@@ -489,7 +489,7 @@ Faire venir une forêt 2019 dans une forêt 2016 = trois étapes exclusives au p
 | - | - | Rôle FSMO |
 |AD WServer 2016| AD WServer 2019| AD WServer 2019|
 
-- Bis repetita pour le premier controller
+- Bis repetita pour le premier contrôleur
 
 | DC secondaire | DC secondaire | DC principal
 |:-:|:-:|:-:|
@@ -516,7 +516,7 @@ Faire venir une forêt 2019 dans une forêt 2016 = trois étapes exclusives au p
     - Utilisation d'un [server ADMT](https://rdr-it.com/admt-outil-de-migration-de-domaine-active-directory/3/) pour la migration les objets de la source vers la cible
     - Installation de [Password Export Server](http://pbarth.fr/node/112) : utilitaire de migration des mots de passe
     - Une fois cela effectué on peut commencer à migrer
-- On ne supprime les deux controllers de base qu'une fois l'ensemble de la migration effectuée
+- On ne supprime les deux contrôleurs de base qu'une fois l'ensemble de la migration effectuée
 
 #### Migration via Azure AD
 
@@ -572,7 +572,7 @@ adprep /domainprep
 **Ajouter un contrôleur AD 2019 dans notre AD 2016**
 
 Maintenant, on peut ajouter un contrôleur AD 2019 dans notre AD 2016.  
-On réactive les répliques et on y touche plus. Pas besoin de les couper à nouveau, même si on reprends la migration des mois plus tard.  
+On réactive les répliques et on n'y touche plus. Pas besoin de les couper à nouveau, même si on reprend la migration des mois plus tard.  
 Retour dans C:
 
 ```cmd
@@ -582,8 +582,8 @@ repadmin /options WS16 -
 ![](207-mig-activrepl.png)
 
 On monte un Windows Serveur 2019.  
-On désactive le firewall et on met l'adresse du controlleur de domaine 2016 en DNS primaire.  
-On prends une petite sureté, on ping les machines entre elles.  
+On désactive le firewall et on met l'adresse du contrôleur de domaine 2016 en DNS primaire.  
+On prend une petite sécurité, on ping les machines entre elles.  
 
 Ensuite, il faut ajouter le Windows Serveur 2019 dans le **domaine** bobdy.lan  
 
@@ -601,7 +601,7 @@ Verifier qu'on soit bien dans le bon domaine.
 On passe aux vérifications, pour être sûr que tout se soit bien passé :
 
 - Dans l'AD19, Carte Réseau : mettre l'AD 2019 en DNS primaire et l'AD 2016 en DNS Secondaire.
-- Dans l'AD19, Gestionnaire DNS: Verifier qu'il y ai bien :  
+- Dans l'AD19, Gestionnaire DNS: Verifier qu'il y ait bien :  
     - les zones, les records et les zones inversées.  
 ![](210-mig-gest-dns-1.png)
     - les serveurs de noms
@@ -616,7 +616,7 @@ On passe aux vérifications, pour être sûr que tout se soit bien passé :
 
 **MIGRATION DES ROLES FSMO DE l'AD2016 à L'AD2019**
 
-Le premier rôle a migrer est caché. Il faut donc le faire apparaitre via une *petite commande*. Ouvrir l'invite de commande et se renre à la racine C:\
+Le premier rôle à migrer est caché. Il faut donc le faire apparaitre via une *petite commande*. Ouvrir l'invite de commande et se renre à la racine C:\
 
 ```cmd
 regsvr32 schmmgmt.dll
@@ -675,7 +675,7 @@ Enfin refaire supprimer les rôles et décocher les deux rôles et cette fois-ci
 On va dans les paramêtres de carte réseau et on retire l'adresse IP du DNS du Windows Serveur 2016.  
 ![](223-mig-retro-AD-4.png)
 
-**QUELQUES NETOYAGES SUR LE NOUVEAU CONTROLLEUR PRINCIPALE WINDOWS 2019**
+**QUELQUES NETOYAGES SUR LE NOUVEAU CONTROLEUR PRINCIPAL WINDOWS 2019**
 
 Gestionnaire DNS  
 Clique-droit sur **bobdy.lan** et vérifier que dans les serveurs de noms, l'ancien serveur 2016 n'y soit plus et sinon supprimez le.  
@@ -691,21 +691,21 @@ Supprimez le serveur des computers.
 Gestionnaire DNS
 Supprime le record du Windows Serveur 2019  
 
-|***Dernière opération, dans Domaines et approbations Active Directory, clique-droit, augmenté le niveau fonctionnel de la forêt. Sur une migration AD2016 à AD2019, il n'y en a pas besoin. Par contre de AD2008 à AD2012, deAD2012 à AD2012R2 et AD2012R2 à AD2016 il y a un niveau fonctionnel à monter.***|
+|***Dernière opération, dans Domaines et approbations Active Directory, clique-droit, augmenter le niveau fonctionnel de la forêt. Sur une migration AD2016 à AD2019, il n'y en a pas besoin. Par contre de AD2008 à AD2012, deAD2012 à AD2012R2 et AD2012R2 à AD2016 il y a un niveau fonctionnel à monter.***|
 |:-:|
 
-### ON VA MANIPER - MIGRATION INTER-FORET
+### ON VA MANIPULER - MIGRATION INTER-FORET
 
-**Pour supprimer une OU :** *Affichage, fonctionnalités avancées, clique-droit sur propriétés l'OU désirée, supprimer, onglet sécurité, décoché la case.*  
+**Pour supprimer une OU :** *Affichage, fonctionnalités avancées, clique-droit sur propriétés l'OU désirée, supprimer, onglet sécurité, décocher la case.*  
 
 **Préparation de la base pour l'AD19 source et cible :**
 
 - Désactiver les firewalls des 2 Windows Serveur.
 - Sur la carte réseau du WS19CIBLE, on fixe l'IP: 192.168.20.53  
-- Renommerla machine en WS19CIBLE  
+- Renommer la machine en WS19CIBLE  
 - On installe les rôles Services AD DS et rôles DNS  
 - Promouvoir en contrôleur de domaine complétement indépendant : **paradise.lan**  
-- Faire les réglages de bases classiques  
+- Faire les réglages de base classiques  
 - Mettre la réplication à 15 minutes  
 - Créer son subnet dans Sites and Services AD
 - Créer son domaine commercial dans les suffixes UPN en .fr
@@ -721,7 +721,7 @@ Supprime le record du Windows Serveur 2019
 |![](226-foret-stub-2.png)|On ajoute notre domaine cible **paradise.lan**|
 |![](227-foret-stub-3.png)|L'adresse IP de notre controlleur cible: 192.168.20.53|
 
-Vérifier que la zone est bien tombé dans les Zones de recherches directes.  
+Vérifier que la zone est bien tombée dans les Zones de recherches directes.  
 
 **Contrôleur Cible:**
 
@@ -752,7 +752,7 @@ Clique-droit sur la propriété, puis Approbations
 
 ![](236-foret-approb-7.png)
 
-Si la zone d'approbation est passé c'est que la zone de stub et le redirecteur conditionnel sont bons.  
+Si la zone d'approbation est passée c'est que la zone de stub et le redirecteur conditionnel sont bons.  
 
 On va vérifier côté Contrôleur Cible :
 
@@ -876,12 +876,12 @@ AMDT fonctionnant avec une BDD, il faut lui installer un SQL express.
 [Lien PES](https://www.microsoft.com/en-us/download/details.aspx?id=1838)
 
 On installe SQL express. (Déclaré en instance et serveur ADMT)  
-On install ADMT (ADMT\ADMT)  
+On installe ADMT (ADMT\ADMT)  
 Une fois ADMT installé on peut le lancer.  
 
 ![](250-admt-install.png)
 
-On va généré sa clé de chiffrement pour la donner à PASSWORD EXPORT SERVER. C'est pour que PES et ADMT puissent migrer  
+On va générer sa clé de chiffrement pour la donner à PASSWORD EXPORT SERVER. C'est pour que PES et ADMT puissent migrer  
 Invite de commande :
 
 ```cmd
@@ -895,7 +895,7 @@ admt key /option:create /sourcedomain:paradise.lan /keyfile:c:\admt_key /keypass
 ![](251-admt-prep-1.png)
 
 On install PES sur le contrôleur de domaine source.  
-Récuperer le fichier admt_key.pes crée sur le contrôleur ADMT et le mettre dans le contrôleur source pour le charger lors de l'installation.  
+Récupérer le fichier admt_key.pes créé sur le contrôleur ADMT et le mettre dans le contrôleur source pour le charger lors de l'installation.  
 Prendre le compte BOBDY\administrateur (domainesource\administrateur) pour se log à PES (dans la bonne pratique, il faudrait créer un compte PES exprès)  
 
 Maintenant, il faut vérifier plusieurs points sur le contrôleur source :

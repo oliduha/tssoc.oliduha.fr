@@ -152,7 +152,7 @@ xtrct ()
 
 ### 3. Automatisation du renouvellement d'un certificat Let's Encrypt tous les 3 mois
 
-*`certbot` doit être installé sur la machine et un certificat doit être configuré sur son nom de domain.*
+*`certbot` doit être installé sur la machine et un certificat doit être configuré sur son nom de domaine.*
 
 L'opération s'effectue uniquement via crontab
 
@@ -166,6 +166,6 @@ on ajoute :
 0 0 1 */3 * certbot renew --apache --domain oduhamel.oliduha.fr -n
 ```
 
-*La commande sera éxectutée tous les 3 mois, le 1er jour du mois*
+*La commande sera éxecutée tous les 3 mois, le 1er jour du mois*
 
 ---

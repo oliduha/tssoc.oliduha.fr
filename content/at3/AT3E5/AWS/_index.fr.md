@@ -119,7 +119,7 @@ service apache2 restart
 
 **Créer un certificat debian pour apache** avec https://certbot.eff.org/
 
-Une fois le certificat crée, on retrouve ses fichiers dans `/etc/letsencrypt/live/oduhamel.oliduha.fr/`
+Une fois le certificat créé, on retrouve ses fichiers dans `/etc/letsencrypt/live/oduhamel.oliduha.fr/`
 
 Il est aussi référencé dans le fichier .conf du site default-ssl d'apache
 
@@ -197,7 +197,7 @@ curl -o /etc/apt/trusted.gpg.d/sury-php8.gpg https://packages.sury.org/php/apt.g
 apt update
 ```
 
-Installation de php et les bibliothèques nécéssaires :
+Installation de php et des bibliothèques nécéssaires :
 
 ```bash
 apt install -y php php-curl php-cli php-mysql php-gd php-common php-xml php-json php-intl php-pear php-imagick php-dev php-common php-mbstring php-zip php-soap php-bz2 php-bcmath php-gmp php-apcu
@@ -308,7 +308,7 @@ apt install zip
 mkdir /root/backup
 ```
 
-On crée un script bash dans le dossier /root/ pour automatiser la sauveagarde des fichiers et de la BDD de Nextcloud et on lui donne les droits d'exécution
+On crée un script bash dans le dossier /root/ pour automatiser la sauvegarde des fichiers et de la BDD de Nextcloud et on lui donne les droits d'exécution
 
 ```bash
 cd root

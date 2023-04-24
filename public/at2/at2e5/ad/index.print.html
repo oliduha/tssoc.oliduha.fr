@@ -74,10 +74,10 @@
 <h1 id="migrations-active-directory">Migrations Active Directory</h1>
 
 <p>
-<a href="#image-51ff8341482606a66c4ab0e63afed2e0" class="lightbox-link">
+<a href="#image-b721667045a6d14493bf6b5c55fc9148" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/001-logoAD.png" alt="logo" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-51ff8341482606a66c4ab0e63afed2e0">
+<a href="javascript:history.back();" class="lightbox" id="image-b721667045a6d14493bf6b5c55fc9148">
 <img src="../../../at2/at2e5/ad/001-logoAD.png" alt="logo" class="lightbox-image" loading="lazy">
 </a></p>
 <h2 id="introduction">Introduction</h2>
@@ -124,7 +124,7 @@ C&rsquo;est grâce à l&rsquo;AD qu&rsquo;on peut faire du SSO (jeton pour la &l
 <p>Les enregistrements sont les mêmes pour les zones DNS internes et externes.</p>
 <p><strong>PROGRAMME:</strong></p>
 <ul>
-<li>Monter une AD unique à nous tous, faire tout ce qu&rsquo;on vas retrouver en entreprise (ex: comptes, groupes, mdp, OU); les bonnes pratiques.</li>
+<li>Monter une AD unique à nous tous, faire tout ce qu&rsquo;on va retrouver en entreprise (ex: comptes, groupes, mdp, OU); les bonnes pratiques.</li>
 <li>On fera des GPO qui sont le plus utilisées en entreprise.</li>
 <li>Sécurité NTFS (sécurité sur les dossiers et les fichiers).</li>
 </ul>
@@ -132,22 +132,22 @@ C&rsquo;est grâce à l&rsquo;AD qu&rsquo;on peut faire du SSO (jeton pour la &l
 <p><em>AD = LDAP (LDAPs = fonction sécurisé) = Annuaire = Annuaire d&rsquo;identité</em></p>
 <p>Port AD 389 / Port LDAS 636</p>
 <p>
-<a href="#image-434d699d618a8bdcd16984362c700736" class="lightbox-link">
+<a href="#image-7de1b87776960cbb19351ed7df964aee" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/002-schemaAD1.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-434d699d618a8bdcd16984362c700736">
+<a href="javascript:history.back();" class="lightbox" id="image-7de1b87776960cbb19351ed7df964aee">
 <img src="../../../at2/at2e5/ad/002-schemaAD1.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
-<p>AD =&gt; c&rsquo;est une forêt =&gt; la forêt c&rsquo;est le schéma qui est remplie d&rsquo;attributs.
-Dans cette forêt, il peut y avoir des domaines, voir des sous-domaines des domaines.
-En entreprise, pour éviter de complexifier son AD, on ne fait qu&rsquo;un domaine, voir deux sous-domaines (messagerie et compte). On peut même simuler des sous-domaines pour ne pas complexifier l&rsquo;AD. Grâce à cela on n&rsquo;as qu&rsquo;un seul et unique domaine à gérer.
+<p>AD =&gt; c&rsquo;est une forêt =&gt; la forêt c&rsquo;est le schéma qui est rempli d&rsquo;attributs.
+Dans cette forêt, il peut y avoir des domaines, voire des sous-domaines des domaines.
+En entreprise, pour éviter de complexifier son AD, on ne fait qu&rsquo;un domaine, voir deux sous-domaines (messagerie et compte). On peut même simuler des sous-domaines pour ne pas complexifier l&rsquo;AD. Grâce à cela on n&rsquo;a qu&rsquo;un seul et unique domaine à gérer.
 Le login côté AD s&rsquo;apelle l&rsquo;UPN (équivalent de l&rsquo;adresse mail)<br>
-AD permet de gérer: les comptes génériques, les mdp, les groupes de sécurité, listes de diffusion, machines, serveur, GPO, BALS (implicitement c&rsquo;est un compte / BALS: Boite aux lettres) générique, BALS équipements, BALS Salle.</p>
+AD permet de gérer: les comptes génériques, mdp, groupes de sécurité, listes de diffusion, machines, serveurs, GPO, BALS (implicitement c&rsquo;est un compte / BALS: Boite aux lettres) générique, BALS équipements, BALS Salle.</p>
 <p>
-<a href="#image-a06a2eeedbaa1f0009f2ebd752fd2368" class="lightbox-link">
+<a href="#image-dd9909bc049e538497c1d7a7218e636a" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/003-schemaForetAD.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-a06a2eeedbaa1f0009f2ebd752fd2368">
+<a href="javascript:history.back();" class="lightbox" id="image-dd9909bc049e538497c1d7a7218e636a">
 <img src="../../../at2/at2e5/ad/003-schemaForetAD.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p>Les 5 étapes de l&rsquo;installtion d&rsquo;un magnifique serveur neuf :</p>
@@ -162,10 +162,10 @@ AD permet de gérer: les comptes génériques, les mdp, les groupes de sécurit�
 Ils sont aussi serveurs DNS externes.<br>
 Les bonnes pratiques :</p>
 <ul>
-<li>Ce sont deux serveurs par site. Un contrôleur de domaine ne doit rien faire d&rsquo;autres.</li>
-<li>Ils doivent être physique. À la limite, un des deux peut être virtualisé (par exemple, sur une infra VMware qui crash et que les deux serveur sont virtualisé, c&rsquo;est la misère)</li>
+<li>Ce sont deux serveurs par site. Un contrôleur de domaine ne doit rien faire d&rsquo;autre.</li>
+<li>Ils doivent être physiques. À la limite, un des deux peut être virtualisé (au cas ou l&rsquo;infra VMware crash)</li>
 <li>Le principal doit rester en physique. Il héberge les rôles FSMO.</li>
-<li>La réplication AD permet de se synchroniser dans les 15 minutes entre tout les contrôleurs de domaine.</li>
+<li>La réplication AD permet de synchroniser dans les 15 minutes tous les contrôleurs de domaine.</li>
 </ul>
 <p>Dans le cas d&rsquo;un multi site :</p>
 <table>
@@ -212,8 +212,8 @@ Les bonnes pratiques :</p>
 </table>
 <p><strong>Bonne pratique</strong> :<br>
 Les 4 sites sont reliés en VPN IPSEC site à site.<br>
-Sur de l&rsquo;intersite, faire passer la réplication AD dans le tunel.<br>
-Tout les Firewalls proposent le VPN IPSEC site à site. Les configurer exterieurements (sur Paris, mettre l&rsquo;Ip publique de Marseille, ainsi que les méthodes d&rsquo;encryption. Il faut qu&rsquo;elle soit égale des 2 côtés. Idem pour la clé secrete partagée).<br>
+Sur de l&rsquo;intersite, faire passer la réplication AD dans le tunnel.<br>
+Tout les Firewalls proposent le VPN IPSEC site à site. Les configurer exterieurement (sur Paris, mettre l&rsquo;Ip publique de Marseille, ainsi que les méthodes d&rsquo;encryption. Il faut qu&rsquo;elle soit égale des 2 côtés. Idem pour la clé secrete partagée).<br>
 Mettre la même marque de firewall sur tout ces sites*</p>
 <h2 id="ad-sur-windows-serveur-2019">AD SUR WINDOWS SERVEUR 2019</h2>
 <h3 id="construire-un-contrôleur-de-domaine-principal">Construire un contrôleur de domaine principal</h3>
@@ -226,7 +226,7 @@ Mettre la même marque de firewall sur tout ces sites*</p>
 <li>Lancer l&rsquo;installation du rôle</li>
 </ul>
 </li>
-<li>Drapeau Orange en haut à droite &ldquo;Promouvoir se serveur en contrôleur de domaine&rdquo;</li>
+<li>Drapeau Orange en haut à droite &ldquo;Promouvoir ce serveur en contrôleur de domaine&rdquo;</li>
 <li>Assistant de Configuration des services de domaines AD
 <ul>
 <li>Configuration de déploiement
@@ -275,8 +275,8 @@ On a les 3 rôles FSMO</li>
 <li>
 <p><strong>Outils Administration, DNS</strong></p>
 <ul>
-<li>On vérifie que notre domaine est crée en zone directe.</li>
-<li>Notre zone reverse n&rsquo;est pas crée, il faut la créer.
+<li>On vérifie que notre domaine est créé en zone directe.</li>
+<li>Si notre zone reverse n&rsquo;est pas créée, il faut la créer.
 <ul>
 <li>clique-droit, ajouter une nouvelle zone.</li>
 <li>Ajouter le pointeur PTR du Record A de la zone directe.</li>
@@ -296,7 +296,7 @@ On a les 3 rôles FSMO</li>
 <li>Default-First-Site-Name
 <ul>
 <li>C&rsquo;est le site sur lequel vous avez mis le controleur de domaine principal.</li>
-<li>On retrouve les contrôleurs de domaine ratachés à ce site.</li>
+<li>On retrouve les contrôleurs de domaine rattachés à ce site.</li>
 </ul>
 </li>
 <li>Inter-Site-Transports
@@ -308,7 +308,7 @@ On a les 3 rôles FSMO</li>
 </li>
 </ul>
 </li>
-<li>Subnets (Le plus important ! Il faut déclarer le réseau du site et le ratacher au site.)
+<li>Subnets (Le plus important ! Il faut déclarer le réseau du site et le rattacher au site.)
 <ul>
 <li>Clique-droit, Nouveau sous-réseau
 <ul>
@@ -326,7 +326,7 @@ On a les 3 rôles FSMO</li>
 <li>Clique-droit, Propriété sur le Domaine et approbation AD.
 <ul>
 <li>On peut simuler des créations de sous-domaines ou des domaines.</li>
-<li><em><strong>Si on ajoute un nouvel utilisateur, on peut lui crée son identifiant avec la partie mail que l&rsquo;on veut.</strong></em></li>
+<li><em><strong>Si on ajoute un nouvel utilisateur, on peut lui créer son identifiant avec la partie mail que l&rsquo;on veut.</strong></em></li>
 </ul>
 </li>
 </ul>
@@ -370,24 +370,24 @@ On a les 3 rôles FSMO</li>
 <ul>
 <li>1ère chose : mettre l&rsquo;IP du contrôleur principal dans les paramêtres de cartes réseau.<br>
 
-<a href="#image-6b14eafbc986d315e5ff48716f1a7551" class="lightbox-link">
+<a href="#image-4a6300be05b85e1a6c0554001f848dcf" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/004-ping.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-6b14eafbc986d315e5ff48716f1a7551">
+<a href="javascript:history.back();" class="lightbox" id="image-4a6300be05b85e1a6c0554001f848dcf">
 <img src="../../../at2/at2e5/ad/004-ping.png" alt="" class="lightbox-image" loading="lazy">
 </a></li>
-<li>2éme chose : ajouter le domaine (On arrive dans les &ldquo;computers&rdquo; sur le controleur principal)<br>
+<li>2éme chose : ajouter le domaine (On arrive dans les &ldquo;computers&rdquo; sur le contrôleur principal)<br>
 
-<a href="#image-c8f2f9aab12a7d2b511c76eda264f8db" class="lightbox-link">
+<a href="#image-9f397690e74516f5361824ec2fc6b114" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/005-ajout_domaine.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-c8f2f9aab12a7d2b511c76eda264f8db">
+<a href="javascript:history.back();" class="lightbox" id="image-9f397690e74516f5361824ec2fc6b114">
 <img src="../../../at2/at2e5/ad/005-ajout_domaine.png" alt="" class="lightbox-image" loading="lazy">
 </a></li>
 <li>Enfin se connecter en tant qu&rsquo;administrateur du serveur (dans notre cas, login: OM\Administrateur)</li>
-<li>Désactiver le pare-feu qui vient se rajouter suite à la rentrée dans le domaine.</li>
+<li>Désactiver le pare-feu qui vient se rajouter suite à l&rsquo;entrée dans le domaine.</li>
 </ul>
-<p><em>On clique sur le drapeau orange et on lance &ldquo;promouvoir en controleur de domaine&rdquo; :</em></p>
+<p><em>On clique sur le drapeau orange et on lance &ldquo;promouvoir en contrôleur de domaine&rdquo; :</em></p>
 <ul>
 <li>Ajout contrôleur de domaine au domaine existant</li>
 <li>Verifier qu&rsquo;on est sur le bon domaine (om.lan)</li>
@@ -397,18 +397,18 @@ On a les 3 rôles FSMO</li>
 </ul>
 <p><em>Une fois installé, voilà quelques checks et réglages à faire:</em></p>
 <ul>
-<li>Carte Réseau: Vérifier les paramêtres de carte. Mettre en DNS primaire nous (192.168.20.51) et en DNS secondaire celle du contrôleur principale (192.168.20.201).</li>
-<li>Vérifier dans l&rsquo;AD, que tout les domaines controlleurs secondaires sont bien présents.</li>
+<li>Carte Réseau: Vérifier les paramêtres de carte. Mettre la nôtre en DNS primaire (192.168.20.51) et en DNS secondaire celle du contrôleur principal (192.168.20.201).</li>
+<li>Vérifier dans l&rsquo;AD, que tous les domain controllers secondaires sont bien présents.</li>
 <li>DNS: Vérifier qu&rsquo;on a bien récuperé om.lan, om.fr et la zone reverse. Supprimer les records inutiles.</li>
 <li>Créer un alias ldapjbf qui pointe sur notre serveur secondaire sur om.lan</li>
 <li>Créer un host A ldapjbf qui pointe sur notre serveur secondaire sur om.fr</li>
 <li>Allez dans Domaines et Approbation AD et vérifier qu&rsquo;on a bien récuperé les suffixes de noms de domaine.</li>
-<li>Allez dans Sites et services AD Sites/Paris/Servers, on doit tous y être. Si on dévellope notre serveur, on doit avoir notre <em>NTDS Settings</em> et enfin à droite on retrouve nos partenaires de réplications.</li>
+<li>Allez dans Sites et services AD Sites/Paris/Servers, on doit tous y être. Si on développe notre serveur, on doit avoir notre <em>NTDS Settings</em> et enfin à droite on retrouve nos partenaires de réplications.</li>
 </ul>
 <p>Utilisateurs et ordinateurs AD :</p>
 <ul>
 <li>Builtin : on s&rsquo;en sert assez peu au quotidien</li>
-<li>Computer : OU d&rsquo;arrivée des PC et des servers dans l&rsquo;AD</li>
+<li>Computer : OU d&rsquo;arrivée des PC et des serveurs dans l&rsquo;AD</li>
 <li>Domain Controller : AD secondaire</li>
 <li>Users : Compte admin + autres comptes par défaut (structures d&rsquo;OU/sous-OU)
 <ul>
@@ -420,11 +420,11 @@ On a les 3 rôles FSMO</li>
 </ul>
 <h3 id="comment-se-structure-un-ad">Comment se structure un AD</h3>
 <p>Une arborescence AD, ses OU et ses sous-OU, dépendent de l&rsquo;entreprise dans laquelle on se trouve.</p>
-<p><strong>Un exemple d&rsquo;organistaion (les bonnes pratiques) :</strong></p>
+<p><strong>Un exemple d&rsquo;organisation (les bonnes pratiques) :</strong></p>
 <ul>
 <li>Côté machine:
 <ul>
-<li>Création OU Serveurs (donc tous serveurs qui arrive dans computers doit être déplacé dans cette OU)</li>
+<li>Création OU Serveurs (donc tout serveur qui arrive dans computers doit être déplacé dans cette OU)</li>
 <li>Création OU Machines
 <ul>
 <li>Création sous-OU: Fixes</li>
@@ -483,10 +483,10 @@ Exemple:</p>
 <tr>
 <td style="text-align:center">ComptesUtilisateurs / Groupes / Dans la sous-OU Groupes, créer deux sous-OU / Securite /ListesDiffusions</td>
 <td style="text-align:center">
-<a href="#image-a52db4144920dc35eb8d5ce6481c1811" class="lightbox-link">
+<a href="#image-b037e2be77bddf24169f0e6161f7658f" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/006-sous-OU.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-a52db4144920dc35eb8d5ce6481c1811">
+<a href="javascript:history.back();" class="lightbox" id="image-b037e2be77bddf24169f0e6161f7658f">
 <img src="../../../at2/at2e5/ad/006-sous-OU.png" alt="" class="lightbox-image" loading="lazy">
 </a></td>
 </tr>
@@ -503,10 +503,10 @@ Exemple:</p>
 <tr>
 <td style="text-align:center">Mettre le nom en majuscule et le mettre avant le prénom</td>
 <td style="text-align:center">
-<a href="#image-1a019342edd2f3733de52d62a36c533e" class="lightbox-link">
+<a href="#image-95c7bed44a873c0ea2c6121e37a7ee8a" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/007-ajout-user.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-1a019342edd2f3733de52d62a36c533e">
+<a href="javascript:history.back();" class="lightbox" id="image-95c7bed44a873c0ea2c6121e37a7ee8a">
 <img src="../../../at2/at2e5/ad/007-ajout-user.png" alt="" class="lightbox-image" loading="lazy">
 </a></td>
 </tr>
@@ -514,7 +514,7 @@ Exemple:</p>
 </table>
 <p>Clique-droit Propriétés sur l&rsquo;user :</p>
 <ul>
-<li>Mettre le plus de renseignement possibles pour avoir quelque chose de complet, fortement apprécié des users.</li>
+<li>Mettre le plus de renseignements possibles pour avoir quelque chose de complet, fortement apprécié des users.</li>
 </ul>
 <table>
 <thead>
@@ -527,35 +527,35 @@ Exemple:</p>
 <tr>
 <td style="text-align:center">Créer un groupe DSI et un groupe ServiceIT. Mettre ServiceIT dépendant du groupe DSI</td>
 <td style="text-align:center">
-<a href="#image-59dfae073f01d1061a586cf97c720264" class="lightbox-link">
+<a href="#image-3e5d61347383f2dd017374d48ca183f1" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/008-groupes.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-59dfae073f01d1061a586cf97c720264">
+<a href="javascript:history.back();" class="lightbox" id="image-3e5d61347383f2dd017374d48ca183f1">
 <img src="../../../at2/at2e5/ad/008-groupes.png" alt="" class="lightbox-image" loading="lazy">
 </a></td>
 </tr>
 <tr>
 <td style="text-align:center">Ajouter l&rsquo;utilisateur dans le groupe ServiceIT</td>
 <td style="text-align:center">
-<a href="#image-fb3acbd6f26fb33fce0ac5976f599f5c" class="lightbox-link">
+<a href="#image-ae5b8ab559a43de5c6c0c376d9d41416" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/009-petit-groupe.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-fb3acbd6f26fb33fce0ac5976f599f5c">
+<a href="javascript:history.back();" class="lightbox" id="image-ae5b8ab559a43de5c6c0c376d9d41416">
 <img src="../../../at2/at2e5/ad/009-petit-groupe.png" alt="" class="lightbox-image" loading="lazy">
 </a></td>
 </tr>
 </tbody>
 </table>
-<p><em>AzureAD vas aspirer le compte d&rsquo;Arthur PENDRAGON et le synchroniser avant sa boite mail</em></p>
+<p><em>AzureAD va aspirer le compte d&rsquo;Arthur PENDRAGON et le synchroniser avant sa boite mail</em></p>
 <h2 id="gpo-et-transferts-de-fichier">GPO ET TRANSFERTS DE FICHIER</h2>
 <p>
-<a href="#image-589d4de7444633fa31493dc11a7c5cc2" class="lightbox-link">
+<a href="#image-34654859bfb4aa2bfd6e1b5278a5264c" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/010-annuaire-AD.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-589d4de7444633fa31493dc11a7c5cc2">
+<a href="javascript:history.back();" class="lightbox" id="image-34654859bfb4aa2bfd6e1b5278a5264c">
 <img src="../../../at2/at2e5/ad/010-annuaire-AD.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
-<p><em>Tout ce dont on parle n&rsquo;est valable que si l&rsquo;entreprise n&rsquo;a pa Teams ou Sharepoint</em></p>
+<p><em>Tout ce dont on parle n&rsquo;est valable que si l&rsquo;entreprise n&rsquo;utilise pas Teams ou Sharepoint</em></p>
 <p><strong>PC Portables ou Fixes</strong></p>
 <ul>
 <li>Besoins du personnel :
@@ -582,7 +582,7 @@ Exemple:</p>
 <li>Nécessite gros serveurs de fichiers (baie de stockage) = disques VM pointés vers baie de stockage</li>
 <li>VM branchées sur baies en ESX (derrière le cluster ESX il n&rsquo;y a que des baies de stockage) = baie connectée aux ESX
 <ul>
-<li>Avenir = hyperconvergence (on s&rsquo;affranchit des baies) = VMWare sait embarquer le stockage dans son noyau, stockage embarqué dans les clusters VSAN qui deviennent aussi baie (baie de stockahe imbriquée à VMWare, disques en full flash)</li>
+<li>Avenir = hyperconvergence (on s&rsquo;affranchit des baies) = VMWare sait embarquer le stockage dans son noyau, stockage embarqué dans les clusters VSAN qui deviennent aussi baie (baie de stockage imbriquée à VMWare, disques en full flash)</li>
 </ul>
 </li>
 </ul>
@@ -596,15 +596,15 @@ Exemple:</p>
 </ul>
 <p><strong>Côté serveur de fichiers</strong></p>
 <p>Grosse bête pointe vers une baie de stockage. Elle projète des volumes directement sur le serveur. Et le serveur dans l&rsquo;explorateur Windows va présenter la baie.</p>
-<p>Sur le server de fichier: Arborescence dossiers<br>
+<p>Sur le serveur de fichier: Arborescence dossiers<br>
 D: Dossiers Ultisateurs &ndash;&gt; partagé &ndash;&gt; Sécurité NTFS</p>
 <ul>
 <li>Dossier individuel des utilisateurs &ndash;&gt; Pas de partage &ndash;&gt; Sécurité NTFS</li>
-<li>Le dossier pour qu&rsquo;il redescende en GPO doit s&rsquo;appeller avec le SAM (S. Acompte Mail.) &ndash;&gt; %UserName%</li>
+<li>Le dossier pour qu&rsquo;il redescende en GPO doit s&rsquo;appeler avec le SAM (S. Acompte Mail.) &ndash;&gt; %UserName%</li>
 <li>Partages &ndash;&gt; partagé &ndash;&gt; Sécurité NTFS</li>
 </ul>
 <p><strong>Première GPO</strong></p>
-<p>Toujours faire ses GPO sur la dernières sous-OU.<br>
+<p>Toujours faire ses GPO sur la dernière sous-OU.<br>
 Outilis / Gestion des stratégies de Groupes.</p>
 <table>
 <thead>
@@ -615,10 +615,10 @@ Outilis / Gestion des stratégies de Groupes.</p>
 <tbody>
 <tr>
 <td style="text-align:center">
-<a href="#image-ad0bfb34d70d4841b254804f44d70260" class="lightbox-link">
+<a href="#image-b37399f95ff3d4529af2f25b2137dc40" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/011-creer-GPO.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-ad0bfb34d70d4841b254804f44d70260">
+<a href="javascript:history.back();" class="lightbox" id="image-b37399f95ff3d4529af2f25b2137dc40">
 <img src="../../../at2/at2e5/ad/011-creer-GPO.png" alt="" class="lightbox-image" loading="lazy">
 </a></td>
 </tr>
@@ -636,10 +636,10 @@ Outilis / Gestion des stratégies de Groupes.</p>
 <tr>
 <td style="text-align:center">Mettre le script dans le dossier (en bas l&rsquo;image), puis le charger dans le gestionnaire.</td>
 <td style="text-align:center">
-<a href="#image-7be0bda818b102c5816a3c3fc7b6b200" class="lightbox-link">
+<a href="#image-99eee0d0c4feec91968574703fe7bf8b" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/012-scrip-powershell.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-7be0bda818b102c5816a3c3fc7b6b200">
+<a href="javascript:history.back();" class="lightbox" id="image-99eee0d0c4feec91968574703fe7bf8b">
 <img src="../../../at2/at2e5/ad/012-scrip-powershell.png" alt="" class="lightbox-image" loading="lazy">
 </a></td>
 </tr>
@@ -654,21 +654,21 @@ Outilis / Gestion des stratégies de Groupes.</p>
 </li>
 </ul>
 <h3 id="sur-le-dossier-parent-dossiersutilisateurs">Sur le dossier parent DossiersUtilisateurs</h3>
-<p>Clique-droit sur le dossier Partages/Propriétés bouton &ldquo;Partage avancé&rdquo; pui cocher &ldquo;Partager ce dossier&rdquo;. Puis bouton &ldquo;Authorisations&rdquo; et Autoriser le contrôle total. Les vrais droits sont gérés par l&rsquo;onglet &ldquo;Sécurité&rdquo;.
+<p>Clique-droit sur le dossier Partages/Propriétés bouton &ldquo;Partage avancé&rdquo; pui cocher &ldquo;Partager ce dossier&rdquo;. Puis bouton &ldquo;Autorisations&rdquo; et Autoriser le contrôle total. Les vrais droits sont gérés par l&rsquo;onglet &ldquo;Sécurité&rdquo;.
 
-<a href="#image-14fd3bf32a45ded5110efadf2597bc22" class="lightbox-link">
+<a href="#image-c68cd829216ef9d7503e7c2d5736581e" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/013-partage-GPO.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-14fd3bf32a45ded5110efadf2597bc22">
+<a href="javascript:history.back();" class="lightbox" id="image-c68cd829216ef9d7503e7c2d5736581e">
 <img src="../../../at2/at2e5/ad/013-partage-GPO.png" alt="" class="lightbox-image" loading="lazy">
 </a>
 <em>Ne pas oublier l&rsquo;autorisation partage sinon pas de partage</em></p>
 <p>Dans l&rsquo;onglet &ldquo;Sécurité&rdquo;, donc, cliquez le bouton &ldquo;Avancé&rdquo; puis le bouton &ldquo;Désactiver l&rsquo;héritage&rdquo; et choisissez &ldquo;Convertir [&hellip;] sur cet objet&rdquo; puis &ldquo;Appliquer&rdquo; et OK. Cliquez ensuite le bouton &ldquo;Modifier&rdquo; un peu plus haut et là définissez les autorisations finement.</p>
 <p>
-<a href="#image-2c6f8f0cfd2bb8af17d988183841e29f" class="lightbox-link">
+<a href="#image-9558785912569a9d31e51af5a03c7b4b" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/014-heritage-GPO.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-2c6f8f0cfd2bb8af17d988183841e29f">
+<a href="javascript:history.back();" class="lightbox" id="image-9558785912569a9d31e51af5a03c7b4b">
 <img src="../../../at2/at2e5/ad/014-heritage-GPO.png" alt="" class="lightbox-image" loading="lazy">
 </a>
 <strong>À mettre partout pour éviter les problèmese :</strong></p>
@@ -678,31 +678,31 @@ Outilis / Gestion des stratégies de Groupes.</p>
 <li>Utilisateurs Authentifiés (suivant le cas, peut être remplacé par un groupe ou un utilisateur spécifique).</li>
 </ul>
 <p>
-<a href="#image-a87adb90b36206057dd61b03d41d5a8b" class="lightbox-link">
+<a href="#image-98a6956d058aa7212c093b1ccceb5371" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/015-GPO-secu.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-a87adb90b36206057dd61b03d41d5a8b">
+<a href="javascript:history.back();" class="lightbox" id="image-98a6956d058aa7212c093b1ccceb5371">
 <img src="../../../at2/at2e5/ad/015-GPO-secu.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <ul>
 <li>Ajouter/Avancé/Recherche/Utilisateurs authentifiés/OK</li>
 </ul>
 <p>
-<a href="#image-dc044aa27f6990379e6ed9d116951903" class="lightbox-link">
+<a href="#image-4461cc1cb73e588db2159029523842d1" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/016-user-auth-GPO.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-dc044aa27f6990379e6ed9d116951903">
+<a href="javascript:history.back();" class="lightbox" id="image-4461cc1cb73e588db2159029523842d1">
 <img src="../../../at2/at2e5/ad/016-user-auth-GPO.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <h3 id="sur-le-dossier-enfant-dsi">Sur le dossier enfant DSI</h3>
 <p>
-<a href="#image-75fea00915d6fbf86758241b578b4e44" class="lightbox-link">
+<a href="#image-97ccdcb29806bc7b25ce004ef12fbea7" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/017-GPO-dsi-secu.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-75fea00915d6fbf86758241b578b4e44">
+<a href="javascript:history.back();" class="lightbox" id="image-97ccdcb29806bc7b25ce004ef12fbea7">
 <img src="../../../at2/at2e5/ad/017-GPO-dsi-secu.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
-<p><strong>Ne pas laisser le <em>CONTROLE TOTAL</em> pour les utilisateurs car cela leur donne accès à l&rsquo;onglet de sécurité ce qui est une faille de sécuité énorme.</strong></p>
+<p><strong>Ne pas laisser le <em>CONTROLE TOTAL</em> pour les utilisateurs car cela leur donne accès à l&rsquo;onglet de sécurité, ce qui est une faille de sécurité énorme.</strong></p>
 <h3 id="faire-la-même-procédure-pour-le-dossier-enfant-service_it">Faire la même procédure pour le dossier enfant Service_IT</h3>
 <p>On vas s&rsquo;occuper de l&rsquo;arborescence des dossiers utisateurs :</p>
 <ul>
@@ -724,15 +724,15 @@ Outilis / Gestion des stratégies de Groupes.</p>
 </li>
 <li>Dans le dossier parent, on crée un dossier enfant avec le SAM de l&rsquo;utilisateur (apendragon).
 <ul>
-<li>On gère la sécurité (comme vu précedemment) mais on enlève l&rsquo;utilisateur authentifié et qu&rsquo;on remplace par l&rsquo;user, avec les rêgles qui vont bien (tout sauf <em>contrôle total</em>)</li>
+<li>On gère la sécurité (comme vu précedemment) mais on enlève l&rsquo;utilisateur authentifié que l&rsquo;on remplace par l&rsquo;user, avec les rêgles adéquates (tout sauf <em>contrôle total</em>)</li>
 </ul>
 </li>
 </ul>
 <p>
-<a href="#image-eba8e44ba5ec85aeb23e05bcb1827d2b" class="lightbox-link">
+<a href="#image-cadfe4cc92a98ff8e0bccee6b7503428" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/018-secu-user-GPO.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-eba8e44ba5ec85aeb23e05bcb1827d2b">
+<a href="javascript:history.back();" class="lightbox" id="image-cadfe4cc92a98ff8e0bccee6b7503428">
 <img src="../../../at2/at2e5/ad/018-secu-user-GPO.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <h3 id="quotas">Quotas</h3>
@@ -745,18 +745,18 @@ Outilis / Gestion des stratégies de Groupes.</p>
 <p>Si on ne rend pas l&rsquo;utilisateur propriétaire de son dossier, il n&rsquo;aura pas son quota.
 Pour faire de l&rsquo;individuel, il faut cliquer-droit sur l&rsquo;user pour gérer son espace disque.</p>
 <p>
-<a href="#image-506fad676c64e70f5196c8472e462eb3" class="lightbox-link">
+<a href="#image-cede646482f77ba30cc40b0b6484c7cd" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/019-quota-GPO.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-506fad676c64e70f5196c8472e462eb3">
+<a href="javascript:history.back();" class="lightbox" id="image-cede646482f77ba30cc40b0b6484c7cd">
 <img src="../../../at2/at2e5/ad/019-quota-GPO.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p>Clique-droit sur le dossier /Propriétés/Sécurité/Avancé/Modifier et choisir l&rsquo;utilisateur.<br>
 
-<a href="#image-522f0e34f47ca976945252a194cdf491" class="lightbox-link">
+<a href="#image-81dd5e57543fdaad8634e09cd11beca4" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/020-proprio-dossier_user.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-522f0e34f47ca976945252a194cdf491">
+<a href="javascript:history.back();" class="lightbox" id="image-81dd5e57543fdaad8634e09cd11beca4">
 <img src="../../../at2/at2e5/ad/020-proprio-dossier_user.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <h3 id="dossiers-des-utilisateurs">Dossiers des utilisateurs</h3>
@@ -771,10 +771,10 @@ Bureau :</p>
 </li>
 </ul>
 <p>
-<a href="#image-0e0639d7d38ee280814d985a4109bf74" class="lightbox-link">
+<a href="#image-f113e417faecd24b43f45fd55f18a4e5" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/021-proprio-bureau-GPO-1.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-0e0639d7d38ee280814d985a4109bf74">
+<a href="javascript:history.back();" class="lightbox" id="image-f113e417faecd24b43f45fd55f18a4e5">
 <img src="../../../at2/at2e5/ad/021-proprio-bureau-GPO-1.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <ul>
@@ -785,10 +785,10 @@ Bureau :</p>
 </li>
 </ul>
 <p>
-<a href="#image-0a6324da76875ee22ee8a412472a0f21" class="lightbox-link">
+<a href="#image-aaf5d12caf01a5b73f99c314778b5437" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/022-proprio-bureau-GPO-2.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-0a6324da76875ee22ee8a412472a0f21">
+<a href="javascript:history.back();" class="lightbox" id="image-aaf5d12caf01a5b73f99c314778b5437">
 <img src="../../../at2/at2e5/ad/022-proprio-bureau-GPO-2.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p>Favoris :</p>
@@ -818,10 +818,10 @@ Bureau :</p>
 </li>
 </ul>
 <p>
-<a href="#image-8b4e543eaa0e6b7955c7be1e8e27d72e" class="lightbox-link">
+<a href="#image-dd45612b3135f92677e3b34c2cceb595" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/023-suivre-doc-GPO.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-8b4e543eaa0e6b7955c7be1e8e27d72e">
+<a href="javascript:history.back();" class="lightbox" id="image-dd45612b3135f92677e3b34c2cceb595">
 <img src="../../../at2/at2e5/ad/023-suivre-doc-GPO.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p>Pour le partage colléctif :</p>
@@ -835,24 +835,24 @@ Bureau :</p>
 </li>
 </ul>
 <p>
-<a href="#image-244c6e50eeaf4294f0d84e4076cbfd8a" class="lightbox-link">
+<a href="#image-23bbb6f3842f0b06ac724d95910578dd" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/024-partage-co-GPO.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-244c6e50eeaf4294f0d84e4076cbfd8a">
+<a href="javascript:history.back();" class="lightbox" id="image-23bbb6f3842f0b06ac724d95910578dd">
 <img src="../../../at2/at2e5/ad/024-partage-co-GPO.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p>Vérification du bon fonctionnement des GPO :</p>
 <ul>
 <li>Monter un W10</li>
-<li>Créer un user à rattaché au domaine (check dans computer dans l&rsquo;AD pour l&rsquo;arrivée)</li>
+<li>Créer un user à rattacher au domaine (check dans computer dans l&rsquo;AD pour l&rsquo;arrivée)</li>
 <li>Mettre un fichier dans un des dossiers Documents/Images/&hellip;</li>
 <li>Check dans l&rsquo;AD s&rsquo;il apparait bien dans l&rsquo;arborescence de l&rsquo;AD par DossierUser</li>
 </ul>
 <p>
-<a href="#image-9837cb7bcaf858166aeea1983642e60a" class="lightbox-link">
+<a href="#image-b8275fac5bd7d113c88cedee4ac735d1" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/025-win10-resultat.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-9837cb7bcaf858166aeea1983642e60a">
+<a href="javascript:history.back();" class="lightbox" id="image-b8275fac5bd7d113c88cedee4ac735d1">
 <img src="../../../at2/at2e5/ad/025-win10-resultat.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p><strong>Ressources :</strong></p>
@@ -873,10 +873,10 @@ Bureau :</p>
 <p><em>Attention : Nécessite de monter de niveau fonctionnel 2012 vers 2016 (niveau fonctionnel toujours au plus haut pour migration)</em></p>
 <h4 id="migration-simple">Migration simple</h4>
 <p>
-<a href="#image-924885e8e664a09c2db509553e476930" class="lightbox-link">
+<a href="#image-b9304e8bc0677d554b9c2eac3621426d" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/101-migration-simple.png" alt="*" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-924885e8e664a09c2db509553e476930">
+<a href="javascript:history.back();" class="lightbox" id="image-b9304e8bc0677d554b9c2eac3621426d">
 <img src="../../../at2/at2e5/ad/101-migration-simple.png" alt="*" class="lightbox-image" loading="lazy">
 </a></p>
 <p><strong>Existant</strong></p>
@@ -901,14 +901,14 @@ Bureau :</p>
 <p><strong>Préparation à la migration</strong></p>
 <p>Faire venir une forêt 2019 dans une forêt 2016 = trois étapes exclusives au prinicpal (puisque possède les FSMO) pour préparation :</p>
 <ol>
-<li>couper les réplications AD entre contollers (1 ligne de commande à passer)</li>
+<li>couper les réplications AD entre contrôleurs (1 ligne de commande à passer)</li>
 <li>préparer la forêt (1 ligne de commande à passer)</li>
 <li>préparer le domaine (1 ligne de commande à passer)</li>
 </ol>
 <p><strong>Première étape de migration</strong></p>
 <ul>
 <li>Préparation d&rsquo;un WServer 2019 : NIC, antivirus etc.</li>
-<li>Insérer le WServer 2019 en controller de domaine secondaire dans la forêt 2016
+<li>Insérer le WServer 2019 en contrôleur de domaine secondaire dans la forêt 2016
 <ul>
 <li>Va se coller à la forêt 2016</li>
 <li>Mode dit &ldquo;mixte&rdquo; (possible de rester ainsi plusieus mois)</li>
@@ -967,10 +967,10 @@ Bureau :</p>
 </table>
 <p><strong>Troisième étape de migration</strong></p>
 <ul>
-<li>Rétrogradation du second controller secondaires
+<li>Rétrogradation du second contrôleur secondaire
 <ul>
 <li>Plus DNS ni AD</li>
-<li>Redevient server simple</li>
+<li>Redevient serveur simple</li>
 </ul>
 </li>
 </ul>
@@ -978,7 +978,7 @@ Bureau :</p>
 <thead>
 <tr>
 <th style="text-align:center">DC secondaire</th>
-<th style="text-align:center">Server simple</th>
+<th style="text-align:center">Serveur simple</th>
 <th style="text-align:center">DC principal</th>
 </tr>
 </thead>
@@ -997,7 +997,7 @@ Bureau :</p>
 </table>
 <p><strong>Quatrième étape de migration</strong></p>
 <ul>
-<li>On crash/réinstalle le server simple en WServer2019</li>
+<li>On crash/réinstalle le serveur simple en WServer2019</li>
 <li>On le fait venir en secondaire en 2019</li>
 </ul>
 <table>
@@ -1022,7 +1022,7 @@ Bureau :</p>
 </tbody>
 </table>
 <ul>
-<li>Bis repetita pour le premier controller</li>
+<li>Bis repetita pour le premier contrôleur</li>
 </ul>
 <table>
 <thead>
@@ -1080,10 +1080,10 @@ Bureau :</p>
 </tbody>
 </table>
 <p>
-<a href="#image-c6ef192ff0029c1d10a9d7ec3a01be4f" class="lightbox-link">
+<a href="#image-8bdb0de2228bbac0484f37115b17c44f" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/201-admt.png" alt="*" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-c6ef192ff0029c1d10a9d7ec3a01be4f">
+<a href="javascript:history.back();" class="lightbox" id="image-8bdb0de2228bbac0484f37115b17c44f">
 <img src="../../../at2/at2e5/ad/201-admt.png" alt="*" class="lightbox-image" loading="lazy">
 </a></p>
 <ul>
@@ -1095,7 +1095,7 @@ Bureau :</p>
 <li>Une fois cela effectué on peut commencer à migrer</li>
 </ul>
 </li>
-<li>On ne supprime les deux controllers de base qu&rsquo;une fois l&rsquo;ensemble de la migration effectuée</li>
+<li>On ne supprime les deux contrôleurs de base qu&rsquo;une fois l&rsquo;ensemble de la migration effectuée</li>
 </ul>
 <h4 id="migration-via-azure-ad">Migration via Azure AD</h4>
 <ul>
@@ -1103,10 +1103,10 @@ Bureau :</p>
 <li>Azure récupère et transpose directement dans Office365</li>
 </ul>
 <p>
-<a href="#image-504a4d2bdfdeadcd77fd43191221dbe9" class="lightbox-link">
+<a href="#image-bedafb6aa3cd7c22c3c0392393e2ddbc" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/202-migration-via-azureAD.png" alt="*" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-504a4d2bdfdeadcd77fd43191221dbe9">
+<a href="javascript:history.back();" class="lightbox" id="image-bedafb6aa3cd7c22c3c0392393e2ddbc">
 <img src="../../../at2/at2e5/ad/202-migration-via-azureAD.png" alt="*" class="lightbox-image" loading="lazy">
 </a></p>
 <table>
@@ -1140,10 +1140,10 @@ Bureau :</p>
 </tbody>
 </table>
 <p>
-<a href="#image-c99af30b362a1b10e8af9eb261ef6cc4" class="lightbox-link">
+<a href="#image-9fab782ca573151457e0c72276197f09" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/203-staging-server-1.png" alt="*" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-c99af30b362a1b10e8af9eb261ef6cc4">
+<a href="javascript:history.back();" class="lightbox" id="image-9fab782ca573151457e0c72276197f09">
 <img src="../../../at2/at2e5/ad/203-staging-server-1.png" alt="*" class="lightbox-image" loading="lazy">
 </a></p>
 <ul>
@@ -1155,10 +1155,10 @@ Ouvrir l&rsquo;invite de commande dans la VM et se rendre à la racine de C.</p>
 <p>On coupe les réplications :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">repadmin /options WS16 +disable_outbound_repl
 </span></span></code></pre></div><p>
-<a href="#image-710e479e6647ff4ac7c1497c81b4ca8c" class="lightbox-link">
+<a href="#image-b1ac26b5a4b93d5d588d31797824977b" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/204-mig-repadmin.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-710e479e6647ff4ac7c1497c81b4ca8c">
+<a href="javascript:history.back();" class="lightbox" id="image-b1ac26b5a4b93d5d588d31797824977b">
 <img src="../../../at2/at2e5/ad/204-mig-repadmin.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p>Pour préparer l&rsquo;AD 2016 à recevoir la fôret de 2019.
@@ -1170,42 +1170,42 @@ On se met dans le répertoire support puis adprep.</p>
 <p>On tape la commande :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">adprep /forestprep
 </span></span></code></pre></div><p>
-<a href="#image-499817a5e569349c750c50e851dcbdf6" class="lightbox-link">
+<a href="#image-6ee0acd05da6f9234747820006e8b657" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/205-mig-adprep.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-499817a5e569349c750c50e851dcbdf6">
+<a href="javascript:history.back();" class="lightbox" id="image-6ee0acd05da6f9234747820006e8b657">
 <img src="../../../at2/at2e5/ad/205-mig-adprep.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p>Toujours dans D:\support\adprep&gt; , on met à jour le domaine :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">adprep /domainprep
 </span></span></code></pre></div><p>
-<a href="#image-e68e08466b0020e7f6c00d797c4a08ad" class="lightbox-link">
+<a href="#image-8f53020a7e1fe4f31b4e0a7e60303287" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/206-mig-domain.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-e68e08466b0020e7f6c00d797c4a08ad">
+<a href="javascript:history.back();" class="lightbox" id="image-8f53020a7e1fe4f31b4e0a7e60303287">
 <img src="../../../at2/at2e5/ad/206-mig-domain.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p><strong>Ajouter un contrôleur AD 2019 dans notre AD 2016</strong></p>
 <p>Maintenant, on peut ajouter un contrôleur AD 2019 dans notre AD 2016.<br>
-On réactive les répliques et on y touche plus. Pas besoin de les couper à nouveau, même si on reprends la migration des mois plus tard.<br>
+On réactive les répliques et on n&rsquo;y touche plus. Pas besoin de les couper à nouveau, même si on reprend la migration des mois plus tard.<br>
 Retour dans C:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">repadmin /options WS16 -
 </span></span></code></pre></div><p>
-<a href="#image-143d1c7b682eb65dc35141d709a8e0c0" class="lightbox-link">
+<a href="#image-6776ac29602cd48915ecd3f365c9ebc7" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/207-mig-activrepl.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-143d1c7b682eb65dc35141d709a8e0c0">
+<a href="javascript:history.back();" class="lightbox" id="image-6776ac29602cd48915ecd3f365c9ebc7">
 <img src="../../../at2/at2e5/ad/207-mig-activrepl.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p>On monte un Windows Serveur 2019.<br>
-On désactive le firewall et on met l&rsquo;adresse du controlleur de domaine 2016 en DNS primaire.<br>
-On prends une petite sureté, on ping les machines entre elles.</p>
+On désactive le firewall et on met l&rsquo;adresse du contrôleur de domaine 2016 en DNS primaire.<br>
+On prend une petite sécurité, on ping les machines entre elles.</p>
 <p>Ensuite, il faut ajouter le Windows Serveur 2019 dans le <strong>domaine</strong> bobdy.lan</p>
 <p>
-<a href="#image-53806b64bf5db217e8c11648cc553bd0" class="lightbox-link">
+<a href="#image-85e02cea01eab2af32a007c03dcb9b46" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/208-mig-mise-domaine.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-53806b64bf5db217e8c11648cc553bd0">
+<a href="javascript:history.back();" class="lightbox" id="image-85e02cea01eab2af32a007c03dcb9b46">
 <img src="../../../at2/at2e5/ad/208-mig-mise-domaine.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p><strong>Se reconnecter dans le Windows Serveur 2019 en compte bobdy\administrateur.</strong></p>
@@ -1213,47 +1213,47 @@ On prends une petite sureté, on ping les machines entre elles.</p>
 <p>Promouvoir en Controlleur de Domaine.<br>
 Verifier qu&rsquo;on soit bien dans le bon domaine.</p>
 <p>
-<a href="#image-e63fe7e6505f326606e322cfcdab970b" class="lightbox-link">
+<a href="#image-44dead2384c4bca0eb360e1036b27f43" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/209-mig-promo-dc.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-e63fe7e6505f326606e322cfcdab970b">
+<a href="javascript:history.back();" class="lightbox" id="image-44dead2384c4bca0eb360e1036b27f43">
 <img src="../../../at2/at2e5/ad/209-mig-promo-dc.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p>On passe aux vérifications, pour être sûr que tout se soit bien passé :</p>
 <ul>
 <li>Dans l&rsquo;AD19, Carte Réseau : mettre l&rsquo;AD 2019 en DNS primaire et l&rsquo;AD 2016 en DNS Secondaire.</li>
-<li>Dans l&rsquo;AD19, Gestionnaire DNS: Verifier qu&rsquo;il y ai bien :
+<li>Dans l&rsquo;AD19, Gestionnaire DNS: Verifier qu&rsquo;il y ait bien :
 <ul>
 <li>les zones, les records et les zones inversées.<br>
 
-<a href="#image-f9ac6c47bfc3205cd9325fe51972f17c" class="lightbox-link">
+<a href="#image-655239f3cf50c020d62ee50ab0ea68e7" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/210-mig-gest-dns-1.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-f9ac6c47bfc3205cd9325fe51972f17c">
+<a href="javascript:history.back();" class="lightbox" id="image-655239f3cf50c020d62ee50ab0ea68e7">
 <img src="../../../at2/at2e5/ad/210-mig-gest-dns-1.png" alt="" class="lightbox-image" loading="lazy">
 </a></li>
 <li>les serveurs de noms
 
-<a href="#image-657015a3256c9dda3eccc449b9af23af" class="lightbox-link">
+<a href="#image-09e9a3b08d455456390563d33c6651c0" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/211-mig-gest-dns-2.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-657015a3256c9dda3eccc449b9af23af">
+<a href="javascript:history.back();" class="lightbox" id="image-09e9a3b08d455456390563d33c6651c0">
 <img src="../../../at2/at2e5/ad/211-mig-gest-dns-2.png" alt="" class="lightbox-image" loading="lazy">
 </a></li>
 <li>les suffixes UPN<br>
 
-<a href="#image-ff98da2df76ae8abd4abd6b4256ba64f" class="lightbox-link">
+<a href="#image-44d22ccd1a632e9a0adf42957ea731ef" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/212-mig-gest-dns-3.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-ff98da2df76ae8abd4abd6b4256ba64f">
+<a href="javascript:history.back();" class="lightbox" id="image-44d22ccd1a632e9a0adf42957ea731ef">
 <img src="../../../at2/at2e5/ad/212-mig-gest-dns-3.png" alt="" class="lightbox-image" loading="lazy">
 </a></li>
 <li>les sites et services<br>
 
-<a href="#image-76c197c2edcc37452aa9bb289e536433" class="lightbox-link">
+<a href="#image-c509864e11d90376257742ea05d82127" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/213-mig-gest-dns-4.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-76c197c2edcc37452aa9bb289e536433">
+<a href="javascript:history.back();" class="lightbox" id="image-c509864e11d90376257742ea05d82127">
 <img src="../../../at2/at2e5/ad/213-mig-gest-dns-4.png" alt="" class="lightbox-image" loading="lazy">
 </a></li>
 <li>les réplications</li>
@@ -1263,7 +1263,7 @@ Verifier qu&rsquo;on soit bien dans le bon domaine.</p>
 </li>
 </ul>
 <p><strong>MIGRATION DES ROLES FSMO DE l&rsquo;AD2016 à L&rsquo;AD2019</strong></p>
-<p>Le premier rôle a migrer est caché. Il faut donc le faire apparaitre via une <em>petite commande</em>. Ouvrir l&rsquo;invite de commande et se renre à la racine C:\</p>
+<p>Le premier rôle à migrer est caché. Il faut donc le faire apparaitre via une <em>petite commande</em>. Ouvrir l&rsquo;invite de commande et se renre à la racine C:\</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">regsvr32 schmmgmt.dll
 </span></span></code></pre></div><p>On vas lancer une console vierge :</p>
 <table>
@@ -1275,10 +1275,10 @@ Verifier qu&rsquo;on soit bien dans le bon domaine.</p>
 <tbody>
 <tr>
 <td style="text-align:center">
-<a href="#image-d52e0e8a37cbe2138d5341e2d92df0d3" class="lightbox-link">
+<a href="#image-fb22eac9d4478c9df5d616cf235fb48b" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/214-winR.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-d52e0e8a37cbe2138d5341e2d92df0d3">
+<a href="javascript:history.back();" class="lightbox" id="image-fb22eac9d4478c9df5d616cf235fb48b">
 <img src="../../../at2/at2e5/ad/214-winR.png" alt="" class="lightbox-image" loading="lazy">
 </a></td>
 </tr>
@@ -1293,10 +1293,10 @@ Verifier qu&rsquo;on soit bien dans le bon domaine.</p>
 <tbody>
 <tr>
 <td style="text-align:center">
-<a href="#image-47d6dd9d04442b37b114c5193edad776" class="lightbox-link">
+<a href="#image-3719e3345395980697133b46fb8547cb" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/215-fsmo-mmc-1.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-47d6dd9d04442b37b114c5193edad776">
+<a href="javascript:history.back();" class="lightbox" id="image-3719e3345395980697133b46fb8547cb">
 <img src="../../../at2/at2e5/ad/215-fsmo-mmc-1.png" alt="" class="lightbox-image" loading="lazy">
 </a></td>
 </tr>
@@ -1311,10 +1311,10 @@ Verifier qu&rsquo;on soit bien dans le bon domaine.</p>
 <tbody>
 <tr>
 <td style="text-align:center">
-<a href="#image-6c0e975395c0c0c45856053612230044" class="lightbox-link">
+<a href="#image-5cb8ddb63794be0e1a05dfea4050fdef" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/216-fsmo-mmc-2.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-6c0e975395c0c0c45856053612230044">
+<a href="javascript:history.back();" class="lightbox" id="image-5cb8ddb63794be0e1a05dfea4050fdef">
 <img src="../../../at2/at2e5/ad/216-fsmo-mmc-2.png" alt="" class="lightbox-image" loading="lazy">
 </a></td>
 </tr>
@@ -1330,17 +1330,17 @@ Verifier qu&rsquo;on soit bien dans le bon domaine.</p>
 <tbody>
 <tr>
 <td style="text-align:center">
-<a href="#image-82483e58ddbd8deae0d57d8b455a0135" class="lightbox-link">
+<a href="#image-f3d57a966fe3c4b842d94563d3cc8094" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/217-fsmo-mmc-3.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-82483e58ddbd8deae0d57d8b455a0135">
+<a href="javascript:history.back();" class="lightbox" id="image-f3d57a966fe3c4b842d94563d3cc8094">
 <img src="../../../at2/at2e5/ad/217-fsmo-mmc-3.png" alt="" class="lightbox-image" loading="lazy">
 </a></td>
 <td style="text-align:center">
-<a href="#image-b6bdd0e983bf740638ec8e0dc4ef2e45" class="lightbox-link">
+<a href="#image-9e80feda4e91086f9feebe78666b4b9c" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/218-fsmo-mmc-4.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-b6bdd0e983bf740638ec8e0dc4ef2e45">
+<a href="javascript:history.back();" class="lightbox" id="image-9e80feda4e91086f9feebe78666b4b9c">
 <img src="../../../at2/at2e5/ad/218-fsmo-mmc-4.png" alt="" class="lightbox-image" loading="lazy">
 </a></td>
 </tr>
@@ -1360,10 +1360,10 @@ Clique-droit sur notre nom de domaine, Maitre d&rsquo;opérations:</p>
 <li>Infrastructure: Modifier, OUI, Ok</li>
 </ul>
 <p>
-<a href="#image-47bf2f5c5f26093db7f12a3b4b42d824" class="lightbox-link">
+<a href="#image-0d230cf1bf170d8e7f795587d6178913" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/219-fsmo-mmc-5.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-47bf2f5c5f26093db7f12a3b4b42d824">
+<a href="javascript:history.back();" class="lightbox" id="image-0d230cf1bf170d8e7f795587d6178913">
 <img src="../../../at2/at2e5/ad/219-fsmo-mmc-5.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p><strong>RETROGRADATION DE WINDOWS SERVEUR 2016</strong></p>
@@ -1371,48 +1371,48 @@ Clique-droit sur notre nom de domaine, Maitre d&rsquo;opérations:</p>
 Il nous propose une méthode de rétrogradation à la décoche.</p>
 <p>Décocher Service AD DS<br>
 
-<a href="#image-7f3571800a9086df36f95858a3d5d24a" class="lightbox-link">
+<a href="#image-3c9a2d2b80e03c962abdc3632be839a5" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/220-mig-retro-AD-1.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-7f3571800a9086df36f95858a3d5d24a">
+<a href="javascript:history.back();" class="lightbox" id="image-3c9a2d2b80e03c962abdc3632be839a5">
 <img src="../../../at2/at2e5/ad/220-mig-retro-AD-1.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p>Cocher &ldquo;Procéder à la suppression&rdquo;<br>
 
-<a href="#image-a0a26b315fac6649f322c84b64618e16" class="lightbox-link">
+<a href="#image-c87bd4196de9677b2139a91531491c94" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/221-mig-retro-AD-2.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-a0a26b315fac6649f322c84b64618e16">
+<a href="javascript:history.back();" class="lightbox" id="image-c87bd4196de9677b2139a91531491c94">
 <img src="../../../at2/at2e5/ad/221-mig-retro-AD-2.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p>Cliquez sur Retrograder<br>
 
-<a href="#image-13e4d0f058022dd1a69dfdd1bdb4a26f" class="lightbox-link">
+<a href="#image-1b5df7fc2076c71cb6166b562a161497" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/222-mig-retro-AD-3.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-13e4d0f058022dd1a69dfdd1bdb4a26f">
+<a href="javascript:history.back();" class="lightbox" id="image-1b5df7fc2076c71cb6166b562a161497">
 <img src="../../../at2/at2e5/ad/222-mig-retro-AD-3.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p>Enfin refaire supprimer les rôles et décocher les deux rôles et cette fois-ci il ne vas pas discuter.<br>
 On va dans les paramêtres de carte réseau et on retire l&rsquo;adresse IP du DNS du Windows Serveur 2016.<br>
 
-<a href="#image-9ca4f7471ae70ae4eb8d54a4acbc4910" class="lightbox-link">
+<a href="#image-01ca1518572376a893ae2ab278be2a2d" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/223-mig-retro-AD-4.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-9ca4f7471ae70ae4eb8d54a4acbc4910">
+<a href="javascript:history.back();" class="lightbox" id="image-01ca1518572376a893ae2ab278be2a2d">
 <img src="../../../at2/at2e5/ad/223-mig-retro-AD-4.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
-<p><strong>QUELQUES NETOYAGES SUR LE NOUVEAU CONTROLLEUR PRINCIPALE WINDOWS 2019</strong></p>
+<p><strong>QUELQUES NETOYAGES SUR LE NOUVEAU CONTROLEUR PRINCIPAL WINDOWS 2019</strong></p>
 <p>Gestionnaire DNS<br>
 Clique-droit sur <strong>bobdy.lan</strong> et vérifier que dans les serveurs de noms, l&rsquo;ancien serveur 2016 n&rsquo;y soit plus et sinon supprimez le.<br>
 Idem dans <strong>bobdy.fr</strong></p>
 <p>Sites and Services Active Directory<br>
 Supprimez le serveur WS16.<br>
 
-<a href="#image-6c83d6d86d2f1e3219a181e7ce0fe4dd" class="lightbox-link">
+<a href="#image-2ea86ad73473263fcbb6794f4d26b5af" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/224-net-AD19.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-6c83d6d86d2f1e3219a181e7ce0fe4dd">
+<a href="javascript:history.back();" class="lightbox" id="image-2ea86ad73473263fcbb6794f4d26b5af">
 <img src="../../../at2/at2e5/ad/224-net-AD19.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p>Utilisateur et ordinateurs Active Directory<br>
@@ -1422,20 +1422,20 @@ Supprime le record du Windows Serveur 2019</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center"><em><strong>Dernière opération, dans Domaines et approbations Active Directory, clique-droit, augmenté le niveau fonctionnel de la forêt. Sur une migration AD2016 à AD2019, il n&rsquo;y en a pas besoin. Par contre de AD2008 à AD2012, deAD2012 à AD2012R2 et AD2012R2 à AD2016 il y a un niveau fonctionnel à monter.</strong></em></th>
+<th style="text-align:center"><em><strong>Dernière opération, dans Domaines et approbations Active Directory, clique-droit, augmenter le niveau fonctionnel de la forêt. Sur une migration AD2016 à AD2019, il n&rsquo;y en a pas besoin. Par contre de AD2008 à AD2012, deAD2012 à AD2012R2 et AD2012R2 à AD2016 il y a un niveau fonctionnel à monter.</strong></em></th>
 </tr>
 </thead>
 </table>
-<h3 id="on-va-maniper---migration-inter-foret">ON VA MANIPER - MIGRATION INTER-FORET</h3>
-<p><strong>Pour supprimer une OU :</strong> <em>Affichage, fonctionnalités avancées, clique-droit sur propriétés l&rsquo;OU désirée, supprimer, onglet sécurité, décoché la case.</em></p>
+<h3 id="on-va-manipuler---migration-inter-foret">ON VA MANIPULER - MIGRATION INTER-FORET</h3>
+<p><strong>Pour supprimer une OU :</strong> <em>Affichage, fonctionnalités avancées, clique-droit sur propriétés l&rsquo;OU désirée, supprimer, onglet sécurité, décocher la case.</em></p>
 <p><strong>Préparation de la base pour l&rsquo;AD19 source et cible :</strong></p>
 <ul>
 <li>Désactiver les firewalls des 2 Windows Serveur.</li>
 <li>Sur la carte réseau du WS19CIBLE, on fixe l&rsquo;IP: 192.168.20.53</li>
-<li>Renommerla machine en WS19CIBLE</li>
+<li>Renommer la machine en WS19CIBLE</li>
 <li>On installe les rôles Services AD DS et rôles DNS</li>
 <li>Promouvoir en contrôleur de domaine complétement indépendant : <strong>paradise.lan</strong></li>
-<li>Faire les réglages de bases classiques</li>
+<li>Faire les réglages de base classiques</li>
 <li>Mettre la réplication à 15 minutes</li>
 <li>Créer son subnet dans Sites and Services AD</li>
 <li>Créer son domaine commercial dans les suffixes UPN en .fr</li>
@@ -1454,37 +1454,37 @@ Supprime le record du Windows Serveur 2019</p>
 <tbody>
 <tr>
 <td style="text-align:center">
-<a href="#image-03e288857021b12d8c1e817a9330040f" class="lightbox-link">
+<a href="#image-feb0191220149f22e23cca0df2ac2ba1" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/225-foret-stub-1.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-03e288857021b12d8c1e817a9330040f">
+<a href="javascript:history.back();" class="lightbox" id="image-feb0191220149f22e23cca0df2ac2ba1">
 <img src="../../../at2/at2e5/ad/225-foret-stub-1.png" alt="" class="lightbox-image" loading="lazy">
 </a></td>
 <td style="text-align:center">La zone de stub va permettre de joindre la deuxième forêt.</td>
 </tr>
 <tr>
 <td style="text-align:center">
-<a href="#image-9cd7d81771bffc70351c2880254baa7d" class="lightbox-link">
+<a href="#image-6630afcf828128081a1af6b801ef8236" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/226-foret-stub-2.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-9cd7d81771bffc70351c2880254baa7d">
+<a href="javascript:history.back();" class="lightbox" id="image-6630afcf828128081a1af6b801ef8236">
 <img src="../../../at2/at2e5/ad/226-foret-stub-2.png" alt="" class="lightbox-image" loading="lazy">
 </a></td>
 <td style="text-align:center">On ajoute notre domaine cible <strong>paradise.lan</strong></td>
 </tr>
 <tr>
 <td style="text-align:center">
-<a href="#image-70824ba42c7db79a253e0b9c674131a2" class="lightbox-link">
+<a href="#image-46bccb98d3d4fd56bb7366f3ba0ed2c9" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/227-foret-stub-3.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-70824ba42c7db79a253e0b9c674131a2">
+<a href="javascript:history.back();" class="lightbox" id="image-46bccb98d3d4fd56bb7366f3ba0ed2c9">
 <img src="../../../at2/at2e5/ad/227-foret-stub-3.png" alt="" class="lightbox-image" loading="lazy">
 </a></td>
 <td style="text-align:center">L&rsquo;adresse IP de notre controlleur cible: 192.168.20.53</td>
 </tr>
 </tbody>
 </table>
-<p>Vérifier que la zone est bien tombé dans les Zones de recherches directes.</p>
+<p>Vérifier que la zone est bien tombée dans les Zones de recherches directes.</p>
 <p><strong>Contrôleur Cible:</strong></p>
 <p><em>Dans le gestionnaire DNS, on va créer un redirecteur conditionnel.</em></p>
 <table>
@@ -1497,17 +1497,17 @@ Supprime le record du Windows Serveur 2019</p>
 <tbody>
 <tr>
 <td style="text-align:center">
-<a href="#image-54c6c20b3d3a0c512dd301547a6a39b2" class="lightbox-link">
+<a href="#image-6cb167d10f0b66243006299bf650eed5" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/228-foret-redir-1.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-54c6c20b3d3a0c512dd301547a6a39b2">
+<a href="javascript:history.back();" class="lightbox" id="image-6cb167d10f0b66243006299bf650eed5">
 <img src="../../../at2/at2e5/ad/228-foret-redir-1.png" alt="" class="lightbox-image" loading="lazy">
 </a></td>
 <td style="text-align:center">
-<a href="#image-e8937d33bf590c8f9823447ca5e0a185" class="lightbox-link">
+<a href="#image-0f00a9059dd419fb8948e478ace2c313" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/229-foret-redir-2.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-e8937d33bf590c8f9823447ca5e0a185">
+<a href="javascript:history.back();" class="lightbox" id="image-0f00a9059dd419fb8948e478ace2c313">
 <img src="../../../at2/at2e5/ad/229-foret-redir-2.png" alt="" class="lightbox-image" loading="lazy">
 </a></td>
 </tr>
@@ -1518,64 +1518,64 @@ Supprime le record du Windows Serveur 2019</p>
 <p>Domaines et approbations Active Directory<br>
 Clique-droit sur la propriété, puis Approbations</p>
 <p>
-<a href="#image-a0497f8c76a5902a5c1129c9b8d5b2b8" class="lightbox-link">
+<a href="#image-b64e1877cc2982ae7c65b28a5ca036ee" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/230-foret-approb-1.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-a0497f8c76a5902a5c1129c9b8d5b2b8">
+<a href="javascript:history.back();" class="lightbox" id="image-b64e1877cc2982ae7c65b28a5ca036ee">
 <img src="../../../at2/at2e5/ad/230-foret-approb-1.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p>
-<a href="#image-f5c6efcf2e1c27ca54ea914eb03b2f53" class="lightbox-link">
+<a href="#image-e5bc4f563abf12cbe5a620580340a761" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/231-foret-approb-2.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-f5c6efcf2e1c27ca54ea914eb03b2f53">
+<a href="javascript:history.back();" class="lightbox" id="image-e5bc4f563abf12cbe5a620580340a761">
 <img src="../../../at2/at2e5/ad/231-foret-approb-2.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p>
-<a href="#image-4b422e655480d2722958942373a0b6d9" class="lightbox-link">
+<a href="#image-1f57fe5a092ed55887d35f691986b555" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/232-foret-approb-3.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-4b422e655480d2722958942373a0b6d9">
+<a href="javascript:history.back();" class="lightbox" id="image-1f57fe5a092ed55887d35f691986b555">
 <img src="../../../at2/at2e5/ad/232-foret-approb-3.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p>
-<a href="#image-46fed187240d41ebbab0f3ee833aebdf" class="lightbox-link">
+<a href="#image-7266784c5d848647699e2c5a2016b0bf" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/233-foret-approb-4.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-46fed187240d41ebbab0f3ee833aebdf">
+<a href="javascript:history.back();" class="lightbox" id="image-7266784c5d848647699e2c5a2016b0bf">
 <img src="../../../at2/at2e5/ad/233-foret-approb-4.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p>
-<a href="#image-5eccfa6da1eddbecf90297449c040aba" class="lightbox-link">
+<a href="#image-ba92d07980c79e047b3363aae94c5bf9" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/234-foret-approb-5.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-5eccfa6da1eddbecf90297449c040aba">
+<a href="javascript:history.back();" class="lightbox" id="image-ba92d07980c79e047b3363aae94c5bf9">
 <img src="../../../at2/at2e5/ad/234-foret-approb-5.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p>
-<a href="#image-b386e05b9335abe3973ea6297c868f88" class="lightbox-link">
+<a href="#image-79f5221be4f19386698bd16fa28f8c3f" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/235-foret-approb-6.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-b386e05b9335abe3973ea6297c868f88">
+<a href="javascript:history.back();" class="lightbox" id="image-79f5221be4f19386698bd16fa28f8c3f">
 <img src="../../../at2/at2e5/ad/235-foret-approb-6.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p>
-<a href="#image-d2ff32dceeabe48b50daa49486a14a51" class="lightbox-link">
+<a href="#image-eafceadd2504bf2fdf84b440086224e0" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/236-foret-approb-7.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-d2ff32dceeabe48b50daa49486a14a51">
+<a href="javascript:history.back();" class="lightbox" id="image-eafceadd2504bf2fdf84b440086224e0">
 <img src="../../../at2/at2e5/ad/236-foret-approb-7.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
-<p>Si la zone d&rsquo;approbation est passé c&rsquo;est que la zone de stub et le redirecteur conditionnel sont bons.</p>
+<p>Si la zone d&rsquo;approbation est passée c&rsquo;est que la zone de stub et le redirecteur conditionnel sont bons.</p>
 <p>On va vérifier côté Contrôleur Cible :</p>
 <ul>
 <li>L&rsquo;approbation est faite dans l&rsquo;autre sens.</li>
 </ul>
 <p>
-<a href="#image-29c9f77efe42d0183434551812a501ba" class="lightbox-link">
+<a href="#image-cbc45aa652aee6a38ef2c5812fafa649" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/237-foret-approb-8.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-29c9f77efe42d0183434551812a501ba">
+<a href="javascript:history.back();" class="lightbox" id="image-cbc45aa652aee6a38ef2c5812fafa649">
 <img src="../../../at2/at2e5/ad/237-foret-approb-8.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <ul>
@@ -1591,17 +1591,17 @@ Clique-droit sur la propriété, puis Approbations</p>
 <tbody>
 <tr>
 <td style="text-align:center">
-<a href="#image-c14572843a7154c23a3f8d9226882135" class="lightbox-link">
+<a href="#image-64010dfa17ed4ab88ba99a6f4fc13c22" class="lightbox-link">
 <img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/foret_approb9.png?raw=true" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-c14572843a7154c23a3f8d9226882135">
+<a href="javascript:history.back();" class="lightbox" id="image-64010dfa17ed4ab88ba99a6f4fc13c22">
 <img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/foret_approb9.png?raw=true" alt="" class="lightbox-image" loading="lazy">
 </a></td>
 <td style="text-align:center">
-<a href="#image-be4de8ea93f5d435eafaf7a43503afb2" class="lightbox-link">
+<a href="#image-fff7040755563e0c5200e8f74e36aeba" class="lightbox-link">
 <img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/foret_approb10.png?raw=true" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-be4de8ea93f5d435eafaf7a43503afb2">
+<a href="javascript:history.back();" class="lightbox" id="image-fff7040755563e0c5200e8f74e36aeba">
 <img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/foret_approb10.png?raw=true" alt="" class="lightbox-image" loading="lazy">
 </a></td>
 </tr>
@@ -1618,17 +1618,17 @@ Clique-droit sur la propriété, puis Approbations</p>
 <tbody>
 <tr>
 <td style="text-align:center">
-<a href="#image-23286cc9ae4981df776e6d701d313f05" class="lightbox-link">
+<a href="#image-06b61468cc084e6cbf7708ef26a7d6c4" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/238-foret-droits-1.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-23286cc9ae4981df776e6d701d313f05">
+<a href="javascript:history.back();" class="lightbox" id="image-06b61468cc084e6cbf7708ef26a7d6c4">
 <img src="../../../at2/at2e5/ad/238-foret-droits-1.png" alt="" class="lightbox-image" loading="lazy">
 </a></td>
 <td style="text-align:center">
-<a href="#image-29a6506cec840a0bb6e7f5ea5602d016" class="lightbox-link">
+<a href="#image-e730650d75e5ab8b79626127985bd1cf" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/239-foret-droits-2.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-29a6506cec840a0bb6e7f5ea5602d016">
+<a href="javascript:history.back();" class="lightbox" id="image-e730650d75e5ab8b79626127985bd1cf">
 <img src="../../../at2/at2e5/ad/239-foret-droits-2.png" alt="" class="lightbox-image" loading="lazy">
 </a></td>
 </tr>
@@ -1645,17 +1645,17 @@ Clique-droit sur la propriété, puis Approbations</p>
 <tbody>
 <tr>
 <td style="text-align:center">
-<a href="#image-f7d38cfb64b8019277c11a0db75424bc" class="lightbox-link">
+<a href="#image-61609975bc7d84da007af25bf19c4fda" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/240-foret-droits-3.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-f7d38cfb64b8019277c11a0db75424bc">
+<a href="javascript:history.back();" class="lightbox" id="image-61609975bc7d84da007af25bf19c4fda">
 <img src="../../../at2/at2e5/ad/240-foret-droits-3.png" alt="" class="lightbox-image" loading="lazy">
 </a></td>
 <td style="text-align:center">
-<a href="#image-bcd84119b729329331043e452386c3a0" class="lightbox-link">
+<a href="#image-cc8de36de672c8a2894f08a3e38874bc" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/241-foret-droits-4.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-bcd84119b729329331043e452386c3a0">
+<a href="javascript:history.back();" class="lightbox" id="image-cc8de36de672c8a2894f08a3e38874bc">
 <img src="../../../at2/at2e5/ad/241-foret-droits-4.png" alt="" class="lightbox-image" loading="lazy">
 </a></td>
 </tr>
@@ -1664,18 +1664,18 @@ Clique-droit sur la propriété, puis Approbations</p>
 <p><em><strong>Pour afficher l&rsquo;onglet sécurité, il faut faire affichage, fonctionnalité avancée.</strong></em></p>
 <p>On rajoute l&rsquo;Administrateur en contrôle total du groupe sécurité. Idem pour le groupe Staff.<br>
 
-<a href="#image-272d96196fb91f052536fe55ac4d4743" class="lightbox-link">
+<a href="#image-9ea9fa7111c998f8cc812ce8e2c786ca" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/242-foret-droits-5.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-272d96196fb91f052536fe55ac4d4743">
+<a href="javascript:history.back();" class="lightbox" id="image-9ea9fa7111c998f8cc812ce8e2c786ca">
 <img src="../../../at2/at2e5/ad/242-foret-droits-5.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p>On change de domaine, et on donne les mêmes droits aux administrateurs sur les OU du domaine source.<br>
 
-<a href="#image-8a726552d3bd3a43d896b66cfe4744c7" class="lightbox-link">
+<a href="#image-0d90a10756c7ed2ca8a216c74efa83af" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/243-foret-droits-6.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-8a726552d3bd3a43d896b66cfe4744c7">
+<a href="javascript:history.back();" class="lightbox" id="image-0d90a10756c7ed2ca8a216c74efa83af">
 <img src="../../../at2/at2e5/ad/243-foret-droits-6.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p><strong>Controleur Source</strong></p>
@@ -1683,10 +1683,10 @@ Clique-droit sur la propriété, puis Approbations</p>
 Il sert à ADMT(logiciel qui permet la migration) de pouvoir migrer les objets.<br>
 Et il ne faut pas mettre de membre ! (very important)<br>
 
-<a href="#image-70e6df6d3ed4e0fe96116244254c6699" class="lightbox-link">
+<a href="#image-0816c8b76a4d6c6af16a8a2414c70fe3" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/244-foret-droits-7.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-70e6df6d3ed4e0fe96116244254c6699">
+<a href="javascript:history.back();" class="lightbox" id="image-0816c8b76a4d6c6af16a8a2414c70fe3">
 <img src="../../../at2/at2e5/ad/244-foret-droits-7.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p>Ouvrir la base de registre (créer la clé si elle n&rsquo;existe pas)</p>
@@ -1709,17 +1709,17 @@ Et il ne faut pas mettre de membre ! (very important)<br>
 <tbody>
 <tr>
 <td style="text-align:center">
-<a href="#image-3daf363701199f673437702a2ff47290" class="lightbox-link">
+<a href="#image-c3d2a6d08bd7507a2800917b4b64873b" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/245-foret-droits-8.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-3daf363701199f673437702a2ff47290">
+<a href="javascript:history.back();" class="lightbox" id="image-c3d2a6d08bd7507a2800917b4b64873b">
 <img src="../../../at2/at2e5/ad/245-foret-droits-8.png" alt="" class="lightbox-image" loading="lazy">
 </a></td>
 <td style="text-align:center">
-<a href="#image-5997c82069f6e0b3a498fb5e9babbc82" class="lightbox-link">
+<a href="#image-03d8ffde4fa0c4af5912de8a7af9780e" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/246-foret-droits-9.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-5997c82069f6e0b3a498fb5e9babbc82">
+<a href="javascript:history.back();" class="lightbox" id="image-03d8ffde4fa0c4af5912de8a7af9780e">
 <img src="../../../at2/at2e5/ad/246-foret-droits-9.png" alt="" class="lightbox-image" loading="lazy">
 </a></td>
 </tr>
@@ -1737,10 +1737,10 @@ Stratégie d&rsquo;audit<br>
 Auditer la gestion des comptes.<br>
 Cocher les cases.<br>
 
-<a href="#image-c2c341658ad1bda0364879d792134103" class="lightbox-link">
+<a href="#image-714349f8976a54746b32beca10f8401b" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/247-mig-gpo.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-c2c341658ad1bda0364879d792134103">
+<a href="javascript:history.back();" class="lightbox" id="image-714349f8976a54746b32beca10f8401b">
 <img src="../../../at2/at2e5/ad/247-mig-gpo.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p><strong>Ligne de Commande</strong></p>
@@ -1750,10 +1750,10 @@ On commence par le contrôleur cible.</p>
 </span></span></code></pre></div><p>donc</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">netdom trust paradise.lan /domain:bobdy.lan /quarantine:no /usero:administrateur /passwordo:Dadfba16
 </span></span></code></pre></div><p>
-<a href="#image-b54d9cb1a1209a9fbf97efde5af6a96d" class="lightbox-link">
+<a href="#image-9141648534c0101b3f1e6573a589a6b2" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/248-mig-cmd-1.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-b54d9cb1a1209a9fbf97efde5af6a96d">
+<a href="javascript:history.back();" class="lightbox" id="image-9141648534c0101b3f1e6573a589a6b2">
 <img src="../../../at2/at2e5/ad/248-mig-cmd-1.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p>Même commande pour le contrôleur source. (évidemment on adapte la commande.)</p>
@@ -1764,10 +1764,10 @@ On commence par le contrôleur source.</p>
 </span></span></code></pre></div><p>donc</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">netdom trust bobdy.lan /domain:paradise.lan /enablesidhistory:yes /usero:administrateur /passwordo:Dadfba16
 </span></span></code></pre></div><p>
-<a href="#image-35f417526e71869b22ea4782504300f1" class="lightbox-link">
+<a href="#image-bc16ac75e69e79a8afa311a9bc41bea0" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/249-mig-cmd-2.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-35f417526e71869b22ea4782504300f1">
+<a href="javascript:history.back();" class="lightbox" id="image-bc16ac75e69e79a8afa311a9bc41bea0">
 <img src="../../../at2/at2e5/ad/249-mig-cmd-2.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p>Même commande pour le contrôleur cible. (évidemment on adapte la commande.)</p>
@@ -1783,28 +1783,28 @@ Et on se log en nomdedomaine\administrateur (paradise\administrateur)</p>
 <a href="https://www.microsoft.com/fr-fr/download/details.aspx?id=56570" target="_blank">Lien ADMT</a><br>
 <a href="https://www.microsoft.com/en-us/download/details.aspx?id=1838" target="_blank">Lien PES</a></p>
 <p>On installe SQL express. (Déclaré en instance et serveur ADMT)<br>
-On install ADMT (ADMT\ADMT)<br>
+On installe ADMT (ADMT\ADMT)<br>
 Une fois ADMT installé on peut le lancer.</p>
 <p>
-<a href="#image-43eee49c43abbf81846509f0be193943" class="lightbox-link">
+<a href="#image-6737a7d44673c31881fe0f7ff10471a3" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/250-admt-install.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-43eee49c43abbf81846509f0be193943">
+<a href="javascript:history.back();" class="lightbox" id="image-6737a7d44673c31881fe0f7ff10471a3">
 <img src="../../../at2/at2e5/ad/250-admt-install.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
-<p>On va généré sa clé de chiffrement pour la donner à PASSWORD EXPORT SERVER. C&rsquo;est pour que PES et ADMT puissent migrer<br>
+<p>On va générer sa clé de chiffrement pour la donner à PASSWORD EXPORT SERVER. C&rsquo;est pour que PES et ADMT puissent migrer<br>
 Invite de commande :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">admt key /option:create /sourcedomain:(domainesource) /keyfile:(dans le répertoire que vous voulez)\admt_key /keypassword:(mdp que vous voulez)
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">admt key /option:create /sourcedomain:paradise.lan /keyfile:c:\admt_key /keypassword:Dadfba16
 </span></span></code></pre></div><p>
-<a href="#image-909cb40fd5ac8fced4269ec6b0f192d0" class="lightbox-link">
+<a href="#image-0b6391f371b0cf6b3403d1e87a968aa8" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/251-admt-prep-1.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-909cb40fd5ac8fced4269ec6b0f192d0">
+<a href="javascript:history.back();" class="lightbox" id="image-0b6391f371b0cf6b3403d1e87a968aa8">
 <img src="../../../at2/at2e5/ad/251-admt-prep-1.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p>On install PES sur le contrôleur de domaine source.<br>
-Récuperer le fichier admt_key.pes crée sur le contrôleur ADMT et le mettre dans le contrôleur source pour le charger lors de l&rsquo;installation.<br>
+Récupérer le fichier admt_key.pes créé sur le contrôleur ADMT et le mettre dans le contrôleur source pour le charger lors de l&rsquo;installation.<br>
 Prendre le compte BOBDY\administrateur (domainesource\administrateur) pour se log à PES (dans la bonne pratique, il faudrait créer un compte PES exprès)</p>
 <p>Maintenant, il faut vérifier plusieurs points sur le contrôleur source :</p>
 <ul>
@@ -1817,10 +1817,10 @@ Prendre le compte BOBDY\administrateur (domainesource\administrateur) pour se lo
 </li>
 </ul>
 <p>
-<a href="#image-9f1087315189b20c5a459244e8cf5bba" class="lightbox-link">
+<a href="#image-ec60864adccd301b93ad982c219764c8" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/252-admt-prep-2.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-9f1087315189b20c5a459244e8cf5bba">
+<a href="javascript:history.back();" class="lightbox" id="image-ec60864adccd301b93ad982c219764c8">
 <img src="../../../at2/at2e5/ad/252-admt-prep-2.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <ul>
@@ -1831,135 +1831,135 @@ Prendre le compte BOBDY\administrateur (domainesource\administrateur) pour se lo
 </li>
 </ul>
 <p>
-<a href="#image-a895bce388f6fc31e1665a3d845c39b2" class="lightbox-link">
+<a href="#image-eef5dfb04ee81cf103cd4703427085ec" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/253-admt-prep-3.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-a895bce388f6fc31e1665a3d845c39b2">
+<a href="javascript:history.back();" class="lightbox" id="image-eef5dfb04ee81cf103cd4703427085ec">
 <img src="../../../at2/at2e5/ad/253-admt-prep-3.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p><strong>Migration des utilisateurs</strong></p>
 <p>Vérifier que le service, PASSWORD EXPORT SERVICE, soit bien démarré.<br>
 Clique droit, assistant de migrations des comptes d&rsquo;utilisateurs</p>
 <p>
-<a href="#image-d99e6f583d003d19c401bca03d96cbf9" class="lightbox-link">
+<a href="#image-faa431a2d96b44e83f6698ac63c46d76" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/254-admt-mig-user-1.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-d99e6f583d003d19c401bca03d96cbf9">
+<a href="javascript:history.back();" class="lightbox" id="image-faa431a2d96b44e83f6698ac63c46d76">
 <img src="../../../at2/at2e5/ad/254-admt-mig-user-1.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p>
-<a href="#image-76bbb17e841eca0360d5306c0defa276" class="lightbox-link">
+<a href="#image-f0c62d04b8007c642c31b67721c3bab4" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/255-admt-mig-user-2.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-76bbb17e841eca0360d5306c0defa276">
+<a href="javascript:history.back();" class="lightbox" id="image-f0c62d04b8007c642c31b67721c3bab4">
 <img src="../../../at2/at2e5/ad/255-admt-mig-user-2.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p>
-<a href="#image-fdf68b95932bd9c55f38f69e1d2a5a19" class="lightbox-link">
+<a href="#image-3578d3227ea35f9f5f00cc6aa256521a" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/256-admt-mig-user-3.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-fdf68b95932bd9c55f38f69e1d2a5a19">
+<a href="javascript:history.back();" class="lightbox" id="image-3578d3227ea35f9f5f00cc6aa256521a">
 <img src="../../../at2/at2e5/ad/256-admt-mig-user-3.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p>
-<a href="#image-091cfeb926c966b09c7b1d94554a8bca" class="lightbox-link">
+<a href="#image-ed65040f024cc3b65921f50222b55765" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/257-admt-mig-user-4.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-091cfeb926c966b09c7b1d94554a8bca">
+<a href="javascript:history.back();" class="lightbox" id="image-ed65040f024cc3b65921f50222b55765">
 <img src="../../../at2/at2e5/ad/257-admt-mig-user-4.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p>
-<a href="#image-ad9122c07ccaf3c5aca33b8adf98475b" class="lightbox-link">
+<a href="#image-90e354324df90344854d42b8175f8a21" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/258-admt-mig-user-5.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-ad9122c07ccaf3c5aca33b8adf98475b">
+<a href="javascript:history.back();" class="lightbox" id="image-90e354324df90344854d42b8175f8a21">
 <img src="../../../at2/at2e5/ad/258-admt-mig-user-5.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p>
-<a href="#image-5889858366792f014dd8fcaf66e24066" class="lightbox-link">
+<a href="#image-8a6c279529d5a27175265097d48232c2" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/259-admt-mig-user-6.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-5889858366792f014dd8fcaf66e24066">
+<a href="javascript:history.back();" class="lightbox" id="image-8a6c279529d5a27175265097d48232c2">
 <img src="../../../at2/at2e5/ad/259-admt-mig-user-6.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p>
-<a href="#image-a5ddf331ec5091764666794887917ce4" class="lightbox-link">
+<a href="#image-02d31cf9bf73e53c942cae5d34670f8e" class="lightbox-link">
 <img src="../../../at2/at2e5/ad/260-admt-mig-user-7.png" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-a5ddf331ec5091764666794887917ce4">
+<a href="javascript:history.back();" class="lightbox" id="image-02d31cf9bf73e53c942cae5d34670f8e">
 <img src="../../../at2/at2e5/ad/260-admt-mig-user-7.png" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p>Une fois les utilisateurs migrés, vérifier que les utilisateurs aient bien leurs nouveaux suffixes UPN.</p>
 <p>
-<a href="#image-f5ad05004a2cdac2755d527dfbca5bac" class="lightbox-link">
+<a href="#image-19621a6da4ef1dee1e950847c2fb8bed" class="lightbox-link">
 <img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/admit_mig6.png?raw=true" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-f5ad05004a2cdac2755d527dfbca5bac">
+<a href="javascript:history.back();" class="lightbox" id="image-19621a6da4ef1dee1e950847c2fb8bed">
 <img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/admit_mig6.png?raw=true" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p>
-<a href="#image-84923ce8c956959d77eeb52e13c748bf" class="lightbox-link">
+<a href="#image-c309ac8c0b63bff1cc2eba2a15a9a71d" class="lightbox-link">
 <img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/admit_mig7.png?raw=true" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-84923ce8c956959d77eeb52e13c748bf">
+<a href="javascript:history.back();" class="lightbox" id="image-c309ac8c0b63bff1cc2eba2a15a9a71d">
 <img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/admit_mig7.png?raw=true" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p><strong>Migration des groupes</strong></p>
 <p>C&rsquo;est identique.</p>
 <p>
-<a href="#image-147813f8c6bff4ebacc7419354a1b0de" class="lightbox-link">
+<a href="#image-526f2dd09a5e8bc2c330c84d0d112edf" class="lightbox-link">
 <img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/admit_mig_compte.png?raw=true" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-147813f8c6bff4ebacc7419354a1b0de">
+<a href="javascript:history.back();" class="lightbox" id="image-526f2dd09a5e8bc2c330c84d0d112edf">
 <img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/admit_mig_compte.png?raw=true" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p>
-<a href="#image-f4557d6a044f16d6f4ec91453f537608" class="lightbox-link">
+<a href="#image-a3e70b982df68a0d3776996c1ebf4fa4" class="lightbox-link">
 <img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/admit_mig_compte1.png?raw=true" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-f4557d6a044f16d6f4ec91453f537608">
+<a href="javascript:history.back();" class="lightbox" id="image-a3e70b982df68a0d3776996c1ebf4fa4">
 <img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/admit_mig_compte1.png?raw=true" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p>
-<a href="#image-90395e1705fe581a773e0ddc2ae5c108" class="lightbox-link">
+<a href="#image-55530505b1f2fb5956c0307783cc22db" class="lightbox-link">
 <img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/admit_mig_compte2.png?raw=true" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-90395e1705fe581a773e0ddc2ae5c108">
+<a href="javascript:history.back();" class="lightbox" id="image-55530505b1f2fb5956c0307783cc22db">
 <img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/admit_mig_compte2.png?raw=true" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p>
-<a href="#image-ac5f18fc0e96e3d445c1316d677afc18" class="lightbox-link">
+<a href="#image-8882e2f46c709f590e7542c54e31fcf6" class="lightbox-link">
 <img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/admit_mig_compte3.png?raw=true" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-ac5f18fc0e96e3d445c1316d677afc18">
+<a href="javascript:history.back();" class="lightbox" id="image-8882e2f46c709f590e7542c54e31fcf6">
 <img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/admit_mig_compte3.png?raw=true" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p>
-<a href="#image-763bfb410a581bae3a56c4a9e97d8df3" class="lightbox-link">
+<a href="#image-d19697816e396ce7060b9e4c3a448eb9" class="lightbox-link">
 <img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/admit_mig_compte4.png?raw=true" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-763bfb410a581bae3a56c4a9e97d8df3">
+<a href="javascript:history.back();" class="lightbox" id="image-d19697816e396ce7060b9e4c3a448eb9">
 <img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/admit_mig_compte4.png?raw=true" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p>
-<a href="#image-39b4cae12d1096d8a809d06eaccd985f" class="lightbox-link">
+<a href="#image-0c24d96c4571ca2d9c12dc4f9b971156" class="lightbox-link">
 <img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/admit_mig_compte5.png?raw=true" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-39b4cae12d1096d8a809d06eaccd985f">
+<a href="javascript:history.back();" class="lightbox" id="image-0c24d96c4571ca2d9c12dc4f9b971156">
 <img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/admit_mig_compte5.png?raw=true" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p>
-<a href="#image-c9056d718ad876f41b05d9e1c2c6e9ec" class="lightbox-link">
+<a href="#image-d0170e61488823910ba51f4b976fb1fc" class="lightbox-link">
 <img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/admit_mig_compte6.png?raw=true" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-c9056d718ad876f41b05d9e1c2c6e9ec">
+<a href="javascript:history.back();" class="lightbox" id="image-d0170e61488823910ba51f4b976fb1fc">
 <img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/admit_mig_compte6.png?raw=true" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p>
-<a href="#image-e4fc6589e0a315a7b30b9fc706f0e8d9" class="lightbox-link">
+<a href="#image-6cee1ca95aa297b181966e19bb7a8557" class="lightbox-link">
 <img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/admit_mig_compte7.png?raw=true" alt="" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-e4fc6589e0a315a7b30b9fc706f0e8d9">
+<a href="javascript:history.back();" class="lightbox" id="image-6cee1ca95aa297b181966e19bb7a8557">
 <img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/admit_mig_compte7.png?raw=true" alt="" class="lightbox-image" loading="lazy">
 </a></p>
 <p><strong>Ressources</strong></p>

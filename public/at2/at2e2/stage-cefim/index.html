@@ -63,7 +63,7 @@
             </a>
           </div>
           <div id="top-github-link">
-            <a class="github-link topbar-link" title='Éditer (CTRL+ALT+w)' href="https://github.com/oliduha/tssoc.oliduha.fr/edit/main/content/at2/AT2E2/stage-cefim/_index.fr.md" target="_blank">
+            <a class="github-link topbar-link" title='Éditer (CTRL+ALT+w)' href="https://github.com/McShelby/hugo-theme-relearn/edit/main/exampleSite/content/at2/AT2E2/stage-cefim/_index.fr.md" target="_blank">
               <i class="fas fa-pen fa-fw"></i>
             </a>
           </div>
@@ -141,13 +141,13 @@
 <p>Dans les locaux du CEFIM, le réseau WiFi CEFIM_PEDAGO est utilisé par la majorité des étudiants, formateurs, intervenants extérieurs et jurys.</p>
 <p>L&rsquo;accès courant au réseau est autorisé par un système de filtrage MAC au niveau du portail captif de la passerelle/pare-feu (pfSense).
 Les adresses MAC des machines CEFIM (pc/mac) fournies aux étudiants et formateurs internes sont enregistrées dans la configuration du portail captif.</p>
-<p>Pour autoriser la connexion d&rsquo;une machine inconnue du portail captif, un système d&rsquo;authentification par vouchers est mis en place au niveau du portail captif.
+<p>Pour autoriser la connexion d&rsquo;une machine inconnue, un système d&rsquo;authentification par vouchers est mis en place au niveau du portail captif.
 Il s&rsquo;agit de séries (appelées Rolls) de codes d&rsquo;accès temporaires générés manuellement dans l&rsquo;interface web du pfSense (menu &lsquo;Services&rsquo; &gt; &lsquo;Captive Portal&rsquo; &gt; &lsquo;Edit Zone&rsquo; &gt; &lsquo;Vouchers&rsquo;).</p>
 <p>En général, une série de 1000 vouchers valides pendant cinq jours est générée par l&rsquo;administrateur quand la série précédente arrive à épuisement.
 La série générée est téléchargée depuis l&rsquo;interface web du pfSense au format .csv puis importée dans un google sheet partagé.</p>
-<p>Lorsqu&rsquo;un groupe d&rsquo;utilisateur a besoin de se connecter temporairement à Internet avec des machines non connues du portail captif, il faut lui fournir une liste de vouchers (1 par personne).
+<p>Lorsqu&rsquo;un groupe d&rsquo;utilisateurs a besoin de se connecter temporairement à Internet avec des machines non connues du portail captif, il faut lui fournir une liste de vouchers (1 par personne).
 Pour cela, un opérateur doit renseigner les divers éléments du tableau (le statut réservé, son nom, la date et le nom du groupe ou de la personne) pour chaque voucher, puis copier le nombre de codes souhaités depuis le tableau partagé et les coller dans un autre document (tableur ou texte) qu&rsquo;il doit ensuite imprimer.
-L&rsquo;utilisateur final peut ainsi se connecter au réseau en renseignant le voucher qui lui est ainsi fourni lorsque le portail captif lui demande.</p>
+L&rsquo;utilisateur final peut ainsi se connecter au réseau en renseignant le voucher qui lui est fourni lorsque le portail captif lui demande.</p>
 <hr>
 <h2 id="problèmes-relevés">Problèmes relevés</h2>
 <ol>
@@ -171,7 +171,7 @@ L&rsquo;utilisateur final peut ainsi se connecter au réseau en renseignant le v
 <ul>
 <li>Afficher un formulaire simplifiant la saisie des informations nécessaires à l&rsquo;extraction par les opérateurs.</li>
 <li>Extraire et réserver le nombre de vouchers nécessaires de la liste.</li>
-<li>Créer un Google Document présentant les vouchers mis en page, pret à être imprimé (mais éditable si besoin).</li>
+<li>Créer un Google Document présentant les vouchers mis en page, prêt à être imprimé.</li>
 <li>Envoyer un email d&rsquo;alerte à l&rsquo;administrateur lorsque la liste de vouchers disponibles arrive à épuisement.</li>
 </ul>
 <p>Fonctionnalité supplémentaire : Disposer d&rsquo;une liste de secours afin de simplifier l&rsquo;ajout de vouchers par l&rsquo;admin s&rsquo;il n&rsquo;est pas présent sur site (en congés, en déplacement, etc.) lorsque la liste courante arrive à épuisement.</p>
@@ -234,13 +234,13 @@ L&rsquo;utilisateur final peut ainsi se connecter au réseau en renseignant le v
 <li>Extraction du nombre de vouchers demandés vers une autre feuille de calcul avec les infos de réservation.</li>
 <li>Mise en forme des données déplacées.</li>
 <li>Création d&rsquo;un Google Document à partir d&rsquo;un modèle.</li>
-<li>Insertions des données dans le Document.</li>
+<li>Insertion des données dans le Document.</li>
 <li>Suppression des éléments inutiles.</li>
-<li>enregistrement du Document dans un sous-dossier spécifique du Drive.</li>
+<li>Enregistrement du Document dans un sous-dossier spécifique du Drive.</li>
 <li>Affichage du lien vers le Document généré.</li>
 </ul>
 </li>
-<li>Envoie d&rsquo;un email d&rsquo;alerte à l&rsquo;administrateur lorsque le nombre de vouchers disponibles est en dessous du seuil défini, avec :
+<li>Envoi d&rsquo;un email d&rsquo;alerte à l&rsquo;administrateur lorsque le nombre de vouchers disponibles est en dessous du seuil défini, avec :
 <ul>
 <li>1 lien vers l&rsquo;interface web du pfSense pour générer un nouveau roll.</li>
 <li>1 lien pour ouvrir la liste de secours.</li>
@@ -253,7 +253,7 @@ L&rsquo;utilisateur final peut ainsi se connecter au réseau en renseignant le v
 <li>Ajout d&rsquo;un menu permettant de lancer la procédure d&rsquo;ajout de vouchers de secours à la liste courante.</li>
 <li>Le chargement de la configuration contenue dans une feuille spécifique du classeur.</li>
 <li>La procédure d&rsquo;ajout de vouchers de secours à la liste courante avec demande de confirmation préalable et gestion des erreurs (authentification, ouverture de fichier).</li>
-<li>Envoi d&rsquo;un email indiquant le succès ou l&rsquo;échec éventuel de l&rsquo;opération et indiquant le nombre de vouchers de secours restants.</li>
+<li>Envoi d&rsquo;un email indiquant le succès ou l&rsquo;échec éventuel de l&rsquo;opération ainsi que le nombre de vouchers de secours restants.</li>
 </ul>
 <h3 id="coté-client">Coté client</h3>
 <p>Un fichier html contenant le formulaire de réservation de vouchers avec :</p>
@@ -327,7 +327,7 @@ L&rsquo;utilisateur final peut ainsi se connecter au réseau en renseignant le v
 <h2 id="améliorations-ultérieures-éventuelles">Améliorations ultérieures éventuelles</h2>
 <ul>
 <li>
-<p>Création et gestions de plusieurs rolls avec des durées de validité différentes (1/2 journée - 1 jour - 2 jours - 3 jours - 4 jours - 1 semaine - 2 semaines - 1 mois) pour correspondre aux durées des différentes formations dispensées. Autant de rolls de secours devront être prévus.</p>
+<p>Création et gestion de plusieurs rolls avec des durées de validité différentes (1/2 journée - 1 jour - 2 jours - 3 jours - 4 jours - 1 semaine - 2 semaines - 1 mois) pour correspondre aux durées des différentes formations dispensées. Autant de rolls de secours devront être prévus.</p>
 </li>
 <li>
 <p>Dans le cas où l&rsquo;opérateur renseigne les noms/prénoms des utilisateurs avant impression, disposer d&rsquo;un script attaché au document permettant de reporter automatiquement ces infos dans le tableau des vouchers utilisés.</p>
@@ -342,7 +342,7 @@ L&rsquo;utilisateur final peut ainsi se connecter au réseau en renseignant le v
 <ul>
 <li>Ils comportent un numéro unique parmi les rolls actifs.</li>
 <li>On leur affecte un nombre de vouchers (1023 maximum avec le nombre de bits de ticket par défaut).</li>
-<li>On leur défini une durée de validité en heures.</li>
+<li>On leur définit une durée de validité en heures.</li>
 <li>Une description leur est associée.</li>
 </ul>
 <p><strong>Attention : Tout changement dans les champs de nombre de bits (roll, ticket ou somme de contrôle - voir ci-après) invalide immédiatement tout roll créé précédemment.</strong></p>
@@ -383,70 +383,70 @@ L&rsquo;utilisateur final peut ainsi se connecter au réseau en renseignant le v
 <li>Le formulaire de réservation :</li>
 </ul>
 <p>
-<a href="#image-544b9aceff651535f2faecbf5cfb540b" class="lightbox-link">
+<a href="#image-1e83b01ad60228dee135e0b13a331ed0" class="lightbox-link">
 <img src="../../../at2/at2e2/stage-cefim/01-Furmulaire%20r%C3%A9servation.png" alt="Formulaire de réservation" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-544b9aceff651535f2faecbf5cfb540b">
+<a href="javascript:history.back();" class="lightbox" id="image-1e83b01ad60228dee135e0b13a331ed0">
 <img src="../../../at2/at2e2/stage-cefim/01-Furmulaire%20r%C3%A9servation.png" alt="Formulaire de réservation" class="lightbox-image" loading="lazy">
 </a></p>
 <ul>
 <li>Le modèle de document :</li>
 </ul>
 <p>
-<a href="#image-34b4e643527073c9befc241efa6744b4" class="lightbox-link">
+<a href="#image-b649b1843cfdb917db1ccc7a9d12181d" class="lightbox-link">
 <img src="../../../at2/at2e2/stage-cefim/02-Template%20Vouchers%20CEFIM_PEDAGO.png" alt="Modèle de document" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-34b4e643527073c9befc241efa6744b4">
+<a href="javascript:history.back();" class="lightbox" id="image-b649b1843cfdb917db1ccc7a9d12181d">
 <img src="../../../at2/at2e2/stage-cefim/02-Template%20Vouchers%20CEFIM_PEDAGO.png" alt="Modèle de document" class="lightbox-image" loading="lazy">
 </a></p>
 <ul>
 <li>La présentation du lien vers le document généré :</li>
 </ul>
 <p>
-<a href="#image-19c4b0deffaf475fe260ccd77767b86a" class="lightbox-link">
+<a href="#image-67252af4202bf90628256836518fbc85" class="lightbox-link">
 <img src="../../../at2/at2e2/stage-cefim/03-Lien%20document%20g%C3%A9n%C3%A9r%C3%A9.png" alt="Lien document généré" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-19c4b0deffaf475fe260ccd77767b86a">
+<a href="javascript:history.back();" class="lightbox" id="image-67252af4202bf90628256836518fbc85">
 <img src="../../../at2/at2e2/stage-cefim/03-Lien%20document%20g%C3%A9n%C3%A9r%C3%A9.png" alt="Lien document généré" class="lightbox-image" loading="lazy">
 </a></p>
 <ul>
 <li>Le document généré :</li>
 </ul>
 <p>
-<a href="#image-17599af739bc01494108015f9bf074fd" class="lightbox-link">
+<a href="#image-fd056ce9f2feb1070d023e22abb2190e" class="lightbox-link">
 <img src="../../../at2/at2e2/stage-cefim/04-Document%20g%C3%A9n%C3%A9r%C3%A9.png" alt="Document généré" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-17599af739bc01494108015f9bf074fd">
+<a href="javascript:history.back();" class="lightbox" id="image-fd056ce9f2feb1070d023e22abb2190e">
 <img src="../../../at2/at2e2/stage-cefim/04-Document%20g%C3%A9n%C3%A9r%C3%A9.png" alt="Document généré" class="lightbox-image" loading="lazy">
 </a></p>
 <ul>
 <li>Le document généré modifié :</li>
 </ul>
 <p>
-<a href="#image-1c8df9954ee1cd68acb459df2553c42e" class="lightbox-link">
+<a href="#image-28500d744ad1d25d44d33bd3ec6b6bbe" class="lightbox-link">
 <img src="../../../at2/at2e2/stage-cefim/05-Document%20g%C3%A9n%C3%A9r%C3%A9%20modifi%C3%A9.png" alt="Document généré modifié" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-1c8df9954ee1cd68acb459df2553c42e">
+<a href="javascript:history.back();" class="lightbox" id="image-28500d744ad1d25d44d33bd3ec6b6bbe">
 <img src="../../../at2/at2e2/stage-cefim/05-Document%20g%C3%A9n%C3%A9r%C3%A9%20modifi%C3%A9.png" alt="Document généré modifié" class="lightbox-image" loading="lazy">
 </a></p>
 <ul>
 <li>L&rsquo;email d&rsquo;alerte de liste épuisée :</li>
 </ul>
 <p>
-<a href="#image-08fc36adbb6c420a43cc56840199470c" class="lightbox-link">
+<a href="#image-4de9246d2a07f8688a3899353595ab56" class="lightbox-link">
 <img src="../../../at2/at2e2/stage-cefim/06-email%20alete%20liste%20%C3%A9puis%C3%A9e.png" alt="Email alerte liste épuisée" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-08fc36adbb6c420a43cc56840199470c">
+<a href="javascript:history.back();" class="lightbox" id="image-4de9246d2a07f8688a3899353595ab56">
 <img src="../../../at2/at2e2/stage-cefim/06-email%20alete%20liste%20%C3%A9puis%C3%A9e.png" alt="Email alerte liste épuisée" class="lightbox-image" loading="lazy">
 </a></p>
 <ul>
 <li>L&rsquo;email de confirmation d&rsquo;activation de vouchers de secours :</li>
 </ul>
 <p>
-<a href="#image-d9db75103bd7f023f8e46dc4b6797999" class="lightbox-link">
+<a href="#image-a7e5229864f1fc805c91b5bd9d7bbb34" class="lightbox-link">
 <img src="../../../at2/at2e2/stage-cefim/07-email%20confirm%20secours.png" alt="Email confirmation secours" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-d9db75103bd7f023f8e46dc4b6797999">
+<a href="javascript:history.back();" class="lightbox" id="image-a7e5229864f1fc805c91b5bd9d7bbb34">
 <img src="../../../at2/at2e2/stage-cefim/07-email%20confirm%20secours.png" alt="Email confirmation secours" class="lightbox-image" loading="lazy">
 </a></p>
 <hr>
@@ -1099,7 +1099,7 @@ Tabs<i class="fas fa-check read-icon"></i></a></li></ul></li></ul></li>
           <div class="nav-title padding">Aller plus loin</div>
           <ul class="space">
             <li><a class="padding" href="../../../tags/index.html"><i class='fas fa-fw fa-tags'></i> Tags</a></li>
-            <li><a class="padding" href="https://github.com/oliduha/tssoc.oliduha.fr"><i class='fab fa-fw fa-github'></i> Repo GitHub</a></li>
+            <li><a class="padding" href="https://github.com/oliduha/"><i class='fab fa-fw fa-github'></i> Repo GitHub</a></li>
             <li><a class="padding" href="../../../more/credits/index.html"><i class='fas fa-fw fa-bullhorn'></i> Credits</a></li>
             <li><a class="padding" href="https://gohugo.io/"><i class='fas fa-fw fa-bookmark'></i> Documentation Hugo</a></li>
           </ul>

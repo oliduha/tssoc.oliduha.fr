@@ -92,7 +92,7 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">show mac address-table address xxxx.xxxx.xxxx
 </span></span></code></pre></div><ul>
 <li>Si la réponse indique que l&rsquo;adresse MAC a été trouvée sur un port Gi0/x, cela signifie que la machine est connectée à un autre switch (lien inter-switch).</li>
-<li>Si la réponse indique un port du type Fa0/x, nous somme sur le bon switch et nous savons donc sur quel port.</li>
+<li>Si la réponse indique un port du type Fa0/x, nous sommes sur le bon switch et nous savons donc sur quel port.</li>
 <li>Si la commande ne trouve pas cette adresse MAC, c&rsquo;est que la prise Ethernet n&rsquo;est pas brassée. Il faut alors :
 <ol>
 <li>Relever le numéro de la prise réseau du poste</li>
@@ -121,10 +121,10 @@
 </ul>
 </li>
 </ul>
-<p>En effet, le TAD structurel mis en place chez Armatis consiste en une alternance de 2 jour à domicile et 3 jours sur site. Les téléconseillé concerné se voient donc attribués une UC qu&rsquo;ils emmènent chez eux et rapportent avec eux lorsqu&rsquo;ils travail sur site. Des postes sont donc aménagés spécifiquement avec une sécurité réseau permettant d&rsquo;accepter différentes machines (contrairement à une poste de travail fixe).</p>
+<p>En effet, le TAD structurel mis en place chez Armatis consiste en une alternance de 2 jours à domicile et 3 jours sur site. Les téléconseillers concernés se voient donc attribuée une UC qu&rsquo;ils emmènent chez eux et rapportent avec eux lorsqu&rsquo;ils travaillent sur site. Des postes sont donc aménagés spécifiquement avec une sécurité réseau permettant d&rsquo;accepter différentes machines (contrairement à un poste de travail fixe).</p>
 <p>On va reconfigurer tous les ports du switch durant la manipulation. On sait déjà quels ports correspondent à quels cas :</p>
 <ol>
-<li>Pour accéder a switch, il faut préalablement se connecter sur un poste en admin et créer une règle temporaire de contournement du pare-feu autorisant tous les ports en sortie.</li>
+<li>Pour accéder au switch, il faut préalablement se connecter sur un poste en admin et créer une règle temporaire de contournement du pare-feu autorisant tous les ports en sortie.</li>
 <li>On accède ensuite au switch via Putty et en utilisant le CLI Cisco</li>
 <li>On vérifie l&rsquo;état des interfaces : <code>sh int status</code></li>
 <li>Puis l&rsquo;état des vlan : <code>sh vlan</code></li>

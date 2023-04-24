@@ -696,7 +696,7 @@ var relearn_search_index = [
     "uri": "/en/more/showcase/index.html"
   },
   {
-    "content": "The siteparam shortcode prints values of site params.\nUsage While the examples are using shortcodes with named parameter you are free to use positional aswell or call this shortcode from your own partials.\nshortcode shortcode (positional) partial {{% siteparam name=\"editURL\" %}} {{% siteparam \"editURL\" %}} {{ partial \"shortcodes/siteparam.html\" (dict \"context\" . \"name\" \"editURL\" )}} Parameter Name Position Default Notes name 1 \u003cempty\u003e The name of the site param to be displayed. Examples editURL from config.toml `editURL` value: {{% siteparam name=\"editURL\" %}} editURL value: https://github.com/oliduha/tssoc.oliduha.fr/edit/main/content/\n",
+    "content": "The siteparam shortcode prints values of site params.\nUsage While the examples are using shortcodes with named parameter you are free to use positional aswell or call this shortcode from your own partials.\nshortcode shortcode (positional) partial {{% siteparam name=\"editURL\" %}} {{% siteparam \"editURL\" %}} {{ partial \"shortcodes/siteparam.html\" (dict \"context\" . \"name\" \"editURL\" )}} Parameter Name Position Default Notes name 1 \u003cempty\u003e The name of the site param to be displayed. Examples editURL from config.toml `editURL` value: {{% siteparam name=\"editURL\" %}} editURL value: https://github.com/McShelby/hugo-theme-relearn/edit/main/exampleSite/content/\n",
     "description": "Get value of site params",
     "tags": null,
     "title": "Site param",
@@ -710,7 +710,7 @@ var relearn_search_index = [
     "uri": "/en/hugo/shortcodes/swagger/index.html"
   },
   {
-    "content": "Lines and Paragraphs i HTML Paragraph I\nHTML Paragraph II\ni HTML Line I\nHTML Line II i HTML Line I\nHTML Line II i Markdown Multicell I Markdown Multicell II Headings i HTML h1 i HTML h2 i HTML h3 i HTML h4 i HTML h5 i HTML h6 Lists i HTML List Item IHTML List Item II Code i Markdown Inline i HTML Inline i HTML Block Links \u0026 Images i Markdown Link i https://example.com i Other i HTML Blockquote i HTML Blockquote with nested Paragraph\ni Shortcodes i Important i Get Hugo i Expand me… Thank you! i i i $$\\left( \\sum_{k=1}^n a_k b_k \\right)^2 \\leq \\left( \\sum_{k=1}^n a_k^2 \\right) \\left( \\sum_{k=1}^n b_k^2 \\right)$$ i $\\sqrt{3}$ i graph LR; If --\u003e Then Then --\u003e Else i https://github.com/oliduha/tssoc.oliduha.fr/edit/main/content/ i python bash print(\"Hello World!\") echo \"Hello World!\" ",
+    "content": "Lines and Paragraphs i HTML Paragraph I\nHTML Paragraph II\ni HTML Line I\nHTML Line II i HTML Line I\nHTML Line II i Markdown Multicell I Markdown Multicell II Headings i HTML h1 i HTML h2 i HTML h3 i HTML h4 i HTML h5 i HTML h6 Lists i HTML List Item IHTML List Item II Code i Markdown Inline i HTML Inline i HTML Block Links \u0026 Images i Markdown Link i https://example.com i Other i HTML Blockquote i HTML Blockquote with nested Paragraph\ni Shortcodes i Important i Get Hugo i Expand me… Thank you! i i i $$\\left( \\sum_{k=1}^n a_k b_k \\right)^2 \\leq \\left( \\sum_{k=1}^n a_k^2 \\right) \\left( \\sum_{k=1}^n b_k^2 \\right)$$ i $\\sqrt{3}$ i graph LR; If --\u003e Then Then --\u003e Else i https://github.com/McShelby/hugo-theme-relearn/edit/main/exampleSite/content/ i python bash print(\"Hello World!\") echo \"Hello World!\" ",
     "description": "Testing different markdown constructs inside of tables",
     "tags": null,
     "title": "Tables",

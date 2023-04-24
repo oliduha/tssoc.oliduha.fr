@@ -104,20 +104,20 @@
 <h3 id="1-simple-ping">1. Simple ping</h3>
 <p>Simple script batch pour un outil de ping qui m&rsquo;a permis d&rsquo;expérimenter le rendu de couleur.</p>
 <p>
-<a href="#image-10798e371789e0561f48e90d02d5230a" class="lightbox-link">
+<a href="#image-48ea46bebfe70664c28bf541f922bd3e" class="lightbox-link">
 <img src="../../at3/at3e2/batch/myping_bat.png" alt="myping.bat" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-10798e371789e0561f48e90d02d5230a">
+<a href="javascript:history.back();" class="lightbox" id="image-48ea46bebfe70664c28bf541f922bd3e">
 <img src="../../at3/at3e2/batch/myping_bat.png" alt="myping.bat" class="lightbox-image" loading="lazy">
 </a></p>
 <hr>
 <h3 id="2-connexion-ssh">2. Connexion ssh</h3>
 <p>Un script offrant un menu permettant de choisir parmi différentes connexions ssh récurentes via cmd ou putty.</p>
 <p>
-<a href="#image-047b85f474709d8d77468f7d799232bd" class="lightbox-link">
+<a href="#image-ff09616ea2da5e3d8ec5ab350d59dfed" class="lightbox-link">
 <img src="../../at3/at3e2/batch/cssh_bat.png" alt="cssh.bat" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-047b85f474709d8d77468f7d799232bd">
+<a href="javascript:history.back();" class="lightbox" id="image-ff09616ea2da5e3d8ec5ab350d59dfed">
 <img src="../../at3/at3e2/batch/cssh_bat.png" alt="cssh.bat" class="lightbox-image" loading="lazy">
 </a></p>
 <hr>
@@ -249,12 +249,12 @@
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span></code></pre></div><hr>
 <h3 id="3-automatisation-du-renouvellement-dun-certificat-lets-encrypt-tous-les-3-mois">3. Automatisation du renouvellement d&rsquo;un certificat Let&rsquo;s Encrypt tous les 3 mois</h3>
-<p><em><code>certbot</code> doit être installé sur la machine et un certificat doit être configuré sur son nom de domain.</em></p>
+<p><em><code>certbot</code> doit être installé sur la machine et un certificat doit être configuré sur son nom de domaine.</em></p>
 <p>L&rsquo;opération s&rsquo;effectue uniquement via crontab</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">crontab -e
 </span></span></code></pre></div><p>on ajoute :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="m">0</span> <span class="m">0</span> <span class="m">1</span> */3 * certbot renew --apache --domain oduhamel.oliduha.fr -n
-</span></span></code></pre></div><p><em>La commande sera éxectutée tous les 3 mois, le 1er jour du mois</em></p>
+</span></span></code></pre></div><p><em>La commande sera éxecutée tous les 3 mois, le 1er jour du mois</em></p>
 <hr>
 
             <footer class="footline">

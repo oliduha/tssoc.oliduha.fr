@@ -88,10 +88,10 @@
 
 <h2 id="serveur-lamps-avec-mediawiki">Serveur LAMPS avec MediaWiki</h2>
 <p>
-<a href="#image-0bfcd1182d25f4894acb6a44ccdca52f" class="lightbox-link">
+<a href="#image-c5a7bd15ed568850a10d1e132d1d159a" class="lightbox-link">
 <img src="../../at2/at2e3/lamps/0_1_architecture.png" alt="Architecture" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-0bfcd1182d25f4894acb6a44ccdca52f">
+<a href="javascript:history.back();" class="lightbox" id="image-c5a7bd15ed568850a10d1e132d1d159a">
 <img src="../../at2/at2e3/lamps/0_1_architecture.png" alt="Architecture" class="lightbox-image" loading="lazy">
 </a>
 <em>Ici, nous installerons MediaWiki en lieu et place de Wordpress</em></p>
@@ -141,10 +141,10 @@
 </span></span></code></pre></div><h3 id="--génération-du-certificat-auto-signé-pour-10-ans">- génération du certificat auto signé pour 10 ans</h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">openssl req <span class="nv">$@</span> -new -x509 -days <span class="m">3650</span> -nodes -out /etc/apache2/apache.pem -keyout /etc/apache2/apache.pem
 </span></span></code></pre></div><p>
-<a href="#image-7f05abc9d0da4179f4ada9d398fda770" class="lightbox-link">
+<a href="#image-d37dc13258e5f8187b349318fc72dab2" class="lightbox-link">
 <img src="../../at2/at2e3/lamps/2_1_apache_pem.PNG" alt="capture" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-7f05abc9d0da4179f4ada9d398fda770">
+<a href="javascript:history.back();" class="lightbox" id="image-d37dc13258e5f8187b349318fc72dab2">
 <img src="../../at2/at2e3/lamps/2_1_apache_pem.PNG" alt="capture" class="lightbox-image" loading="lazy">
 </a></p>
 <h3 id="--activation-des-modules-populaires">- activation des modules populaires</h3>
@@ -152,10 +152,10 @@
 </span></span><span class="line"><span class="cl">a2enmod headers
 </span></span></code></pre></div><h3 id="--écriture-du-nouveau-certificat-ssl-dans-la-conf-apache-et-changement-du-documentroot-et-redirection">- écriture du nouveau certificat ssl dans la conf apache et changement du documentroot et redirection</h3>
 <p>
-<a href="#image-85bbfa83af22cc47ad48c8d0882d038c" class="lightbox-link">
+<a href="#image-44ed5a261fb96fb3bcd87e91054cbbf4" class="lightbox-link">
 <img src="../../at2/at2e3/lamps/2_2_apache_default-ssl.conf.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-85bbfa83af22cc47ad48c8d0882d038c">
+<a href="javascript:history.back();" class="lightbox" id="image-44ed5a261fb96fb3bcd87e91054cbbf4">
 <img src="../../at2/at2e3/lamps/2_2_apache_default-ssl.conf.PNG" alt="Capture" class="lightbox-image" loading="lazy">
 </a></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> /etc/apache2/sites-available/
@@ -167,10 +167,10 @@
 </span></span><span class="line"><span class="cl">	Redirect Permanent / https://wiki.infra.lan  
 </span></span><span class="line"><span class="cl">&lt;/VirtualHost&gt;
 </span></span></code></pre></div><p>
-<a href="#image-c06c6fd3caf93842a1f18c411ce4b4b0" class="lightbox-link">
+<a href="#image-8539cf46ea1cf72b85fec751d8789430" class="lightbox-link">
 <img src="../../at2/at2e3/lamps/2_3_apache_000-default.conf.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-c06c6fd3caf93842a1f18c411ce4b4b0">
+<a href="javascript:history.back();" class="lightbox" id="image-8539cf46ea1cf72b85fec751d8789430">
 <img src="../../at2/at2e3/lamps/2_3_apache_000-default.conf.PNG" alt="Capture" class="lightbox-image" loading="lazy">
 </a></p>
 <ul>
@@ -182,10 +182,10 @@
 </ul>
 <pre tabindex="0"><code>nano /etc/apache2/apache2.conf
 </code></pre><p>
-<a href="#image-06d782b043ee096860237d5d0e768dd8" class="lightbox-link">
+<a href="#image-0b215777c3822be1d8cdf2c1960575fb" class="lightbox-link">
 <img src="../../at2/at2e3/lamps/2_4_apache_apache2.conf.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-06d782b043ee096860237d5d0e768dd8">
+<a href="javascript:history.back();" class="lightbox" id="image-0b215777c3822be1d8cdf2c1960575fb">
 <img src="../../at2/at2e3/lamps/2_4_apache_apache2.conf.PNG" alt="Capture" class="lightbox-image" loading="lazy">
 </a></p>
 <ul>
@@ -219,10 +219,10 @@
 </ul>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod -R <span class="m">775</span> /home/user/wiki
 </span></span></code></pre></div><p>
-<a href="#image-0a6c8c59cbaf199a1b3a6eb1dc0b62aa" class="lightbox-link">
+<a href="#image-9416f04feaf4353b4726b096ef2d87aa" class="lightbox-link">
 <img src="../../at2/at2e3/lamps/2_5_apache_chown.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-0a6c8c59cbaf199a1b3a6eb1dc0b62aa">
+<a href="javascript:history.back();" class="lightbox" id="image-9416f04feaf4353b4726b096ef2d87aa">
 <img src="../../at2/at2e3/lamps/2_5_apache_chown.PNG" alt="Capture" class="lightbox-image" loading="lazy">
 </a></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">service apache2 restart
@@ -251,19 +251,19 @@
 <li>ajout de la section &lt;Directory&hellip; </Directory> dans site.conf qui doit maintenant ressembler à ça :</li>
 </ul>
 <p>
-<a href="#image-f02608cc252ded78246782da7900714b" class="lightbox-link">
+<a href="#image-fa2a4193b5287988a1d4924b806fadc3" class="lightbox-link">
 <img src="../../at2/at2e3/lamps/2_6_apache_site.conf.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-f02608cc252ded78246782da7900714b">
+<a href="javascript:history.back();" class="lightbox" id="image-fa2a4193b5287988a1d4924b806fadc3">
 <img src="../../at2/at2e3/lamps/2_6_apache_site.conf.PNG" alt="Capture" class="lightbox-image" loading="lazy">
 </a></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">service apache2 restart
 </span></span></code></pre></div><p><strong>à ce stade la page html doit s&rsquo;afficher dans le navigateur de Windows à l&rsquo;adresse <a href="https://wiki.infra.lan" target="_blank">https://wiki.infra.lan</a></strong></p>
 <p>
-<a href="#image-aa7f21ff2617856ef28cfa81dbf38a1a" class="lightbox-link">
+<a href="#image-0f471c044c1faaa8bbeb02f8a89ec0ca" class="lightbox-link">
 <img src="../../at2/at2e3/lamps/2_7_apache_nav.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-aa7f21ff2617856ef28cfa81dbf38a1a">
+<a href="javascript:history.back();" class="lightbox" id="image-0f471c044c1faaa8bbeb02f8a89ec0ca">
 <img src="../../at2/at2e3/lamps/2_7_apache_nav.PNG" alt="Capture" class="lightbox-image" loading="lazy">
 </a></p>
 <h2 id="3---mysql">3 - MySQL</h2>
@@ -277,30 +277,30 @@
 <p>Sélectionner &lsquo;MySQL Server &amp; Cluster&hellip;&rsquo; + [entrée]</p>
 </blockquote>
 <p>
-<a href="#image-8e3d1c5e668c98157ddd1b206e351bd9" class="lightbox-link">
+<a href="#image-1a554c8d309a4d5585f0b095a3aba499" class="lightbox-link">
 <img src="../../at2/at2e3/lamps/3_1_mysql_install.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-8e3d1c5e668c98157ddd1b206e351bd9">
+<a href="javascript:history.back();" class="lightbox" id="image-1a554c8d309a4d5585f0b095a3aba499">
 <img src="../../at2/at2e3/lamps/3_1_mysql_install.PNG" alt="Capture" class="lightbox-image" loading="lazy">
 </a></p>
 <blockquote>
 <p>Sélectionner &lsquo;mysql-8.0&rsquo; + [entrée]</p>
 </blockquote>
 <p>
-<a href="#image-dccafea941d3d590ef4736ca261b522e" class="lightbox-link">
+<a href="#image-730d7e15d26f76a490d71ca57f966a4d" class="lightbox-link">
 <img src="../../at2/at2e3/lamps/3_2_mysql_install.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-dccafea941d3d590ef4736ca261b522e">
+<a href="javascript:history.back();" class="lightbox" id="image-730d7e15d26f76a490d71ca57f966a4d">
 <img src="../../at2/at2e3/lamps/3_2_mysql_install.PNG" alt="Capture" class="lightbox-image" loading="lazy">
 </a></p>
 <blockquote>
 <p>Sélectionner &lsquo;Ok&rsquo; dans la liste + [entrée]</p>
 </blockquote>
 <p>
-<a href="#image-eb754fc8d2c77aef7180b16b9ba5632e" class="lightbox-link">
+<a href="#image-0e6f03551883aa8d469b6ae05d345b52" class="lightbox-link">
 <img src="../../at2/at2e3/lamps/3_3_mysql_install.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-eb754fc8d2c77aef7180b16b9ba5632e">
+<a href="javascript:history.back();" class="lightbox" id="image-0e6f03551883aa8d469b6ae05d345b52">
 <img src="../../at2/at2e3/lamps/3_3_mysql_install.PNG" alt="Capture" class="lightbox-image" loading="lazy">
 </a></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">apt update
@@ -310,20 +310,20 @@
 <li>indiquer le mot de passe pour l&rsquo;accès à mysql en root et confimer à l&rsquo;écran suivant</li>
 </ul>
 <p>
-<a href="#image-45f7268ff2a5e555929716bdfa61461c" class="lightbox-link">
+<a href="#image-9934b8f80892f21312299b526d56a29e" class="lightbox-link">
 <img src="../../at2/at2e3/lamps/3_4_mysql_apt_install.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-45f7268ff2a5e555929716bdfa61461c">
+<a href="javascript:history.back();" class="lightbox" id="image-9934b8f80892f21312299b526d56a29e">
 <img src="../../at2/at2e3/lamps/3_4_mysql_apt_install.PNG" alt="Capture" class="lightbox-image" loading="lazy">
 </a></p>
 <blockquote>
 <p>choisir l&rsquo;option recommandée (strong password encryption) + [entrée]</p>
 </blockquote>
 <p>
-<a href="#image-e4ddbe8c5156e43b96553e0dd541ea2b" class="lightbox-link">
+<a href="#image-ad757b18e0ec76d0a2d3a57f99aedf14" class="lightbox-link">
 <img src="../../at2/at2e3/lamps/3_5_mysql_apt_install.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-e4ddbe8c5156e43b96553e0dd541ea2b">
+<a href="javascript:history.back();" class="lightbox" id="image-ad757b18e0ec76d0a2d3a57f99aedf14">
 <img src="../../at2/at2e3/lamps/3_5_mysql_apt_install.PNG" alt="Capture" class="lightbox-image" loading="lazy">
 </a></p>
 <ul>
@@ -332,10 +332,10 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mysql -u root -p
 </span></span></code></pre></div><p>puis entrer le mot de passe choisi juste avant</p>
 <p>
-<a href="#image-370f66652586dbcf8093ea41cec99445" class="lightbox-link">
+<a href="#image-38ff771018d8ed9b673e07c2d594112d" class="lightbox-link">
 <img src="../../at2/at2e3/lamps/3_6_mysql_post_install.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-370f66652586dbcf8093ea41cec99445">
+<a href="javascript:history.back();" class="lightbox" id="image-38ff771018d8ed9b673e07c2d594112d">
 <img src="../../at2/at2e3/lamps/3_6_mysql_post_install.PNG" alt="Capture" class="lightbox-image" loading="lazy">
 </a></p>
 <p><code>exit</code> pour sortir</p>
@@ -352,10 +352,10 @@
 </span></span></code></pre></div><p><em>pour faire une recherche dans nano :
 tapper ctrl+w et entrer le texte à rechercher (upload_max) puis entrée</em></p>
 <p>
-<a href="#image-d24062ae6883e46f889dfd1a21b5d5b5" class="lightbox-link">
+<a href="#image-27d4e27f8ef62ba0026c92bf4f73da91" class="lightbox-link">
 <img src="../../at2/at2e3/lamps/4_1_php.ini.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-d24062ae6883e46f889dfd1a21b5d5b5">
+<a href="javascript:history.back();" class="lightbox" id="image-27d4e27f8ef62ba0026c92bf4f73da91">
 <img src="../../at2/at2e3/lamps/4_1_php.ini.PNG" alt="Capture" class="lightbox-image" loading="lazy">
 </a></p>
 <ul>
@@ -366,10 +366,10 @@ tapper ctrl+w et entrer le texte à rechercher (upload_max) puis entrée</em></p
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">su user
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nano /home/user/wiki/info.php
 </span></span></code></pre></div><p>
-<a href="#image-5bd47ff0e95c438dbef2f49c6b45d659" class="lightbox-link">
+<a href="#image-5a261d5537d4f6ebb6d8d73354831675" class="lightbox-link">
 <img src="../../at2/at2e3/lamps/4_2_info.php.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-5bd47ff0e95c438dbef2f49c6b45d659">
+<a href="javascript:history.back();" class="lightbox" id="image-5a261d5537d4f6ebb6d8d73354831675">
 <img src="../../at2/at2e3/lamps/4_2_info.php.PNG" alt="Capture" class="lightbox-image" loading="lazy">
 </a></p>
 <ul>
@@ -382,10 +382,10 @@ tapper ctrl+w et entrer le texte à rechercher (upload_max) puis entrée</em></p
 <li>lancer un navigateur sur <a href="https://wiki.infra.lan/info.php" target="_blank">https://wiki.infra.lan/info.php</a></li>
 </ul>
 <p>
-<a href="#image-6087dee9c8fafb16e5370c6a79438b8c" class="lightbox-link">
+<a href="#image-5f6a35359bf9dba4f2823a3b9bc6c401" class="lightbox-link">
 <img src="../../at2/at2e3/lamps/4_3_info_php.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-6087dee9c8fafb16e5370c6a79438b8c">
+<a href="javascript:history.back();" class="lightbox" id="image-5f6a35359bf9dba4f2823a3b9bc6c401">
 <img src="../../at2/at2e3/lamps/4_3_info_php.PNG" alt="Capture" class="lightbox-image" loading="lazy">
 </a></p>
 <h3 id="installation-des-libs-php-souvent-utilisées-par-les-cms">installation des libs PHP souvent utilisées par les cms</h3>
@@ -403,20 +403,20 @@ tapper ctrl+w et entrer le texte à rechercher (upload_max) puis entrée</em></p
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">apt install phpmyadmin
 </span></span></code></pre></div><p><strong>ATTENTION</strong> : à la page de sélection du serveur web, appuyer sur [espace] pour sélectionner &lsquo;apache2&rsquo; avant de valider :</p>
 <p>
-<a href="#image-05a89411bd881e09a212609e0267051d" class="lightbox-link">
+<a href="#image-a8749b5d5c31770857b60956631ed8d9" class="lightbox-link">
 <img src="../../at2/at2e3/lamps/5_1_pma_install.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-05a89411bd881e09a212609e0267051d">
+<a href="javascript:history.back();" class="lightbox" id="image-a8749b5d5c31770857b60956631ed8d9">
 <img src="../../at2/at2e3/lamps/5_1_pma_install.PNG" alt="Capture" class="lightbox-image" loading="lazy">
 </a></p>
 <blockquote>
 <p>répondre OUI pour utiliser dbconfig-common</p>
 </blockquote>
 <p>
-<a href="#image-5466b8db8e9d42cb1736544b554321af" class="lightbox-link">
+<a href="#image-c175d66c10c6053be2aef4ac2fe55ee9" class="lightbox-link">
 <img src="../../at2/at2e3/lamps/5_2_pma_install.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-5466b8db8e9d42cb1736544b554321af">
+<a href="javascript:history.back();" class="lightbox" id="image-c175d66c10c6053be2aef4ac2fe55ee9">
 <img src="../../at2/at2e3/lamps/5_2_pma_install.PNG" alt="Capture" class="lightbox-image" loading="lazy">
 </a></p>
 <blockquote>
@@ -430,10 +430,10 @@ tapper ctrl+w et entrer le texte à rechercher (upload_max) puis entrée</em></p
 </ul>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nano /etc/phpmyadmin/apache.conf
 </span></span></code></pre></div><p>
-<a href="#image-1525d93bfc180b3d473d9bca24558100" class="lightbox-link">
+<a href="#image-d767550361569ac29c85226a6cae39a3" class="lightbox-link">
 <img src="../../at2/at2e3/lamps/5_3_pma_alias.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-1525d93bfc180b3d473d9bca24558100">
+<a href="javascript:history.back();" class="lightbox" id="image-d767550361569ac29c85226a6cae39a3">
 <img src="../../at2/at2e3/lamps/5_3_pma_alias.PNG" alt="Capture" class="lightbox-image" loading="lazy">
 </a></p>
 <ul>
@@ -453,10 +453,10 @@ tapper ctrl+w et entrer le texte à rechercher (upload_max) puis entrée</em></p
 </li>
 </ul>
 <p>
-<a href="#image-50130b4b0082b4ed1d8096977780890a" class="lightbox-link">
+<a href="#image-66324c2979f2a64688028abf0921291e" class="lightbox-link">
 <img src="../../at2/at2e3/lamps/5_4_pma_root.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-50130b4b0082b4ed1d8096977780890a">
+<a href="javascript:history.back();" class="lightbox" id="image-66324c2979f2a64688028abf0921291e">
 <img src="../../at2/at2e3/lamps/5_4_pma_root.PNG" alt="Capture" class="lightbox-image" loading="lazy">
 </a></p>
 <h3 id="création-via-pma-dans-mysql-dun-utilisateur-user-qui-aura-tous-les-droits-sur-la-base-user-mais-pas-ailleurs">Création via PMA dans MYSQL d&rsquo;un utilisateur &lsquo;user&rsquo; qui aura tous les droits sur la base &lsquo;user&rsquo; mais pas ailleurs</h3>
@@ -464,30 +464,30 @@ tapper ctrl+w et entrer le texte à rechercher (upload_max) puis entrée</em></p
 <li>aller à l&rsquo;accueil de pma</li>
 </ul>
 <p>
-<a href="#image-2d5524a2e403e280212105ac4964c0c0" class="lightbox-link">
+<a href="#image-d4cd6ccfa3ad7655b101011ed8f0ce4a" class="lightbox-link">
 <img src="../../at2/at2e3/lamps/5_5_pma_user.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-2d5524a2e403e280212105ac4964c0c0">
+<a href="javascript:history.back();" class="lightbox" id="image-d4cd6ccfa3ad7655b101011ed8f0ce4a">
 <img src="../../at2/at2e3/lamps/5_5_pma_user.PNG" alt="Capture" class="lightbox-image" loading="lazy">
 </a></p>
 <ul>
 <li>cliquer sur l&rsquo;onglet &lsquo;Comptes utilisateurs&rsquo; puis le lien &lsquo;Ajouter un compte utilisateur&rsquo;</li>
 </ul>
 <p>
-<a href="#image-fc749e5c2bc8c587c26426ab833a7d49" class="lightbox-link">
+<a href="#image-84b2d9e3e97ada94aae4e14d73d421cd" class="lightbox-link">
 <img src="../../at2/at2e3/lamps/5_6_pma_user.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-fc749e5c2bc8c587c26426ab833a7d49">
+<a href="javascript:history.back();" class="lightbox" id="image-84b2d9e3e97ada94aae4e14d73d421cd">
 <img src="../../at2/at2e3/lamps/5_6_pma_user.PNG" alt="Capture" class="lightbox-image" loading="lazy">
 </a></p>
 <ul>
 <li>saisir le nom d&rsquo;utilisateur et son mot de passe + confirmation puis activer la case à cocher &lsquo;Créer une base portant son nom&hellip;&rsquo; et rien d&rsquo;autre. Cliquer le bouton &lsquo;Exécuter&rsquo; tout en bas à droite de la page.</li>
 </ul>
 <p>
-<a href="#image-317a089c2ebabd0aab1c2e153cc7cdc9" class="lightbox-link">
+<a href="#image-086362e88f054d6e5fef137a85871ad7" class="lightbox-link">
 <img src="../../at2/at2e3/lamps/5_7_pma_user.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-317a089c2ebabd0aab1c2e153cc7cdc9">
+<a href="javascript:history.back();" class="lightbox" id="image-086362e88f054d6e5fef137a85871ad7">
 <img src="../../at2/at2e3/lamps/5_7_pma_user.PNG" alt="Capture" class="lightbox-image" loading="lazy">
 </a></p>
 <ul>
@@ -520,10 +520,10 @@ tapper ctrl+w et entrer le texte à rechercher (upload_max) puis entrée</em></p
 <li>se connecter en sftp avec filezilla client</li>
 </ul>
 <p>
-<a href="#image-229aae0e6d3741fa5e4505ea419153d2" class="lightbox-link">
+<a href="#image-6cd1aa26b810a3f4947f862c86bb272b" class="lightbox-link">
 <img src="../../at2/at2e3/lamps/6_1_ftp_filezilla.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-229aae0e6d3741fa5e4505ea419153d2">
+<a href="javascript:history.back();" class="lightbox" id="image-6cd1aa26b810a3f4947f862c86bb272b">
 <img src="../../at2/at2e3/lamps/6_1_ftp_filezilla.PNG" alt="Capture" class="lightbox-image" loading="lazy">
 </a></p>
 <h2 id="7---samba">7 - SAMBA</h2>
@@ -534,10 +534,10 @@ tapper ctrl+w et entrer le texte à rechercher (upload_max) puis entrée</em></p
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cp /etc/samba/smb.conf /etc/samba/smb.bak
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nano /etc/samba/smb.conf
 </span></span></code></pre></div><p>
-<a href="#image-5631a0cda1c7944796d8cb44d51967db" class="lightbox-link">
+<a href="#image-3159249d892bb1a3d4e4feb2b1d2e314" class="lightbox-link">
 <img src="../../at2/at2e3/lamps/7_1_samba_smb.conf.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-5631a0cda1c7944796d8cb44d51967db">
+<a href="javascript:history.back();" class="lightbox" id="image-3159249d892bb1a3d4e4feb2b1d2e314">
 <img src="../../at2/at2e3/lamps/7_1_samba_smb.conf.PNG" alt="Capture" class="lightbox-image" loading="lazy">
 </a></p>
 <ul>
@@ -555,10 +555,10 @@ tapper ctrl+w et entrer le texte à rechercher (upload_max) puis entrée</em></p
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">smbpasswd -a user
 </span></span></code></pre></div><h3 id="il-n-y-a-plus-quà-tester-via-lexplorateur-de-fichier-avec">il n&rsquo; y a plus qu&rsquo;à tester via l&rsquo;explorateur de fichier avec</h3>
 <p>
-<a href="#image-a326c2bbb50bb09564446948c44f9e4f" class="lightbox-link">
+<a href="#image-f13418276e93ba4ddbc3eec0c274646e" class="lightbox-link">
 <img src="../../at2/at2e3/lamps/7_2_samba_explorer.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-a326c2bbb50bb09564446948c44f9e4f">
+<a href="javascript:history.back();" class="lightbox" id="image-f13418276e93ba4ddbc3eec0c274646e">
 <img src="../../at2/at2e3/lamps/7_2_samba_explorer.PNG" alt="Capture" class="lightbox-image" loading="lazy">
 </a></p>
 <h2 id="8---script-de-sauvegarde-des-bases-de-donnees">8 - Script de sauvegarde des bases de données</h2>
@@ -611,10 +611,10 @@ tapper ctrl+w et entrer le texte à rechercher (upload_max) puis entrée</em></p
 <p>Dans un navigateur, accéder à l&rsquo;url : <a href="https://wiki.infra.lan:10000" target="_blank">https://wiki.infra.lan:10000</a> et se connercter avec root</p>
 <p>Puis dans Webmin &gt; Webmin Configuration &gt; SSL encryption (version en) :</p>
 <p>
-<a href="#image-fb423c990ce2eec8d86036d1aacd5c9b" class="lightbox-link">
+<a href="#image-10e5200febbe8abb92c7697297a93064" class="lightbox-link">
 <img src="../../at2/at2e3/lamps/9_1_webmin_cert.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-fb423c990ce2eec8d86036d1aacd5c9b">
+<a href="javascript:history.back();" class="lightbox" id="image-10e5200febbe8abb92c7697297a93064">
 <img src="../../at2/at2e3/lamps/9_1_webmin_cert.PNG" alt="Capture" class="lightbox-image" loading="lazy">
 </a></p>
 <p>Appliquer les changements en cliquant le bouton &lsquo;Save&rsquo; en bas à gauche de la page ; attendre quelques secondes puis recharger la page.</p>
@@ -673,18 +673,18 @@ tapper ctrl+w et entrer le texte à rechercher (upload_max) puis entrée</em></p
 </span></span><span class="line"><span class="cl">chmod -R <span class="m">775</span> /home/user/wiki
 </span></span></code></pre></div><h2 id="le-wiki-est-opérationnel-sur-httpswikiinfralanhttpswikiinfralan">Le wiki est opérationnel sur <a href="https://wiki.infra.lan" target="_blank">https://wiki.infra.lan</a></h2>
 <p>
-<a href="#image-9f305a4eb3b62699ae27e3b52dc33113" class="lightbox-link">
+<a href="#image-5709cc675f94495dc40106d930a40fa3" class="lightbox-link">
 <img src="../../at2/at2e3/lamps/10_1_wiki.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-9f305a4eb3b62699ae27e3b52dc33113">
+<a href="javascript:history.back();" class="lightbox" id="image-5709cc675f94495dc40106d930a40fa3">
 <img src="../../at2/at2e3/lamps/10_1_wiki.PNG" alt="Capture" class="lightbox-image" loading="lazy">
 </a></p>
 <p>On peut consulter la base de donnée en se connectant avec user à PhpMyAdmin sur <a href="https://wiki.infra.lan/pma" target="_blank">https://wiki.infra.lan/pma</a> : l&rsquo;installation de MediaWiki a généré 58 tables.</p>
 <p>
-<a href="#image-1ef5a0a255b896c308604645bb80188e" class="lightbox-link">
+<a href="#image-883d904123f794fd104bcb07498042ab" class="lightbox-link">
 <img src="../../at2/at2e3/lamps/10_1_wiki_pma.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-1ef5a0a255b896c308604645bb80188e">
+<a href="javascript:history.back();" class="lightbox" id="image-883d904123f794fd104bcb07498042ab">
 <img src="../../at2/at2e3/lamps/10_1_wiki_pma.PNG" alt="Capture" class="lightbox-image" loading="lazy">
 </a></p>
 

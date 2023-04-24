@@ -110,7 +110,7 @@
 </ul>
   </div>
 </div>
-<h3 id="installation-des-rôle">Installation des rôle</h3>
+<h3 id="installation-des-rôles">Installation des rôles</h3>
 <p>Avant d&rsquo;installer le moindre rôle, on s&rsquo;assure de paramétrer le nom de la machine et sa carte réseau en IP fixe (192.168.13.250/24 ici) et on la reboot.</p>
 <p>On installe d&rsquo;abord le rôle AD-DS puis promotion en Domain Controler et configuration d&rsquo;une forêt pour notre réseau local.</p>
 <p>Ensuite vient le rôle DHCP et sa configuration.</p>
@@ -134,10 +134,10 @@ et</li>
 <li>Attentre que la configuration se termine et une nouvelle fenêtre apparaît. Ne pas sélectionner &ldquo;Ajouter les images au serveur maintenant&rdquo; et <em>Terminer</em></li>
 </ul>
 <p>
-<a href="#image-7ef42d4d95c53238b31a9e95b2f4202b" class="lightbox-link">
+<a href="#image-44692a481e18c6ace7fd41475f36a627" class="lightbox-link">
 <img src="../../../at3/at3e1/wds-mdt/01_1_Gestionnaire_WDS.png" alt="Gestionnaire_wds" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-7ef42d4d95c53238b31a9e95b2f4202b">
+<a href="javascript:history.back();" class="lightbox" id="image-44692a481e18c6ace7fd41475f36a627">
 <img src="../../../at3/at3e1/wds-mdt/01_1_Gestionnaire_WDS.png" alt="Gestionnaire_wds" class="lightbox-image" loading="lazy">
 </a></p>
 <h2 id="ajout-dimages">Ajout d&rsquo;images</h2>
@@ -152,27 +152,27 @@ et</li>
 <li>Après chargement du fichier, cliquer <em>Terminer</em></li>
 </ul>
 <p>
-<a href="#image-38fe821fc9cf6df11295cd5abb7cd9a1" class="lightbox-link">
+<a href="#image-6147f2e87b5fdddf4e8c32504ad4b5c9" class="lightbox-link">
 <img src="../../../at3/at3e1/wds-mdt/01_2_Image_Install.png" alt="Image_install_ajoutée" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-38fe821fc9cf6df11295cd5abb7cd9a1">
+<a href="javascript:history.back();" class="lightbox" id="image-6147f2e87b5fdddf4e8c32504ad4b5c9">
 <img src="../../../at3/at3e1/wds-mdt/01_2_Image_Install.png" alt="Image_install_ajoutée" class="lightbox-image" loading="lazy">
 </a></p>
 <ul>
 <li>Répéter le même principe pour l&rsquo;image de démarrage qui correspont au fichier <strong>boot.wim</strong> situé dans le même dossier du CD-Rom (pas de groupe ici).</li>
 </ul>
 <p>
-<a href="#image-ebd53278c9bcd20deaabd74dd7066653" class="lightbox-link">
+<a href="#image-2e4d0b5fda0e662364aa483ac92a759f" class="lightbox-link">
 <img src="../../../at3/at3e1/wds-mdt/01_3_Image_Boot.png" alt="Image_boot_ajoutée" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-ebd53278c9bcd20deaabd74dd7066653">
+<a href="javascript:history.back();" class="lightbox" id="image-2e4d0b5fda0e662364aa483ac92a759f">
 <img src="../../../at3/at3e1/wds-mdt/01_3_Image_Boot.png" alt="Image_boot_ajoutée" class="lightbox-image" loading="lazy">
 </a></p>
 
 <div class="box notices cstyle note">
   <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Remarque</div>
   <div class="box-content">
-<p>Pour une machine physique, il est possible que l’image de démarrage ne se charge pas du à une erreur de pilote, nous verrons plus loin comment ajouter des drivers aux services WDS et comment les intégrés aux images de démarrage et de capture.</p>
+<p>Pour une machine physique, il est possible que l’image de démarrage ne se charge pas du à une erreur de pilote, nous verrons plus loin comment ajouter des drivers aux services WDS et comment les intégrer aux images de démarrage et de capture.</p>
   </div>
 </div>
 <hr>
@@ -202,18 +202,18 @@ et</li>
 <li>Une copie du fichier install.win (l&rsquo;image) de notre version de Windows à configurer</li>
 </ul>
 <p>
-<a href="#image-069ce7787d799f15e70e4fe6a99d7bf7" class="lightbox-link">
+<a href="#image-32e461e8af47901c38ce8ea2eb6fc413" class="lightbox-link">
 <img src="../../../at3/at3e1/wds-mdt/02_1_WDSIM.png" alt="Assistant_Gestion_Installation" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-069ce7787d799f15e70e4fe6a99d7bf7">
+<a href="javascript:history.back();" class="lightbox" id="image-32e461e8af47901c38ce8ea2eb6fc413">
 <img src="../../../at3/at3e1/wds-mdt/02_1_WDSIM.png" alt="Assistant_Gestion_Installation" class="lightbox-image" loading="lazy">
 </a></p>
 <p>Il faut d&rsquo;abord ouvrir une image Windows : <code>Menu Fichier &gt; Sélectionner l'image Windows</code> et indiquer le fichier <strong>install.wim</strong> puis la verion souhaitée et enfin Valider la création du catalogue. La zone en bas à gauche <em>(Image Windows)</em> doit se peupler.</p>
 <p>
-<a href="#image-9a9b5f3d28ec64dbb05dd478c396c6dd" class="lightbox-link">
+<a href="#image-23e2dbf3e6b699f73a41bf737081694d" class="lightbox-link">
 <img src="../../../at3/at3e1/wds-mdt/02_2_Image_Windows.png" alt="WSIM_image_win" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-9a9b5f3d28ec64dbb05dd478c396c6dd">
+<a href="javascript:history.back();" class="lightbox" id="image-23e2dbf3e6b699f73a41bf737081694d">
 <img src="../../../at3/at3e1/wds-mdt/02_2_Image_Windows.png" alt="WSIM_image_win" class="lightbox-image" loading="lazy">
 </a></p>
 <h3 id="créer-un-nouveau-fichier-de-réponse">Créer un nouveau fichier de réponse</h3>
@@ -243,7 +243,7 @@ et</li>
 <li>OOBE / SkipUserOOBE : true</li>
 </ul>
 <p><strong>Mot de passe de l’administrateur local</strong></p>
-<p>Ajouter les paramètres UserAccounts qui se trouve dans amd64_Microsoft-Windows-Shell-Setup et configurer les propriétés suivantes :</p>
+<p>Ajouter les paramètres UserAccounts qui se trouvent dans amd64_Microsoft-Windows-Shell-Setup et configurer les propriétés suivantes :</p>
 <ul>
 <li>AdministratorPassword / Value : mot de passe</li>
 </ul>
@@ -253,10 +253,10 @@ et</li>
 <p>Fichier de réponse complet :</p>
 <p><code>WDS_w10Pro_unatended.xml</code></p>
 <p>
-<a href="#image-bd692f514e1a3291b03a3950d7c9859e" class="lightbox-link">
+<a href="#image-100acb1f587f5a7d11041a580af29839" class="lightbox-link">
 <img src="../../../at3/at3e1/wds-mdt/02_3_WSIM_Comolet.png" alt="WSIM_complet" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-bd692f514e1a3291b03a3950d7c9859e">
+<a href="javascript:history.back();" class="lightbox" id="image-100acb1f587f5a7d11041a580af29839">
 <img src="../../../at3/at3e1/wds-mdt/02_3_WSIM_Comolet.png" alt="WSIM_complet" class="lightbox-image" loading="lazy">
 </a></p>
 <p>et son code xml :</p>
@@ -417,20 +417,20 @@ et</li>
 </li>
 </ul>
 <p>
-<a href="#image-f9127ad2ec4f741e9acd497d74f3712f" class="lightbox-link">
+<a href="#image-a1bd0d22ebb0cf90455beab00eef9425" class="lightbox-link">
 <img src="../../../at3/at3e1/wds-mdt/03_1_Propri%C3%A9t%C3%A9s_WDS_Clients.png" alt="Propriétés_WDS_Clients" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-f9127ad2ec4f741e9acd497d74f3712f">
+<a href="javascript:history.back();" class="lightbox" id="image-a1bd0d22ebb0cf90455beab00eef9425">
 <img src="../../../at3/at3e1/wds-mdt/03_1_Propri%C3%A9t%C3%A9s_WDS_Clients.png" alt="Propriétés_WDS_Clients" class="lightbox-image" loading="lazy">
 </a></p>
 <ul>
 <li>Clique droit sur l&rsquo;image et <code>Propriétés</code>. Sélectionner <code>Autoriser l'image à s'installer en mode sans assistance</code> et <code>Selectionner un fichier...</code> pour indiquer le fichier de réponse. Valider.</li>
 </ul>
 <p>
-<a href="#image-819a87a5c53dc08215693b1c49fcb220" class="lightbox-link">
+<a href="#image-387c07edb28e23b97d844a9f977c7e8b" class="lightbox-link">
 <img src="../../../at3/at3e1/wds-mdt/03_2_Propri%C3%A9t%C3%A9s_Image.png" alt="Propriétés_Image" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-819a87a5c53dc08215693b1c49fcb220">
+<a href="javascript:history.back();" class="lightbox" id="image-387c07edb28e23b97d844a9f977c7e8b">
 <img src="../../../at3/at3e1/wds-mdt/03_2_Propri%C3%A9t%C3%A9s_Image.png" alt="Propriétés_Image" class="lightbox-image" loading="lazy">
 </a></p>
 <blockquote>
@@ -445,17 +445,17 @@ et</li>
 <p>Ajouter une image de capture (boot) sur le serveur :</p>
 <p>Cliquer droit sur l&rsquo;image de boot créée précédemment et choisir <strong>Créer une image de capture&hellip;</strong> ; lui donner un nom (capture), une description et lui indiquer le chemin du dossier partagé du serveur et un nom de fichier : <code>D:\RemoteInstall\WdsClientUnattend\capture.wim</code>.</p>
 <p>
-<a href="#image-adfb5e36df3dc90ac974a5a584a3cde5" class="lightbox-link">
+<a href="#image-aaec8d8df8530f753223b655c14326cf" class="lightbox-link">
 <img src="../../../at3/at3e1/wds-mdt/04_capture_wim.png" alt="capture.wim" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-adfb5e36df3dc90ac974a5a584a3cde5">
+<a href="javascript:history.back();" class="lightbox" id="image-aaec8d8df8530f753223b655c14326cf">
 <img src="../../../at3/at3e1/wds-mdt/04_capture_wim.png" alt="capture.wim" class="lightbox-image" loading="lazy">
 </a></p>
 <p>
-<a href="#image-e663575dcc7624f792d7af8a3f4ee584" class="lightbox-link">
+<a href="#image-aaef069e9de39c8f6f8b7317cb8e325d" class="lightbox-link">
 <img src="../../../at3/at3e1/wds-mdt/05_capture_image_boot.png" alt="capture_image_boot.png" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-e663575dcc7624f792d7af8a3f4ee584">
+<a href="javascript:history.back();" class="lightbox" id="image-aaef069e9de39c8f6f8b7317cb8e325d">
 <img src="../../../at3/at3e1/wds-mdt/05_capture_image_boot.png" alt="capture_image_boot.png" class="lightbox-image" loading="lazy">
 </a></p>
 <p><em><code>Sur la machine à capturer</code></em> :</p>
@@ -497,7 +497,7 @@ Se rendre sur le serveur &gt; AD Utilisateurs et Ordinateurs et Propriétés de 
 <li><code>OK</code></li>
 </ul>
 </li>
-<li>Si la connexion réussit, les groupes d&rsquo;images du serveur sont chargées dans la liste déroulante : choisir celle souhaitée.</li>
+<li>Si la connexion réussit, les groupes d&rsquo;images du serveur sont chargés dans la liste déroulante : choisir celle souhaitée.</li>
 <li>Cliquer <code>Suivant &gt;</code></li>
 </ul>
 </li>
@@ -509,19 +509,19 @@ Se rendre sur le serveur &gt; AD Utilisateurs et Ordinateurs et Propriétés de 
 </li>
 </ul>
 <p>
-<a href="#image-9f77a454744daaf67959e312c0e3f0c0" class="lightbox-link">
+<a href="#image-5960235f06e3e26ef966df310e606efc" class="lightbox-link">
 <img src="../../../at3/at3e1/wds-mdt/07_machine_capture.png" alt="machine_capture" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-9f77a454744daaf67959e312c0e3f0c0">
+<a href="javascript:history.back();" class="lightbox" id="image-5960235f06e3e26ef966df310e606efc">
 <img src="../../../at3/at3e1/wds-mdt/07_machine_capture.png" alt="machine_capture" class="lightbox-image" loading="lazy">
 </a></p>
 <p>La machine redémarre et la nouvelle image d&rsquo;installation apparaît dans le groupe choisi du Gestionnaire WDS sur le serveur.</p>
 <p>Il ne reste plus qu&rsquo;à lui créer son propre fichier de réponse à partir d&rsquo;une copie du 1er ficher dont on modifie uniquement les propriétés propres à l&rsquo;image WDS (Nom, Groupe et Nom de fichier), copier de xml sur le serveur dans <code>RemoteInstall\WdsClientUnattend\</code> et l&rsquo;affecter à la nouvelle image par ses propriétés.</p>
 <p>
-<a href="#image-ecb60021c9be9bc0fb7cc56fb6ee9a68" class="lightbox-link">
+<a href="#image-2cad7425c1dc5296d6cf96b4416ffaa2" class="lightbox-link">
 <img src="../../../at3/at3e1/wds-mdt/08_capture_ready_to_deploy.png" alt="capture_ready_to_deploy" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-ecb60021c9be9bc0fb7cc56fb6ee9a68">
+<a href="javascript:history.back();" class="lightbox" id="image-2cad7425c1dc5296d6cf96b4416ffaa2">
 <img src="../../../at3/at3e1/wds-mdt/08_capture_ready_to_deploy.png" alt="capture_ready_to_deploy" class="lightbox-image" loading="lazy">
 </a></p>
 <p>Lors du prochain déploiement, une nouvelle fenêtre apparaitra permettant de choisir l&rsquo;image à déployer et proposant notre image nouvellement crée. Si le fichier de réponse est correct, l&rsquo;installation se poursuivra sans intervention jusqu&rsquo;au 1er login du système.</p>

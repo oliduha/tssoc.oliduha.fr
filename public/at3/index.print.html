@@ -143,7 +143,7 @@
 </ul>
   </div>
 </div>
-<h3 id="installation-des-rôle">Installation des rôle</h3>
+<h3 id="installation-des-rôles">Installation des rôles</h3>
 <p>Avant d&rsquo;installer le moindre rôle, on s&rsquo;assure de paramétrer le nom de la machine et sa carte réseau en IP fixe (192.168.13.250/24 ici) et on la reboot.</p>
 <p>On installe d&rsquo;abord le rôle AD-DS puis promotion en Domain Controler et configuration d&rsquo;une forêt pour notre réseau local.</p>
 <p>Ensuite vient le rôle DHCP et sa configuration.</p>
@@ -167,10 +167,10 @@ et</li>
 <li>Attentre que la configuration se termine et une nouvelle fenêtre apparaît. Ne pas sélectionner &ldquo;Ajouter les images au serveur maintenant&rdquo; et <em>Terminer</em></li>
 </ul>
 <p>
-<a href="#image-7ef42d4d95c53238b31a9e95b2f4202b" class="lightbox-link">
+<a href="#image-44692a481e18c6ace7fd41475f36a627" class="lightbox-link">
 <img src="../at3/at3e1/wds-mdt/01_1_Gestionnaire_WDS.png" alt="Gestionnaire_wds" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-7ef42d4d95c53238b31a9e95b2f4202b">
+<a href="javascript:history.back();" class="lightbox" id="image-44692a481e18c6ace7fd41475f36a627">
 <img src="../at3/at3e1/wds-mdt/01_1_Gestionnaire_WDS.png" alt="Gestionnaire_wds" class="lightbox-image" loading="lazy">
 </a></p>
 <h2 id="ajout-dimages">Ajout d&rsquo;images</h2>
@@ -185,27 +185,27 @@ et</li>
 <li>Après chargement du fichier, cliquer <em>Terminer</em></li>
 </ul>
 <p>
-<a href="#image-38fe821fc9cf6df11295cd5abb7cd9a1" class="lightbox-link">
+<a href="#image-6147f2e87b5fdddf4e8c32504ad4b5c9" class="lightbox-link">
 <img src="../at3/at3e1/wds-mdt/01_2_Image_Install.png" alt="Image_install_ajoutée" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-38fe821fc9cf6df11295cd5abb7cd9a1">
+<a href="javascript:history.back();" class="lightbox" id="image-6147f2e87b5fdddf4e8c32504ad4b5c9">
 <img src="../at3/at3e1/wds-mdt/01_2_Image_Install.png" alt="Image_install_ajoutée" class="lightbox-image" loading="lazy">
 </a></p>
 <ul>
 <li>Répéter le même principe pour l&rsquo;image de démarrage qui correspont au fichier <strong>boot.wim</strong> situé dans le même dossier du CD-Rom (pas de groupe ici).</li>
 </ul>
 <p>
-<a href="#image-ebd53278c9bcd20deaabd74dd7066653" class="lightbox-link">
+<a href="#image-2e4d0b5fda0e662364aa483ac92a759f" class="lightbox-link">
 <img src="../at3/at3e1/wds-mdt/01_3_Image_Boot.png" alt="Image_boot_ajoutée" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-ebd53278c9bcd20deaabd74dd7066653">
+<a href="javascript:history.back();" class="lightbox" id="image-2e4d0b5fda0e662364aa483ac92a759f">
 <img src="../at3/at3e1/wds-mdt/01_3_Image_Boot.png" alt="Image_boot_ajoutée" class="lightbox-image" loading="lazy">
 </a></p>
 
 <div class="box notices cstyle note">
   <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Remarque</div>
   <div class="box-content">
-<p>Pour une machine physique, il est possible que l’image de démarrage ne se charge pas du à une erreur de pilote, nous verrons plus loin comment ajouter des drivers aux services WDS et comment les intégrés aux images de démarrage et de capture.</p>
+<p>Pour une machine physique, il est possible que l’image de démarrage ne se charge pas du à une erreur de pilote, nous verrons plus loin comment ajouter des drivers aux services WDS et comment les intégrer aux images de démarrage et de capture.</p>
   </div>
 </div>
 <hr>
@@ -235,18 +235,18 @@ et</li>
 <li>Une copie du fichier install.win (l&rsquo;image) de notre version de Windows à configurer</li>
 </ul>
 <p>
-<a href="#image-069ce7787d799f15e70e4fe6a99d7bf7" class="lightbox-link">
+<a href="#image-32e461e8af47901c38ce8ea2eb6fc413" class="lightbox-link">
 <img src="../at3/at3e1/wds-mdt/02_1_WDSIM.png" alt="Assistant_Gestion_Installation" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-069ce7787d799f15e70e4fe6a99d7bf7">
+<a href="javascript:history.back();" class="lightbox" id="image-32e461e8af47901c38ce8ea2eb6fc413">
 <img src="../at3/at3e1/wds-mdt/02_1_WDSIM.png" alt="Assistant_Gestion_Installation" class="lightbox-image" loading="lazy">
 </a></p>
 <p>Il faut d&rsquo;abord ouvrir une image Windows : <code>Menu Fichier &gt; Sélectionner l'image Windows</code> et indiquer le fichier <strong>install.wim</strong> puis la verion souhaitée et enfin Valider la création du catalogue. La zone en bas à gauche <em>(Image Windows)</em> doit se peupler.</p>
 <p>
-<a href="#image-9a9b5f3d28ec64dbb05dd478c396c6dd" class="lightbox-link">
+<a href="#image-23e2dbf3e6b699f73a41bf737081694d" class="lightbox-link">
 <img src="../at3/at3e1/wds-mdt/02_2_Image_Windows.png" alt="WSIM_image_win" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-9a9b5f3d28ec64dbb05dd478c396c6dd">
+<a href="javascript:history.back();" class="lightbox" id="image-23e2dbf3e6b699f73a41bf737081694d">
 <img src="../at3/at3e1/wds-mdt/02_2_Image_Windows.png" alt="WSIM_image_win" class="lightbox-image" loading="lazy">
 </a></p>
 <h3 id="créer-un-nouveau-fichier-de-réponse">Créer un nouveau fichier de réponse</h3>
@@ -276,7 +276,7 @@ et</li>
 <li>OOBE / SkipUserOOBE : true</li>
 </ul>
 <p><strong>Mot de passe de l’administrateur local</strong></p>
-<p>Ajouter les paramètres UserAccounts qui se trouve dans amd64_Microsoft-Windows-Shell-Setup et configurer les propriétés suivantes :</p>
+<p>Ajouter les paramètres UserAccounts qui se trouvent dans amd64_Microsoft-Windows-Shell-Setup et configurer les propriétés suivantes :</p>
 <ul>
 <li>AdministratorPassword / Value : mot de passe</li>
 </ul>
@@ -286,10 +286,10 @@ et</li>
 <p>Fichier de réponse complet :</p>
 <p><code>WDS_w10Pro_unatended.xml</code></p>
 <p>
-<a href="#image-bd692f514e1a3291b03a3950d7c9859e" class="lightbox-link">
+<a href="#image-100acb1f587f5a7d11041a580af29839" class="lightbox-link">
 <img src="../at3/at3e1/wds-mdt/02_3_WSIM_Comolet.png" alt="WSIM_complet" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-bd692f514e1a3291b03a3950d7c9859e">
+<a href="javascript:history.back();" class="lightbox" id="image-100acb1f587f5a7d11041a580af29839">
 <img src="../at3/at3e1/wds-mdt/02_3_WSIM_Comolet.png" alt="WSIM_complet" class="lightbox-image" loading="lazy">
 </a></p>
 <p>et son code xml :</p>
@@ -450,20 +450,20 @@ et</li>
 </li>
 </ul>
 <p>
-<a href="#image-f9127ad2ec4f741e9acd497d74f3712f" class="lightbox-link">
+<a href="#image-a1bd0d22ebb0cf90455beab00eef9425" class="lightbox-link">
 <img src="../at3/at3e1/wds-mdt/03_1_Propri%C3%A9t%C3%A9s_WDS_Clients.png" alt="Propriétés_WDS_Clients" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-f9127ad2ec4f741e9acd497d74f3712f">
+<a href="javascript:history.back();" class="lightbox" id="image-a1bd0d22ebb0cf90455beab00eef9425">
 <img src="../at3/at3e1/wds-mdt/03_1_Propri%C3%A9t%C3%A9s_WDS_Clients.png" alt="Propriétés_WDS_Clients" class="lightbox-image" loading="lazy">
 </a></p>
 <ul>
 <li>Clique droit sur l&rsquo;image et <code>Propriétés</code>. Sélectionner <code>Autoriser l'image à s'installer en mode sans assistance</code> et <code>Selectionner un fichier...</code> pour indiquer le fichier de réponse. Valider.</li>
 </ul>
 <p>
-<a href="#image-819a87a5c53dc08215693b1c49fcb220" class="lightbox-link">
+<a href="#image-387c07edb28e23b97d844a9f977c7e8b" class="lightbox-link">
 <img src="../at3/at3e1/wds-mdt/03_2_Propri%C3%A9t%C3%A9s_Image.png" alt="Propriétés_Image" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-819a87a5c53dc08215693b1c49fcb220">
+<a href="javascript:history.back();" class="lightbox" id="image-387c07edb28e23b97d844a9f977c7e8b">
 <img src="../at3/at3e1/wds-mdt/03_2_Propri%C3%A9t%C3%A9s_Image.png" alt="Propriétés_Image" class="lightbox-image" loading="lazy">
 </a></p>
 <blockquote>
@@ -478,17 +478,17 @@ et</li>
 <p>Ajouter une image de capture (boot) sur le serveur :</p>
 <p>Cliquer droit sur l&rsquo;image de boot créée précédemment et choisir <strong>Créer une image de capture&hellip;</strong> ; lui donner un nom (capture), une description et lui indiquer le chemin du dossier partagé du serveur et un nom de fichier : <code>D:\RemoteInstall\WdsClientUnattend\capture.wim</code>.</p>
 <p>
-<a href="#image-adfb5e36df3dc90ac974a5a584a3cde5" class="lightbox-link">
+<a href="#image-aaec8d8df8530f753223b655c14326cf" class="lightbox-link">
 <img src="../at3/at3e1/wds-mdt/04_capture_wim.png" alt="capture.wim" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-adfb5e36df3dc90ac974a5a584a3cde5">
+<a href="javascript:history.back();" class="lightbox" id="image-aaec8d8df8530f753223b655c14326cf">
 <img src="../at3/at3e1/wds-mdt/04_capture_wim.png" alt="capture.wim" class="lightbox-image" loading="lazy">
 </a></p>
 <p>
-<a href="#image-e663575dcc7624f792d7af8a3f4ee584" class="lightbox-link">
+<a href="#image-aaef069e9de39c8f6f8b7317cb8e325d" class="lightbox-link">
 <img src="../at3/at3e1/wds-mdt/05_capture_image_boot.png" alt="capture_image_boot.png" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-e663575dcc7624f792d7af8a3f4ee584">
+<a href="javascript:history.back();" class="lightbox" id="image-aaef069e9de39c8f6f8b7317cb8e325d">
 <img src="../at3/at3e1/wds-mdt/05_capture_image_boot.png" alt="capture_image_boot.png" class="lightbox-image" loading="lazy">
 </a></p>
 <p><em><code>Sur la machine à capturer</code></em> :</p>
@@ -530,7 +530,7 @@ Se rendre sur le serveur &gt; AD Utilisateurs et Ordinateurs et Propriétés de 
 <li><code>OK</code></li>
 </ul>
 </li>
-<li>Si la connexion réussit, les groupes d&rsquo;images du serveur sont chargées dans la liste déroulante : choisir celle souhaitée.</li>
+<li>Si la connexion réussit, les groupes d&rsquo;images du serveur sont chargés dans la liste déroulante : choisir celle souhaitée.</li>
 <li>Cliquer <code>Suivant &gt;</code></li>
 </ul>
 </li>
@@ -542,19 +542,19 @@ Se rendre sur le serveur &gt; AD Utilisateurs et Ordinateurs et Propriétés de 
 </li>
 </ul>
 <p>
-<a href="#image-9f77a454744daaf67959e312c0e3f0c0" class="lightbox-link">
+<a href="#image-5960235f06e3e26ef966df310e606efc" class="lightbox-link">
 <img src="../at3/at3e1/wds-mdt/07_machine_capture.png" alt="machine_capture" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-9f77a454744daaf67959e312c0e3f0c0">
+<a href="javascript:history.back();" class="lightbox" id="image-5960235f06e3e26ef966df310e606efc">
 <img src="../at3/at3e1/wds-mdt/07_machine_capture.png" alt="machine_capture" class="lightbox-image" loading="lazy">
 </a></p>
 <p>La machine redémarre et la nouvelle image d&rsquo;installation apparaît dans le groupe choisi du Gestionnaire WDS sur le serveur.</p>
 <p>Il ne reste plus qu&rsquo;à lui créer son propre fichier de réponse à partir d&rsquo;une copie du 1er ficher dont on modifie uniquement les propriétés propres à l&rsquo;image WDS (Nom, Groupe et Nom de fichier), copier de xml sur le serveur dans <code>RemoteInstall\WdsClientUnattend\</code> et l&rsquo;affecter à la nouvelle image par ses propriétés.</p>
 <p>
-<a href="#image-ecb60021c9be9bc0fb7cc56fb6ee9a68" class="lightbox-link">
+<a href="#image-2cad7425c1dc5296d6cf96b4416ffaa2" class="lightbox-link">
 <img src="../at3/at3e1/wds-mdt/08_capture_ready_to_deploy.png" alt="capture_ready_to_deploy" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-ecb60021c9be9bc0fb7cc56fb6ee9a68">
+<a href="javascript:history.back();" class="lightbox" id="image-2cad7425c1dc5296d6cf96b4416ffaa2">
 <img src="../at3/at3e1/wds-mdt/08_capture_ready_to_deploy.png" alt="capture_ready_to_deploy" class="lightbox-image" loading="lazy">
 </a></p>
 <p>Lors du prochain déploiement, une nouvelle fenêtre apparaitra permettant de choisir l&rsquo;image à déployer et proposant notre image nouvellement crée. Si le fichier de réponse est correct, l&rsquo;installation se poursuivra sans intervention jusqu&rsquo;au 1er login du système.</p>
@@ -607,10 +607,10 @@ Configuration ordinateur/Stratégies/Paramètres du logiciel/ clique droit sur I
   </div>
 </div>
 <p>
-<a href="#image-0174fd912a27f888e53c642635150736" class="lightbox-link">
+<a href="#image-1ca60bd67c14debaf9c41d42f70a79b5" class="lightbox-link">
 <img src="../at3/at3e1/fog/00_schema_reseau.png" alt="reseau" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-0174fd912a27f888e53c642635150736">
+<a href="javascript:history.back();" class="lightbox" id="image-1ca60bd67c14debaf9c41d42f70a79b5">
 <img src="../at3/at3e1/fog/00_schema_reseau.png" alt="reseau" class="lightbox-image" loading="lazy">
 </a></p>
 <hr>
@@ -627,14 +627,14 @@ Configuration ordinateur/Stratégies/Paramètres du logiciel/ clique droit sur I
   </div>
 </div>
 <p>
-<a href="#image-addfcbdded91ef5b3da7a04c37549684" class="lightbox-link">
+<a href="#image-777e165e7846f0ff943101d7aed4e5c6" class="lightbox-link">
 <img src="../at3/at3e1/fog/01_ipfire.png" alt="IPFire" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-addfcbdded91ef5b3da7a04c37549684">
+<a href="javascript:history.back();" class="lightbox" id="image-777e165e7846f0ff943101d7aed4e5c6">
 <img src="../at3/at3e1/fog/01_ipfire.png" alt="IPFire" class="lightbox-image" loading="lazy">
 </a></p>
 <blockquote>
-<p>En cas de besoin, on peux entrer dans la configuration d&rsquo;IPFire à posteriori via la commande :</p>
+<p>En cas de besoin, on peut entrer dans la configuration d&rsquo;IPFire à posteriori via la commande :</p>
 </blockquote>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">setup
 </span></span></code></pre></div><hr>
@@ -698,29 +698,29 @@ Configuration ordinateur/Stratégies/Paramètres du logiciel/ clique droit sur I
 <p><strong><code>Renommer la machine si besoin (Hostname)</code></strong></p>
 <p>Récap. + validation =&gt; le script d&rsquo;install se lance&hellip;</p>
 <p>Lorque c&rsquo;est terminé, il affiche une URL qu&rsquo;il demande d&rsquo;ouvrir dans le navigateur avant de pouvoir finaliser l&rsquo;install : <code>https://ip_du_serveur/fog/management</code></p>
-<p>Une fois l&rsquo;url ouverte dans le navigateur de notre hôte (la machine qui fait tourner VMWare) on doit cliquer <code>Install/Update Database</code>.</p>
+<p>Une fois l&rsquo;url ouverte dans le navigateur de notre hôte (la machine qui fait tourner VMWare) on doit cliquer sur <code>Install/Update Database</code>.</p>
 <p>
-<a href="#image-ead7b4a0f5901a4a2c69ebe5c44644b3" class="lightbox-link">
+<a href="#image-a0da52fd29ab1b08616feafcc3ba6b35" class="lightbox-link">
 <img src="../at3/at3e1/fog/02_1_Fog_Validate_Database.png" alt="Fog_Validate_Database" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-ead7b4a0f5901a4a2c69ebe5c44644b3">
+<a href="javascript:history.back();" class="lightbox" id="image-a0da52fd29ab1b08616feafcc3ba6b35">
 <img src="../at3/at3e1/fog/02_1_Fog_Validate_Database.png" alt="Fog_Validate_Database" class="lightbox-image" loading="lazy">
 </a></p>
 <p>On peut ensuite retourner sur la VM FOG pour finaliser l&rsquo;installation avec &ldquo;Entrée&rdquo;.</p>
 <p>
-<a href="#image-f139018fc29e900d03096affa3849215" class="lightbox-link">
+<a href="#image-590f8d03a8f6946b0fdcfb61004390aa" class="lightbox-link">
 <img src="../at3/at3e1/fog/02_2_Fog_Install_End.png" alt="Fog_Install_End" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-f139018fc29e900d03096affa3849215">
+<a href="javascript:history.back();" class="lightbox" id="image-590f8d03a8f6946b0fdcfb61004390aa">
 <img src="../at3/at3e1/fog/02_2_Fog_Install_End.png" alt="Fog_Install_End" class="lightbox-image" loading="lazy">
 </a></p>
 <p>Il faut ensuite se rendre dans le navigateur à <code>https://ip_du_serveur/fog/</code></p>
 <p>&hellip;et se logger avec <strong><code>fog/password</code></strong> <em>(par défaut)</em> pour atterrir sur le Dashboard de FOG.</p>
 <p>
-<a href="#image-5e333ae575f68a5c23a1c678c75ff3ca" class="lightbox-link">
+<a href="#image-9e643e3cb7015c72ba83d9d5b9616146" class="lightbox-link">
 <img src="../at3/at3e1/fog/02_3_fog_dashboard.png" alt="Dashboard FOG" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-5e333ae575f68a5c23a1c678c75ff3ca">
+<a href="javascript:history.back();" class="lightbox" id="image-9e643e3cb7015c72ba83d9d5b9616146">
 <img src="../at3/at3e1/fog/02_3_fog_dashboard.png" alt="Dashboard FOG" class="lightbox-image" loading="lazy">
 </a></p>
 <h3 id="serveur-dhcp">Serveur DHCP</h3>
@@ -753,10 +753,10 @@ Configuration ordinateur/Stratégies/Paramètres du logiciel/ clique droit sur I
 </div>
 <p>Pour enregistrer un poste de travail dans fog, il faut le faire démarrer sur la carte réseau en PXE (Network boot dans le bios ou UEFI de la machine).</p>
 <p>
-<a href="#image-c6f7d7189767b2bcbc1defc0ba98d585" class="lightbox-link">
+<a href="#image-7c4e0eadf3a8dbd16022d3b1f7c321ab" class="lightbox-link">
 <img src="../at3/at3e1/fog/03_vmw_master_bios_pxe.png" alt="Config_Bios" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-c6f7d7189767b2bcbc1defc0ba98d585">
+<a href="javascript:history.back();" class="lightbox" id="image-7c4e0eadf3a8dbd16022d3b1f7c321ab">
 <img src="../at3/at3e1/fog/03_vmw_master_bios_pxe.png" alt="Config_Bios" class="lightbox-image" loading="lazy">
 </a></p>
 <blockquote>
@@ -767,26 +767,26 @@ Configuration ordinateur/Stratégies/Paramètres du logiciel/ clique droit sur I
 </blockquote>
 <p>Lors du boot PXE, la machine est interceptée par FOG et arrive sur un menu spécifique :</p>
 <p>
-<a href="#image-50fe88c5ff700e6ed17d7d8c2b8a8ba4" class="lightbox-link">
+<a href="#image-29e2931b9e3c6586b018b6d74862e590" class="lightbox-link">
 <img src="../at3/at3e1/fog/04_1_vwm_master_fog_menu_1.png" alt="Menu_Fog_unregistered" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-50fe88c5ff700e6ed17d7d8c2b8a8ba4">
+<a href="javascript:history.back();" class="lightbox" id="image-29e2931b9e3c6586b018b6d74862e590">
 <img src="../at3/at3e1/fog/04_1_vwm_master_fog_menu_1.png" alt="Menu_Fog_unregistered" class="lightbox-image" loading="lazy">
 </a></p>
-<p>Sélectionner <strong><code>Quick Registration and Inventory</code></strong> pour lancer la procédure d&rsquo;enregistrement de la machine qui va se dérouler sans autre intervention, et après un reboot, revenir à ce menu en indiquant le nom qui lui a été affecté par FOG, en en-têtte <em>(peut être son adresse MAC)</em> :</p>
+<p>Sélectionner <strong><code>Quick Registration and Inventory</code></strong> pour lancer la procédure d&rsquo;enregistrement de la machine qui va se dérouler sans autre intervention, et après un reboot, revenir à ce menu en indiquant le nom qui lui a été affecté par FOG, en en-tête <em>(peut être son adresse MAC)</em> :</p>
 <p>
-<a href="#image-56f4053282d8e36a8dffa12de6ea8f80" class="lightbox-link">
+<a href="#image-efb50ce85f0e858dd16f65a04de828b0" class="lightbox-link">
 <img src="../at3/at3e1/fog/04_2_vwm_master_fog_menu_2.png" alt="Menu_fog_registered" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-56f4053282d8e36a8dffa12de6ea8f80">
+<a href="javascript:history.back();" class="lightbox" id="image-efb50ce85f0e858dd16f65a04de828b0">
 <img src="../at3/at3e1/fog/04_2_vwm_master_fog_menu_2.png" alt="Menu_fog_registered" class="lightbox-image" loading="lazy">
 </a></p>
 <p>On peut vérifier dans l&rsquo;interface web de FOG que la machine est enregistrée en cliquant l&rsquo;icone <strong>Hosts</strong> dans la barre du haut puis <strong>List All Hosts</strong> dans le menu de gauche.</p>
 <p>
-<a href="#image-2d6981eeee20955707a026e0f01bcc94" class="lightbox-link">
+<a href="#image-b7ec873f05498178a08ebaada5159407" class="lightbox-link">
 <img src="../at3/at3e1/fog/05_1_fog_host_master.png" alt="Fog_hosts_master" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-2d6981eeee20955707a026e0f01bcc94">
+<a href="javascript:history.back();" class="lightbox" id="image-b7ec873f05498178a08ebaada5159407">
 <img src="../at3/at3e1/fog/05_1_fog_host_master.png" alt="Fog_hosts_master" class="lightbox-image" loading="lazy">
 </a></p>
 <p>On peut changer ses nom et description en cliquant dessus :</p>
@@ -798,10 +798,10 @@ Configuration ordinateur/Stratégies/Paramètres du logiciel/ clique droit sur I
   </div>
 </div>
 <p>
-<a href="#image-a06a814d8b14148c71c195ceb5bf99fa" class="lightbox-link">
+<a href="#image-286d9da62a1dd072357794142cf54139" class="lightbox-link">
 <img src="../at3/at3e1/fog/05_2_fog_host_master_details.png" alt="Fog_hosts_master_details" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-a06a814d8b14148c71c195ceb5bf99fa">
+<a href="javascript:history.back();" class="lightbox" id="image-286d9da62a1dd072357794142cf54139">
 <img src="../at3/at3e1/fog/05_2_fog_host_master_details.png" alt="Fog_hosts_master_details" class="lightbox-image" loading="lazy">
 </a></p>
 <h3 id="4---capture-de-limage-du-master">4 - Capture de l&rsquo;image du Master</h3>
@@ -815,52 +815,52 @@ Configuration ordinateur/Stratégies/Paramètres du logiciel/ clique droit sur I
   </div>
 </div>
 <p>
-<a href="#image-dd88007788db9a4b42e752547357852e" class="lightbox-link">
+<a href="#image-8cbbc614767e10870b83b9cee512a2b7" class="lightbox-link">
 <img src="../at3/at3e1/fog/06_1_fog_image_master_details.png" alt="Master_Image" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-dd88007788db9a4b42e752547357852e">
+<a href="javascript:history.back();" class="lightbox" id="image-8cbbc614767e10870b83b9cee512a2b7">
 <img src="../at3/at3e1/fog/06_1_fog_image_master_details.png" alt="Master_Image" class="lightbox-image" loading="lazy">
 </a></p>
 <p>Ce qui donne :</p>
 <p>
-<a href="#image-adf1b9552d849b00b34fe65818ccd94e" class="lightbox-link">
+<a href="#image-7481259ae9f61cff4f2a3d67435eafe9" class="lightbox-link">
 <img src="../at3/at3e1/fog/06_2_fog_images_master.png" alt="Imges" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-adf1b9552d849b00b34fe65818ccd94e">
+<a href="javascript:history.back();" class="lightbox" id="image-7481259ae9f61cff4f2a3d67435eafe9">
 <img src="../at3/at3e1/fog/06_2_fog_images_master.png" alt="Imges" class="lightbox-image" loading="lazy">
 </a></p>
-<p>Nous pouvons à présent créer une tâche de capture assignée à notre master : de retours sur la page <strong>Host Management</strong> cliquer sur le nom du master pour lui indiquer le conteneur où stocker l&rsquo;image à la ligne <strong>Host image</strong>. Sélectionner ensuite <strong>Basic Tasks</strong> dans les onglets juste au-dessus et enfin l&rsquo;icone <strong>Capture</strong> :</p>
+<p>Nous pouvons à présent créer une tâche de capture assignée à notre master : de retour sur la page <strong>Host Management</strong> cliquer sur le nom du master pour lui indiquer le conteneur où stocker l&rsquo;image à la ligne <strong>Host image</strong>. Sélectionner ensuite <strong>Basic Tasks</strong> dans les onglets juste au-dessus et enfin l&rsquo;icone <strong>Capture</strong> :</p>
 <p>
-<a href="#image-ca3c728dd6887d21b8c40a5c82b2489b" class="lightbox-link">
+<a href="#image-e136f9dc03cbe2f5e1b3f376508dc2ce" class="lightbox-link">
 <img src="../at3/at3e1/fog/07_1_fog_host_task.png" alt="Master_Capture" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-ca3c728dd6887d21b8c40a5c82b2489b">
+<a href="javascript:history.back();" class="lightbox" id="image-e136f9dc03cbe2f5e1b3f376508dc2ce">
 <img src="../at3/at3e1/fog/07_1_fog_host_task.png" alt="Master_Capture" class="lightbox-image" loading="lazy">
 </a></p>
 <p>Dans la fenêtre suivante, sélectionner <strong>Wake On Lan</strong> et <strong>Schedule Instant</strong>. Valider.</p>
 <p>La tâche doit apparaître dans la page Task Management acessible via l&rsquo;icone <strong>Tasks</strong> <em>(barre du haut)</em> &gt; <strong>Active Tasks</strong> <em>(menu de gauche)</em>. On peut également suivre sont avancement à cet endroit.</p>
 <p>Il suffit désormais de (re)démarrer la VM master en PXE pour obtenir le menu FOG et y choisir l&rsquo;option <strong>Capture</strong> pour démarrer la procédure automatique :</p>
 <p>
-<a href="#image-3855cfd23539a5c1ba7efd487e641efd" class="lightbox-link">
+<a href="#image-15b37ad01ae705c1f5b0aa8ba208a500" class="lightbox-link">
 <img src="../at3/at3e1/fog/07_2_master_capture.png" alt="Master_Capture_VM" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-3855cfd23539a5c1ba7efd487e641efd">
+<a href="javascript:history.back();" class="lightbox" id="image-15b37ad01ae705c1f5b0aa8ba208a500">
 <img src="../at3/at3e1/fog/07_2_master_capture.png" alt="Master_Capture_VM" class="lightbox-image" loading="lazy">
 </a></p>
 <p>Opération qu&rsquo;on peut donc aussi suivre sur l&rsquo;interface web (et donc à distance) :</p>
 <p>
-<a href="#image-1c4f73432850cbbaf9722314c400e578" class="lightbox-link">
+<a href="#image-d8b64502f4dd2fe77669181d3f013bbb" class="lightbox-link">
 <img src="../at3/at3e1/fog/07_3_fog_master_capture.png" alt="Master_Capture_Fog" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-1c4f73432850cbbaf9722314c400e578">
+<a href="javascript:history.back();" class="lightbox" id="image-d8b64502f4dd2fe77669181d3f013bbb">
 <img src="../at3/at3e1/fog/07_3_fog_master_capture.png" alt="Master_Capture_Fog" class="lightbox-image" loading="lazy">
 </a></p>
 <p>Une fois l&rsquo;opération terminée, l&rsquo;image est disponible pour déploiement&hellip;</p>
 <p>
-<a href="#image-3471cb9215682d5e44911a23ebbbfc99" class="lightbox-link">
+<a href="#image-25f952eacf49446c8e1d6e441dd98f11" class="lightbox-link">
 <img src="../at3/at3e1/fog/07_4_Master_capture_done.png" alt="Master_Capture_Done" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-3471cb9215682d5e44911a23ebbbfc99">
+<a href="javascript:history.back();" class="lightbox" id="image-25f952eacf49446c8e1d6e441dd98f11">
 <img src="../at3/at3e1/fog/07_4_Master_capture_done.png" alt="Master_Capture_Done" class="lightbox-image" loading="lazy">
 </a></p>
 <p>À ce stade, nous n&rsquo;avons plus besoin de la machine Master. On peut lui remettre son mode de boot précédent et/ou l&rsquo;éteindre.</p>
@@ -872,85 +872,85 @@ Configuration ordinateur/Stratégies/Paramètres du logiciel/ clique droit sur I
 <p>Nous créons une VM en Host Only, sans OS mais configurée pour recevoir un Windows 10 et avec au moins autant de capacité de disque dur que le master.</p>
 <p>Les machines cibles du déploiement doivent au préalable être enregistrées et inventoriées dans FOG par la même procédure que pour le Master (boot en PXE et Quick registration and Inventory).</p>
 <p>
-<a href="#image-4110266e2c66617f63799c2d2784d984" class="lightbox-link">
+<a href="#image-268d469bd0f802c88fd531c4f8aae569" class="lightbox-link">
 <img src="../at3/at3e1/fog/08_vmw_client_apres_enreg.png" alt="VMW_Client_Inventaire" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-4110266e2c66617f63799c2d2784d984">
+<a href="javascript:history.back();" class="lightbox" id="image-268d469bd0f802c88fd531c4f8aae569">
 <img src="../at3/at3e1/fog/08_vmw_client_apres_enreg.png" alt="VMW_Client_Inventaire" class="lightbox-image" loading="lazy">
 </a></p>
 <p>Une fois notre machine inventoriée, on clique sur <strong>Hosts</strong> <em>(barre du haut)</em>, <strong>List All Hosts</strong> <em>(menu de gauche)</em> puis sur notre nouvelle machine pour la renommer et lui spécifier notre image précédemment créée <em>(Host image)</em>. Enfin on clique sur <strong>Basic Tasks</strong> <em>(onglet)</em> et l&rsquo;icone <strong>Deploy</strong> puis les options <strong>Wake On Lan</strong> et <strong>Schedule Instant</strong> dans la fenêtre suivante. On valide cette tâche qui se retrouve à présent dans la liste des tâches actives <em>(comme pour la tâche de capture du master)</em>.</p>
 <p>
-<a href="#image-1783dc445623e2492817478bc7cb22f8" class="lightbox-link">
+<a href="#image-7dcbdce63c261fc63c88172a92fd3b80" class="lightbox-link">
 <img src="../at3/at3e1/fog/09_Fog_Hosts_Client.png" alt="Fog_Hosts_Client" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-1783dc445623e2492817478bc7cb22f8">
+<a href="javascript:history.back();" class="lightbox" id="image-7dcbdce63c261fc63c88172a92fd3b80">
 <img src="../at3/at3e1/fog/09_Fog_Hosts_Client.png" alt="Fog_Hosts_Client" class="lightbox-image" loading="lazy">
 </a></p>
 <p>
-<a href="#image-d657cabf6a73f2fc90431e0e74ce8cfc" class="lightbox-link">
+<a href="#image-a34bdc2271b3020a159f4466d035405a" class="lightbox-link">
 <img src="../at3/at3e1/fog/10_1_Client_Deploy_New_Task_.png" alt="Fog_Client_Task_Deploy" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-d657cabf6a73f2fc90431e0e74ce8cfc">
+<a href="javascript:history.back();" class="lightbox" id="image-a34bdc2271b3020a159f4466d035405a">
 <img src="../at3/at3e1/fog/10_1_Client_Deploy_New_Task_.png" alt="Fog_Client_Task_Deploy" class="lightbox-image" loading="lazy">
 </a></p>
 <p>
-<a href="#image-f650122ad20a087ad267e79ea5180268" class="lightbox-link">
+<a href="#image-4cf2155125080d98f161ad59ccb30cd4" class="lightbox-link">
 <img src="../at3/at3e1/fog/10_2_Client_Deploy_Task_Options.png" alt="Fog_Client_Tasks_Deploy_Options" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-f650122ad20a087ad267e79ea5180268">
+<a href="javascript:history.back();" class="lightbox" id="image-4cf2155125080d98f161ad59ccb30cd4">
 <img src="../at3/at3e1/fog/10_2_Client_Deploy_Task_Options.png" alt="Fog_Client_Tasks_Deploy_Options" class="lightbox-image" loading="lazy">
 </a></p>
 <p>
-<a href="#image-7ee0830dc9ea3ad7d4d4de36a8e3c236" class="lightbox-link">
+<a href="#image-c41b0609420fa612ca837bf96a5c20b8" class="lightbox-link">
 <img src="../at3/at3e1/fog/10_3_Client_Deploy_Task_Added.png" alt="Fog_Client_Task_added" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-7ee0830dc9ea3ad7d4d4de36a8e3c236">
+<a href="javascript:history.back();" class="lightbox" id="image-c41b0609420fa612ca837bf96a5c20b8">
 <img src="../at3/at3e1/fog/10_3_Client_Deploy_Task_Added.png" alt="Fog_Client_Task_added" class="lightbox-image" loading="lazy">
 </a></p>
 <p>
-<a href="#image-33b3c1689865f7824b4a962d7e507231" class="lightbox-link">
+<a href="#image-05689a7c1801873164262471e68a19fb" class="lightbox-link">
 <img src="../at3/at3e1/fog/10_4_Client_Active_Tasks.png" alt="fog_Client_Deploy_Active_Tasks" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-33b3c1689865f7824b4a962d7e507231">
+<a href="javascript:history.back();" class="lightbox" id="image-05689a7c1801873164262471e68a19fb">
 <img src="../at3/at3e1/fog/10_4_Client_Active_Tasks.png" alt="fog_Client_Deploy_Active_Tasks" class="lightbox-image" loading="lazy">
 </a></p>
 <p>On (re)démarre la machine cliente et le déploiement démarre automatiquement :</p>
 <p>
-<a href="#image-44f61aa87f1a3fd82b1e023510cbfaee" class="lightbox-link">
+<a href="#image-3136d3b75b4f5862221b18888c20f7c5" class="lightbox-link">
 <img src="../at3/at3e1/fog/10_5_Client_VMW_Deploy_Running.png" alt="VMW_Client_Deploy_Running" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-44f61aa87f1a3fd82b1e023510cbfaee">
+<a href="javascript:history.back();" class="lightbox" id="image-3136d3b75b4f5862221b18888c20f7c5">
 <img src="../at3/at3e1/fog/10_5_Client_VMW_Deploy_Running.png" alt="VMW_Client_Deploy_Running" class="lightbox-image" loading="lazy">
 </a></p>
 <p>
-<a href="#image-4581cf91a20c9c73b2d27770dbf6139a" class="lightbox-link">
+<a href="#image-b571cb584eaab890bad0478543679256" class="lightbox-link">
 <img src="../at3/at3e1/fog/10_6_Client_Deploy_fog_Running.png" alt="Fog_Client_Deploy_Running" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-4581cf91a20c9c73b2d27770dbf6139a">
+<a href="javascript:history.back();" class="lightbox" id="image-b571cb584eaab890bad0478543679256">
 <img src="../at3/at3e1/fog/10_6_Client_Deploy_fog_Running.png" alt="Fog_Client_Deploy_Running" class="lightbox-image" loading="lazy">
 </a></p>
 <p>** Pour déployer une machine sans avoir créé de tâche au préalable :**</p>
-<p>On (re)démarre la machine à déployer et on choisi <strong>Deploy Image</strong> dans le menu FOG pour démarrer la tâche de déploiement. Le processus demande alors un login/mot de passe qu&rsquo;on renseigne avec <code>fog/pqsszord</code> (pour fog/password, le clavier étant en disposition QWERTY à ce moment là).</p>
+<p>On (re)démarre la machine à déployer et on choisit <strong>Deploy Image</strong> dans le menu FOG pour démarrer la tâche de déploiement. Le processus demande alors un login/mot de passe qu&rsquo;on renseigne avec <code>fog/pqsszord</code> (pour fog/password, le clavier étant en disposition QWERTY à ce moment là).</p>
 <p>
-<a href="#image-fa503157df35a40c84342359ea6025be" class="lightbox-link">
+<a href="#image-6dec382002d6a616a7a5072f0697bfec" class="lightbox-link">
 <img src="../at3/at3e1/fog/11_1_Client_VMW_Menu_Deploy.png" alt="VMW_Client_Deploy_Menu" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-fa503157df35a40c84342359ea6025be">
+<a href="javascript:history.back();" class="lightbox" id="image-6dec382002d6a616a7a5072f0697bfec">
 <img src="../at3/at3e1/fog/11_1_Client_VMW_Menu_Deploy.png" alt="VMW_Client_Deploy_Menu" class="lightbox-image" loading="lazy">
 </a></p>
 <p>
-<a href="#image-1d58d165490e4ed9938d3726db9eeeb4" class="lightbox-link">
+<a href="#image-07ef42405e08b1cc50377a3c9ef04dd2" class="lightbox-link">
 <img src="../at3/at3e1/fog/11_2_Client_VMW_Deploy_Login.png" alt="VMW_Client_Deploy_login" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-1d58d165490e4ed9938d3726db9eeeb4">
+<a href="javascript:history.back();" class="lightbox" id="image-07ef42405e08b1cc50377a3c9ef04dd2">
 <img src="../at3/at3e1/fog/11_2_Client_VMW_Deploy_Login.png" alt="VMW_Client_Deploy_login" class="lightbox-image" loading="lazy">
 </a></p>
 <p>Une fois l&rsquo;opération terminée, on reboot la machine clonée pour modifier son BIOS afin qu&rsquo;elle boot sur son disque dur. Elle possède la même configuration que la master avec cependant un nom d&rsquo;hôte correspondant au nom qu&rsquo;on a spécifié dans FOG <em>(tout comme le master)</em>.</p>
 <p>
-<a href="#image-b16e49097d41a02a9105b1dd38b39240" class="lightbox-link">
+<a href="#image-92f44228c2aa9901a823e9a826611779" class="lightbox-link">
 <img src="../at3/at3e1/fog/12_Master-Client.png.png" alt="Master-Client" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-b16e49097d41a02a9105b1dd38b39240">
+<a href="javascript:history.back();" class="lightbox" id="image-92f44228c2aa9901a823e9a826611779">
 <img src="../at3/at3e1/fog/12_Master-Client.png.png" alt="Master-Client" class="lightbox-image" loading="lazy">
 </a></p>
 <hr>
@@ -964,10 +964,10 @@ Configuration ordinateur/Stratégies/Paramètres du logiciel/ clique droit sur I
 </ul>
 <p>Durant l&rsquo;installation <em>(procédure classique)</em> il faut renseigner l&rsquo;adresse IP du serveur FOG :</p>
 <p>
-<a href="#image-e4e8ac6d5ff055efd40046ddfa68d513" class="lightbox-link">
+<a href="#image-77928ae1bef41622cf2925a5a57bf265" class="lightbox-link">
 <img src="../at3/at3e1/fog/13_Install_Agent.png" alt="Install_Agent_Fog" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-e4e8ac6d5ff055efd40046ddfa68d513">
+<a href="javascript:history.back();" class="lightbox" id="image-77928ae1bef41622cf2925a5a57bf265">
 <img src="../at3/at3e1/fog/13_Install_Agent.png" alt="Install_Agent_Fog" class="lightbox-image" loading="lazy">
 </a></p>
 <p>&hellip; et sélectionner <code>HTTPS</code> si c&rsquo;est le cas.</p>
@@ -979,50 +979,50 @@ Configuration ordinateur/Stratégies/Paramètres du logiciel/ clique droit sur I
 <p>On y accède via l&rsquo;icone <strong>snapin</strong> <em>(barre du haut)</em> et on crée un nouveau via le menu de gauche <strong>Create New Snapin</strong>.</p>
 <p>Il faut au minimum lui donner un nom, un template, un fichier d&rsquo;installation + les éventuels arguments de ligne de commande pour installation silencieuse (se référer à la doc du logiciel) et valider.</p>
 <p>
-<a href="#image-318ba3ecd7353f76a91355791b9ac88b" class="lightbox-link">
+<a href="#image-534fd9dd13821c78773930bed593e994" class="lightbox-link">
 <img src="../at3/at3e1/fog/14_1_New_Snapin.png" alt="New_Snapin" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-318ba3ecd7353f76a91355791b9ac88b">
+<a href="javascript:history.back();" class="lightbox" id="image-534fd9dd13821c78773930bed593e994">
 <img src="../at3/at3e1/fog/14_1_New_Snapin.png" alt="New_Snapin" class="lightbox-image" loading="lazy">
 </a></p>
 <p>Ensuite, il faut affecter notre nouveau snapin au(x) poste(s) client(s) en cliquant  <strong>Membership</strong> dans les onglets de la page</p>
 <p>
-<a href="#image-f6806b34c70942df6765619f2f28f7e2" class="lightbox-link">
+<a href="#image-baa95b1a95611d02143adcd77e734ac9" class="lightbox-link">
 <img src="../at3/at3e1/fog/14_2_Snapin_Membership.png" alt="Snapin_Membership" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-f6806b34c70942df6765619f2f28f7e2">
+<a href="javascript:history.back();" class="lightbox" id="image-baa95b1a95611d02143adcd77e734ac9">
 <img src="../at3/at3e1/fog/14_2_Snapin_Membership.png" alt="Snapin_Membership" class="lightbox-image" loading="lazy">
 </a></p>
 <p>On le retrouve dans la liste <strong>All Snapins</strong></p>
 <p>
-<a href="#image-325061c8700dff6201a85931d9d4e76b" class="lightbox-link">
+<a href="#image-5b8c8748707e064f49edd57fb2358098" class="lightbox-link">
 <img src="../at3/at3e1/fog/14_3_All_Snapins.png" alt="All_Snapins" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-325061c8700dff6201a85931d9d4e76b">
+<a href="javascript:history.back();" class="lightbox" id="image-5b8c8748707e064f49edd57fb2358098">
 <img src="../at3/at3e1/fog/14_3_All_Snapins.png" alt="All_Snapins" class="lightbox-image" loading="lazy">
 </a></p>
 <p>De retour sur le poste client dans la gestion des hôtes, on clique sur &ldquo;Basic Tasks&rdquo; puis sur &ldquo;Advanced&rdquo;</p>
 <p>
-<a href="#image-b0c78ebf856621b7fbcbef20448a9a6e" class="lightbox-link">
+<a href="#image-682ec1a5a7101d1469aee6e53470eb4c" class="lightbox-link">
 <img src="../at3/at3e1/fog/14_4_Snapin_Host_New_Task.png" alt="Snapin_Host_New_Task" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-b0c78ebf856621b7fbcbef20448a9a6e">
+<a href="javascript:history.back();" class="lightbox" id="image-682ec1a5a7101d1469aee6e53470eb4c">
 <img src="../at3/at3e1/fog/14_4_Snapin_Host_New_Task.png" alt="Snapin_Host_New_Task" class="lightbox-image" loading="lazy">
 </a></p>
 <p>Et enfin, dans la liste, sur &ldquo;Single Snapin&rdquo; car nous n&rsquo;avons qu&rsquo;un logiciel à installer.</p>
 <p>
-<a href="#image-1bc74bc7fdf8f37249dbb12ea4978b11" class="lightbox-link">
+<a href="#image-81719b6129b08fd7b306de2f5c91318b" class="lightbox-link">
 <img src="../at3/at3e1/fog/14_5_Snapin_Host_New_Task_Config.png" alt="Snapin_Host_New_Task_Config" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-1bc74bc7fdf8f37249dbb12ea4978b11">
+<a href="javascript:history.back();" class="lightbox" id="image-81719b6129b08fd7b306de2f5c91318b">
 <img src="../at3/at3e1/fog/14_5_Snapin_Host_New_Task_Config.png" alt="Snapin_Host_New_Task_Config" class="lightbox-image" loading="lazy">
 </a></p>
 <p>Sélectionner le package à installer et valider</p>
 <p>
-<a href="#image-51161974d3c0a0dbe9865475cd64347f" class="lightbox-link">
+<a href="#image-07883aa62b62fcfab6295af4d6b77c6c" class="lightbox-link">
 <img src="../at3/at3e1/fog/14_6_Single_Snapin_Task.png" alt="Single_Snapin_Task" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-51161974d3c0a0dbe9865475cd64347f">
+<a href="javascript:history.back();" class="lightbox" id="image-07883aa62b62fcfab6295af4d6b77c6c">
 <img src="../at3/at3e1/fog/14_6_Single_Snapin_Task.png" alt="Single_Snapin_Task" class="lightbox-image" loading="lazy">
 </a></p>
 <p>La tâche apparaît dans les tâches actives</p>
@@ -1115,10 +1115,10 @@ Configuration ordinateur/Stratégies/Paramètres du logiciel/ clique droit sur I
   </div>
 </div>
 <p>
-<a href="#image-edacafe5a176d56b400a32611fcd77a7" class="lightbox-link">
+<a href="#image-22559161d569315dbae520875c2f583d" class="lightbox-link">
 <img src="../at3/at3e1/fog/15_0_outil_ms.png" alt="outils_en_ligne" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-edacafe5a176d56b400a32611fcd77a7">
+<a href="javascript:history.back();" class="lightbox" id="image-22559161d569315dbae520875c2f583d">
 <img src="../at3/at3e1/fog/15_0_outil_ms.png" alt="outils_en_ligne" class="lightbox-image" loading="lazy">
 </a></p>
 <ul>
@@ -1142,19 +1142,19 @@ Configuration ordinateur/Stratégies/Paramètres du logiciel/ clique droit sur I
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">\\192.168.13.222\partage\setup.exe /configure \\192.168.13.222\partage\InstallOffice.xml
 </span></span></code></pre></div><p>On doit obtenir ceci :</p>
 <p>
-<a href="#image-083d0f7121ba9fc9e8bdd8862da533af" class="lightbox-link">
+<a href="#image-0fc6b4673a982cc593ff1e769999cf37" class="lightbox-link">
 <img src="../at3/at3e1/fog/15_1_Dossier_ODT.png" alt="Dossier_ODT" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-083d0f7121ba9fc9e8bdd8862da533af">
+<a href="javascript:history.back();" class="lightbox" id="image-0fc6b4673a982cc593ff1e769999cf37">
 <img src="../at3/at3e1/fog/15_1_Dossier_ODT.png" alt="Dossier_ODT" class="lightbox-image" loading="lazy">
 </a></p>
 <p>On exécute ensuite le fichier <code>odt.bat</code> et on attend que le téléchargement d&rsquo;Office soit terminé (<em>Appuyer sur une touche pour continer&hellip;</em> apparaît dans le terminal).</p>
 <p>On vérifie qu&rsquo;on a bien peuplé notre dossier partagé sur le serveur FOG à l&rsquo;adresse du partage <strong><code>\\192.168.13.222\partage</code></strong> :</p>
 <p>
-<a href="#image-23bea72aca714dda9a0833a00b279388" class="lightbox-link">
+<a href="#image-1180565a317880ba6750f90243ed19ab" class="lightbox-link">
 <img src="../at3/at3e1/fog/15_2_Dossier_partage.png" alt="Dossier_partage" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-23bea72aca714dda9a0833a00b279388">
+<a href="javascript:history.back();" class="lightbox" id="image-1180565a317880ba6750f90243ed19ab">
 <img src="../at3/at3e1/fog/15_2_Dossier_partage.png" alt="Dossier_partage" class="lightbox-image" loading="lazy">
 </a></p>
 
@@ -1170,27 +1170,27 @@ Configuration ordinateur/Stratégies/Paramètres du logiciel/ clique droit sur I
 </blockquote>
 <p>On va ensuite créer notre snapin contenant le script <code>snapinSetupOffice.cmd</code> comme ceci :</p>
 <p>
-<a href="#image-80f7a2b719134c2d9a6202b6319cfab6" class="lightbox-link">
+<a href="#image-e0561b823b2f99f21d86d56b7b3248dd" class="lightbox-link">
 <img src="../at3/at3e1/fog/15_3_add_office_snapin.png" alt="add_office_snapin" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-80f7a2b719134c2d9a6202b6319cfab6">
+<a href="javascript:history.back();" class="lightbox" id="image-e0561b823b2f99f21d86d56b7b3248dd">
 <img src="../at3/at3e1/fog/15_3_add_office_snapin.png" alt="add_office_snapin" class="lightbox-image" loading="lazy">
 </a></p>
 <p>Puis l&rsquo;affecter à notre hôte cible comme un snapin simple.</p>
 <p>
-<a href="#image-23408aca59596a3f091e0a6f0ee2637b" class="lightbox-link">
+<a href="#image-fe9eee4a70e0652b36527936b04f3257" class="lightbox-link">
 <img src="../at3/at3e1/fog/15_4_Affect_Office_Snapin.png" alt="Affect_Office_Snapin" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-23408aca59596a3f091e0a6f0ee2637b">
+<a href="javascript:history.back();" class="lightbox" id="image-fe9eee4a70e0652b36527936b04f3257">
 <img src="../at3/at3e1/fog/15_4_Affect_Office_Snapin.png" alt="Affect_Office_Snapin" class="lightbox-image" loading="lazy">
 </a></p>
-<p>Et elle doit figurer dans la liste des tâches active.</p>
+<p>Et elle doit figurer dans la liste des tâches actives.</p>
 <p>Avec la configuration choisie, une barre de progression doit apparaître sur le poste client durant l&rsquo;installation d&rsquo;Office <em>(n&rsquo;a pas fonctionné lors de ce test)</em>.</p>
 <p>
-<a href="#image-7fd06f863d429949244500c4c7c8d70d" class="lightbox-link">
+<a href="#image-a892eaf3015d5d5d72ebb8a2fedcbb99" class="lightbox-link">
 <img src="../at3/at3e1/fog/15_5_Office_installed.png" alt="Office_Installed" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-7fd06f863d429949244500c4c7c8d70d">
+<a href="javascript:history.back();" class="lightbox" id="image-a892eaf3015d5d5d72ebb8a2fedcbb99">
 <img src="../at3/at3e1/fog/15_5_Office_installed.png" alt="Office_Installed" class="lightbox-image" loading="lazy">
 </a></p>
 <hr>
@@ -1201,18 +1201,18 @@ Configuration ordinateur/Stratégies/Paramètres du logiciel/ clique droit sur I
 <p>Puis <strong>Hostname Changer</strong> pour vérifier l&rsquo;état du service</p>
 <p>La case doit être cochée</p>
 <p>
-<a href="#image-a52162a7944aa04c0b5acc5fee357673" class="lightbox-link">
+<a href="#image-3527bf5036392f513f1f2aaa77f56158" class="lightbox-link">
 <img src="../at3/at3e1/fog/16_1_Hostname_Changer.png" alt="Hostname_Changer" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-a52162a7944aa04c0b5acc5fee357673">
+<a href="javascript:history.back();" class="lightbox" id="image-3527bf5036392f513f1f2aaa77f56158">
 <img src="../at3/at3e1/fog/16_1_Hostname_Changer.png" alt="Hostname_Changer" class="lightbox-image" loading="lazy">
 </a></p>
 <p>Ensuite on peut changer le nom de l&rsquo;hôte dans la page de l&rsquo;hôte à Host name.</p>
 <p>
-<a href="#image-234db4363f3952633d786fb20a55f2f0" class="lightbox-link">
+<a href="#image-4da6c25fa4bdb3b9c233e7faf7c94798" class="lightbox-link">
 <img src="../at3/at3e1/fog/16_2_Host_Name_Change.png" alt="Host_Name_Change" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-234db4363f3952633d786fb20a55f2f0">
+<a href="javascript:history.back();" class="lightbox" id="image-4da6c25fa4bdb3b9c233e7faf7c94798">
 <img src="../at3/at3e1/fog/16_2_Host_Name_Change.png" alt="Host_Name_Change" class="lightbox-image" loading="lazy">
 </a></p>
 <p>Le poste redémarrera automatiquement lors du prochain contact de l&rsquo;agent pour prendre le nom spécifié dans FOG</p>
@@ -1224,10 +1224,10 @@ Configuration ordinateur/Stratégies/Paramètres du logiciel/ clique droit sur I
   </div>
 </div>
 <p>
-<a href="#image-ac0065259dc3ca0f0e7109c4580f9fc1" class="lightbox-link">
+<a href="#image-1a82720f5ac8c83dbdc230e423633c46" class="lightbox-link">
 <img src="../at3/at3e1/fog/16_3_AD_Defaults.png" alt="AD_Defaults" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-ac0065259dc3ca0f0e7109c4580f9fc1">
+<a href="javascript:history.back();" class="lightbox" id="image-1a82720f5ac8c83dbdc230e423633c46">
 <img src="../at3/at3e1/fog/16_3_AD_Defaults.png" alt="AD_Defaults" class="lightbox-image" loading="lazy">
 </a></p>
 <hr>
@@ -1240,10 +1240,10 @@ créer un batch &ldquo;script.cmd&rdquo; qui contient :</p>
 </span></span><span class="line"><span class="cl"><span class="k">mkdir</span> c:\TestScript
 </span></span><span class="line"><span class="cl">ping 192.168.13.254 <span class="p">&gt;</span> c:\TestScript\ping_gw.txt
 </span></span></code></pre></div><p>
-<a href="#image-60fe68b2f34554c22ca91265d9213c36" class="lightbox-link">
+<a href="#image-dd19befc8b1da92a8fcfe4a52e315cf2" class="lightbox-link">
 <img src="../at3/at3e1/fog/17_Script_Snapin.png" alt="Script_Snapin" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-60fe68b2f34554c22ca91265d9213c36">
+<a href="javascript:history.back();" class="lightbox" id="image-dd19befc8b1da92a8fcfe4a52e315cf2">
 <img src="../at3/at3e1/fog/17_Script_Snapin.png" alt="Script_Snapin" class="lightbox-image" loading="lazy">
 </a></p>
 <p>Ensuite il suffira d&rsquo;affecter le snapin au poste client voulu et de planifier la tâche au niveau de l&rsquo;hôte.</p>
@@ -1259,67 +1259,67 @@ créer un batch &ldquo;script.cmd&rdquo; qui contient :</p>
 <p>Fog project intègre un système de plugin afin de proposer des fonctionnalités supplémentaires (en développement)</p>
 <p>Cliquez sur l&rsquo;icone&rsquo; de configuration</p>
 <p>
-<a href="#image-36de7f170e8d2070da5c216446654ce0" class="lightbox-link">
+<a href="#image-c664de539d91a25b56876e67bee777ab" class="lightbox-link">
 <img src="../at3/at3e1/fog/18_1.jpg" alt="18_1" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-36de7f170e8d2070da5c216446654ce0">
+<a href="javascript:history.back();" class="lightbox" id="image-c664de539d91a25b56876e67bee777ab">
 <img src="../at3/at3e1/fog/18_1.jpg" alt="18_1" class="lightbox-image" loading="lazy">
 </a></p>
 <p>Puis sur &ldquo;plugin system&rdquo; en bas de la liste</p>
 <p>
-<a href="#image-c0196e84c962d10e5b0009afa80bb580" class="lightbox-link">
+<a href="#image-40d42959b8ce85ade4445b80abc641d8" class="lightbox-link">
 <img src="../at3/at3e1/fog/18_2.jpg" alt="18_2" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-c0196e84c962d10e5b0009afa80bb580">
+<a href="javascript:history.back();" class="lightbox" id="image-40d42959b8ce85ade4445b80abc641d8">
 <img src="../at3/at3e1/fog/18_2.jpg" alt="18_2" class="lightbox-image" loading="lazy">
 </a></p>
 <p>Et enfin il faut activer le PlugIn System</p>
 <p>
-<a href="#image-5688b18e3aaf3d12233058a68dd59337" class="lightbox-link">
+<a href="#image-84b00f2892ee33dff19817562fee50a4" class="lightbox-link">
 <img src="../at3/at3e1/fog/18_3.jpg" alt="18_3" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-5688b18e3aaf3d12233058a68dd59337">
+<a href="javascript:history.back();" class="lightbox" id="image-84b00f2892ee33dff19817562fee50a4">
 <img src="../at3/at3e1/fog/18_3.jpg" alt="18_3" class="lightbox-image" loading="lazy">
 </a></p>
 <p>Un nouveau menu apparaît maintenant, cliquez dessus pour voir la liste des plugins.</p>
 <p>
-<a href="#image-3eb32ddc402b9f91d18d1d49b5ad0c08" class="lightbox-link">
+<a href="#image-000506eafa29252fc1c3b479437cd09d" class="lightbox-link">
 <img src="../at3/at3e1/fog/18_4.jpg" alt="18_4" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-3eb32ddc402b9f91d18d1d49b5ad0c08">
+<a href="javascript:history.back();" class="lightbox" id="image-000506eafa29252fc1c3b479437cd09d">
 <img src="../at3/at3e1/fog/18_4.jpg" alt="18_4" class="lightbox-image" loading="lazy">
 </a></p>
 <p>Il faut commencer par activer le plugin en cliquant dessus.</p>
 <p>
-<a href="#image-1a146fb9817bcf56588eb77a5c2cb6aa" class="lightbox-link">
+<a href="#image-30f29486c2cd374a5418679f51b2b3d8" class="lightbox-link">
 <img src="../at3/at3e1/fog/18_5.jpg" alt="18_5" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-1a146fb9817bcf56588eb77a5c2cb6aa">
+<a href="javascript:history.back();" class="lightbox" id="image-30f29486c2cd374a5418679f51b2b3d8">
 <img src="../at3/at3e1/fog/18_5.jpg" alt="18_5" class="lightbox-image" loading="lazy">
 </a></p>
 <p>cliquez sur le plugin choisi, ici c&rsquo;est Pushbullet un service qui permet de recevoir des notifications des tâches faites sous FOG</p>
 <p>Cliquez sur le menu &ldquo;install plugins&rdquo; et enfin sur l&rsquo;icone de &ldquo;Pushbullet&rdquo;</p>
 <p>
-<a href="#image-5ec97d9b304f4f493e11f39e1ee00ee8" class="lightbox-link">
+<a href="#image-eb69788b50c59f9b8f435728634d3bf1" class="lightbox-link">
 <img src="../at3/at3e1/fog/18_6.jpg" alt="18_6" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-5ec97d9b304f4f493e11f39e1ee00ee8">
+<a href="javascript:history.back();" class="lightbox" id="image-eb69788b50c59f9b8f435728634d3bf1">
 <img src="../at3/at3e1/fog/18_6.jpg" alt="18_6" class="lightbox-image" loading="lazy">
 </a></p>
 <p>Puis sur le menu &ldquo;installer Plugins&rdquo;</p>
 <p>
-<a href="#image-4f0bd163cce1f7e9ba33c278af75a00d" class="lightbox-link">
+<a href="#image-0c22f4485f8a06f61eb8c82b8c80af55" class="lightbox-link">
 <img src="../at3/at3e1/fog/18_7.jpg" alt="18_7" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-4f0bd163cce1f7e9ba33c278af75a00d">
+<a href="javascript:history.back();" class="lightbox" id="image-0c22f4485f8a06f61eb8c82b8c80af55">
 <img src="../at3/at3e1/fog/18_7.jpg" alt="18_7" class="lightbox-image" loading="lazy">
 </a></p>
 <p>Le plugin est installé et apparaît dans le menu</p>
 <p>
-<a href="#image-9595e8183d6e8b1952fe7aaec7cf61eb" class="lightbox-link">
+<a href="#image-bb07e7f10f954b60321cb1a055123924" class="lightbox-link">
 <img src="../at3/at3e1/fog/18_8.jpg" alt="18_8" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-9595e8183d6e8b1952fe7aaec7cf61eb">
+<a href="javascript:history.back();" class="lightbox" id="image-bb07e7f10f954b60321cb1a055123924">
 <img src="../at3/at3e1/fog/18_8.jpg" alt="18_8" class="lightbox-image" loading="lazy">
 </a></p>
 <p>Il faut avoir un compte Pushbullet :</p>
@@ -1330,10 +1330,10 @@ créer un batch &ldquo;script.cmd&rdquo; qui contient :</p>
 <p>Installer FOG sur une autre VM debian en choisissant <strong>[S] Stockage</strong> à la 2ème question de l&rsquo;installeur.
 Outre le serveur FOG principal il faudra spécifier les nom et mdp de l&rsquo;utilisateur MySQL qui est renseigné dans l&rsquo;interface web du serveur sous l&rsquo;icone <strong><code>FOG configuration</code></strong> <em>(barre du haut)</em> &gt; <strong><code>FOG Settings</code></strong> <em>(menu de gauche)</em> &gt; section <strong><code>FOG Storage Nodes</code></strong></p>
 <p>
-<a href="#image-38c2dd2d7117db2336a26d878f5347c5" class="lightbox-link">
+<a href="#image-78fb3371417f339ac1acaeb8e6fd7f78" class="lightbox-link">
 <img src="../at3/at3e1/fog/19_Database_user_Infos.png" alt="Database_User_Infos" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-38c2dd2d7117db2336a26d878f5347c5">
+<a href="javascript:history.back();" class="lightbox" id="image-78fb3371417f339ac1acaeb8e6fd7f78">
 <img src="../at3/at3e1/fog/19_Database_user_Infos.png" alt="Database_User_Infos" class="lightbox-image" loading="lazy">
 </a></p>
 
@@ -1389,7 +1389,7 @@ Outre le serveur FOG principal il faudra spécifier les nom et mdp de l&rsquo;ut
 </li>
 <li>Dans le menu de CloneZilla qui s&rsquo;affiche, choisir <code>TAUX - Direct Restore HP Universal</code>
 <ul>
-<li>Sur certaine machine (les plus récentes) une demande de confirmation apparaît après environ 1 minute =&gt; [Entrée]</li>
+<li>Sur certaines machines (les plus récentes) une demande de confirmation apparaît après environ 1 minute =&gt; [Entrée]</li>
 </ul>
 </li>
 </ul>
@@ -1491,20 +1491,20 @@ Outre le serveur FOG principal il faudra spécifier les nom et mdp de l&rsquo;ut
 <h3 id="1-simple-ping">1. Simple ping</h3>
 <p>Simple script batch pour un outil de ping qui m&rsquo;a permis d&rsquo;expérimenter le rendu de couleur.</p>
 <p>
-<a href="#image-10798e371789e0561f48e90d02d5230a" class="lightbox-link">
+<a href="#image-48ea46bebfe70664c28bf541f922bd3e" class="lightbox-link">
 <img src="../at3/at3e2/batch/myping_bat.png" alt="myping.bat" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-10798e371789e0561f48e90d02d5230a">
+<a href="javascript:history.back();" class="lightbox" id="image-48ea46bebfe70664c28bf541f922bd3e">
 <img src="../at3/at3e2/batch/myping_bat.png" alt="myping.bat" class="lightbox-image" loading="lazy">
 </a></p>
 <hr>
 <h3 id="2-connexion-ssh">2. Connexion ssh</h3>
 <p>Un script offrant un menu permettant de choisir parmi différentes connexions ssh récurentes via cmd ou putty.</p>
 <p>
-<a href="#image-047b85f474709d8d77468f7d799232bd" class="lightbox-link">
+<a href="#image-ff09616ea2da5e3d8ec5ab350d59dfed" class="lightbox-link">
 <img src="../at3/at3e2/batch/cssh_bat.png" alt="cssh.bat" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-047b85f474709d8d77468f7d799232bd">
+<a href="javascript:history.back();" class="lightbox" id="image-ff09616ea2da5e3d8ec5ab350d59dfed">
 <img src="../at3/at3e2/batch/cssh_bat.png" alt="cssh.bat" class="lightbox-image" loading="lazy">
 </a></p>
 <hr>
@@ -1636,12 +1636,12 @@ Outre le serveur FOG principal il faudra spécifier les nom et mdp de l&rsquo;ut
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span></code></pre></div><hr>
 <h3 id="3-automatisation-du-renouvellement-dun-certificat-lets-encrypt-tous-les-3-mois">3. Automatisation du renouvellement d&rsquo;un certificat Let&rsquo;s Encrypt tous les 3 mois</h3>
-<p><em><code>certbot</code> doit être installé sur la machine et un certificat doit être configuré sur son nom de domain.</em></p>
+<p><em><code>certbot</code> doit être installé sur la machine et un certificat doit être configuré sur son nom de domaine.</em></p>
 <p>L&rsquo;opération s&rsquo;effectue uniquement via crontab</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">crontab -e
 </span></span></code></pre></div><p>on ajoute :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="m">0</span> <span class="m">0</span> <span class="m">1</span> */3 * certbot renew --apache --domain oduhamel.oliduha.fr -n
-</span></span></code></pre></div><p><em>La commande sera éxectutée tous les 3 mois, le 1er jour du mois</em></p>
+</span></span></code></pre></div><p><em>La commande sera éxecutée tous les 3 mois, le 1er jour du mois</em></p>
 <hr>
 
             <footer class="footline">
@@ -2038,7 +2038,7 @@ github
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">show mac address-table address xxxx.xxxx.xxxx
 </span></span></code></pre></div><ul>
 <li>Si la réponse indique que l&rsquo;adresse MAC a été trouvée sur un port Gi0/x, cela signifie que la machine est connectée à un autre switch (lien inter-switch).</li>
-<li>Si la réponse indique un port du type Fa0/x, nous somme sur le bon switch et nous savons donc sur quel port.</li>
+<li>Si la réponse indique un port du type Fa0/x, nous sommes sur le bon switch et nous savons donc sur quel port.</li>
 <li>Si la commande ne trouve pas cette adresse MAC, c&rsquo;est que la prise Ethernet n&rsquo;est pas brassée. Il faut alors :
 <ol>
 <li>Relever le numéro de la prise réseau du poste</li>
@@ -2067,10 +2067,10 @@ github
 </ul>
 </li>
 </ul>
-<p>En effet, le TAD structurel mis en place chez Armatis consiste en une alternance de 2 jour à domicile et 3 jours sur site. Les téléconseillé concerné se voient donc attribués une UC qu&rsquo;ils emmènent chez eux et rapportent avec eux lorsqu&rsquo;ils travail sur site. Des postes sont donc aménagés spécifiquement avec une sécurité réseau permettant d&rsquo;accepter différentes machines (contrairement à une poste de travail fixe).</p>
+<p>En effet, le TAD structurel mis en place chez Armatis consiste en une alternance de 2 jours à domicile et 3 jours sur site. Les téléconseillers concernés se voient donc attribuée une UC qu&rsquo;ils emmènent chez eux et rapportent avec eux lorsqu&rsquo;ils travaillent sur site. Des postes sont donc aménagés spécifiquement avec une sécurité réseau permettant d&rsquo;accepter différentes machines (contrairement à un poste de travail fixe).</p>
 <p>On va reconfigurer tous les ports du switch durant la manipulation. On sait déjà quels ports correspondent à quels cas :</p>
 <ol>
-<li>Pour accéder a switch, il faut préalablement se connecter sur un poste en admin et créer une règle temporaire de contournement du pare-feu autorisant tous les ports en sortie.</li>
+<li>Pour accéder au switch, il faut préalablement se connecter sur un poste en admin et créer une règle temporaire de contournement du pare-feu autorisant tous les ports en sortie.</li>
 <li>On accède ensuite au switch via Putty et en utilisant le CLI Cisco</li>
 <li>On vérifie l&rsquo;état des interfaces : <code>sh int status</code></li>
 <li>Puis l&rsquo;état des vlan : <code>sh vlan</code></li>
@@ -2157,10 +2157,10 @@ github
 <hr>
 <p><em>TP Cefim terminé avec succès :</em></p>
 <p>
-<a href="#image-c2e31e02185f11817b52b16df57acf65" class="lightbox-link">
+<a href="#image-479b795d717a51b4aabd78b97c81a72a" class="lightbox-link">
 <img src="../at3/at3e4/zabbix/final_zabbix_webhook_alert.png" alt="zabbix webhook alerte" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-c2e31e02185f11817b52b16df57acf65">
+<a href="javascript:history.back();" class="lightbox" id="image-479b795d717a51b4aabd78b97c81a72a">
 <img src="../at3/at3e4/zabbix/final_zabbix_webhook_alert.png" alt="zabbix webhook alerte" class="lightbox-image" loading="lazy">
 </a></p>
 <hr>
@@ -2226,27 +2226,27 @@ github
 </li>
 </ul>
 <p>
-<a href="#image-c95a16b15560b35ed507bc74f23c07ec" class="lightbox-link">
+<a href="#image-06af3319ba9c68377dc37e8fb9bac76d" class="lightbox-link">
 <img src="../at3/at3e5/aws/01_AWS_instance.png" alt="AWS_instance" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-c95a16b15560b35ed507bc74f23c07ec">
+<a href="javascript:history.back();" class="lightbox" id="image-06af3319ba9c68377dc37e8fb9bac76d">
 <img src="../at3/at3e5/aws/01_AWS_instance.png" alt="AWS_instance" class="lightbox-image" loading="lazy">
 </a></p>
 <p>
-<a href="#image-8714ee042a572c94a18864a571ceea25" class="lightbox-link">
+<a href="#image-05b09709c0e510811c71a8c7c5456025" class="lightbox-link">
 <img src="../at3/at3e5/aws/01_AWS_instance_reseau.png" alt="AWS_instance_reseau" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-8714ee042a572c94a18864a571ceea25">
+<a href="javascript:history.back();" class="lightbox" id="image-05b09709c0e510811c71a8c7c5456025">
 <img src="../at3/at3e5/aws/01_AWS_instance_reseau.png" alt="AWS_instance_reseau" class="lightbox-image" loading="lazy">
 </a></p>
 <ul>
 <li>configuration pare-feu AWS pour les ports nécessaires</li>
 </ul>
 <p>
-<a href="#image-1542bd991dda1cf34c3453d82a2686e1" class="lightbox-link">
+<a href="#image-24d69a168d735fc102cbe0074a8ff921" class="lightbox-link">
 <img src="../at3/at3e5/aws/01_AWS_instance_secu.png" alt="AWS_instance_secu" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-1542bd991dda1cf34c3453d82a2686e1">
+<a href="javascript:history.back();" class="lightbox" id="image-24d69a168d735fc102cbe0074a8ff921">
 <img src="../at3/at3e5/aws/01_AWS_instance_secu.png" alt="AWS_instance_secu" class="lightbox-image" loading="lazy">
 </a></p>
 <ul>
@@ -2268,20 +2268,20 @@ github
 </span></span></code></pre></div><h2 id="3---upgrade-debian-10--11">3 - <strong>Upgrade debian 10 =&gt; 11</strong></h2>
 <p><a href="https://www.cyberciti.biz/faq/update-upgrade-debian-10-to-debian-11-bullseye/" target="_blank">https://www.cyberciti.biz/faq/update-upgrade-debian-10-to-debian-11-bullseye/</a></p>
 <p>
-<a href="#image-531c9445d3ca2215f2c080e8c05743c5" class="lightbox-link">
+<a href="#image-5721508385baf8083a0398b755f86c09" class="lightbox-link">
 <img src="../at3/at3e5/aws/03_upgrade_debian_10_11.png" alt="upgrade_debian_10_11" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-531c9445d3ca2215f2c080e8c05743c5">
+<a href="javascript:history.back();" class="lightbox" id="image-5721508385baf8083a0398b755f86c09">
 <img src="../at3/at3e5/aws/03_upgrade_debian_10_11.png" alt="upgrade_debian_10_11" class="lightbox-image" loading="lazy">
 </a></p>
 <h2 id="4---iptables--iptables-persistent">4 - <strong>Iptables + iptables-persistent</strong></h2>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">apt install iptables 
 </span></span></code></pre></div><p>Ajout des règles nécessaires dans iptables</p>
 <p>
-<a href="#image-1100c5e5fedb1f28aac648b1276f9292" class="lightbox-link">
+<a href="#image-255ca8a6787f65b4accbc22e0c3672eb" class="lightbox-link">
 <img src="../at3/at3e5/aws/04_iptables_conf.png" alt="Iptables_conf" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-1100c5e5fedb1f28aac648b1276f9292">
+<a href="javascript:history.back();" class="lightbox" id="image-255ca8a6787f65b4accbc22e0c3672eb">
 <img src="../at3/at3e5/aws/04_iptables_conf.png" alt="Iptables_conf" class="lightbox-image" loading="lazy">
 </a></p>
 <p>puis :</p>
@@ -2295,10 +2295,10 @@ github
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">iptables-save &gt; /etc/iptables/rules.v4
 </span></span></code></pre></div><p><em>Nous travaillerons essentiellement en IPv4.</em></p>
 <p>
-<a href="#image-800abb849ce9f251057262dc99fd015d" class="lightbox-link">
+<a href="#image-263abe1b60d309ebcb7fbb033a1678b4" class="lightbox-link">
 <img src="../at3/at3e5/aws/04_iptables_save.png" alt="Iptables_save" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-800abb849ce9f251057262dc99fd015d">
+<a href="javascript:history.back();" class="lightbox" id="image-263abe1b60d309ebcb7fbb033a1678b4">
 <img src="../at3/at3e5/aws/04_iptables_save.png" alt="Iptables_save" class="lightbox-image" loading="lazy">
 </a></p>
 <h2 id="5---apache">5 - <strong>Apache</strong></h2>
@@ -2310,14 +2310,14 @@ github
 </span></span><span class="line"><span class="cl">service apache2 restart
 </span></span></code></pre></div><h2 id="6---certificat-lets-encrypt">6 - <strong>Certificat Let&rsquo;s Encrypt</strong></h2>
 <p><strong>Créer un certificat debian pour apache</strong> avec <a href="https://certbot.eff.org/" target="_blank">https://certbot.eff.org/</a></p>
-<p>Une fois le certificat crée, on retrouve ses fichiers dans <code>/etc/letsencrypt/live/oduhamel.oliduha.fr/</code></p>
+<p>Une fois le certificat créé, on retrouve ses fichiers dans <code>/etc/letsencrypt/live/oduhamel.oliduha.fr/</code></p>
 <p>Il est aussi référencé dans le fichier .conf du site default-ssl d&rsquo;apache</p>
 <p>On regroupe les 2 configurations par défaut d&rsquo;apache dans une seule</p>
 <p>
-<a href="#image-c23d9a704853b92e74dba49ac5feee76" class="lightbox-link">
+<a href="#image-96307f801816620d122aff62163d2846" class="lightbox-link">
 <img src="../at3/at3e5/aws/05_apache_sites.png" alt="Apache_sites" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-c23d9a704853b92e74dba49ac5feee76">
+<a href="javascript:history.back();" class="lightbox" id="image-96307f801816620d122aff62163d2846">
 <img src="../at3/at3e5/aws/05_apache_sites.png" alt="Apache_sites" class="lightbox-image" loading="lazy">
 </a></p>
 <p>et on redémarre apache2</p>
@@ -2348,10 +2348,10 @@ github
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">FLUSH</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">quit</span><span class="w">
 </span></span></span></code></pre></div><p>
-<a href="#image-949474e9c9c8880390f497449ffa2838" class="lightbox-link">
+<a href="#image-9f5e5da323b98268c4aeb9e788407107" class="lightbox-link">
 <img src="../at3/at3e5/aws/07_mariadb.png" alt="mariadb" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-949474e9c9c8880390f497449ffa2838">
+<a href="javascript:history.back();" class="lightbox" id="image-9f5e5da323b98268c4aeb9e788407107">
 <img src="../at3/at3e5/aws/07_mariadb.png" alt="mariadb" class="lightbox-image" loading="lazy">
 </a></p>
 <h2 id="8---php-8">8 - <strong>Php 8</strong></h2>
@@ -2361,7 +2361,7 @@ github
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -o /etc/apt/trusted.gpg.d/sury-php8.gpg https://packages.sury.org/php/apt.gpg
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">apt update
-</span></span></code></pre></div><p>Installation de php et les bibliothèques nécéssaires :</p>
+</span></span></code></pre></div><p>Installation de php et des bibliothèques nécéssaires :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">apt install -y php php-curl php-cli php-mysql php-gd php-common php-xml php-json php-intl php-pear php-imagick php-dev php-common php-mbstring php-zip php-soap php-bz2 php-bcmath php-gmp php-apcu
 </span></span></code></pre></div><p>puis :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">apt install -y libmagickcore-dev
@@ -2402,10 +2402,10 @@ opcache.revalidate_freq = 1</p>
 <p>puis</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chown -R www-data:www-data nextcloud
 </span></span></code></pre></div><p>
-<a href="#image-31d357d763ebc971e9578b5ee4c7db30" class="lightbox-link">
+<a href="#image-1f8b15a0f20de9a0fceb61f5e60da92b" class="lightbox-link">
 <img src="../at3/at3e5/aws/10_nextcloud_folder.png" alt="Nextcloud_folder" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-31d357d763ebc971e9578b5ee4c7db30">
+<a href="javascript:history.back();" class="lightbox" id="image-1f8b15a0f20de9a0fceb61f5e60da92b">
 <img src="../at3/at3e5/aws/10_nextcloud_folder.png" alt="Nextcloud_folder" class="lightbox-image" loading="lazy">
 </a></p>
 <p>configuration et activation du site apache</p>
@@ -2413,10 +2413,10 @@ opcache.revalidate_freq = 1</p>
 </span></span><span class="line"><span class="cl">cp site.conf nextcloud.conf
 </span></span><span class="line"><span class="cl">nano nextcloud.conf
 </span></span></code></pre></div><p>
-<a href="#image-4dcbe2ce7aa7330b62107e740d19c80c" class="lightbox-link">
+<a href="#image-381bd729637ebec6eed668d31c330c52" class="lightbox-link">
 <img src="../at3/at3e5/aws/10_nextcloud.conf.png" alt="Nextcloud.conf" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-4dcbe2ce7aa7330b62107e740d19c80c">
+<a href="javascript:history.back();" class="lightbox" id="image-381bd729637ebec6eed668d31c330c52">
 <img src="../at3/at3e5/aws/10_nextcloud.conf.png" alt="Nextcloud.conf" class="lightbox-image" loading="lazy">
 </a></p>
 <p>désactiver site.conf et activer nextcloud.conf</p>
@@ -2438,10 +2438,10 @@ Si demandé, le dossier des données se trouve dans</p>
 <p>plus bas, indiquer l&rsquo;utilisateur <code>nextclouduser</code> créé précedemment dans mariadb, le PW associé et <code>nextcloud_db</code> pour la BDD ainsi que &rsquo;localhost'</p>
 <p>La page renseignée et validée, on se log et on arrive sur l&rsquo;interface de Nextcloud :</p>
 <p>
-<a href="#image-838d02017e0c04f04bc0712f5775b0d0" class="lightbox-link">
+<a href="#image-748361f361f734368b3bce946b8cedf4" class="lightbox-link">
 <img src="../at3/at3e5/aws/10_Nextcloud.png" alt="Nextcloud" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-838d02017e0c04f04bc0712f5775b0d0">
+<a href="javascript:history.back();" class="lightbox" id="image-748361f361f734368b3bce946b8cedf4">
 <img src="../at3/at3e5/aws/10_Nextcloud.png" alt="Nextcloud" class="lightbox-image" loading="lazy">
 </a></p>
 <p>Parcourir les options de configurations pour régler plus finement la webapp</p>
@@ -2449,7 +2449,7 @@ Si demandé, le dossier des données se trouve dans</p>
 <p>Installer zip et créer un dossier pour stocker les sauvegardes</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">apt install zip
 </span></span><span class="line"><span class="cl">mkdir /root/backup
-</span></span></code></pre></div><p>On crée un script bash dans le dossier /root/ pour automatiser la sauveagarde des fichiers et de la BDD de Nextcloud et on lui donne les droits d&rsquo;exécution</p>
+</span></span></code></pre></div><p>On crée un script bash dans le dossier /root/ pour automatiser la sauvegarde des fichiers et de la BDD de Nextcloud et on lui donne les droits d&rsquo;exécution</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> root
 </span></span><span class="line"><span class="cl">touch backup.sh
 </span></span><span class="line"><span class="cl">chmod +x backup.sh
@@ -2471,10 +2471,10 @@ Si demandé, le dossier des données se trouve dans</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="m">0</span> <span class="m">23</span> * * <span class="m">5</span> /root/backup.sh
 </span></span></code></pre></div><h2 id="12---fail2ban">12 - <strong>Fail2ban</strong></h2>
 <p>
-<a href="#image-3d46b0fc6a731f568d6076b9c9c5877e" class="lightbox-link">
+<a href="#image-ba30f1f630230bd4be9229dffc2c2834" class="lightbox-link">
 <img src="../at3/at3e5/aws/12_fail2ban.png" alt="fail2ban" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-3d46b0fc6a731f568d6076b9c9c5877e">
+<a href="javascript:history.back();" class="lightbox" id="image-ba30f1f630230bd4be9229dffc2c2834">
 <img src="../at3/at3e5/aws/12_fail2ban.png" alt="fail2ban" class="lightbox-image" loading="lazy">
 </a></p>
 <hr>
@@ -2545,10 +2545,10 @@ Si demandé, le dossier des données se trouve dans</p>
 </ul>
 <p>Feedly sur mon smartphone Android
 
-<a href="#image-927e7e87f00e08927e57a54ba10baf46" class="lightbox-link">
+<a href="#image-aeef901a837a521915cc79aa7139bfa4" class="lightbox-link">
 <img src="../at3/at3e6/feedly/feedly_android.jpg" alt="Feedly Android" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-927e7e87f00e08927e57a54ba10baf46">
+<a href="javascript:history.back();" class="lightbox" id="image-aeef901a837a521915cc79aa7139bfa4">
 <img src="../at3/at3e6/feedly/feedly_android.jpg" alt="Feedly Android" class="lightbox-image" loading="lazy">
 </a></p>
 <hr>

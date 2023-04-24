@@ -35,7 +35,7 @@ Avec VMWare :
     - Rôle WDS
 {{% /notice %}}
 
-### Installation des rôle
+### Installation des rôles
 
 Avant d'installer le moindre rôle, on s'assure de paramétrer le nom de la machine et sa carte réseau en IP fixe (192.168.13.250/24 ici) et on la reboot.
 
@@ -82,7 +82,7 @@ Il faut ajouter une image d'un Windows qui servira de modèle pour nos futures d
 ![Image_boot_ajoutée](01_3_Image_Boot.png)
 
 {{% notice note %}}
-Pour une machine physique, il est possible que l’image de démarrage ne se charge pas du à une erreur de pilote, nous verrons plus loin comment ajouter des drivers aux services WDS et comment les intégrés aux images de démarrage et de capture.
+Pour une machine physique, il est possible que l’image de démarrage ne se charge pas du à une erreur de pilote, nous verrons plus loin comment ajouter des drivers aux services WDS et comment les intégrer aux images de démarrage et de capture.
 {{% /notice %}}
 
 ---
@@ -150,7 +150,7 @@ Ajouter le paramètre WindowsDeploymentServices dans amd64_Microsoft-Windows-She
 
 **Mot de passe de l’administrateur local**
 
-Ajouter les paramètres UserAccounts qui se trouve dans amd64_Microsoft-Windows-Shell-Setup et configurer les propriétés suivantes :
+Ajouter les paramètres UserAccounts qui se trouvent dans amd64_Microsoft-Windows-Shell-Setup et configurer les propriétés suivantes :
 
 - AdministratorPassword / Value : mot de passe
 
@@ -378,7 +378,7 @@ L'Assistant de Capture d'image des services de déploiement Windows affiche une 
         - Nom d'utilisateur : **administrateur@wds.local**
         - Mot de passe : Le mote de passe de l'administrateur du serveur
         - `OK`
-    - Si la connexion réussit, les groupes d'images du serveur sont chargées dans la liste déroulante : choisir celle souhaitée.
+    - Si la connexion réussit, les groupes d'images du serveur sont chargés dans la liste déroulante : choisir celle souhaitée.
     - Cliquer `Suivant >`
 
 - 3 - La capture de l'image démarre

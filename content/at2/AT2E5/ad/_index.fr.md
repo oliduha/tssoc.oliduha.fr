@@ -174,7 +174,7 @@ Sur un contrôleur de domaine, lorsque le domaine est crée, la notion d'Admin l
 *Une fois installé, voilà quelques checks et réglages à faire:*
 
 - Carte Réseau: Vérifier les paramêtres de carte. Mettre la nôtre en DNS primaire (192.168.20.51) et en DNS secondaire celle du contrôleur principal (192.168.20.201).
-- Vérifier dans l'AD, que tous les domaines controleurs secondaires sont bien présents.  
+- Vérifier dans l'AD, que tous les domain controllers secondaires sont bien présents.  
 - DNS: Vérifier qu'on a bien récuperé om.lan, om.fr et la zone reverse. Supprimer les records inutiles.
 - Créer un alias ldapjbf qui pointe sur notre serveur secondaire sur om.lan
 - Créer un host A ldapjbf qui pointe sur notre serveur secondaire sur om.fr
@@ -242,7 +242,7 @@ Clique-droit Propriétés sur l'user :
 
 ![](010-annuaire-AD.png)
 
-*Tout ce dont on parle n'est valable que si l'entreprise ne peut pas utiliser Teams ou Sharepoint*
+*Tout ce dont on parle n'est valable que si l'entreprise n'utilise pas Teams ou Sharepoint*
 
 **PC Portables ou Fixes**
 

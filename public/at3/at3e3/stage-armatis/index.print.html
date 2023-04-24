@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="Docs formation Cefim TSSR">
+    <meta name="author" content="Olivier Duhamel">
+    <title>Stage Armatis - TSSOC</title>
+    <link href="https://www.tssoc.oliduha.fr/at3/at3e3/stage-armatis/index.html" rel="canonical" type="text/html" title="Stage Armatis - TSSOC">
+    <link href="../../../at3/at3e3/stage-armatis/index.xml" rel="alternate" type="application/rss+xml" title="Stage Armatis - TSSOC">
+    <link href="../../../images/logo.svg" rel="icon" type="image/svg+xml">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="../../../css/fontawesome-all.min.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fontawesome-all.min.css" rel="stylesheet"></noscript>
+    <link href="../../../css/nucleus.css" rel="stylesheet">
+    <link href="../../../css/auto-complete.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/auto-complete.css" rel="stylesheet"></noscript>
+    <link href="../../../css/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="../../../css/fonts.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fonts.css" rel="stylesheet"></noscript>
+    <link href="../../../css/theme.css" rel="stylesheet">
+    <link href="../../../css/theme-auto.css" rel="stylesheet" id="variant-style">
+    <link href="../../../css/variant.css" rel="stylesheet">
+    <link href="../../../css/print.css" rel="stylesheet" media="print">
+    <link href="../../../css/format-print.css" rel="stylesheet">
+    <link href="../../../css/ie.css" rel="stylesheet">
+    <script src="../../../js/url.js"></script>
+    <script src="../../../js/variant.js"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      window.index_js_url="../../../index.search.js";
+      var root_url="../../../";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copier dans le presse-papiers';
+      window.T_Copied_to_clipboard = 'Copié dans le presse-papiers !';
+      window.T_Copy_link_to_clipboard = 'Copier le lien dans le presse-papiers';
+      window.T_Link_copied_to_clipboard = 'Lien copié dans le presse-papiers !';
+      window.T_No_results_found = 'Aucun résultat trouvé pour \u0022{0}\u0022';
+      window.T_N_results_found = '{1} résultats trouvés pour \u0022{0}\u0022';
+      // some further base stuff
+      var baseUriFull='https:\/\/www.tssoc.oliduha.fr/';
+      window.variants && variants.init( [ 'auto', 'relearn-bright', 'relearn-light', 'relearn-dark', 'learn', 'neon', 'blue', 'green', 'red' ] );
+    </script>
+    <style>
+      #body img.bg-white {
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="../../../at3/at3e3/stage-armatis/index.html">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../index.html"><span itemprop="name">TSSOC</span></a><meta itemprop="position" content="1"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../at3/index.html"><span itemprop="name">Maintenir et exploiter une infrastructure distribuée et contribuer à sa sécurisation</span></a><meta itemprop="position" content="2"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../at3/at3e3/index.html"><span itemprop="name">Maintenir et sécuriser les accès réseaux distants</span></a><meta itemprop="position" content="3"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Stage Armatis</span><meta itemprop="position" content="4"></li>
+            </ol>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable chapter narrow" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="chapter">
+<div class="article-subheading">Exemple 1</div>
+<h1 id="stage-armatis">Stage Armatis</h1>
+
+<h2 id="sécurisation-du-réseau-armatis-sur-un-plateau-edf">Sécurisation du réseau Armatis sur un plateau EDF</h2>
+<p>Lors de la mise en place d&rsquo;un poste de travail, le brassage du poste n&rsquo;est pas toujours de fait. Si le poste n&rsquo;a pas de connexion réseau, il faut procéder à divers vérifications :</p>
+<p>On connecte un pc portable dont on connaît l&rsquo;adresse MAC au cable Ethernet du poste à vérifier, puis on se connecte en admin à un autre poste et via Putty et le CLI Cisco on recherche à quel port de quel switch le poste est connecté.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">show mac address-table address xxxx.xxxx.xxxx
+</span></span></code></pre></div><ul>
+<li>Si la réponse indique que l&rsquo;adresse MAC a été trouvée sur un port Gi0/x, cela signifie que la machine est connectée à un autre switch (lien inter-switch).</li>
+<li>Si la réponse indique un port du type Fa0/x, nous somme sur le bon switch et nous savons donc sur quel port.</li>
+<li>Si la commande ne trouve pas cette adresse MAC, c&rsquo;est que la prise Ethernet n&rsquo;est pas brassée. Il faut alors :
+<ol>
+<li>Relever le numéro de la prise réseau du poste</li>
+<li>Aller en salle blanche contrôler le brassage en suivant le cable correspondant au numéro de prise relevé vers le switch</li>
+<li>Si aucun cable ne sort du numéro de prise en salle blanche, on va chercher à connecter le poste à une autre prise disponible proche du poste de travail (certains switchs sont saturés).</li>
+<li>alternativement, si au moins un port de switch est libre, on pourra tirer un nouveau cable pour faire la liaison.</li>
+<li>Relever le port du switch connecté</li>
+<li>Depuis un poste en admin, configurer le port du switch concerné, l&rsquo;activer si besoin et effectuer les réglages de sécurisation (voir ci-après)</li>
+</ol>
+</li>
+</ul>
+<hr>
+<p>La sécurisation réseau consiste à limiter le nombre d&rsquo;adresses Mac différentes qu&rsquo;il est possible de connecter sur chaque ports du switch (maximum) et une fois qu&rsquo;une machine est connectée au switch, elle n&rsquo;est plus autorisée à utiliser un autre port (mac-address sticky) sous peine de provoquer la désactivation automatique du port.</p>
+<p>On différencie 2 cas :</p>
+<ul>
+<li>Les postes fixes :
+<ul>
+<li>3 adresses Mac maximum autorisées (souche, VM + administration)</li>
+<li>le mode sticky activé</li>
+</ul>
+</li>
+<li>Les postes TAD Structurel :
+<ul>
+<li>30 adresses Mac</li>
+<li>pas de sticky</li>
+</ul>
+</li>
+</ul>
+<p>En effet, le TAD structurel mis en place chez Armatis consiste en une alternance de 2 jour à domicile et 3 jours sur site. Les téléconseillé concerné se voient donc attribués une UC qu&rsquo;ils emmènent chez eux et rapportent avec eux lorsqu&rsquo;ils travail sur site. Des postes sont donc aménagés spécifiquement avec une sécurité réseau permettant d&rsquo;accepter différentes machines (contrairement à une poste de travail fixe).</p>
+<p>On va reconfigurer tous les ports du switch durant la manipulation. On sait déjà quels ports correspondent à quels cas :</p>
+<ol>
+<li>Pour accéder a switch, il faut préalablement se connecter sur un poste en admin et créer une règle temporaire de contournement du pare-feu autorisant tous les ports en sortie.</li>
+<li>On accède ensuite au switch via Putty et en utilisant le CLI Cisco</li>
+<li>On vérifie l&rsquo;état des interfaces : <code>sh int status</code></li>
+<li>Puis l&rsquo;état des vlan : <code>sh vlan</code></li>
+<li>On réinitialise le port-security sticky pour tous les ports :</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">clear port-security sticky
+</span></span></code></pre></div><ol start="6">
+<li>On peut vérifier l&rsquo;état d&rsquo;un port en particulier : <code>sh run int fa0/4</code></li>
+<li>On passe en mode configuration terminal avec</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">conf t
+</span></span></code></pre></div>
+<div class="box notices cstyle note">
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Remarque</div>
+  <div class="box-content">
+<p><em><strong>On commence maintenant la configuration.</strong> On va agir sur des plages de ports consécutifs.</em></p>
+  </div>
+</div>
+<ol>
+<li>Cas d&rsquo;une plage des 4 premiers ports pour des postes fixes :</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">int r fa0/1-4
+</span></span><span class="line"><span class="cl">switchport port-security maximum <span class="m">3</span>
+</span></span><span class="line"><span class="cl">switchport port-security mac-address sticky
+</span></span><span class="line"><span class="cl">switchport port-security
+</span></span></code></pre></div>
+<div class="box notices cstyle warning">
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-triangle"></i> Attention</div>
+  <div class="box-content">
+<p>Cette dernière commande est indispensable pour activer la sécurité</p>
+  </div>
+</div>
+<ol>
+<li>Cas d&rsquo;une plage de 2 ports pour des postes TAD</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">int r fa0/5-6
+</span></span><span class="line"><span class="cl">switchport port-security maximum <span class="m">30</span>
+</span></span><span class="line"><span class="cl">no switchport port-security mac-address sticky
+</span></span><span class="line"><span class="cl">switchport port-security
+</span></span><span class="line"><span class="cl">description **** TAD STRUCT ****
+</span></span></code></pre></div><ol start="10">
+<li>On répète ces opérations autant de fois que nécessaire pour configurer tous les ports du switch (24 ou 48)</li>
+<li>On sort du mode configuration avec <code>end</code></li>
+<li>Pour finir on enregistre la configuration avec</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">wr mem
+</span></span></code></pre></div><ol start="13">
+<li>Et on quitte le CLI avec <code>exit</code></li>
+</ol>
+<hr>
+
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <script src="../../../js/clipboard.min.js" defer></script>
+    <script src="../../../js/perfect-scrollbar.min.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+  </body>
+</html>

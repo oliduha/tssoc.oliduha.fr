@@ -42,7 +42,7 @@ En effet, le TAD structurel mis en place chez Armatis consiste en une alternance
 
 On va reconfigurer tous les ports du switch durant la manipulation. On sait déjà quels ports correspondent à quels cas :
 
-1. Pour accéder à switch, il faut préalablement se connecter sur un poste en admin et créer une règle temporaire de contournement du pare-feu autorisant tous les ports en sortie.
+1. Pour accéder au switch, il faut préalablement se connecter sur un poste en admin et créer une règle temporaire de contournement du pare-feu autorisant tous les ports en sortie.
 2. On accède ensuite au switch via Putty et en utilisant le CLI Cisco
 3. On vérifie l'état des interfaces : `sh int status`
 4. Puis l'état des vlan : `sh vlan`

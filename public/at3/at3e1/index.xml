@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Configurer serveur de déploiement et de terminaux légers on TSSOC</title>
+    <link>https://www.tssoc.oliduha.fr/at3/at3e1/index.html</link>
+    <description>Recent content in Configurer serveur de déploiement et de terminaux légers on TSSOC</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language><atom:link href="https://www.tssoc.oliduha.fr/at3/at3e1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WDS - MDT</title>
+      <link>https://www.tssoc.oliduha.fr/at3/at3e1/wds-mdt/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.tssoc.oliduha.fr/at3/at3e1/wds-mdt/index.html</guid>
+      <description>WDS Window Deployment System TP
+Information Avec VMWare :
+1 VM IPFire avec la carte &amp;ldquo;green&amp;rdquo; sur 192.168.13.0/24 en Host Only côté lan 1 VM Windows Server AD-DS + DHCP en Host Only 1 VM Windows CLient vierge en Host Only 1 - Serveur AD-DS et DHCP Information Une VM Windows Server 2022 avec : 3-4 Go Ram 1 DD 40 GO (C:) 1 DD 60 GO (D:) Host Only en 192.</description>
+    </item>
+    <item>
+      <title>FOG</title>
+      <link>https://www.tssoc.oliduha.fr/at3/at3e1/fog/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.tssoc.oliduha.fr/at3/at3e1/fog/index.html</guid>
+      <description>&amp;gt; FOG Project Information TP : On crée 4 VMs dans un réseau en &amp;ldquo;Host Only&amp;rdquo; :
+1 IPFire avec 2 cartes réseau qui ont des adresses MAC différentes. 1 carte RED en Bridge vers l&amp;rsquo;extérieur du réseau (DHCP ou fixe) 1 carte GREEN en Host Only comme passerelle du réseau H.O. en 192.168.13.254 fixe 1 Debian 11 en Serveur FOG (DD 60 GO) en Host Only en 192.168.13.222 fixe - Serveur DHCP !</description>
+    </item>
+    <item>
+      <title>Stage Armatis</title>
+      <link>https://www.tssoc.oliduha.fr/at3/at3e1/stage-armatis/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.tssoc.oliduha.fr/at3/at3e1/stage-armatis/index.html</guid>
+      <description>Déploiement Armatis Le déploiement des postes s&amp;rsquo;effectue en 2 étapes :
+déploiement de l&amp;rsquo;image souche (l&amp;rsquo;hôte) - environ 30 min déploiement de la VM (VMWare) selon l&amp;rsquo;activité à laquelle sera affectée la machine - environ 2 h Les machines sont déployées une à une.
+Déploiement image souche Sur chaque machine, le déploiement de l&amp;rsquo;image souche s&amp;rsquo;effectue par boot PXE, puis sélection dans Clonezilla de l&amp;rsquo;image à déployer. Plusieurs scripts de configuration sont ensuite appelés automatiquement.</description>
+    </item>
+  </channel>
+</rss>

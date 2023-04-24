@@ -4,9 +4,9 @@ title = "Feedly"
 weight = 1
 +++
 
-## Agregation RSS avec Feedly
+## Agrégation RSS avec Feedly
 
-Feedly permet de s'abonner aux flux RSS de tout site web dont on souhaite suivre l'actualité, ce qui en fait un outil efficace pour effectuer sa veille technologique.
+[Feedly](https://feedly.com) permet de s'abonner aux flux RSS de tout site web dont on souhaite suivre l'actualité, ce qui en fait un outil efficace pour effectuer sa veille technologique.
 
 Personnellement je suis abonné aux flux suivants répartis en 3 catégories (limite d'un compte gratuit) :
 
@@ -37,6 +37,9 @@ Personnellement je suis abonné aux flux suivants répartis en 3 catégories (li
 	- [Le Monde Informatique - Toutes les actualités](https://www.lemondeinformatique.fr/)
 	- [ZDNet Actualités](https://www.zdnet.fr/)
 	- [Zythom](https://zythom-en.blogspot.com/)
+  
+Feedly sur mon smartphone Android
+![Feedly Android](feedly_android.jpg)
 
 ---
 

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Maintenir et exploiter un environnement virtualisé on TSSOC</title>
+    <link>https://www.tssoc.oliduha.fr/at2/at2e4/index.html</link>
+    <description>Recent content in Maintenir et exploiter un environnement virtualisé on TSSOC</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language><atom:link href="https://www.tssoc.oliduha.fr/at2/at2e4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TP Infra</title>
+      <link>https://www.tssoc.oliduha.fr/at2/at2e4/tp-infra/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.tssoc.oliduha.fr/at2/at2e4/tp-infra/index.html</guid>
+      <description>TP infra en cluster ESXi Voici les schémas réseaux du TP infra dirigé par Karl Fricker
+CHECKLIST ROUTEUR /GTW Installation d&amp;rsquo;un PFSense VRAI Configuration du WAN VRAI Configuration du LAN en classe B/24 VRAI Définir les interfaces optionnelles pour chaque VLAN VRAI Les clients derrière le routeur ont internet VRAI Configuration de l&amp;rsquo;accès en https only sur le port 666 VRAI L&amp;rsquo;équipement est pinguable via un FQDN pertinent ou son alias VRAI Définir un SSID petinent avec une shared key WPA2 VRAI L&amp;rsquo;équipement est pinguable via un FQDN pertinent ou son alias VRAI Sécuriser l&amp;rsquo;équipement VRAI ESXi Installation d&amp;rsquo;un ESXi 7 sur une machine hôte physique VRAI 1 datastore local est configuré VRAI A minima deux cartes réseaux sont configurées VRAI Les VMS ne passent pas toutes par la même IF VRAI L&amp;quot;ESXI peut s&amp;rsquo;authentifier sur le LDAP de DC1 FAUX L&amp;rsquo;équipement est pinguable via un FQDN pertinent ou son alias VRAI DC1 un domaine du type toto.</description>
+    </item>
+  </channel>
+</rss>

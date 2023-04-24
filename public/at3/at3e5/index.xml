@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Intervenir dans un environnement de Cloud Computing on TSSOC</title>
+    <link>https://www.tssoc.oliduha.fr/at3/at3e5/index.html</link>
+    <description>Recent content in Intervenir dans un environnement de Cloud Computing on TSSOC</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language><atom:link href="https://www.tssoc.oliduha.fr/at3/at3e5/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS</title>
+      <link>https://www.tssoc.oliduha.fr/at3/at3e5/aws/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.tssoc.oliduha.fr/at3/at3e5/aws/index.html</guid>
+      <description>Monter un serveur LAMPS avec NextCloud sur AWS Préambule se connecter dans AWS se familiariser avec l’interface créer ou utiliser une AMI (amazon machine image) d’une debian 10 créer une instance de cette ami en mode t2.micro se connecter dessus en ssh paramétrer le firewall de AWS pour les ports concernés (au moins 80,443,22&amp;hellip;) Migrer le deb10 en deb11 avec la méthode dist-upgrade installer un service WEB APP de votre choix (Wordpress, GLPI, Nextcloud, Wiki….</description>
+    </item>
+  </channel>
+</rss>

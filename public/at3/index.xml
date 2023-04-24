@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Maintenir et exploiter une infrastructure distribuée et contribuer à sa sécurisation on TSSOC</title>
+    <link>https://www.tssoc.oliduha.fr/at3/index.html</link>
+    <description>Recent content in Maintenir et exploiter une infrastructure distribuée et contribuer à sa sécurisation on TSSOC</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language><atom:link href="https://www.tssoc.oliduha.fr/at3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Configurer serveur de déploiement et de terminaux légers</title>
+      <link>https://www.tssoc.oliduha.fr/at3/at3e1/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.tssoc.oliduha.fr/at3/at3e1/index.html</guid>
+      <description> 1. WDS - MDT 2. FOG 3. stage Armatis </description>
+    </item>
+    <item>
+      <title>Automatiser les tâches à l&#39;aide de scripts</title>
+      <link>https://www.tssoc.oliduha.fr/at3/at3e2/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.tssoc.oliduha.fr/at3/at3e2/index.html</guid>
+      <description> 1. Batch 2. Bash 3. PowerShell 4. Stage Cefim 5. Python </description>
+    </item>
+    <item>
+      <title>Maintenir et sécuriser les accès réseaux distants</title>
+      <link>https://www.tssoc.oliduha.fr/at3/at3e3/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.tssoc.oliduha.fr/at3/at3e3/index.html</guid>
+      <description> 1. Stage Armatis </description>
+    </item>
+    <item>
+      <title>Superviser l&#39;infrastructure</title>
+      <link>https://www.tssoc.oliduha.fr/at3/at3e4/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.tssoc.oliduha.fr/at3/at3e4/index.html</guid>
+      <description> 1. Zabbix </description>
+    </item>
+    <item>
+      <title>Intervenir dans un environnement de Cloud Computing</title>
+      <link>https://www.tssoc.oliduha.fr/at3/at3e5/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.tssoc.oliduha.fr/at3/at3e5/index.html</guid>
+      <description> 1. AWS </description>
+    </item>
+    <item>
+      <title>Assurer sa veille technologique</title>
+      <link>https://www.tssoc.oliduha.fr/at3/at3e6/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.tssoc.oliduha.fr/at3/at3e6/index.html</guid>
+      <description> 1. Feedly </description>
+    </item>
+  </channel>
+</rss>

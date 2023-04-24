@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Automatiser les tâches à l&#39;aide de scripts on TSSOC</title>
+    <link>https://www.tssoc.oliduha.fr/at3/at3e2/index.html</link>
+    <description>Recent content in Automatiser les tâches à l&#39;aide de scripts on TSSOC</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language><atom:link href="https://www.tssoc.oliduha.fr/at3/at3e2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Batch</title>
+      <link>https://www.tssoc.oliduha.fr/at3/at3e2/batch/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.tssoc.oliduha.fr/at3/at3e2/batch/index.html</guid>
+      <description>Scripts batch Remarque Le caractère ESC dans le code s&amp;rsquo;obtient avec ALT+027.
+Il correpond au caractère d&amp;rsquo;échappement ASCII.
+1. Simple ping Simple script batch pour un outil de ping qui m&amp;rsquo;a permis d&amp;rsquo;expérimenter le rendu de couleur.
+2. Connexion ssh Un script offrant un menu permettant de choisir parmi différentes connexions ssh récurentes via cmd ou putty.</description>
+    </item>
+    <item>
+      <title>Bash</title>
+      <link>https://www.tssoc.oliduha.fr/at3/at3e2/bash/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.tssoc.oliduha.fr/at3/at3e2/bash/index.html</guid>
+      <description>Scripts bash 1. Script de sauvegarde des fichiers et de la base de données du site wiki Information Contexte : 1 VM debian 11 LAMPS avec mediawiki.
+L&amp;rsquo;objectif est de créer une tâche automatiquement éxecutée quotidiennement qui compresse en zip un dump de la BDD ainsi que le contenu du dossier wiki et le sauvegarde dans un dossier à la date du jour.
+on se log en root on édite le script dans /root su - cd nano backup.</description>
+    </item>
+    <item>
+      <title>PowerShell</title>
+      <link>https://www.tssoc.oliduha.fr/at3/at3e2/powershell/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.tssoc.oliduha.fr/at3/at3e2/powershell/index.html</guid>
+      <description>Scripts PowerShell 1. Script PowerShell d’import d’utilisateurs dans un AD à partir d’un .csv # xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx # Script d&amp;#39;import d&amp;#39;utisateur dans un AD depuis un .csv # xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx $users = import-csv -path &amp;#34;C:\Users\Olivier\Desktop\import.csv&amp;#34; -delimiter &amp;#34;;&amp;#34; foreach($user in $users) { $nom = $user.nom $prenom= $user.prenom $nomComplet = $prenom + &amp;#34; &amp;#34; +$nom $idSAM = $prenom.substring(0,1) + $nom $id = $idSAM + &amp;#34;@tssr.lan&amp;#34; $pass= ConvertTo-SecureString &amp;#34;1234&amp;#34; -AsPlaintext -Force New-ADuser -name $idSAM -DisplayName $nomComplet -givenname $prenom -surname $nom -Path &amp;#34;OU=usagers,DC=tssr,DC=lan&amp;#34; -UserPrincipalName $id -AccountPassword $pass -Enabled $true } Attention Pour l&amp;rsquo;option -Path de la commande New-ADuser l&amp;rsquo;ordre des OU et DC est important (surtout dans le cas d&amp;rsquo;OU imbiquées) : il faut commencer par l&amp;rsquo;extrémité et décrire le chemin en remontant dans l&amp;rsquo;arborescence.</description>
+    </item>
+    <item>
+      <title>Stage Cefim</title>
+      <link>https://www.tssoc.oliduha.fr/at3/at3e2/stage-cefim/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.tssoc.oliduha.fr/at3/at3e2/stage-cefim/index.html</guid>
+      <description>Présentation Projet de simplification et rationnalisation de l&amp;rsquo;utilisation des vouchers pour le réseau Wifi CEFIM_PEDAGO réalisé sur Google Workspace avec Apps Script :
+Voir : Sécuriser les accès à Internet - Stage Cefim</description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>https://www.tssoc.oliduha.fr/at3/at3e2/python/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.tssoc.oliduha.fr/at3/at3e2/python/index.html</guid>
+      <description>Scripts python Information Le projet &amp;ldquo;ScrapPy&amp;rdquo; est disponible et documenté sur github Voici le contenu du module scrapper.py contenant les diverses fonctions appelées depuis le code principal (main.py).
+try: import requests import bs4 import os import json import csv import re except ImportError as e: print(&amp;#34;Erreur d&amp;#39;import : &amp;#34; + str(e)) import requests import bs4 import os import json import csv import re # cf : https://stackoverflow.com/questions/287871/how-do-i-print-colored-text-to-the-terminal col_red = &amp;#39;\033[91m&amp;#39; col_green = &amp;#39;\33[92m&amp;#39; col_yellow = &amp;#39;\033[93m&amp;#39; col_end = &amp;#39;\033[0m&amp;#39; def scrap(links, make_csv=True, make_json=False, aio=False): list_titre = [] list_a = [] list_csv = [] dict_json = {} file_name = &amp;#34;&amp;#34; for i in range(len(links)): file_name = links[i][0] link = links[i][1] # On récupère le contenu de la page en cours req_scrap = requests.</description>
+    </item>
+  </channel>
+</rss>

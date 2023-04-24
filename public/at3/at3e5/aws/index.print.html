@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="Docs formation Cefim TSSR">
+    <meta name="author" content="Olivier Duhamel">
+    <title>AWS - TSSOC</title>
+    <link href="https://www.tssoc.oliduha.fr/at3/at3e5/aws/index.html" rel="canonical" type="text/html" title="AWS - TSSOC">
+    <link href="../../../at3/at3e5/aws/index.xml" rel="alternate" type="application/rss+xml" title="AWS - TSSOC">
+    <link href="../../../images/logo.svg" rel="icon" type="image/svg+xml">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="../../../css/fontawesome-all.min.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fontawesome-all.min.css" rel="stylesheet"></noscript>
+    <link href="../../../css/nucleus.css" rel="stylesheet">
+    <link href="../../../css/auto-complete.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/auto-complete.css" rel="stylesheet"></noscript>
+    <link href="../../../css/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="../../../css/fonts.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fonts.css" rel="stylesheet"></noscript>
+    <link href="../../../css/theme.css" rel="stylesheet">
+    <link href="../../../css/theme-auto.css" rel="stylesheet" id="variant-style">
+    <link href="../../../css/variant.css" rel="stylesheet">
+    <link href="../../../css/print.css" rel="stylesheet" media="print">
+    <link href="../../../css/format-print.css" rel="stylesheet">
+    <link href="../../../css/ie.css" rel="stylesheet">
+    <script src="../../../js/url.js"></script>
+    <script src="../../../js/variant.js"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      window.index_js_url="../../../index.search.js";
+      var root_url="../../../";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copier dans le presse-papiers';
+      window.T_Copied_to_clipboard = 'Copié dans le presse-papiers !';
+      window.T_Copy_link_to_clipboard = 'Copier le lien dans le presse-papiers';
+      window.T_Link_copied_to_clipboard = 'Lien copié dans le presse-papiers !';
+      window.T_No_results_found = 'Aucun résultat trouvé pour \u0022{0}\u0022';
+      window.T_N_results_found = '{1} résultats trouvés pour \u0022{0}\u0022';
+      // some further base stuff
+      var baseUriFull='https:\/\/www.tssoc.oliduha.fr/';
+      window.variants && variants.init( [ 'auto', 'relearn-bright', 'relearn-light', 'relearn-dark', 'learn', 'neon', 'blue', 'green', 'red' ] );
+    </script>
+    <style>
+      #body img.bg-white {
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="../../../at3/at3e5/aws/index.html">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../index.html"><span itemprop="name">TSSOC</span></a><meta itemprop="position" content="1"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../at3/index.html"><span itemprop="name">Maintenir et exploiter une infrastructure distribuée et contribuer à sa sécurisation</span></a><meta itemprop="position" content="2"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../at3/at3e5/index.html"><span itemprop="name">Intervenir dans un environnement de Cloud Computing</span></a><meta itemprop="position" content="3"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">AWS</span><meta itemprop="position" content="4"></li>
+            </ol>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable chapter narrow" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="chapter">
+<div class="article-subheading">Exemple 1</div>
+<h1 id="aws">AWS</h1>
+
+<h2 id="monter-un-serveur-lamps-avec-nextcloud-sur-aws"><strong>Monter un serveur LAMPS avec NextCloud sur AWS</strong></h2>
+<h2 id="préambule">Préambule</h2>
+<ul>
+<li>se connecter dans AWS</li>
+<li>se familiariser avec l’interface</li>
+<li>créer ou utiliser une AMI (amazon machine image) d’une debian 10</li>
+<li>créer une instance de cette ami en mode t2.micro</li>
+<li>se connecter dessus en ssh</li>
+<li>paramétrer le firewall de AWS pour les ports concernés (au moins 80,443,22&hellip;)</li>
+<li>Migrer le deb10 en deb11 avec la méthode dist-upgrade</li>
+<li>installer un service WEB APP de votre choix (Wordpress, GLPI, Nextcloud, Wiki….)</li>
+<li>sécuriser la solution (par ex : Fail2Ban)</li>
+<li>on doit pouvoir consulter votre service web par une ip publique et par le nom dns générique donné par AWS</li>
+<li>vous devrez enregistrer un vrai nom fqdn ans grâce à  votre hébergement ou domaine perso ou un service no-ip</li>
+<li>vous devez installer Let’s encrypt  via certbot:-)</li>
+<li>automatiser le renouvellement du certificat SSL/TLS tous les 3 mois via cron</li>
+</ul>
+<h2 id="1---connexion-à-aws-et-instanciation">1 - <strong>Connexion à AWS et instanciation</strong></h2>
+<ul>
+<li>
+<p>Connexion au compte cefimaws / username / mdp fourni par cefim</p>
+</li>
+<li>
+<p>Connexion à la zone eu-west-2 (Londre)</p>
+</li>
+<li>
+<p>Création d&rsquo;une instance</p>
+<ul>
+<li>t2.micro</li>
+<li>AMI debian 10 x86-x64 de juil-22 par FAI</li>
+<li>1 processeur</li>
+<li>1 GO RAM</li>
+<li>8 GO d&rsquo;espace disque</li>
+<li>enregistrement clés (username_key.pem)</li>
+</ul>
+</li>
+</ul>
+<p>
+<a href="#image-c95a16b15560b35ed507bc74f23c07ec" class="lightbox-link">
+<img src="../../../at3/at3e5/aws/01_AWS_instance.png" alt="AWS_instance" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-c95a16b15560b35ed507bc74f23c07ec">
+<img src="../../../at3/at3e5/aws/01_AWS_instance.png" alt="AWS_instance" class="lightbox-image" loading="lazy">
+</a></p>
+<p>
+<a href="#image-8714ee042a572c94a18864a571ceea25" class="lightbox-link">
+<img src="../../../at3/at3e5/aws/01_AWS_instance_reseau.png" alt="AWS_instance_reseau" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-8714ee042a572c94a18864a571ceea25">
+<img src="../../../at3/at3e5/aws/01_AWS_instance_reseau.png" alt="AWS_instance_reseau" class="lightbox-image" loading="lazy">
+</a></p>
+<ul>
+<li>configuration pare-feu AWS pour les ports nécessaires</li>
+</ul>
+<p>
+<a href="#image-1542bd991dda1cf34c3453d82a2686e1" class="lightbox-link">
+<img src="../../../at3/at3e5/aws/01_AWS_instance_secu.png" alt="AWS_instance_secu" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-1542bd991dda1cf34c3453d82a2686e1">
+<img src="../../../at3/at3e5/aws/01_AWS_instance_secu.png" alt="AWS_instance_secu" class="lightbox-image" loading="lazy">
+</a></p>
+<ul>
+<li>Enregistrement FQDN (OVH) avec l&rsquo;IP publique fournie par AWS 18.133.224.112 =&gt; oduhamel.oliduha.fr</li>
+</ul>
+<h2 id="2---prise-de-contrôle-en-ssh">2 - <strong>Prise de contrôle en SSH</strong></h2>
+<ul>
+<li>Connexion en ssh avec les clés fournies par AWS</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">C<span class="p">:</span><span class="nl">\Uers\Olivier</span><span class="c1">&gt;ssh -i _PEM\oduhamel_key.pem admin@oduhamel.oliduha.fr</span>
+</span></span></code></pre></div><ul>
+<li>Connexion au compte root</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo su -
+</span></span></code></pre></div><ul>
+<li>Changement du mot de passe root</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">passwd
+</span></span></code></pre></div><h2 id="3---upgrade-debian-10--11">3 - <strong>Upgrade debian 10 =&gt; 11</strong></h2>
+<p><a href="https://www.cyberciti.biz/faq/update-upgrade-debian-10-to-debian-11-bullseye/" target="_blank">https://www.cyberciti.biz/faq/update-upgrade-debian-10-to-debian-11-bullseye/</a></p>
+<p>
+<a href="#image-531c9445d3ca2215f2c080e8c05743c5" class="lightbox-link">
+<img src="../../../at3/at3e5/aws/03_upgrade_debian_10_11.png" alt="upgrade_debian_10_11" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-531c9445d3ca2215f2c080e8c05743c5">
+<img src="../../../at3/at3e5/aws/03_upgrade_debian_10_11.png" alt="upgrade_debian_10_11" class="lightbox-image" loading="lazy">
+</a></p>
+<h2 id="4---iptables--iptables-persistent">4 - <strong>Iptables + iptables-persistent</strong></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">apt install iptables 
+</span></span></code></pre></div><p>Ajout des règles nécessaires dans iptables</p>
+<p>
+<a href="#image-1100c5e5fedb1f28aac648b1276f9292" class="lightbox-link">
+<img src="../../../at3/at3e5/aws/04_iptables_conf.png" alt="Iptables_conf" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-1100c5e5fedb1f28aac648b1276f9292">
+<img src="../../../at3/at3e5/aws/04_iptables_conf.png" alt="Iptables_conf" class="lightbox-image" loading="lazy">
+</a></p>
+<p>puis :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">apt install iptables-persistent
+</span></span></code></pre></div><p>Accepter la sauvegarde proposée durant l&rsquo;installation va créer 2 fichiers qui seront automatiquement rechargés après un reboot :</p>
+<blockquote>
+<p>/etc/iptables/rules.v4<br>
+/etc/iptables/rules.v6</p>
+</blockquote>
+<p>Pour maj de ces fichier après modif :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">iptables-save &gt; /etc/iptables/rules.v4
+</span></span></code></pre></div><p><em>Nous travaillerons essentiellement en IPv4.</em></p>
+<p>
+<a href="#image-800abb849ce9f251057262dc99fd015d" class="lightbox-link">
+<img src="../../../at3/at3e5/aws/04_iptables_save.png" alt="Iptables_save" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-800abb849ce9f251057262dc99fd015d">
+<img src="../../../at3/at3e5/aws/04_iptables_save.png" alt="Iptables_save" class="lightbox-image" loading="lazy">
+</a></p>
+<h2 id="5---apache">5 - <strong>Apache</strong></h2>
+<p>Installer apache2 et activer les modules ssl, rewrite et headers.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">apt install apache2
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">a2enmod ssl rewrite headers
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">service apache2 restart
+</span></span></code></pre></div><h2 id="6---certificat-lets-encrypt">6 - <strong>Certificat Let&rsquo;s Encrypt</strong></h2>
+<p><strong>Créer un certificat debian pour apache</strong> avec <a href="https://certbot.eff.org/" target="_blank">https://certbot.eff.org/</a></p>
+<p>Une fois le certificat crée, on retrouve ses fichiers dans <code>/etc/letsencrypt/live/oduhamel.oliduha.fr/</code></p>
+<p>Il est aussi référencé dans le fichier .conf du site default-ssl d&rsquo;apache</p>
+<p>On regroupe les 2 configurations par défaut d&rsquo;apache dans une seule</p>
+<p>
+<a href="#image-c23d9a704853b92e74dba49ac5feee76" class="lightbox-link">
+<img src="../../../at3/at3e5/aws/05_apache_sites.png" alt="Apache_sites" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-c23d9a704853b92e74dba49ac5feee76">
+<img src="../../../at3/at3e5/aws/05_apache_sites.png" alt="Apache_sites" class="lightbox-image" loading="lazy">
+</a></p>
+<p>et on redémarre apache2</p>
+<p>On automatise ensuite le renouvellement du certificat tous les 3 mois via crontab</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">crontab -e
+</span></span></code></pre></div><p>et on ajoute :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="m">0</span> <span class="m">0</span> <span class="m">1</span> */3 * certbot renew --apache --domain oduhamel.oliduha.fr -n
+</span></span></code></pre></div><h2 id="7---mariadb">7 - <strong>Mariadb</strong></h2>
+<p>installation de mariadb</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">apt install mariadb-server mariadb-client
+</span></span></code></pre></div><p>puis</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mysql_secure_installation
+</span></span></code></pre></div><ul>
+<li>passer le PW root [Enter]</li>
+<li>activer unix_socket authentication [Y]</li>
+<li>Indiquer ici un PW fort pour root et confirmer [&hellip;][&hellip;]</li>
+<li>Supprimer l&rsquo;utilisateur anonyme [Y]</li>
+<li>désactiver le login à distance root  [Y]</li>
+<li>supprimer la base test [Y]</li>
+<li>actualiser la table des privilèges [Y]</li>
+</ul>
+<p>Création BDD et User pour Nextcloud</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mysql -u root -p
+</span></span></code></pre></div><p>puis dans mariadb</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">nextcloud_db</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">CREATE</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="n">nextclouduser</span><span class="o">@</span><span class="n">localhost</span><span class="w"> </span><span class="n">IDENTIFIED</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="s1">&#39;StrongPassword&#39;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">GRANT</span><span class="w"> </span><span class="k">ALL</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">nextcloud_db</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">nextclouduser</span><span class="o">@</span><span class="n">localhost</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">FLUSH</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">quit</span><span class="w">
+</span></span></span></code></pre></div><p>
+<a href="#image-949474e9c9c8880390f497449ffa2838" class="lightbox-link">
+<img src="../../../at3/at3e5/aws/07_mariadb.png" alt="mariadb" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-949474e9c9c8880390f497449ffa2838">
+<img src="../../../at3/at3e5/aws/07_mariadb.png" alt="mariadb" class="lightbox-image" loading="lazy">
+</a></p>
+<h2 id="8---php-8">8 - <strong>Php 8</strong></h2>
+<p>Ajout du repository php</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;deb https://packages.sury.org/php/ </span><span class="k">$(</span>lsb_release -sc<span class="k">)</span><span class="s2"> main&#34;</span><span class="se">\ </span><span class="p">|</span> sudo tee /etc/apt/sources.list.d/sury-php.list
+</span></span></code></pre></div><p>Télécharger la clé GPG dans le dossier <code>/etc/apt/trusted.gpg</code>.d</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -o /etc/apt/trusted.gpg.d/sury-php8.gpg https://packages.sury.org/php/apt.gpg
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">apt update
+</span></span></code></pre></div><p>Installation de php et les bibliothèques nécéssaires :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">apt install -y php php-curl php-cli php-mysql php-gd php-common php-xml php-json php-intl php-pear php-imagick php-dev php-common php-mbstring php-zip php-soap php-bz2 php-bcmath php-gmp php-apcu
+</span></span></code></pre></div><p>puis :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">apt install -y libmagickcore-dev
+</span></span></code></pre></div><p>Edition du php.ini</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> /etc/php/8.0/apache2/
+</span></span><span class="line"><span class="cl">nano php.ini
+</span></span></code></pre></div><p>Vérifier et modifier si besoin :</p>
+<blockquote>
+<p>file_uploads = On<br>
+allow_url_fopen = On<br>
+memory_limit = 512M<br>
+upload_max_filesize = 500M<br>
+post_max_size = 600M<br>
+max_execution_time = 300<br>
+display_errors = Off<br>
+date.timezone = Europe/Paris<br>
+output_buffering = Off<br>
+zend_extension=opcache</p>
+</blockquote>
+<p>puis à la section <code>[OPCACHE]</code></p>
+<blockquote>
+<p>opcache.enable = 1<br>
+opcache.interned_strings_buffer = 8<br>
+opcache.max_accelerated_files = 10000<br>
+opcache.memory_consumption = 128<br>
+opcache.save_comments = 1<br>
+opcache.revalidate_freq = 1</p>
+</blockquote>
+<p>Sauvegarder et redémarrer le service apache2</p>
+<h2 id="9---phpmyadmin">9 - <strong>Phpmyadmin</strong></h2>
+<p>Installation habituelle de phpmyadmin</p>
+<h2 id="10---nextcloud">10 - <strong>Nextcloud</strong></h2>
+<ul>
+<li>Téléchargement de Nextcloud latest.zip</li>
+<li>installation de unzip</li>
+<li>Décompression de l&rsquo;archive dans <code>/var/www/nextcloud</code></li>
+</ul>
+<p>puis</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chown -R www-data:www-data nextcloud
+</span></span></code></pre></div><p>
+<a href="#image-31d357d763ebc971e9578b5ee4c7db30" class="lightbox-link">
+<img src="../../../at3/at3e5/aws/10_nextcloud_folder.png" alt="Nextcloud_folder" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-31d357d763ebc971e9578b5ee4c7db30">
+<img src="../../../at3/at3e5/aws/10_nextcloud_folder.png" alt="Nextcloud_folder" class="lightbox-image" loading="lazy">
+</a></p>
+<p>configuration et activation du site apache</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> /etc/apache2/sites-available/
+</span></span><span class="line"><span class="cl">cp site.conf nextcloud.conf
+</span></span><span class="line"><span class="cl">nano nextcloud.conf
+</span></span></code></pre></div><p>
+<a href="#image-4dcbe2ce7aa7330b62107e740d19c80c" class="lightbox-link">
+<img src="../../../at3/at3e5/aws/10_nextcloud.conf.png" alt="Nextcloud.conf" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-4dcbe2ce7aa7330b62107e740d19c80c">
+<img src="../../../at3/at3e5/aws/10_nextcloud.conf.png" alt="Nextcloud.conf" class="lightbox-image" loading="lazy">
+</a></p>
+<p>désactiver site.conf et activer nextcloud.conf</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">a2dissite site
+</span></span><span class="line"><span class="cl">a2ensite nextcloud.conf
+</span></span></code></pre></div><p>tester la config et redémarrer le service apache2</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">apachectl configtest
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">systemctl restart apache2
+</span></span></code></pre></div><p>La page de configuration de Nextcloud doit s&rsquo;afficher dans le navigateur à l&rsquo;URL :</p>
+<blockquote>
+<p><a href="https://oduhamel.oliduha.fr" target="_blank">https://oduhamel.oliduha.fr</a></p>
+</blockquote>
+<p>Créer un 1er utilisateur qui sera admin du site avec un mot de passe fort.
+Si demandé, le dossier des données se trouve dans</p>
+<blockquote>
+<p>/var/www/nextcloud/data</p>
+</blockquote>
+<p>plus bas, indiquer l&rsquo;utilisateur <code>nextclouduser</code> créé précedemment dans mariadb, le PW associé et <code>nextcloud_db</code> pour la BDD ainsi que &rsquo;localhost'</p>
+<p>La page renseignée et validée, on se log et on arrive sur l&rsquo;interface de Nextcloud :</p>
+<p>
+<a href="#image-838d02017e0c04f04bc0712f5775b0d0" class="lightbox-link">
+<img src="../../../at3/at3e5/aws/10_Nextcloud.png" alt="Nextcloud" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-838d02017e0c04f04bc0712f5775b0d0">
+<img src="../../../at3/at3e5/aws/10_Nextcloud.png" alt="Nextcloud" class="lightbox-image" loading="lazy">
+</a></p>
+<p>Parcourir les options de configurations pour régler plus finement la webapp</p>
+<h2 id="11---sauvegarde-automatique-de-la-bdd">11 - <strong>Sauvegarde automatique de la BDD</strong></h2>
+<p>Installer zip et créer un dossier pour stocker les sauvegardes</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">apt install zip
+</span></span><span class="line"><span class="cl">mkdir /root/backup
+</span></span></code></pre></div><p>On crée un script bash dans le dossier /root/ pour automatiser la sauveagarde des fichiers et de la BDD de Nextcloud et on lui donne les droits d&rsquo;exécution</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> root
+</span></span><span class="line"><span class="cl">touch backup.sh
+</span></span><span class="line"><span class="cl">chmod +x backup.sh
+</span></span></code></pre></div><p>Puis on l&rsquo;édite avec :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nano backup.sh
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="c1"># script de sauvegarde de la BDD nextcloud</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> Compression des fichiers...
+</span></span><span class="line"><span class="cl">zip -rq /root/backup/<span class="k">$(</span>date +%Y%m%d%H%M<span class="k">)</span>_nextcloud_backup_files.zip /var/www/nextcloud
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> Dump de la BDD...
+</span></span><span class="line"><span class="cl">mysqldump -u root -p <span class="s1">&#39;1nfr@2022NG&#39;</span> --database nextcloud_db &gt; /root/backup/nextcloud_backup_bdd.sql
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> Compression de la BDD...
+</span></span><span class="line"><span class="cl">zip -q /root/backup/<span class="k">$(</span>date +%Y%m%d%H%M<span class="k">)</span>_nextcloud_backup_bdd.zip /root/backup/nextcloud_backup_bdd.sql
+</span></span><span class="line"><span class="cl">rm /root/backup/nextcloud_backup_bdd.sql
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> Terminé !
+</span></span></code></pre></div><p>On automatise ensuite l&rsquo;exécution de ce script via crontab pour faire une sauvegarde chaque vendredi soir.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">crontab -e
+</span></span></code></pre></div><p>et on y ajoute :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="m">0</span> <span class="m">23</span> * * <span class="m">5</span> /root/backup.sh
+</span></span></code></pre></div><h2 id="12---fail2ban">12 - <strong>Fail2ban</strong></h2>
+<p>
+<a href="#image-3d46b0fc6a731f568d6076b9c9c5877e" class="lightbox-link">
+<img src="../../../at3/at3e5/aws/12_fail2ban.png" alt="fail2ban" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-3d46b0fc6a731f568d6076b9c9c5877e">
+<img src="../../../at3/at3e5/aws/12_fail2ban.png" alt="fail2ban" class="lightbox-image" loading="lazy">
+</a></p>
+<hr>
+
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <script src="../../../js/clipboard.min.js" defer></script>
+    <script src="../../../js/perfect-scrollbar.min.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+  </body>
+</html>

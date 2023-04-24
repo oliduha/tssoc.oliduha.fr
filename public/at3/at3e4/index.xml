@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Superviser l&#39;infrastructure on TSSOC</title>
+    <link>https://www.tssoc.oliduha.fr/at3/at3e4/index.html</link>
+    <description>Recent content in Superviser l&#39;infrastructure on TSSOC</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language><atom:link href="https://www.tssoc.oliduha.fr/at3/at3e4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Zabbix</title>
+      <link>https://www.tssoc.oliduha.fr/at3/at3e4/zabbix/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.tssoc.oliduha.fr/at3/at3e4/zabbix/index.html</guid>
+      <description>Ressources Installation de Zabbix Tuto ultime d&amp;rsquo;installation Zabbix 6.2 sur Debian Documentation webhook Supervision d&amp;rsquo;un NAS Synology via SNMP et Zabbix Une liste de tuto Zabbix TP Cefim terminé avec succès :</description>
+    </item>
+  </channel>
+</rss>

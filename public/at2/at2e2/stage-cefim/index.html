@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="Docs formation Cefim TSSR">
+    <meta name="author" content="Olivier Duhamel">
+    <title>Stage Cefim - TSSOC</title>
+    <link href="../../../at2/at2e2/stage-cefim/index.xml" rel="alternate" type="application/rss+xml" title="Stage Cefim - TSSOC">
+    <link href="../../../at2/at2e2/stage-cefim/index.print.html" rel="alternate" type="text/html" title="Stage Cefim - TSSOC">
+    <link href="../../../images/logo.svg" rel="icon" type="image/svg+xml">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="../../../css/fontawesome-all.min.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fontawesome-all.min.css" rel="stylesheet"></noscript>
+    <link href="../../../css/nucleus.css" rel="stylesheet">
+    <link href="../../../css/auto-complete.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/auto-complete.css" rel="stylesheet"></noscript>
+    <link href="../../../css/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="../../../css/fonts.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fonts.css" rel="stylesheet"></noscript>
+    <link href="../../../css/theme.css" rel="stylesheet">
+    <link href="../../../css/theme-auto.css" rel="stylesheet" id="variant-style">
+    <link href="../../../css/variant.css" rel="stylesheet">
+    <link href="../../../css/print.css" rel="stylesheet" media="print">
+    <link href="../../../css/ie.css" rel="stylesheet">
+    <script src="../../../js/url.js"></script>
+    <script src="../../../js/variant.js"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      window.index_js_url="../../../index.search.js";
+      var root_url="../../../";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copier dans le presse-papiers';
+      window.T_Copied_to_clipboard = 'Copié dans le presse-papiers !';
+      window.T_Copy_link_to_clipboard = 'Copier le lien dans le presse-papiers';
+      window.T_Link_copied_to_clipboard = 'Lien copié dans le presse-papiers !';
+      window.T_No_results_found = 'Aucun résultat trouvé pour \u0022{0}\u0022';
+      window.T_N_results_found = '{1} résultats trouvés pour \u0022{0}\u0022';
+      // some further base stuff
+      var baseUriFull='https:\/\/www.tssoc.oliduha.fr/';
+      window.variants && variants.init( [ 'auto', 'relearn-bright', 'relearn-light', 'relearn-dark', 'learn', 'neon', 'blue', 'green', 'red' ] );
+    </script>
+    <style>
+      #body img.bg-white {
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body class="mobile-support html disableInlineCopyToClipboard" data-url="../../../at2/at2e2/stage-cefim/index.html">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div class="navigation">
+            <a class="nav nav-next topbar-link" href="../../../at2/at2e3/index.html" title="Maintenir et exploiter un serveur Linux (&#129106;)"><i class="fas fa-chevron-right fa-fw"></i></a>
+          </div>
+          <div class="navigation">
+            <a class="nav nav-prev topbar-link" href="../../../at2/at2e2/index.html" title="Sécuriser les accès à Internet (&#129104;)"><i class="fas fa-chevron-left fa-fw"></i></a>
+          </div>
+          <div id="top-print-link">
+            <a class="print-link topbar-link" title='Imprimer le chapitre entier (CTRL+ALT+p)' href="../../../at2/at2e2/stage-cefim/index.print.html">
+              <i class="fas fa-print fa-fw"></i>
+            </a>
+          </div>
+          <div id="top-github-link">
+            <a class="github-link topbar-link" title='Éditer (CTRL+ALT+w)' href="https://github.com/oliduha/tssoc.oliduha.fr/edit/main/content/at2/AT2E2/stage-cefim/_index.fr.md" target="_blank">
+              <i class="fas fa-pen fa-fw"></i>
+            </a>
+          </div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <span id="toc-menu" title='Table des matières (CTRL+ALT+t)'><i class="fas fa-list-alt fa-fw"></i></span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../index.html"><span itemprop="name">TSSOC</span></a><meta itemprop="position" content="1"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../at2/index.html"><span itemprop="name">Maintenir, exploiter et sécuriser une infrastructure centralisée</span></a><meta itemprop="position" content="2"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../at2/at2e2/index.html"><span itemprop="name">Sécuriser les accès à Internet</span></a><meta itemprop="position" content="3"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Stage Cefim</span><meta itemprop="position" content="4"></li>
+            </ol>
+          </div>
+          <div class="default-animation progress">
+            <div class="toc-wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#automatisation-vouchers-cefim_pedago"><strong>Automatisation vouchers CEFIM_PEDAGO</strong></a></li>
+    <li><a href="#mission-initiale">Mission initiale</a></li>
+    <li><a href="#contexte">Contexte</a></li>
+    <li><a href="#problèmes-relevés">Problèmes relevés</a></li>
+    <li><a href="#objectifs-fonctionnels">Objectifs fonctionnels</a></li>
+    <li><a href="#solution-envisagée">Solution envisagée</a></li>
+    <li><a href="#prérequis">Prérequis</a></li>
+    <li><a href="#mise-en-oeuvre">Mise en oeuvre</a>
+      <ul>
+        <li><a href="#côté-serveur">Côté serveur</a></li>
+        <li><a href="#coté-client">Coté client</a></li>
+      </ul>
+    </li>
+    <li><a href="#utilisation">Utilisation</a>
+      <ul>
+        <li><a href="#par-les-opérateurs">Par les opérateurs</a></li>
+        <li><a href="#par-ladministrateur">Par l&rsquo;administrateur</a></li>
+      </ul>
+    </li>
+    <li><a href="#mise-en-production">Mise en production</a>
+      <ul>
+        <li><a href="#partages">Partages</a></li>
+      </ul>
+    </li>
+    <li><a href="#améliorations-ultérieures-éventuelles">Améliorations ultérieures éventuelles</a></li>
+    <li><a href="#annexes">Annexes</a>
+      <ul>
+        <li><a href="#caractéristiques-des-rolls-de-vouchers">Caractéristiques des rolls de vouchers</a></li>
+        <li><a href="#caractéristiques-générales-des-vouchers-pfsense">Caractéristiques générales des vouchers pfSense</a></li>
+        <li><a href="#caractéristiques-des-vouchers-pour-cefim_pedago">Caractéristiques des vouchers pour CEFIM_PEDAGO</a></li>
+        <li><a href="#captures-décrans">Captures d&rsquo;écrans</a></li>
+        <li><a href="#code">Code</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable chapter narrow" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="chapter">
+<div class="article-subheading">Exemple 1</div>
+<h1 id="stage-cefim">Stage Cefim</h1>
+
+<h2 id="automatisation-vouchers-cefim_pedago"><strong>Automatisation vouchers CEFIM_PEDAGO</strong></h2>
+<p><em><strong>Les vouchers sont des codes d&rsquo;accès temporaires à un réseau WiFi sécurisé.</strong></em></p>
+<hr>
+<h2 id="mission-initiale">Mission initiale</h2>
+<p>Simplifier l&rsquo;extraction de vouchers pour connexion au réseau WiFi CEFIM_PEDAGO des utilisateurs apportant leur propre matériel (ordinateur, tablette, smartphone).</p>
+<hr>
+<h2 id="contexte">Contexte</h2>
+<p>Dans les locaux du CEFIM, le réseau WiFi CEFIM_PEDAGO est utilisé par la majorité des étudiants, formateurs, intervenants extérieurs et jurys.</p>
+<p>L&rsquo;accès courant au réseau est autorisé par un système de filtrage MAC au niveau du portail captif de la passerelle/pare-feu (pfSense).
+Les adresses MAC des machines CEFIM (pc/mac) fournies aux étudiants et formateurs internes sont enregistrées dans la configuration du portail captif.</p>
+<p>Pour autoriser la connexion d&rsquo;une machine inconnue du portail captif, un système d&rsquo;authentification par vouchers est mis en place au niveau du portail captif.
+Il s&rsquo;agit de séries (appelées Rolls) de codes d&rsquo;accès temporaires générés manuellement dans l&rsquo;interface web du pfSense (menu &lsquo;Services&rsquo; &gt; &lsquo;Captive Portal&rsquo; &gt; &lsquo;Edit Zone&rsquo; &gt; &lsquo;Vouchers&rsquo;).</p>
+<p>En général, une série de 1000 vouchers valides pendant cinq jours est générée par l&rsquo;administrateur quand la série précédente arrive à épuisement.
+La série générée est téléchargée depuis l&rsquo;interface web du pfSense au format .csv puis importée dans un google sheet partagé.</p>
+<p>Lorsqu&rsquo;un groupe d&rsquo;utilisateur a besoin de se connecter temporairement à Internet avec des machines non connues du portail captif, il faut lui fournir une liste de vouchers (1 par personne).
+Pour cela, un opérateur doit renseigner les divers éléments du tableau (le statut réservé, son nom, la date et le nom du groupe ou de la personne) pour chaque voucher, puis copier le nombre de codes souhaités depuis le tableau partagé et les coller dans un autre document (tableur ou texte) qu&rsquo;il doit ensuite imprimer.
+L&rsquo;utilisateur final peut ainsi se connecter au réseau en renseignant le voucher qui lui est ainsi fourni lorsque le portail captif lui demande.</p>
+<hr>
+<h2 id="problèmes-relevés">Problèmes relevés</h2>
+<ol>
+<li>Plusieurs manipulations sont nécessaires pour imprimer les vouchers.</li>
+<li>Les opérateurs n&rsquo;utilisent pas toujours des codes contigus dans la liste, rendant parfois encore plus fastidieuses les extractions ultérieures.</li>
+<li>L&rsquo;administrateur doit surveiller l&rsquo;évolution de l&rsquo;utilisation de la liste de vouchers afin d&rsquo;en générer de nouveau lorsqu&rsquo;elle arrive à épuisement.</li>
+<li>Les vouchers sont le plus souvent attribués à des groupes d&rsquo;utilisateurs. Une fois la formation terminée il n&rsquo;y a aucun moyen de relier un utilisateur au code de connexion utilisé, ce qui représente un risque légal.</li>
+<li>Une partie des vouchers n&rsquo;a pas été utilisée une fois la formation terminée, ce qui représente un autre risque car ces codes se retrouvent alors &ldquo;dans la nature&rdquo;.</li>
+</ol>
+<hr>
+<h2 id="objectifs-fonctionnels">Objectifs fonctionnels</h2>
+<ul>
+<li>Simplifier et rationaliser le système.</li>
+<li>Avertir l&rsquo;administrateur lorsque la liste de vouchers atteint un seuil critique.</li>
+<li>Relier les utilisateurs aux vouchers qu&rsquo;ils ont utilisé.</li>
+<li>Invalider les vouchers non utilisés.</li>
+</ul>
+<hr>
+<h2 id="solution-envisagée">Solution envisagée</h2>
+<p>Développer un script &lsquo;Apps Script&rsquo; (le langage de script Google Workspace - une version de javascript spécifiquement développée par Google) qui devra :</p>
+<ul>
+<li>Afficher un formulaire simplifiant la saisie des informations nécessaires à l&rsquo;extraction par les opérateurs.</li>
+<li>Extraire et réserver le nombre de vouchers nécessaires de la liste.</li>
+<li>Créer un Google Document présentant les vouchers mis en page, pret à être imprimé (mais éditable si besoin).</li>
+<li>Envoyer un email d&rsquo;alerte à l&rsquo;administrateur lorsque la liste de vouchers disponibles arrive à épuisement.</li>
+</ul>
+<p>Fonctionnalité supplémentaire : Disposer d&rsquo;une liste de secours afin de simplifier l&rsquo;ajout de vouchers par l&rsquo;admin s&rsquo;il n&rsquo;est pas présent sur site (en congés, en déplacement, etc.) lorsque la liste courante arrive à épuisement.</p>
+<p>L&rsquo;invalidation des vouchers non utilisés n&rsquo;est possible que par l&rsquo;intermédiaire de l&rsquo;interface web du pfSense et donc relève de la responsabilité de l&rsquo;administrateur. Il faut simplement intégrer cette opération dans une procédure de maintenance.</p>
+<hr>
+<h2 id="prérequis">Prérequis</h2>
+<p>Arborescence Google Drive :</p>
+<ul>
+<li>1 dossier principal Google Drive partagé avec :
+<ul>
+<li>1 sous-dossier accessible uniquement par l&rsquo;administrateur.</li>
+<li>1 sous-dossier partagé</li>
+</ul>
+</li>
+</ul>
+<p>Documents Google :</p>
+<ul>
+<li>1 Google Sheet dans le dossier principal contenant la liste courante de vouchers disponibles. Le partage de ce fichier doit être nominatif (l&rsquo;accès nécessite une connection aux services Google). Il contiendra :
+<ul>
+<li>1 feuille de calcul pour la liste des vouchers disponible.</li>
+<li>1 feuille de calcul pour la liste des vouchers utilisés.</li>
+<li>1 feuille de calcul masquée contenant les paramètres généraux des scripts :
+<ul>
+<li>L&rsquo;Id du modèle de document.</li>
+<li>L&rsquo;Id du sous-dossier contenant les documents générés.</li>
+<li>L&rsquo;adresse email de l&rsquo;administrateur.</li>
+<li>Le seuil d&rsquo;alerte.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>1 modèle Google Document dans le dossier principal pour impression des vouchers sur demande contenant :
+<ul>
+<li>Le logo du CEFIM.</li>
+<li>1 emplacement pour le nom du groupe ou de la personne.</li>
+<li>1 emplacement pour la date.</li>
+<li>1 tableau sur 2 colonnes avec :
+<ul>
+<li>1 ligne de titres</li>
+<li>25 lignes avec chacune 1 emplacement pour un voucher dans la 1ère colonne et 1 cellule vide pour recevoir les nom et prénom de l&rsquo;utilisateur dans la 2ème colonne.</li>
+</ul>
+</li>
+<li>Un message &ldquo;Bonne formation&rdquo; sous le tableau.</li>
+</ul>
+</li>
+<li>1 Google Sheet dans le dossier privé contenant la liste des vouchers de secours.</li>
+</ul>
+<hr>
+<h2 id="mise-en-oeuvre">Mise en oeuvre</h2>
+<h3 id="côté-serveur">Côté serveur</h3>
+<p>Un script serveur attaché à la liste courante qui implémente les fonctionnalités suivantes :</p>
+<ul>
+<li>Ajout d&rsquo;un menu permettant d&rsquo;afficher le formulaire de demande de vouchers.</li>
+<li>Ajout d&rsquo;un déclencheur personnalisé affichant le formulaire à l&rsquo;ouverture de la feuille de calcul.</li>
+<li>Le formulaire est affiché de manière modale.</li>
+<li>Post-traitement du formulaire :
+<ul>
+<li>Récupération des données saisies.</li>
+<li>Récupération de l&rsquo;adresse email de l&rsquo;opérateur.</li>
+<li>Extraction du nombre de vouchers demandés vers une autre feuille de calcul avec les infos de réservation.</li>
+<li>Mise en forme des données déplacées.</li>
+<li>Création d&rsquo;un Google Document à partir d&rsquo;un modèle.</li>
+<li>Insertions des données dans le Document.</li>
+<li>Suppression des éléments inutiles.</li>
+<li>enregistrement du Document dans un sous-dossier spécifique du Drive.</li>
+<li>Affichage du lien vers le Document généré.</li>
+</ul>
+</li>
+<li>Envoie d&rsquo;un email d&rsquo;alerte à l&rsquo;administrateur lorsque le nombre de vouchers disponibles est en dessous du seuil défini, avec :
+<ul>
+<li>1 lien vers l&rsquo;interface web du pfSense pour générer un nouveau roll.</li>
+<li>1 lien pour ouvrir la liste de secours.</li>
+<li>1 lien vers la liste courante.</li>
+</ul>
+</li>
+</ul>
+<p>Un script serveur attaché à la liste de secours qui implémente ces fonctionnalités :</p>
+<ul>
+<li>Ajout d&rsquo;un menu permettant de lancer la procédure d&rsquo;ajout de vouchers de secours à la liste courante.</li>
+<li>Le chargement de la configuration contenue dans une feuille spécifique du classeur.</li>
+<li>La procédure d&rsquo;ajout de vouchers de secours à la liste courante avec demande de confirmation préalable et gestion des erreurs (authentification, ouverture de fichier).</li>
+<li>Envoi d&rsquo;un email indiquant le succès ou l&rsquo;échec éventuel de l&rsquo;opération et indiquant le nombre de vouchers de secours restants.</li>
+</ul>
+<h3 id="coté-client">Coté client</h3>
+<p>Un fichier html contenant le formulaire de réservation de vouchers avec :</p>
+<ul>
+<li>1 champ pour renseigner le nom du ou des destinataires (groupe ou personne).</li>
+<li>1 champ pour la date.</li>
+<li>1 champ pour le nombre de vouchers à réserver.</li>
+<li>Formatage CSS :
+<ul>
+<li>Mise en page générale.</li>
+<li>Indication des champs requis.</li>
+</ul>
+</li>
+<li>Javascript :
+<ul>
+<li>Validation des données saisies pour éviter les erreurs, avec retour visuel.</li>
+<li>Indication de chargement.</li>
+<li>Déclenchement du script serveur suite à la validation du formulaire.</li>
+</ul>
+</li>
+</ul>
+<p>Un fichier Html d&rsquo;indication de chargement comportant :</p>
+<ul>
+<li>1 titre</li>
+<li>1 gif animé hébergé sur le Google Drive partagé</li>
+</ul>
+<hr>
+<h2 id="utilisation">Utilisation</h2>
+<h3 id="par-les-opérateurs">Par les opérateurs</h3>
+<p>À l&rsquo;ouverture du Google Sheet partagé contenant la liste des vouchers disponibles, un script est automatiquement exécuté. Il ajoute une entrée de menu et affiche le formulaire permettant de saisir les informations nécessaires à la réservation de vouchers :</p>
+<ul>
+<li>Un nom de groupe ou personne.</li>
+<li>La date de début de formation.</li>
+<li>Le nombre de vouchers à réserver.</li>
+</ul>
+<p>L&rsquo;opérateur étant connecté pour avoir accès au document, son adresse email est automatiquement récupérée par le script.</p>
+<p>Une fois le formulaire correctement renseigné (les données saisies sont vérifiées) le script déplace le nombre de vouchers réservés dans une autre feuille où sont également renseignés les informations propres à la réservation, puis génère une copie du modèle Google Document en y insérant le nom du groupe, la date et la liste de vouchers réservés.</p>
+<p>Une boite de dialogue affichant le lien vers le document généré est alors présentée à l&rsquo;opérateur. En suivant ce lien le document s&rsquo;ouvre dans un nouvel onglet de son navigateur, il peut directement l&rsquo;imprimer ou le modifier au préalable si besoin (par ex. : renseigner la colonne des noms d&rsquo;utilisateurs si connus par l&rsquo;opérateur). Si non remplis avant impression, les utilisateurs devront renseigner leur nom et prénom en regard du voucher utilisé.</p>
+<p>Une fois le tableau rempli et récupéré, l&rsquo;opérateur devra reporter ces renseignements dans le tableau des vouchers utilisés. Pour se conformer à la législation, ces données devront être conservées pendant une durée minimum d'1 an.</p>
+<h3 id="par-ladministrateur">Par l&rsquo;administrateur</h3>
+<p>L&rsquo;administrateur génère un roll initial de 1000 vouchers ayants une durée de validité de 5 jours.</p>
+<p>Lorsque le nombre de vouchers disponible atteint le seuil minimal, il reçoit un email d&rsquo;alerte lui indiquant le nombre de vouchers disponibles restant et lui présentant :</p>
+<ul>
+<li>Un lien vers l&rsquo;interface web du pfSense (adresse ip publique accessible de l&rsquo;extérieur).</li>
+<li>Un lien vers le Google Sheet contenant les vouchers de secours pour un ajout rapide.</li>
+<li>Un lien vers la liste courante pour vérification.</li>
+</ul>
+<p>S&rsquo;il décide d&rsquo;activer des vouchers de secours, un menu ou un bouton lui permettent d&rsquo;ajouter 100 vouchers de secours à la liste courante. Il peut répéter l&rsquo;opération jusqu&rsquo;à épuisement de la liste de secours. Un email de confirmation (ou d&rsquo;erreur) lui est automatiquement envoyé à chaque ajout lui indiquant le succès (ou l&rsquo;échec le cas échéant) de l&rsquo;opération ainsi que le nombre de vouchers de secours restants.</p>
+<p>Ensuite, lorsque son emploi du temps lui permettra, il devra générer un nouveau roll de vouchers par le biais de l&rsquo;interface web du pfSense et les ajouter à la liste courante. Il devra également s&rsquo;assurer de disposer d&rsquo;un nombre suffisant de vouchers de secours en cas de besoin.</p>
+<hr>
+<h2 id="mise-en-production">Mise en production</h2>
+<p>Le document Google Sheet contenant la liste courante de voucher doit être stocké dans un dossier principal Google Drive (&lsquo;CEFIM_PEDAGO&rsquo;). Ce document doit être partagé nominativement (utiliser le partage &ldquo;Limité&rdquo;) en renseignant une adresse email pour chaque collaborateur devant avoir un accès à cette liste. Ceci est nécessaire pour pouvoir récupérer automatiquement son adresse email via le script. Ce document comportera 3 feuilles de calcul :</p>
+<ul>
+<li>1 feuille nommée <strong>&ldquo;Vouchers&rdquo;</strong> contenant la liste des vouchers disponibles.</li>
+<li>1 feuille nommée <strong>&ldquo;Utilisés&rdquo;</strong> contenant la liste des vouchers réservés.</li>
+<li>1 feuille nommée <strong>&ldquo;Config&rdquo;</strong> (masquée) contenant les paramètres des scripts.</li>
+</ul>
+<p>Le modèle Google Document sera hébergé dans le dossier principal avec la liste courante et pourra être partagé de manière plus permissive (option de partage &ldquo;Tous les utilisateurs qui ont le lien&rdquo;).</p>
+<p>Le document Google Sheet contenant les vouchers de secours doit être, quant-à-lui, stocké dans un sous dossier privé (&lsquo;PRIVATE&rsquo;) du dossier principal et n&rsquo;être accessible que par l&rsquo;administrateur en charge de la génération des rolls de vouchers (détenant un accès au pfSense). Il ne comportera qu&rsquo;une seule feuille nommée <strong>&ldquo;Liste_Secours&rdquo;</strong>.</p>
+<p><strong>Important : Bien respecter les noms des feuilles de calcul pour les 2 Google Sheet tels qu&rsquo;indiqués ci-dessus en gras : Les scripts s&rsquo;appuient sur ces noms de feuille.</strong></p>
+<h3 id="partages">Partages</h3>
+<ul>
+<li>Dossier principal &lsquo;CEFIM_PEDAGO&rsquo; : Tous les utilisateurs qui ont le lien</li>
+<li>Sous-dossier &lsquo;DOCS&rsquo; : Tous les utilisateurs qui ont le lien</li>
+<li>Sous-dossier &lsquo;PRIVATE&rsquo; : Non partagé</li>
+<li>Google Sheet &lsquo;Vouchers_CEFIM_PEDAGO&rsquo; : Partage limité</li>
+<li>Google Document &lsquo;Template_Vouchers_CEFIM_PEAGO&rsquo; : Tous les utilisateurs qui ont le lien</li>
+<li>Google Sheet &lsquo;Vouchers_CEFIM_PEDAGO_SECOURS&rsquo; : Non partagé</li>
+</ul>
+<hr>
+<h2 id="améliorations-ultérieures-éventuelles">Améliorations ultérieures éventuelles</h2>
+<ul>
+<li>
+<p>Création et gestions de plusieurs rolls avec des durées de validité différentes (1/2 journée - 1 jour - 2 jours - 3 jours - 4 jours - 1 semaine - 2 semaines - 1 mois) pour correspondre aux durées des différentes formations dispensées. Autant de rolls de secours devront être prévus.</p>
+</li>
+<li>
+<p>Dans le cas où l&rsquo;opérateur renseigne les noms/prénoms des utilisateurs avant impression, disposer d&rsquo;un script attaché au document permettant de reporter automatiquement ces infos dans le tableau des vouchers utilisés.</p>
+</li>
+<li>
+<p>Export des vouchers réservés à l&rsquo;issue de chaque formation afin d&rsquo;en faciliter la vérification (s&rsquo;ils ont été utilisés ou non) ou l&rsquo;invalidation (interface web du pfSense dans les 2 cas).</p>
+</li>
+</ul>
+<hr>
+<h2 id="annexes">Annexes</h2>
+<h3 id="caractéristiques-des-rolls-de-vouchers">Caractéristiques des rolls de vouchers</h3>
+<ul>
+<li>Ils comportent un numéro unique parmi les rolls actifs.</li>
+<li>On leur affecte un nombre de vouchers (1023 maximum avec le nombre de bits de ticket par défaut).</li>
+<li>On leur défini une durée de validité en heures.</li>
+<li>Une description leur est associée.</li>
+</ul>
+<p><strong>Attention : Tout changement dans les champs de nombre de bits (roll, ticket ou somme de contrôle - voir ci-après) invalide immédiatement tout roll créé précédemment.</strong></p>
+<h3 id="caractéristiques-générales-des-vouchers-pfsense">Caractéristiques générales des vouchers pfSense</h3>
+<blockquote>
+<p><em>Le texte en italique ci-dessous est une traduction de la documentation officielle.</em></p>
+</blockquote>
+<ul>
+<li>Clés RSA : <code>64 bits maximum</code> (32 bits par défaut).</li>
+<li>Jeu de caractères (utilisé pour la création des vouchers) : <code>2345678abcdefhijkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ</code> (par défaut - les caractères pouvant prêter à confusion sont retirés).</li>
+</ul>
+<p>Bits des vouchers : <em>Les champs de bits suivants contrôlent la manière dont les vouchers sont généré par le portail. Il est recommandé d&rsquo;utiliser les valeurs par défaut mais celles-ci peuvent être ajustées si nécessaire. Le total de tous les champs de bits doit être inférieur au nombre de bits de la clé RSA (exemple avec les valeurs par défaut : 16 + 10 + 5 = 31 =&gt; 32 - 1).</em></p>
+<ul>
+<li>Bits de roll : [1-31], défaut : <code>16</code> =&gt; définit le nombre maximum de rolls actifs simultanément = 65535 avec 16 bits (2^16 - 1, défaut).</li>
+<li>Bits de ticket : [1-16], défaut : <code>10</code> =&gt; définit le nombre maximum de vouchers par roll = 1023 avec 10 bits (2^10 - 1, défaut).</li>
+<li>Bits de somme de contrôle : [0-31], défaut : <code>5</code> =&gt; bits de contrôle d&rsquo;intégrité.</li>
+</ul>
+<p><em>Le &rsquo;nombre magique&rsquo; est présent dans chaque voucher et est vérifié par le portail lors de la vérification du voucher. La taille du nombre magique dépend du nombre de bits restant après avoir additionné les bits de roll, voucher et somme de contrôle. S&rsquo;il ne reste aucun bit disponible, le nombre magique n&rsquo;est pas utilisé.</em></p>
+<p>Les deux derniers champs de la page de configuration permettent de personnaliser les messages d&rsquo;erreur en cas de tentative de connexion avec un code invalide ou avec un code expiré.</p>
+<p>En résumé : Pour augmenter le nombre maximum de vouchers générés par roll il faut augmenter le nombre de bits de ticket tout en diminuant d&rsquo;autant le nombre de bits de roll (en conséquence les vouchers générés comporteront davantage de caractères).</p>
+<h3 id="caractéristiques-des-vouchers-pour-cefim_pedago">Caractéristiques des vouchers pour CEFIM_PEDAGO</h3>
+<ul>
+<li>Générés par roll de 1000 vouchers.</li>
+<li>Durée de validité de 5 jours à compter du moment d&rsquo;activation par l&rsquo;utilisateur.</li>
+</ul>
+<p>Les options suivantes conservent les valeurs par défaut :</p>
+<ul>
+<li>Clés RSA de 32 Bit (Public/Private).</li>
+<li>Jeu de caractères : 2345678abcdefhijkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ</li>
+<li>Bits de roll : 16</li>
+<li>Bits de tickets : 10</li>
+<li>Bits de somme de contrôle : 5</li>
+<li>Nombre magique à 10 chiffres.</li>
+</ul>
+<hr>
+<h3 id="captures-décrans">Captures d&rsquo;écrans</h3>
+<ul>
+<li>Le formulaire de réservation :</li>
+</ul>
+<p>
+<a href="#image-544b9aceff651535f2faecbf5cfb540b" class="lightbox-link">
+<img src="../../../at2/at2e2/stage-cefim/01-Furmulaire%20r%C3%A9servation.png" alt="Formulaire de réservation" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-544b9aceff651535f2faecbf5cfb540b">
+<img src="../../../at2/at2e2/stage-cefim/01-Furmulaire%20r%C3%A9servation.png" alt="Formulaire de réservation" class="lightbox-image" loading="lazy">
+</a></p>
+<ul>
+<li>Le modèle de document :</li>
+</ul>
+<p>
+<a href="#image-34b4e643527073c9befc241efa6744b4" class="lightbox-link">
+<img src="../../../at2/at2e2/stage-cefim/02-Template%20Vouchers%20CEFIM_PEDAGO.png" alt="Modèle de document" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-34b4e643527073c9befc241efa6744b4">
+<img src="../../../at2/at2e2/stage-cefim/02-Template%20Vouchers%20CEFIM_PEDAGO.png" alt="Modèle de document" class="lightbox-image" loading="lazy">
+</a></p>
+<ul>
+<li>La présentation du lien vers le document généré :</li>
+</ul>
+<p>
+<a href="#image-19c4b0deffaf475fe260ccd77767b86a" class="lightbox-link">
+<img src="../../../at2/at2e2/stage-cefim/03-Lien%20document%20g%C3%A9n%C3%A9r%C3%A9.png" alt="Lien document généré" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-19c4b0deffaf475fe260ccd77767b86a">
+<img src="../../../at2/at2e2/stage-cefim/03-Lien%20document%20g%C3%A9n%C3%A9r%C3%A9.png" alt="Lien document généré" class="lightbox-image" loading="lazy">
+</a></p>
+<ul>
+<li>Le document généré :</li>
+</ul>
+<p>
+<a href="#image-17599af739bc01494108015f9bf074fd" class="lightbox-link">
+<img src="../../../at2/at2e2/stage-cefim/04-Document%20g%C3%A9n%C3%A9r%C3%A9.png" alt="Document généré" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-17599af739bc01494108015f9bf074fd">
+<img src="../../../at2/at2e2/stage-cefim/04-Document%20g%C3%A9n%C3%A9r%C3%A9.png" alt="Document généré" class="lightbox-image" loading="lazy">
+</a></p>
+<ul>
+<li>Le document généré modifié :</li>
+</ul>
+<p>
+<a href="#image-1c8df9954ee1cd68acb459df2553c42e" class="lightbox-link">
+<img src="../../../at2/at2e2/stage-cefim/05-Document%20g%C3%A9n%C3%A9r%C3%A9%20modifi%C3%A9.png" alt="Document généré modifié" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-1c8df9954ee1cd68acb459df2553c42e">
+<img src="../../../at2/at2e2/stage-cefim/05-Document%20g%C3%A9n%C3%A9r%C3%A9%20modifi%C3%A9.png" alt="Document généré modifié" class="lightbox-image" loading="lazy">
+</a></p>
+<ul>
+<li>L&rsquo;email d&rsquo;alerte de liste épuisée :</li>
+</ul>
+<p>
+<a href="#image-08fc36adbb6c420a43cc56840199470c" class="lightbox-link">
+<img src="../../../at2/at2e2/stage-cefim/06-email%20alete%20liste%20%C3%A9puis%C3%A9e.png" alt="Email alerte liste épuisée" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-08fc36adbb6c420a43cc56840199470c">
+<img src="../../../at2/at2e2/stage-cefim/06-email%20alete%20liste%20%C3%A9puis%C3%A9e.png" alt="Email alerte liste épuisée" class="lightbox-image" loading="lazy">
+</a></p>
+<ul>
+<li>L&rsquo;email de confirmation d&rsquo;activation de vouchers de secours :</li>
+</ul>
+<p>
+<a href="#image-d9db75103bd7f023f8e46dc4b6797999" class="lightbox-link">
+<img src="../../../at2/at2e2/stage-cefim/07-email%20confirm%20secours.png" alt="Email confirmation secours" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-d9db75103bd7f023f8e46dc4b6797999">
+<img src="../../../at2/at2e2/stage-cefim/07-email%20confirm%20secours.png" alt="Email confirmation secours" class="lightbox-image" loading="lazy">
+</a></p>
+<hr>
+<h3 id="code">Code</h3>
+<p>Vouchers CEFIM_PEDAGO</p>
+<p>Code.gs :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="c1">// Global config object
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">let</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Add a menu entry to UI
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">function</span> <span class="nx">onOpen</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">SpreadsheetApp</span><span class="p">.</span><span class="nx">getUi</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">createMenu</span><span class="p">(</span><span class="s1">&#39;🔑VOUCHERS&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">addItem</span><span class="p">(</span><span class="s1">&#39;Reserver&#39;</span><span class="p">,</span> <span class="s1">&#39;openFormDialog&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">addToUi</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Open the form dialog (triggered by opening the spreadsheet or by the VOUCHERS menu)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">function</span> <span class="nx">openFormDialog</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">sheet</span> <span class="o">=</span> <span class="nx">SpreadsheetApp</span><span class="p">.</span><span class="nx">getActive</span><span class="p">().</span><span class="nx">getSheetByName</span><span class="p">(</span><span class="s1">&#39;Vouchers&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">sheet</span><span class="p">.</span><span class="nx">activate</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">html</span> <span class="o">=</span> <span class="nx">HtmlService</span><span class="p">.</span><span class="nx">createHtmlOutputFromFile</span><span class="p">(</span><span class="s1">&#39;Form&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">setWidth</span><span class="p">(</span><span class="mi">520</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">setHeight</span><span class="p">(</span><span class="mi">320</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">SpreadsheetApp</span><span class="p">.</span><span class="nx">getUi</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">showModalDialog</span><span class="p">(</span><span class="nx">html</span><span class="p">,</span> <span class="s1">&#39;Vouchers CEFIM_PEDAGO&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Show the loading dialog
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">function</span> <span class="nx">openLoadingModal</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">html</span> <span class="o">=</span> <span class="nx">HtmlService</span><span class="p">.</span><span class="nx">createHtmlOutputFromFile</span><span class="p">(</span><span class="s1">&#39;Loading&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">setWidth</span><span class="p">(</span><span class="mi">520</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">setHeight</span><span class="p">(</span><span class="mi">360</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">SpreadsheetApp</span><span class="p">.</span><span class="nx">getUi</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">showModalDialog</span><span class="p">(</span><span class="nx">html</span><span class="p">,</span> <span class="s1">&#39;Chargement...&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Populate the config object
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">function</span> <span class="nx">getConfig</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">configSheet</span> <span class="o">=</span> <span class="nx">SpreadsheetApp</span><span class="p">.</span><span class="nx">getActive</span><span class="p">().</span><span class="nx">getSheetByName</span><span class="p">(</span><span class="s1">&#39;Config&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">config</span><span class="p">.</span><span class="nx">templateId</span> <span class="o">=</span> <span class="nx">configSheet</span><span class="p">.</span><span class="nx">getRange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">).</span><span class="nx">getValue</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">config</span><span class="p">.</span><span class="nx">docFolderId</span> <span class="o">=</span> <span class="nx">configSheet</span><span class="p">.</span><span class="nx">getRange</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">).</span><span class="nx">getValue</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">config</span><span class="p">.</span><span class="nx">email</span> <span class="o">=</span> <span class="nx">configSheet</span><span class="p">.</span><span class="nx">getRange</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">).</span><span class="nx">getValue</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">config</span><span class="p">.</span><span class="nx">lowlimit</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">configSheet</span><span class="p">.</span><span class="nx">getRange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">).</span><span class="nx">getValue</span><span class="p">(),</span> <span class="mi">10</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`*CONFIG* templateId: </span><span class="si">${</span><span class="nx">config</span><span class="p">.</span><span class="nx">templateId</span><span class="si">}</span><span class="sb">
+</span></span></span><span class="line"><span class="cl"><span class="sb">        docFolderId: </span><span class="si">${</span><span class="nx">config</span><span class="p">.</span><span class="nx">docFolderId</span><span class="si">}</span><span class="sb">
+</span></span></span><span class="line"><span class="cl"><span class="sb">        email: </span><span class="si">${</span><span class="nx">config</span><span class="p">.</span><span class="nx">email</span><span class="si">}</span><span class="sb">
+</span></span></span><span class="line"><span class="cl"><span class="sb">        lowlimit: </span><span class="si">${</span><span class="nx">config</span><span class="p">.</span><span class="nx">lowLimit</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Create a Google Document with form response data
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">function</span> <span class="nx">createDocumentFromFormData</span><span class="p">(</span><span class="nx">form</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">config</span> <span class="o">=</span> <span class="nx">getConfig</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">html</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">ui</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// Form response (or test data if debugging)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">let</span> <span class="nx">grp</span> <span class="o">=</span> <span class="nx">form</span><span class="p">.</span><span class="nx">group</span> <span class="o">?</span> <span class="nx">form</span><span class="p">.</span><span class="nx">group</span> <span class="o">:</span> <span class="s1">&#39;DEBUG TEST GRP [&#39;</span> <span class="o">+</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;]&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">date</span> <span class="o">=</span> <span class="nx">form</span><span class="p">.</span><span class="nx">date</span> <span class="o">?</span> <span class="nx">form</span><span class="p">.</span><span class="nx">date</span> <span class="o">:</span> <span class="s1">&#39;2022-12-31&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">nb</span> <span class="o">=</span> <span class="nx">form</span><span class="p">.</span><span class="nx">nb</span> <span class="o">?</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">form</span><span class="p">.</span><span class="nx">nb</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="o">:</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// Localized date
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">let</span> <span class="nx">fdate</span> <span class="o">=</span> <span class="nx">Utilities</span><span class="p">.</span><span class="nx">formatDate</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">date</span><span class="p">),</span> <span class="s1">&#39;Europe/Paris&#39;</span><span class="p">,</span> <span class="s1">&#39;dd/MM/yyyy&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// Get email of the user executing the script
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">let</span> <span class="nx">user</span> <span class="o">=</span> <span class="nx">Session</span><span class="p">.</span><span class="nx">getActiveUser</span><span class="p">().</span><span class="nx">getEmail</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">ss</span> <span class="o">=</span> <span class="nx">SpreadsheetApp</span><span class="p">.</span><span class="nx">getActive</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// Store the working Sheets
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">let</span> <span class="nx">vlist</span> <span class="o">=</span> <span class="nx">ss</span><span class="p">.</span><span class="nx">getSheetByName</span><span class="p">(</span><span class="s1">&#39;Vouchers&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">used</span> <span class="o">=</span> <span class="nx">ss</span><span class="p">.</span><span class="nx">getSheetByName</span><span class="p">(</span><span class="s1">&#39;Utilisés&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">rows</span> <span class="o">=</span> <span class="nx">vlist</span><span class="p">.</span><span class="nx">getDataRange</span><span class="p">().</span><span class="nx">getValues</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// Make a copy of the template Document &amp; store its ID
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">let</span> <span class="nx">documentId</span> <span class="o">=</span> <span class="nx">DriveApp</span><span class="p">.</span><span class="nx">getFileById</span><span class="p">(</span><span class="nx">config</span><span class="p">.</span><span class="nx">templateId</span><span class="p">).</span><span class="nx">makeCopy</span><span class="p">().</span><span class="nx">getId</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// Using string interpolation
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">let</span> <span class="nx">title</span> <span class="o">=</span> <span class="sb">`</span><span class="si">${</span><span class="nx">date</span><span class="si">}</span><span class="sb"> - </span><span class="si">${</span><span class="nx">grp</span><span class="si">}</span><span class="sb"> - </span><span class="si">${</span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">docFile</span> <span class="o">=</span> <span class="nx">DriveApp</span><span class="p">.</span><span class="nx">getFileById</span><span class="p">(</span><span class="nx">documentId</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">docFile</span><span class="p">.</span><span class="nx">setName</span><span class="p">(</span><span class="nx">title</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// Add the docFile to the doc sub-folder
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">DriveApp</span><span class="p">.</span><span class="nx">getFolderById</span><span class="p">(</span><span class="nx">config</span><span class="p">.</span><span class="nx">docFolderId</span><span class="p">).</span><span class="nx">addFile</span><span class="p">(</span><span class="nx">docFile</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// Remove the docFile ref from the current folder
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">docFile</span><span class="p">.</span><span class="nx">getParents</span><span class="p">().</span><span class="nx">next</span><span class="p">().</span><span class="nx">removeFile</span><span class="p">(</span><span class="nx">docFile</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">documentUrl</span> <span class="o">=</span> <span class="sb">`https://docs.google.com/document/d/</span><span class="si">${</span><span class="nx">documentId</span><span class="si">}</span><span class="sb">/edit`</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">docBody</span> <span class="o">=</span> <span class="nx">DocumentApp</span><span class="p">.</span><span class="nx">openById</span><span class="p">(</span><span class="nx">documentId</span><span class="p">).</span><span class="nx">getBody</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">docBody</span><span class="p">.</span><span class="nx">replaceText</span><span class="p">(</span><span class="s1">&#39;##Groupe##&#39;</span><span class="p">,</span> <span class="nx">grp</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">docBody</span><span class="p">.</span><span class="nx">replaceText</span><span class="p">(</span><span class="s1">&#39;##Date##&#39;</span><span class="p">,</span> <span class="nx">fdate</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">placeholder</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// Store the 1st empty row from the used Sheet before insertion
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">let</span> <span class="nx">firstRow</span> <span class="o">=</span> <span class="nx">used</span><span class="p">.</span><span class="nx">getLastRow</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// Get &amp; move the needed number of Vouchers from the vlist Sheet to the used Sheet,
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="c1">// starting from the end of the list (one by one to timestamp each of them)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">rows</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">row</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&gt;=</span> <span class="mi">2</span> <span class="o">&amp;&amp;</span> <span class="nx">j</span> <span class="o">&lt;=</span> <span class="nx">nb</span><span class="p">;</span> <span class="nx">i</span><span class="o">--</span><span class="p">,</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">row</span> <span class="o">=</span> <span class="nx">rows</span><span class="p">[</span><span class="nx">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">vlist</span><span class="p">.</span><span class="nx">deleteRow</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">placeholder</span> <span class="o">=</span> <span class="sb">`##voucher</span><span class="si">${</span><span class="nx">j</span><span class="si">}</span><span class="sb">##`</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// row[0] is the voucher
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">docBody</span><span class="p">.</span><span class="nx">replaceText</span><span class="p">(</span><span class="nx">placeholder</span><span class="p">,</span> <span class="nx">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// add the timestamp
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">row</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nx">Utilities</span><span class="p">.</span><span class="nx">formatDate</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">(),</span> <span class="s1">&#39;Europe/Paris&#39;</span><span class="p">,</span> <span class="s1">&#39;yyyy/MM/dd  HH:mm:ss.SSS&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">row</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Following data need to be written 1 time only
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="nx">j</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">row</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="nx">fdate</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">row</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="nx">user</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">row</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="nx">grp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">row</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="nx">documentUrl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Append the row to the used list
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">used</span><span class="p">.</span><span class="nx">appendRow</span><span class="p">(</span><span class="nx">row</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// Count remaining vouchers en send an alert if &lt;= config.lowlimit
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">rows</span> <span class="o">=</span> <span class="nx">vlist</span><span class="p">.</span><span class="nx">getDataRange</span><span class="p">().</span><span class="nx">getValues</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">vouchersLeft</span> <span class="o">=</span> <span class="nx">rows</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="nx">vouchersLeft</span> <span class="o">&lt;=</span> <span class="nx">config</span><span class="p">.</span><span class="nx">lowlimit</span><span class="p">)</span> <span class="p">{</span><span class="nx">sendAlertEmail</span><span class="p">(</span><span class="nx">vouchersLeft</span><span class="p">);}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Format inserted data inside the used Sheet (merge - valign - borders - columns auto resize)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">let</span> <span class="nx">lastRow</span> <span class="o">=</span> <span class="nx">used</span><span class="p">.</span><span class="nx">getLastRow</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">range</span> <span class="o">=</span> <span class="sb">`D</span><span class="si">${</span><span class="nx">firstRow</span><span class="si">}</span><span class="sb">:G</span><span class="si">${</span><span class="nx">lastRow</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// merge &amp; align
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">used</span><span class="p">.</span><span class="nx">getRange</span><span class="p">(</span><span class="nx">range</span><span class="p">).</span><span class="nx">mergeVertically</span><span class="p">().</span><span class="nx">setVerticalAlignment</span><span class="p">(</span><span class="s1">&#39;middle&#39;</span><span class="p">).</span><span class="nx">setHorizontalAlignment</span><span class="p">(</span><span class="s1">&#39;center&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">range</span> <span class="o">=</span> <span class="sb">`A</span><span class="si">${</span><span class="nx">firstRow</span><span class="si">}</span><span class="sb">:G</span><span class="si">${</span><span class="nx">lastRow</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// borders
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">used</span><span class="p">.</span><span class="nx">getRange</span><span class="p">(</span><span class="nx">range</span><span class="p">).</span><span class="nx">setBorder</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="kc">null</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// autoresize colums
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">used</span><span class="p">.</span><span class="nx">autoResizeColumns</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c1">// Delete unused placeholders in the Document
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">nb</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="mi">25</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">placeholder</span> <span class="o">=</span> <span class="sb">`##voucher</span><span class="si">${</span><span class="nx">i</span><span class="si">}</span><span class="sb">##`</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">docBody</span><span class="p">.</span><span class="nx">replaceText</span><span class="p">(</span><span class="nx">placeholder</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">search</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">tables</span> <span class="o">=</span> <span class="p">[];</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// Extract all the tables inside the Document
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="k">while</span> <span class="p">(</span><span class="nx">search</span> <span class="o">=</span> <span class="nx">docBody</span><span class="p">.</span><span class="nx">findElement</span><span class="p">(</span><span class="nx">DocumentApp</span><span class="p">.</span><span class="nx">ElementType</span><span class="p">.</span><span class="nx">TABLE</span><span class="p">,</span> <span class="nx">search</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">tables</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">search</span><span class="p">.</span><span class="nx">getElement</span><span class="p">().</span><span class="nx">asTable</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// Delete all empty rows from the Document tables
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">tables</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">table</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="kd">let</span> <span class="nx">trows</span> <span class="o">=</span> <span class="nx">table</span><span class="p">.</span><span class="nx">getNumRows</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">// Iterate through each row of the table
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">r</span> <span class="o">=</span> <span class="nx">trows</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">r</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">r</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="c1">// If the table row contains no text, delete it
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>          <span class="k">if</span> <span class="p">(</span><span class="nx">table</span><span class="p">.</span><span class="nx">getRow</span><span class="p">(</span><span class="nx">r</span><span class="p">).</span><span class="nx">getText</span><span class="p">().</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\s/g</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="o">===</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">              <span class="nx">table</span><span class="p">.</span><span class="nx">removeRow</span><span class="p">(</span><span class="nx">r</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">          <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Show the ready to print Document link in a modal dialog
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">SpreadsheetApp</span><span class="p">.</span><span class="nx">getActive</span><span class="p">().</span><span class="nx">toast</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">nb</span><span class="si">}</span><span class="sb"> vouchers réservés pour le groupe </span><span class="si">${</span><span class="nx">grp</span><span class="si">}</span><span class="sb"> pour le </span><span class="si">${</span><span class="nx">fdate</span><span class="si">}</span><span class="sb"> par </span><span class="si">${</span><span class="nx">user</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">html</span> <span class="o">=</span> <span class="s1">&#39;&lt;html&gt;&lt;head&gt;&lt;style&gt;* {font-family: &#34;Google Sans&#34;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;}&lt;/style&gt;&lt;/head&gt;&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">+</span> <span class="s1">&#39;&lt;body&gt;&lt;h1&gt;&lt;a href=&#34;&#39;</span> <span class="o">+</span> <span class="nx">documentUrl</span> <span class="o">+</span> <span class="s1">&#39;&#34; target=&#34;_blank&#34;&gt;Ouvrir le document&lt;/a&gt;&lt;/h1&gt;&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">+</span> <span class="s1">&#39;&lt;h3&gt;Une fois ouvert, le document peut être modifié et/ou imprimé.&lt;/h3&gt;&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">+</span> <span class="s1">&#39;&lt;p&gt;Le lien du document est également accessible via la feuille &#34;Utilisés&#34;.&lt;/p&gt;&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">+</span> <span class="s1">&#39;&lt;div style=&#34;margin: 80px auto auto 200px;&#34;&gt;&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">+</span> <span class="s1">&#39;&lt;input type=&#34;button&#34; value=&#34;Fermer&#34; id=&#34;btnclose&#34; onclick=&#34;google.script.host.close();&#34; style=&#34; width: 80px; height: 30px;&#34; /&gt;&lt;/div&gt;&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">+</span> <span class="s1">&#39;&lt;/body&gt;&lt;/html&gt;&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">ui</span> <span class="o">=</span> <span class="nx">HtmlService</span><span class="p">.</span><span class="nx">createHtmlOutput</span><span class="p">(</span><span class="nx">html</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">SpreadsheetApp</span><span class="p">.</span><span class="nx">getUi</span><span class="p">().</span><span class="nx">showModalDialog</span><span class="p">(</span><span class="nx">ui</span><span class="p">,</span> <span class="nx">title</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">sendAlertEmail</span><span class="p">(</span><span class="nx">nbleft</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`sendAlertEmail a démarré avec le paramètre nbleft=</span><span class="si">${</span><span class="nx">nbleft</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">subject</span> <span class="o">=</span> <span class="s1">&#39;Alerte CEFIM_PEDAGO Vouchers : Liste épuisée&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">body</span> <span class="o">=</span> <span class="s1">&#39;&lt;html&gt;&lt;body&gt;&lt;h1 style=&#34;color: red;&#34;&gt;La liste de vouchers CEFIM_PEDAGO disponibles arrive à épuisement.&lt;/h1&gt;&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">+</span> <span class="s1">&#39;&lt;h2&gt;Il reste &lt;b&gt;&#39;</span> <span class="o">+</span> <span class="nx">nbleft</span> <span class="o">+</span> <span class="s1">&#39; vouchers disponibles&lt;/b&gt; dans la liste courante.&lt;/h2&gt;&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">+</span> <span class="s1">&#39;&lt;h3&gt;&lt;p&gt;Options :&lt;/p&gt;&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">+</span> <span class="s1">&#39;&lt;ul&gt;&lt;li&gt;&lt;a href=&#34;https://46.247.250.13:666//&#34; target=&#34;_blank&#34;&gt;&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">+</span> <span class="s1">&#39;Se connecter à l\&#39;inteface web du pfSense CEFIM_PEDAGO afin de générer un nouveau Roll&lt;/a&gt;&lt;/li&gt;&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">+</span> <span class="s1">&#39;&lt;li&gt;&lt;a href=&#34;https://docs.google.com/spreadsheets/d/12vdKWwv6jeDFzN9X8V79do9gQrcitEgQPXLvzj6H91w&#34; target=&#34;_blank&#34;&gt;&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">+</span> <span class="s1">&#39;Ouvrir la liste de secours pour ajout rapide de vouchers&lt;/a&gt;&lt;/li&gt;&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">+</span> <span class="s1">&#39;&lt;li&gt;&lt;a href=&#34;https://docs.google.com/spreadsheets/d/16eqNvG-Z5y9pHuQbCb80A3K3q3gIcX9S6Ja_7TwtFZ0/edit#gid=1505767989&#34; target=&#34;_blank&#34;&gt;&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">+</span> <span class="s1">&#39;Ouvrir la liste régulière pour vérifications&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/h3&gt;&lt;/body&gt;&lt;/html&gt;&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">MailApp</span><span class="p">.</span><span class="nx">sendEmail</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">to</span><span class="o">:</span><span class="nx">config</span><span class="p">.</span><span class="nx">email</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">subject</span><span class="o">:</span><span class="nx">subject</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">htmlBody</span><span class="o">:</span><span class="nx">body</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">name</span><span class="o">:</span><span class="s1">&#39;CEFIM_PEDAGO - Vouchers alerte&#39;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Form.html :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="o">&lt;!</span><span class="nx">DOCTYPE</span> <span class="nx">html</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;</span><span class="nx">base</span> <span class="nx">target</span><span class="o">=</span><span class="s2">&#34;_top&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;</span><span class="nx">style</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="o">*</span> <span class="p">{</span><span class="nx">font</span><span class="o">-</span><span class="nx">family</span><span class="o">:</span> <span class="s2">&#34;Google Sans&#34;</span><span class="p">,</span><span class="nx">Roboto</span><span class="p">,</span><span class="nx">RobotoDraft</span><span class="p">,</span><span class="nx">Helvetica</span><span class="p">,</span><span class="nx">Arial</span><span class="p">,</span><span class="nx">sans</span><span class="o">-</span><span class="nx">serif</span><span class="p">;}</span>
+</span></span><span class="line"><span class="cl">      <span class="err">#</span><span class="nx">info</span> <span class="p">{</span><span class="nx">font</span><span class="o">-</span><span class="nx">size</span><span class="o">:</span> <span class="mi">14</span><span class="nx">px</span><span class="p">;</span> <span class="nx">color</span><span class="o">:</span> <span class="nx">red</span><span class="p">;</span> <span class="nx">margin</span><span class="o">-</span><span class="nx">bottom</span><span class="o">:</span> <span class="mi">10</span><span class="nx">px</span><span class="p">;}</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">p</span> <span class="p">{</span><span class="nx">font</span><span class="o">-</span><span class="nx">weight</span><span class="o">:</span> <span class="mi">600</span><span class="p">;}</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">label</span> <span class="p">{</span><span class="nx">display</span><span class="o">:</span> <span class="nx">inline</span><span class="o">-</span><span class="nx">block</span><span class="p">;</span> <span class="nx">width</span><span class="o">:</span> <span class="mi">210</span><span class="nx">px</span><span class="p">;}</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">label</span><span class="o">::</span><span class="nx">after</span> <span class="p">{</span><span class="nx">content</span><span class="o">:</span> <span class="s2">&#34; *&#34;</span><span class="p">;</span> <span class="nx">color</span><span class="o">:</span> <span class="nx">red</span><span class="p">;}</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">input</span> <span class="p">{</span><span class="nx">display</span><span class="o">:</span> <span class="nx">inline</span><span class="o">-</span><span class="nx">block</span><span class="p">;</span> <span class="nx">width</span><span class="o">:</span> <span class="mi">260</span><span class="nx">px</span><span class="p">;</span> <span class="nx">color</span><span class="o">:</span> <span class="nx">blue</span><span class="p">;}</span>
+</span></span><span class="line"><span class="cl">      <span class="err">#</span><span class="nx">date</span> <span class="p">{</span><span class="nx">width</span><span class="o">:</span> <span class="mi">120</span><span class="nx">px</span><span class="p">;}</span>
+</span></span><span class="line"><span class="cl">      <span class="err">#</span><span class="nx">nb</span> <span class="p">{</span><span class="nx">width</span><span class="o">:</span> <span class="mi">40</span><span class="nx">px</span><span class="p">;}</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">sep</span> <span class="p">{</span><span class="nx">font</span><span class="o">-</span><span class="nx">size</span><span class="o">:</span> <span class="mi">10</span><span class="nx">px</span><span class="p">;}</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">msg</span> <span class="p">{</span><span class="nx">display</span><span class="o">:</span> <span class="nx">none</span><span class="p">;</span> <span class="nx">color</span><span class="o">:</span> <span class="nx">red</span><span class="p">;</span> <span class="nx">font</span><span class="o">-</span><span class="nx">size</span><span class="o">:</span> <span class="mi">10</span><span class="nx">px</span><span class="p">;</span> <span class="nx">margin</span><span class="o">-</span><span class="nx">left</span><span class="o">:</span> <span class="mi">110</span><span class="nx">px</span><span class="p">;}</span>
+</span></span><span class="line"><span class="cl">      <span class="err">#</span><span class="nx">btnsubmit</span><span class="p">,</span> <span class="err">#</span><span class="nx">btncancel</span> <span class="p">{</span><span class="nx">width</span><span class="o">:</span> <span class="mi">210</span><span class="nx">px</span><span class="p">;</span> <span class="nx">margin</span><span class="o">:</span> <span class="mi">0</span> <span class="mi">12</span><span class="nx">px</span> <span class="mi">0</span> <span class="mi">12</span><span class="nx">px</span><span class="p">;</span> <span class="nx">padding</span><span class="o">:</span> <span class="mi">5</span><span class="nx">px</span> <span class="mi">0</span><span class="p">;}</span>
+</span></span><span class="line"><span class="cl">      <span class="err">#</span><span class="nx">loading</span> <span class="p">{</span><span class="nx">display</span><span class="o">:</span> <span class="nx">none</span><span class="p">;}</span>
+</span></span><span class="line"><span class="cl">      <span class="err">#</span><span class="nx">loadtxt</span> <span class="p">{</span><span class="nx">position</span><span class="o">:</span> <span class="nx">absolute</span><span class="p">;</span> <span class="nx">top</span><span class="o">:</span> <span class="mi">2</span><span class="nx">px</span><span class="p">;</span> <span class="nx">left</span><span class="o">:</span> <span class="mi">2</span><span class="nx">px</span><span class="p">;}</span>
+</span></span><span class="line"><span class="cl">      <span class="err">#</span><span class="nx">loadimg</span> <span class="p">{</span><span class="nx">position</span><span class="o">:</span> <span class="nx">relative</span><span class="p">;}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;</span><span class="err">/style&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">&lt;</span><span class="err">/head&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&#34;form&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Les</span> <span class="nx">vouchers</span> <span class="nx">CEFIM_PEDAGO</span> <span class="nx">sont</span> <span class="nx">valides</span> <span class="mi">5</span> <span class="nx">jours</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="o">&lt;</span><span class="nx">hr</span> <span class="o">/&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&#34;info&#34;</span><span class="o">&gt;*</span> <span class="nx">Requis</span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="o">&lt;</span><span class="nx">form</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&#34;resaForm&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">&lt;</span><span class="nx">label</span> <span class="k">for</span><span class="o">=</span><span class="s2">&#34;grp&#34;</span><span class="o">&gt;</span><span class="nx">Nom</span> <span class="nx">ou</span> <span class="nx">Groupe</span><span class="o">&lt;</span><span class="err">/label&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&#34;text&#34;</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&#34;grp&#34;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&#34;group&#34;</span> <span class="o">/&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&#34;badgrp&#34;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&#34;msg&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Indiquer</span> <span class="nx">un</span> <span class="nx">nom</span> <span class="nx">de</span> <span class="nx">personne</span> <span class="nx">ou</span> <span class="nx">de</span> <span class="nx">groupe</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">&lt;</span><span class="err">/div&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&#34;sepgrp&#34;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&#34;sep&#34;</span><span class="o">&gt;&lt;</span><span class="nx">p</span><span class="o">&gt;&amp;</span><span class="nx">nbsp</span><span class="p">;</span><span class="o">&lt;</span><span class="err">/p&gt;&lt;/div&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">&lt;</span><span class="nx">label</span> <span class="k">for</span><span class="o">=</span><span class="s2">&#34;date&#34;</span><span class="o">&gt;</span><span class="nb">Date</span><span class="o">&lt;</span><span class="err">/label&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&#34;date&#34;</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&#34;date&#34;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&#34;date&#34;</span> <span class="o">/&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&#34;baddate&#34;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&#34;msg&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Choisir</span> <span class="nx">une</span> <span class="nx">date</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">&lt;</span><span class="err">/div&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&#34;sepdate&#34;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&#34;sep&#34;</span><span class="o">&gt;&lt;</span><span class="nx">p</span><span class="o">&gt;&amp;</span><span class="nx">nbsp</span><span class="p">;</span><span class="o">&lt;</span><span class="err">/p&gt;&lt;/div&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">&lt;</span><span class="nx">label</span> <span class="k">for</span><span class="o">=</span><span class="s2">&#34;nb&#34;</span><span class="o">&gt;</span><span class="nx">Nombre</span> <span class="nx">de</span> <span class="nx">vouchers</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">25</span><span class="p">)</span><span class="o">&lt;</span><span class="err">/label&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&#34;number&#34;</span> <span class="nx">min</span><span class="o">=</span><span class="s2">&#34;1&#34;</span> <span class="nx">max</span><span class="o">=</span><span class="s2">&#34;25&#34;</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&#34;nb&#34;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&#34;nb&#34;</span> <span class="o">/&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&#34;badnb&#34;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&#34;msg&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Choisir</span> <span class="nx">un</span> <span class="nx">nombre</span> <span class="nx">entre</span> <span class="mi">1</span> <span class="nx">et</span> <span class="mi">25</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">&lt;</span><span class="err">/div&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&#34;sepnb&#34;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&#34;sep&#34;</span><span class="o">&gt;&lt;</span><span class="nx">p</span><span class="o">&gt;&amp;</span><span class="nx">nbsp</span><span class="p">;</span><span class="o">&lt;</span><span class="err">/p&gt;&lt;/div&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">&lt;</span><span class="nx">hr</span> <span class="o">/&gt;&lt;</span><span class="nx">br</span> <span class="o">/&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&#34;button&#34;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&#34;Annuler&#34;</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&#34;btncancel&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">onclick</span><span class="o">=</span><span class="s2">&#34;google.script.host.close();&#34;</span> <span class="o">/&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&#34;button&#34;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&#34;Valider&#34;</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&#34;btnsubmit&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">onclick</span><span class="o">=</span><span class="s2">&#34;submitForm();&#34;</span> <span class="o">/&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="o">&lt;</span><span class="err">/form&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;</span><span class="err">/div&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="nb">window</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="err">  </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;grp&#34;</span><span class="p">).</span><span class="nx">focus</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">// Called right after the form is submited
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="kd">function</span> <span class="nx">submitForm</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">let</span> <span class="nx">err</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">let</span> <span class="nx">grp</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;grp&#34;</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">grp</span> <span class="o">===</span> <span class="s2">&#34;&#34;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;badgrp&#34;</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="s2">&#34;block&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">          <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;sepgrp&#34;</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="s2">&#34;none&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">err</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;badgrp&#34;</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="s2">&#34;none&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">          <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;sepgrp&#34;</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="s2">&#34;block&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">let</span> <span class="nx">dat</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;date&#34;</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">dat</span> <span class="o">===</span> <span class="s2">&#34;&#34;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;baddate&#34;</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="s2">&#34;block&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">          <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;sepdate&#34;</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="s2">&#34;none&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">err</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;baddate&#34;</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="s2">&#34;none&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">          <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;sepdate&#34;</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="s2">&#34;block&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">let</span> <span class="nx">num</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;nb&#34;</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">((</span><span class="nx">num</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="nx">num</span> <span class="o">&gt;</span> <span class="mi">25</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;badnb&#34;</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="s2">&#34;block&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">          <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;sepnb&#34;</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="s2">&#34;none&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">err</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;badnb&#34;</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="s2">&#34;none&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">          <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;sepnb&#34;</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="s2">&#34;block&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">err</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span><span class="p">;}</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">google</span><span class="p">.</span><span class="nx">script</span><span class="p">.</span><span class="nx">run</span>
+</span></span><span class="line"><span class="cl">          <span class="p">.</span><span class="nx">openLoadingModal</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">google</span><span class="p">.</span><span class="nx">script</span><span class="p">.</span><span class="nx">run</span>
+</span></span><span class="line"><span class="cl">          <span class="p">.</span><span class="nx">withSuccessHandler</span><span class="p">(</span><span class="nx">onSubmitSuccess</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">          <span class="p">.</span><span class="nx">createDocumentFromFormData</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;resaForm&#34;</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">// Called when the form is successfully submited - google.script.run is asynchronous
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="kd">function</span> <span class="nx">onSubmitSuccess</span><span class="p">(</span><span class="cm">/*serverFunctionOutput, userObj*/</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">google</span><span class="p">.</span><span class="nx">script</span><span class="p">.</span><span class="nx">run</span>
+</span></span><span class="line"><span class="cl">          <span class="p">.</span><span class="nx">withSuccessHandler</span><span class="p">(</span><span class="nx">onLoadSuccess</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">          <span class="p">.</span><span class="nx">openLoadingModal</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">// Called when the process is finished
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="kd">function</span> <span class="nx">onLoadSuccess</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">google</span><span class="p">.</span><span class="nx">script</span><span class="p">.</span><span class="nx">host</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;</span><span class="err">/script&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">&lt;</span><span class="err">/body&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="err">/html&gt;</span>
+</span></span></code></pre></div><p>Loading.html :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="o">&lt;!</span><span class="nx">DOCTYPE</span> <span class="nx">html</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;</span><span class="nx">base</span> <span class="nx">target</span><span class="o">=</span><span class="s2">&#34;_top&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;</span><span class="nx">style</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="o">*</span> <span class="p">{</span><span class="nx">font</span><span class="o">-</span><span class="nx">family</span><span class="o">:</span> <span class="s2">&#34;Google Sans&#34;</span><span class="p">,</span><span class="nx">Roboto</span><span class="p">,</span><span class="nx">RobotoDraft</span><span class="p">,</span><span class="nx">Helvetica</span><span class="p">,</span><span class="nx">Arial</span><span class="p">,</span><span class="nx">sans</span><span class="o">-</span><span class="nx">serif</span><span class="p">;}</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">img</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">display</span><span class="o">:</span> <span class="nx">block</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">margin</span><span class="o">-</span><span class="nx">left</span><span class="o">:</span> <span class="nx">auto</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">margin</span><span class="o">-</span><span class="nx">right</span><span class="o">:</span> <span class="nx">auto</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">width</span><span class="o">:</span> <span class="mi">90</span><span class="o">%</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">h2</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">position</span><span class="o">:</span> <span class="nx">absolute</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">top</span><span class="o">:</span> <span class="mi">2</span><span class="nx">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">left</span><span class="o">:</span> <span class="mi">50</span><span class="nx">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;</span><span class="err">/style&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">&lt;</span><span class="err">/head&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&#34;loading&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&#34;loadimg&#34;</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&#34;https://lh3.googleusercontent.com/M7YzZMHlX9FO4tQC_o3FbCHXzA1GpYKSmP1h-w0EeGR40CNppuVzEkNZio8lRI9ZwLM=w2400&#34;</span> <span class="nx">title</span><span class="o">=</span><span class="s2">&#34;Loading...&#34;</span> <span class="nx">style</span><span class="o">=</span><span class="s2">&#34;&#34;</span> <span class="o">/&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="o">&lt;</span><span class="nx">h2</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&#34;loadtxt&#34;</span><span class="o">&gt;</span><span class="nx">Patientez</span> <span class="nx">svp</span><span class="o">&lt;</span><span class="err">/h2&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;</span><span class="err">/div&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">&lt;</span><span class="err">/body&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="err">/html&gt;</span>
+</span></span></code></pre></div>
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <aside id="sidebar" class="default-animation showVisitedLinks">
+      <div id="header-wrapper" class="default-animation">
+        <div id="header" class="default-animation">
+          <style>
+            #logo svg,
+            #logo svg * {
+              color: #282828;
+              color: var(--MENU-SECTIONS-BG-color);
+              fill: #282828 !important;
+              fill: var(--MENU-SECTIONS-BG-color) !important;
+              opacity: .945;
+            }
+            a#logo {
+              color: #282828;
+              color: var(--MENU-SECTIONS-BG-color);
+              font-family: 'Work Sans', 'Helvetica', 'Tahoma', 'Geneva', 'Arial', sans-serif;
+              font-size: 1.875rem;
+              font-weight: 300;
+              margin-top: -.8125rem;
+              max-width: 60%;
+              text-transform: uppercase;
+              width: 14.125rem;
+              white-space: nowrap;
+            }
+            a#logo:hover {
+              color: #282828;
+              color: var(--MENU-SECTIONS-BG-color);
+            }
+            #logo svg {
+              margin-bottom: -1.25rem;
+              margin-inline-start: -1.47rem;
+              width: 40.5%;
+            }
+            @media only all and (max-width: 60rem) {
+              a#logo {
+                font-size: 1.5625rem;
+                margin-top: -.1875rem;
+              }
+              #logo svg {
+                margin-bottom: -.75rem;
+                margin-inline-start: -1.47rem;
+              }
+            }
+            @media all and (-ms-high-contrast:none) {
+              /* IE11s understanding of positioning is weird at best */
+              a#logo {
+                margin-top: -3.625rem;
+              }
+              #logo svg {
+                margin-bottom: -3.875rem;
+                margin-left: -1.47rem;
+              }
+            }
+            @media only all and (-ms-high-contrast:none) and (max-width: 60rem) {
+              #logo svg {
+                margin-left: -1.47rem;
+              }
+            }
+          </style>
+          <a id="logo" href="../../../index.html">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64.044 64.044">
+              <path d="M46.103 136.34c-.642-.394-1.222-2.242-1.98-2.358-.76-.117-1.353.506-1.618 1.519-.266 1.012-.446 4.188.173 5.538.213.435.482.787 1.03.845.547.057.967-.504 1.45-1.027.482-.523.437-.9 1.142-.612.705.289 1.051.4 1.586 1.229.535.828 1.085 4.043.868 5.598-.241 1.458-.531 2.8-.59 4.088.26.075.517.148.772.217 2.68.724 5.373 1.037 7.873.02.001-.028.01-.105.008-.11-.048-.165-.18-.41-.36-.698-.18-.29-.414-.645-.586-1.114a3.212 3.212 0 0 1-.125-1.735c.056-.21.153-.342.249-.475 1.237-1.193 2.932-1.373 4.244-1.384.557-.004 1.389.016 2.198.255.809.239 1.706.724 2.068 1.843.187.578.114 1.17-.043 1.623-.153.438-.369.783-.545 1.091-.178.31-.329.6-.401.821-.007.02-.003.071-.005.094 2.256 1.008 4.716.91 7.189.398.55-.114 1.11-.247 1.673-.377.344-1.085.678-2.145.852-3.208.124-.752.158-2.311-.078-3.538-.118-.613-.306-1.15-.52-1.489-.221-.349-.413-.501-.747-.538-.243-.027-.51.013-.796.098-.67.223-1.33.606-1.966.76l-.008.002-.109.032c-.556.152-1.233.158-1.797-.36-.556-.51-.89-1.367-1.117-2.596-.283-1.528-.075-3.279.89-4.518l.071-.09h.07c.65-.71 1.485-.802 2.16-.599.706.213 1.333.629 1.772.84.736.354 1.185.319 1.475.171.291-.148.5-.439.668-.955.332-1.017.301-2.819.022-4.106-.148-.684-.13-1.292-.13-1.883-1.558-.463-3.067-.982-4.574-1.208-1.128-.169-2.263-.173-3.298.164-.13.046-.256.095-.38.15-.373.164-.633.342-.805.52-.077.098-.081.105-.087.21-.004.068.031.289.13.571.1.282.256.634.467 1.03.279.524.448 1.063.431 1.618a2.12 2.12 0 0 1-.499 1.309 1.757 1.757 0 0 1-.62.51h-.002c-.515.291-1.107.404-1.723.464-.86.083-1.787.026-2.598-.097-.806-.123-1.47-.28-1.948-.555-.444-.256-.79-.547-1.037-.925a2.273 2.273 0 0 1-.356-1.301c.029-.837.403-1.437.625-1.897.111-.23.191-.433.236-.583.045-.15.044-.25.046-.24-.005-.029-.127-.355-1.015-.741-1.138-.495-2.322-.673-3.533-.668h-.015a9.711 9.711 0 0 0-.521.016h-.002c-1.163.057-2.35.308-3.541.569.383 1.531.79 2.753.818 4.502-.096 1.297.158 2.114-1.03 2.935-.85.588-1.508.729-2.15.335" style="fill:#282828;fill-opacity:1;stroke:none;stroke-width:1.03763;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-40.698 -95.175)"/>
+              <path d="M61.472 101.34v.002c-.3-.003-.603.01-.894.04-.544.055-1.39.165-1.778.306-1.238.364.13 2.344.41 2.913.28.569.285 2.03.14 2.134-.144.103-.375.261-.934.345-.56.084.03-.037-1.589.086-1.62.122-5.506.29-8.265.248-.022.26-.036.521-.097.808-.309 1.442-.63 3.163-.494 4.074.071.473.168.65.414.8.23.14.737.235 1.62-.004.834-.227 1.3-.442 1.887-.456.595-.016 1.555.472 1.965.717.411.245-.03-.008.002 0s.128.05.176.102c.049.053-.276-.523.104.199.379.721.72 3.256.002 4.68-.46.913-1.01 1.49-1.64 1.711-.63.22-1.229.067-1.734-.135-.881-.353-1.584-.7-2.205-.647-1.199 1.94-1.186 4.17-.6 6.602.097.397.212.814.327 1.23 2.68-.556 5.542-1.016 8.337.132 1.064.437 1.73 1.015 1.902 1.857.169.831-.193 1.508-.438 1.986-.122.238-.23.46-.307.642-.07.164-.096.28-.104.324.069.429.309.723.686.945.385.227.89.355 1.35.423.723.104 1.567.152 2.287.086.693-.064 1.032-.338 1.241-.544a2.447 2.447 0 0 0 .303-.437.175.175 0 0 0 .013-.035c-.004-.066-.037-.246-.195-.527-.46-.816-.87-1.595-.817-2.51.028-.476.218-.938.529-1.288.304-.343.698-.586 1.186-.79 1.442-.606 2.96-.609 4.372-.409 1.525.216 2.963.679 4.378 1.083.226-2.09.784-3.9.592-5.77-.058-.565-.287-1.333-.598-1.827-.32-.508-.59-.717-1.036-.642-.648.11-1.472.935-2.707 1.078-.791.092-1.494-.267-1.95-.86-.45-.583-.678-1.335-.78-2.101-.202-1.525.031-3.229.89-4.27.615-.747 1.45-.887 2.15-.74.687.145 1.307.492 1.857.745v-.002c.546.252 1.033.388 1.281.344a.547.547 0 0 0 .353-.188c.113-.124.242-.35.384-.75.604-1.712.206-3.68-.303-5.654-.667.145-1.336.293-2.018.413-1.341.236-2.73.392-4.136.273-.656-.055-1.695-.085-2.58-.476-.442-.195-.903-.514-1.157-1.093-.259-.591-.205-1.313.08-2.014.223-.64 1.082-2.178.692-2.585-.391-.407-1.651-.56-2.554-.571z" style="fill:#282828;fill-opacity:1;stroke:none;stroke-width:.992837;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-40.698 -95.175)"/>
+              <path d="M83.128 98.116c-.484 1.875-1.057 3.757-2.486 5.033-.638.57-1.13.666-1.483.548-.401-.134-.715-.506-1.058-.973-.338-.461-.655-.97-1.076-1.332-.192-.165-.404-.315-.683-.38-.279-.066-.599-.02-.9.102-.489.196-.89.58-1.28 1.047a6.1 6.1 0 0 0-.985 1.632c-.234.591-.356 1.174-.277 1.713.072.487.392.977.905 1.185.463.187.926.156 1.36.154.433 0 .843.01 1.242.147.55.189.79.736.822 1.368.034.66-.145 1.412-.393 1.988l-.008.021c-.74 1.705-1.946 2.893-3.004 4.349l-.664.915.979.099c.924.092 1.788.26 2.468.675.46.281 1.806 1.205 2.794 2.222.497.513.888 1.031 1.047 1.502.078.231.095.422.05.6a.93.93 0 0 1-.345.474c-.301.223-.606.395-.864.532l-.354.186c-.107.058-.189.087-.345.228a.637.637 0 0 1 .062-.045l-.064.041-.209.236-.103.343s.003.126.007.152c.003.017.003.007.004.015v.002c.016.195.061.307.133.476a4.1 4.1 0 0 0 .32.596 5.7 5.7 0 0 0 2.8 2.258c.284.108.908.321 1.548.36.33.02.59.015.912-.13h.002c.08-.037.228-.095.382-.281.153-.186.19-.355.212-.445l.019-.075.003-.078c.023-.585-.037-1.296.072-1.899.153-.657.435-.956 1.009-.909 2.771.239 4.74 1.955 6.693 3.83l.742.714.279-1.155c.55-2.29 1.093-4.464 2.928-5.977.692-.57 1.184-.642 1.527-.509.39.151.676.536.996.995.319.458.605.926 1.07 1.212.194.119.464.232.784.209.32-.024.638-.163.988-.384 1.022-.645 1.778-1.756 2.086-2.942.136-.522.102-.991-.046-1.301-.158-.334-.433-.553-.754-.707-.653-.314-1.468-.373-2.094-.486-.825-.15-1.22-.475-1.345-.878-.13-.417 0-.953.335-1.61.6-1.173 1.887-2.602 3.13-3.911l.498-.526-.449-.432c-1.545-1.49-3.163-3.01-5.252-3.715h-.002c-.473-.16-1.097-.413-1.73-.424h-.003c-.311-.004-.596.04-.883.24v.002c-.22.155-.483.537-.583.937l-.008.036-.006.038c-.116.773-.06 1.467-.217 1.995-.063.212-.198.418-.359.507-.202.111-.492.153-.976.072-.582-.097-1.978-.69-3.021-1.503-.523-.407-.934-.85-1.117-1.3a1.153 1.153 0 0 1-.083-.63c.03-.184.1-.477.308-.593.21-.116.941-.32 1.377-.642h.002c.192-.141.403-.367.518-.64.114-.275.127-.526.123-.774-.006-.142-.036-.192-.08-.3a8.417 8.417 0 0 0-3-3.027c-1.226-.725-2.585-1.135-3.927-1.539-.434-.12-.844-.111-1.02.466zm.912.947c1.186.364 2.357.718 3.345 1.303 1.035.612 1.864 1.488 2.507 2.528-.514.263-1.095.5-1.44.79-.345.29-.729.914-.815 1.434-.084.509 0 .968.155 1.347.301.74.85 1.276 1.44 1.735 1.18.92 2.554 1.545 3.47 1.698.604.1 1.186.088 1.739-.216.594-.327.935-.911 1.088-1.427.264-.884.193-1.664.262-2.17h.1c.3.006.926.206 1.417.371 1.646.554 3.044 1.773 4.431 3.089-1.102 1.174-2.222 2.423-2.888 3.73-.42.823-.73 1.789-.453 2.687.283.913 1.1 1.415 2.138 1.603.691.126 1.472.226 1.84.403.19.091.258.182.278.223.03.064.058.075-.023.387-.21.804-.761 1.598-1.413 2.01-.247.155-.365.183-.407.187-.042.003-.061.002-.172-.066-.144-.088-.455-.473-.772-.929-.317-.454-.714-1.07-1.452-1.356-.783-.304-1.776-.022-2.713.75-1.942 1.6-2.626 3.764-3.146 5.8-1.802-1.676-3.772-3.138-6.589-3.517h-.002c-.346-.095-1.013-.031-1.293.143-.735.501-1.005 1.132-1.168 2.007-.125.69-.082 1.216-.074 1.659-.055.006-.046.01-.104.006-.42-.026-1.035-.215-1.244-.295-.947-.361-1.774-1.006-2.314-1.857-.054-.085-.072-.132-.109-.2l.027-.016c.284-.15.656-.36 1.045-.648.44-.327.789-.798.93-1.35a2.4 2.4 0 0 0-.068-1.379c-.254-.751-.753-1.353-1.295-1.911-1.09-1.124-2.452-2.049-2.99-2.378-.609-.372-1.303-.44-1.981-.56.875-1.094 1.878-2.251 2.596-3.921.294-.823.543-1.907.513-2.658-.049-.97-.489-2.013-1.52-2.367-.579-.2-1.131-.204-1.58-.203-.45.002-.786-.006-.97-.08h-.002c-.264-.107-.236-.108-.268-.33-.025-.17.021-.553.183-.962a4.67 4.67 0 0 1 .725-1.192c.29-.348.617-.59.705-.626.142-.057.176-.05.22-.04.045.011.127.052.263.17.235.201.56.671.92 1.161.354.484.791 1.08 1.543 1.33.8.267 1.784-.052 2.671-.846 1.594-1.424 2.235-3.317 2.714-5.051zm11.705 7.023c-.02.014.042-.002.042 0l-.008.035c.05-.2-.028-.04-.034-.035zM79.472 122.45a.198.198 0 0 1 .005.023v.014c-.002-.01-.003-.03-.005-.037zm-.29.732-.006.01-.044.027c.016-.01.033-.024.05-.036z" style="color:#000;fill:#282828;stroke-width:1.02352;-inkscape-stroke:none" transform="translate(-40.698 -95.175)"/>
+              <path d="M76.694 128.845c-.85-.012-1.668.253-2.434.67-.01.592-.015 1.17.109 1.772.323 1.573.422 3.553-.07 5.147-.247.804-.684 1.535-1.347 1.891-.663.356-1.467.296-2.362-.159-.522-.266-1.059-.62-1.487-.757-.223-.072-.392-.096-.522-.069-.13.027-.232.094-.362.27-.53.719-.681 1.823-.497 2.876.177 1.012.418 1.438.543 1.56.143.137.26.154.604.055.548-.158 1.523-.857 2.573-.972l.02-.002.5.058c.686.081 1.247.562 1.622 1.19.372.62.591 1.37.73 2.136.279 1.532.25 3.16.083 4.232-.14.91-.394 1.72-.632 2.53 1.719-.385 3.485-.692 5.307-.36 1.174.214 2.749.574 3.762 1.977l.088.122.046.159c.162.551.16 1.114.024 1.578-.13.45-.348.772-.533 1.023-.181.246-.336.444-.437.606-.102.16-.141.275-.145.336-.01.17 0 .197.07.315.057.1.186.242.39.366.408.246 1.106.414 1.843.45a7.842 7.842 0 0 0 2.174-.21 4.28 4.28 0 0 0 .822-.296c.218-.106.385-.242.377-.233l.029-.031c.025-.035.05-.072.05-.068 0-.004 0-.017-.003-.05a2.733 2.733 0 0 0-.21-.579c-.26-.548-.839-1.333-.822-2.46.01-.657.27-1.21.598-1.576.32-.357.696-.575 1.074-.736.759-.323 1.57-.418 2.054-.458 1.653-.136 3.252.296 4.755.765.457.142.905.29 1.352.434.325-2.258.902-4.247.598-6.217-.071-.46-.25-1.169-.486-1.684-.238-.518-.495-.762-.675-.779-.351-.032-.716.14-1.174.418-.457.277-1.005.665-1.695.742-.745.082-1.406-.291-1.84-.908-.428-.608-.653-1.394-.754-2.196-.203-1.596.016-3.377.794-4.493.568-.813 1.358-.984 2.024-.835.65.146 1.243.51 1.769.779.524.267.99.413 1.237.365a.527.527 0 0 0 .346-.2c.11-.132.235-.373.37-.798.612-1.918.27-3.894-.246-6.054-2.815-.851-5.49-1.534-8.089-.267a.727.727 0 0 0-.223.148c-.024.028-.018.021-.026.056.001-.003-.01.178.07.44.162.522.611 1.29.911 1.978l.004.009.029.063.024.084V133c.162.635.016 1.297-.274 1.727-.272.404-.618.636-.952.81-.675.353-1.399.484-1.724.533a5.888 5.888 0 0 1-3.973-.795c-.512-.311-.876-.594-1.133-1.02-.282-.466-.318-1.084-.172-1.557.252-.814.715-1.266.971-1.89a.663.663 0 0 0 .047-.14c.001-.013 0-.006-.007-.037a.761.761 0 0 0-.184-.268c-.264-.267-.865-.595-1.54-.826-1.356-.462-3.07-.659-3.583-.686-.062-.002-.121-.006-.178-.006z" style="fill:#282828;fill-opacity:1;stroke:none;stroke-width:.991342;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-40.698 -95.175)"/>
+            </svg>
+            Relearn
+          </a>
+        </div>
+        <form action="../../../search.html" method="get"><div class="searchbox default-animation">
+          <button type="submit" title="Rechercher (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+          <label class="a11y-only" for="search-by">Rechercher</label>
+          <input data-search-input id="search-by" name="search-by" class="search-by" type="search" placeholder="Rechercher...">
+          <span data-search-clear=""><i class="fas fa-times"></i></span>
+        </div></form>
+        <script>
+          var contentLangs=['en', 'fr'];
+        </script>
+        <script src="../../../js/auto-complete.js" defer></script>
+        <script src="../../../js/lunr/lunr.min.js" defer></script>
+        <script src="../../../js/lunr/lunr.stemmer.support.min.js" defer></script>
+        <script src="../../../js/lunr/lunr.multi.min.js" defer></script>
+        <script src="../../../js/lunr/lunr.en.min.js" defer></script>
+        <script src="../../../js/lunr/lunr.fr.min.js" defer></script>
+        <script src="../../../js/search.js" defer></script>
+      </div>
+      <div id="content-wrapper" class="highlightable">
+        <ul class="topics enlarge morespace collapsible-menu">
+          <li data-nav-id="/at1/index.html" class=""><input type="checkbox" id="section-7818884114bf0c5d92eb15341fe553b8" aria-controls="subsections-7818884114bf0c5d92eb15341fe553b8"><label for="section-7818884114bf0c5d92eb15341fe553b8"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Assister les utilisateurs en centre de services</span></label><a class="padding" href="../../../at1/index.html"><b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">1.</b> 
+
+Assister les utilisateurs en centre de services<i class="fas fa-check read-icon"></i></a><ul id="subsections-7818884114bf0c5d92eb15341fe553b8" class="morespace collapsible-menu">
+          <li data-nav-id="/at1/at1e1/index.html" class="alwaysopen"><input type="checkbox" id="section-58a3ad15abf2052b4ad5b68123d4062c" aria-controls="subsections-58a3ad15abf2052b4ad5b68123d4062c" checked><label for="section-58a3ad15abf2052b4ad5b68123d4062c"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Mettre en service un équipement numérique</span></label><a class="padding" href="../../../at1/at1e1/index.html">
+<b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">1.</b> 
+Mettre en service un équipement numérique<i class="fas fa-check read-icon"></i></a><ul id="subsections-58a3ad15abf2052b4ad5b68123d4062c" class="morespace collapsible-menu">
+          <li data-nav-id="/at1/at1e1/stage-armatis/index.html" class=""><a class="padding" href="../../../at1/at1e1/stage-armatis/index.html">
+
+<b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">1.</b> Stage Armatis<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/at1/at1e2/index.html" class="alwaysopen"><input type="checkbox" id="section-824e58791a2f212e229c9bfe12e03c11" aria-controls="subsections-824e58791a2f212e229c9bfe12e03c11" checked><label for="section-824e58791a2f212e229c9bfe12e03c11"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Assister les utilisateurs sur leurs équipements numériques</span></label><a class="padding" href="../../../at1/at1e2/index.html">
+<b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">2.</b> 
+Assister les utilisateurs sur leurs équipements numériques<i class="fas fa-check read-icon"></i></a><ul id="subsections-824e58791a2f212e229c9bfe12e03c11" class="morespace collapsible-menu">
+          <li data-nav-id="/at1/at1e2/stage-armatis/index.html" class=""><a class="padding" href="../../../at1/at1e2/stage-armatis/index.html">
+
+<b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">1.</b> Stage Armatis<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/at1/at1e3/index.html" class="alwaysopen"><input type="checkbox" id="section-fbdfcb0bf9bfc870ce1eb66918c429d4" aria-controls="subsections-fbdfcb0bf9bfc870ce1eb66918c429d4" checked><label for="section-fbdfcb0bf9bfc870ce1eb66918c429d4"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Gérer les incidents et les problèmes</span></label><a class="padding" href="../../../at1/at1e3/index.html">
+<b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">3.</b> 
+Gérer les incidents et les problèmes<i class="fas fa-check read-icon"></i></a><ul id="subsections-fbdfcb0bf9bfc870ce1eb66918c429d4" class="morespace collapsible-menu">
+          <li data-nav-id="/at1/at1e3/stage-armatis/index.html" class=""><a class="padding" href="../../../at1/at1e3/stage-armatis/index.html">
+
+<b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">1.</b> Stage Armatis<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/at1/at1e4/index.html" class="alwaysopen"><input type="checkbox" id="section-45788a54b43f905f8694e7ed2252bc93" aria-controls="subsections-45788a54b43f905f8694e7ed2252bc93" checked><label for="section-45788a54b43f905f8694e7ed2252bc93"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Assister à l&#39;utilisation des ressources collaboratives</span></label><a class="padding" href="../../../at1/at1e4/index.html">
+<b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">4.</b> 
+Assister à l&#39;utilisation des ressources collaboratives<i class="fas fa-check read-icon"></i></a><ul id="subsections-45788a54b43f905f8694e7ed2252bc93" class="morespace collapsible-menu">
+          <li data-nav-id="/at1/at1e4/stage-cefim/index.html" class=""><a class="padding" href="../../../at1/at1e4/stage-cefim/index.html">
+
+<b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">1.</b> Stage Cefim<i class="fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+          <li data-nav-id="/at2/index.html" class="parent "><input type="checkbox" id="section-92493996862d319a11363a1af90c0f34" aria-controls="subsections-92493996862d319a11363a1af90c0f34" checked><label for="section-92493996862d319a11363a1af90c0f34"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Maintenir, exploiter et sécuriser une infrastructure centralisée</span></label><a class="padding" href="../../../at2/index.html"><b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">2.</b> 
+
+Maintenir, exploiter et sécuriser une infrastructure centralisée<i class="fas fa-check read-icon"></i></a><ul id="subsections-92493996862d319a11363a1af90c0f34" class="morespace collapsible-menu">
+          <li data-nav-id="/at2/at2e1/index.html" class="alwaysopen"><input type="checkbox" id="section-bd843d80fa57a974a560064e28b945f2" aria-controls="subsections-bd843d80fa57a974a560064e28b945f2" checked><label for="section-bd843d80fa57a974a560064e28b945f2"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Maintenir et exploiter le réseau local et la téléphonie</span></label><a class="padding" href="../../../at2/at2e1/index.html">
+<b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">1.</b> 
+Maintenir et exploiter le réseau local et la téléphonie<i class="fas fa-check read-icon"></i></a><ul id="subsections-bd843d80fa57a974a560064e28b945f2" class="morespace collapsible-menu">
+          <li data-nav-id="/at2/at2e1/reseau-local/index.html" class=""><a class="padding" href="../../../at2/at2e1/reseau-local/index.html">
+
+<b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">1.</b> Réseau local<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/at2/at2e2/index.html" class="parent alwaysopen"><input type="checkbox" id="section-62976019da935554c3c9e2850d008881" aria-controls="subsections-62976019da935554c3c9e2850d008881" checked><label for="section-62976019da935554c3c9e2850d008881"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Sécuriser les accès à Internet</span></label><a class="padding" href="../../../at2/at2e2/index.html">
+<b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">2.</b> 
+Sécuriser les accès à Internet<i class="fas fa-check read-icon"></i></a><ul id="subsections-62976019da935554c3c9e2850d008881" class="morespace collapsible-menu">
+          <li data-nav-id="/at2/at2e2/stage-cefim/index.html" class="active"><a class="padding" href="../../../at2/at2e2/stage-cefim/index.html">
+
+<b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">1.</b> Stage Cefim<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/at2/at2e3/index.html" class="alwaysopen"><input type="checkbox" id="section-caab5e8eea915ecb32522d39d811299b" aria-controls="subsections-caab5e8eea915ecb32522d39d811299b" checked><label for="section-caab5e8eea915ecb32522d39d811299b"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Maintenir et exploiter un serveur Linux</span></label><a class="padding" href="../../../at2/at2e3/index.html">
+<b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">3.</b> 
+Maintenir et exploiter un serveur Linux<i class="fas fa-check read-icon"></i></a><ul id="subsections-caab5e8eea915ecb32522d39d811299b" class="morespace collapsible-menu">
+          <li data-nav-id="/at2/at2e3/lamps/index.html" class=""><a class="padding" href="../../../at2/at2e3/lamps/index.html">
+
+<b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">3.</b> Serveur LAMPS<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/at2/at2e4/index.html" class="alwaysopen"><input type="checkbox" id="section-c3681b012df6168023d484a3685b3736" aria-controls="subsections-c3681b012df6168023d484a3685b3736" checked><label for="section-c3681b012df6168023d484a3685b3736"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Maintenir et exploiter un environnement virtualisé</span></label><a class="padding" href="../../../at2/at2e4/index.html">
+<b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">4.</b> 
+Maintenir et exploiter un environnement virtualisé<i class="fas fa-check read-icon"></i></a><ul id="subsections-c3681b012df6168023d484a3685b3736" class="morespace collapsible-menu">
+          <li data-nav-id="/at2/at2e4/tp-infra/index.html" class=""><a class="padding" href="../../../at2/at2e4/tp-infra/index.html">
+
+<b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">4.</b> TP Infra<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/at2/at2e5/index.html" class="alwaysopen"><input type="checkbox" id="section-8ea9729787b0f5c81e1ceda54f9f07bd" aria-controls="subsections-8ea9729787b0f5c81e1ceda54f9f07bd" checked><label for="section-8ea9729787b0f5c81e1ceda54f9f07bd"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Maintenir et exploiter un domaine Active Directory et les serveurs Windows</span></label><a class="padding" href="../../../at2/at2e5/index.html">
+<b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">5.</b> 
+Maintenir et exploiter un domaine Active Directory et les serveurs Windows<i class="fas fa-check read-icon"></i></a><ul id="subsections-8ea9729787b0f5c81e1ceda54f9f07bd" class="morespace collapsible-menu">
+          <li data-nav-id="/at2/at2e5/ad/index.html" class=""><a class="padding" href="../../../at2/at2e5/ad/index.html">
+
+<b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">1.</b> Migrations Active Directory<i class="fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+          <li data-nav-id="/at3/index.html" class=""><input type="checkbox" id="section-36cf04e891c76a4810254b0c37767d48" aria-controls="subsections-36cf04e891c76a4810254b0c37767d48"><label for="section-36cf04e891c76a4810254b0c37767d48"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Maintenir et exploiter une infrastructure distribuée et contribuer à sa sécurisation</span></label><a class="padding" href="../../../at3/index.html"><b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">3.</b> 
+
+Maintenir et exploiter une infrastructure distribuée et contribuer à sa sécurisation<i class="fas fa-check read-icon"></i></a><ul id="subsections-36cf04e891c76a4810254b0c37767d48" class="morespace collapsible-menu">
+          <li data-nav-id="/at3/at3e1/index.html" class="alwaysopen"><input type="checkbox" id="section-40e9cddfc6f9888b0fcbd070c90b1027" aria-controls="subsections-40e9cddfc6f9888b0fcbd070c90b1027" checked><label for="section-40e9cddfc6f9888b0fcbd070c90b1027"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Configurer serveur de déploiement et de terminaux légers</span></label><a class="padding" href="../../../at3/at3e1/index.html">
+<b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">1.</b> 
+Configurer serveur de déploiement et de terminaux légers<i class="fas fa-check read-icon"></i></a><ul id="subsections-40e9cddfc6f9888b0fcbd070c90b1027" class="morespace collapsible-menu">
+          <li data-nav-id="/at3/at3e1/wds-mdt/index.html" class=""><a class="padding" href="../../../at3/at3e1/wds-mdt/index.html">
+
+<b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">1.</b> WDS - MDT<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/at3/at3e1/fog/index.html" class=""><a class="padding" href="../../../at3/at3e1/fog/index.html">
+
+<b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">2.</b> FOG<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/at3/at3e1/stage-armatis/index.html" class=""><a class="padding" href="../../../at3/at3e1/stage-armatis/index.html">
+
+<b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">3.</b> Stage Armatis<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/at3/at3e2/index.html" class="alwaysopen"><input type="checkbox" id="section-94b29004d9fdd343635dcf3c81c13c55" aria-controls="subsections-94b29004d9fdd343635dcf3c81c13c55" checked><label for="section-94b29004d9fdd343635dcf3c81c13c55"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Automatiser les tâches à l&#39;aide de scripts</span></label><a class="padding" href="../../../at3/at3e2/index.html">
+<b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">2.</b> 
+Automatiser les tâches à l&#39;aide de scripts<i class="fas fa-check read-icon"></i></a><ul id="subsections-94b29004d9fdd343635dcf3c81c13c55" class="morespace collapsible-menu">
+          <li data-nav-id="/at3/at3e2/batch/index.html" class=""><a class="padding" href="../../../at3/at3e2/batch/index.html">
+
+<b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">1.</b> Batch<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/at3/at3e2/bash/index.html" class=""><a class="padding" href="../../../at3/at3e2/bash/index.html">
+
+<b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">2.</b> Bash<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/at3/at3e2/powershell/index.html" class=""><a class="padding" href="../../../at3/at3e2/powershell/index.html">
+
+<b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">3.</b> PowerShell<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/at3/at3e2/stage-cefim/index.html" class=""><a class="padding" href="../../../at3/at3e2/stage-cefim/index.html">
+
+<b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">4.</b> Stage Cefim<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/at3/at3e2/python/index.html" class=""><a class="padding" href="../../../at3/at3e2/python/index.html">
+
+<b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">5.</b> Python<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/at3/at3e3/index.html" class="alwaysopen"><input type="checkbox" id="section-f53b317967182aaf318d9e4ef5f4fd1e" aria-controls="subsections-f53b317967182aaf318d9e4ef5f4fd1e" checked><label for="section-f53b317967182aaf318d9e4ef5f4fd1e"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Maintenir et sécuriser les accès réseaux distants</span></label><a class="padding" href="../../../at3/at3e3/index.html">
+<b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">3.</b> 
+Maintenir et sécuriser les accès réseaux distants<i class="fas fa-check read-icon"></i></a><ul id="subsections-f53b317967182aaf318d9e4ef5f4fd1e" class="morespace collapsible-menu">
+          <li data-nav-id="/at3/at3e3/stage-armatis/index.html" class=""><a class="padding" href="../../../at3/at3e3/stage-armatis/index.html">
+
+<b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">1.</b> Stage Armatis<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/at3/at3e4/index.html" class="alwaysopen"><input type="checkbox" id="section-ebe8a608e4778cbd2a6e4e1e7a3a016f" aria-controls="subsections-ebe8a608e4778cbd2a6e4e1e7a3a016f" checked><label for="section-ebe8a608e4778cbd2a6e4e1e7a3a016f"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Superviser l&#39;infrastructure</span></label><a class="padding" href="../../../at3/at3e4/index.html">
+<b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">4.</b> 
+Superviser l&#39;infrastructure<i class="fas fa-check read-icon"></i></a><ul id="subsections-ebe8a608e4778cbd2a6e4e1e7a3a016f" class="morespace collapsible-menu">
+          <li data-nav-id="/at3/at3e4/zabbix/index.html" class=""><a class="padding" href="../../../at3/at3e4/zabbix/index.html">
+
+<b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">1.</b> Zabbix<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/at3/at3e5/index.html" class="alwaysopen"><input type="checkbox" id="section-16fa3baf201381a86b1e1bdac754b2c7" aria-controls="subsections-16fa3baf201381a86b1e1bdac754b2c7" checked><label for="section-16fa3baf201381a86b1e1bdac754b2c7"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Intervenir dans un environnement de Cloud Computing</span></label><a class="padding" href="../../../at3/at3e5/index.html">
+<b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">5.</b> 
+Intervenir dans un environnement de Cloud Computing<i class="fas fa-check read-icon"></i></a><ul id="subsections-16fa3baf201381a86b1e1bdac754b2c7" class="morespace collapsible-menu">
+          <li data-nav-id="/at3/at3e5/aws/index.html" class=""><a class="padding" href="../../../at3/at3e5/aws/index.html">
+
+<b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">1.</b> AWS<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/at3/at3e6/index.html" class="alwaysopen"><input type="checkbox" id="section-76838384006aac09bd81dfa3b771c483" aria-controls="subsections-76838384006aac09bd81dfa3b771c483" checked><label for="section-76838384006aac09bd81dfa3b771c483"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Assurer sa veille technologique</span></label><a class="padding" href="../../../at3/at3e6/index.html">
+<b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">6.</b> 
+Assurer sa veille technologique<i class="fas fa-check read-icon"></i></a><ul id="subsections-76838384006aac09bd81dfa3b771c483" class="morespace collapsible-menu">
+          <li data-nav-id="/at3/at3e6/feedly/index.html" class=""><a class="padding" href="../../../at3/at3e6/feedly/index.html">
+
+<b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">1.</b> Feedly<i class="fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+          <li data-nav-id="/hugo/index.html" class=""><input type="checkbox" id="section-39a04d904eff80f4f70c4c476ea313fb" aria-controls="subsections-39a04d904eff80f4f70c4c476ea313fb"><label for="section-39a04d904eff80f4f70c4c476ea313fb"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Hugo Relearn Documentation</span></label><a class="padding" href="../../../hugo/index.html">
+
+Hugo Relearn Documentation<i class="fas fa-check read-icon"></i></a><ul id="subsections-39a04d904eff80f4f70c4c476ea313fb" class="morespace collapsible-menu">
+          <li data-nav-id="/hugo/basics/index.html" class="alwaysopen"><input type="checkbox" id="section-bf36765a9aa8c773e66430bacfc1a549" aria-controls="subsections-bf36765a9aa8c773e66430bacfc1a549" checked><label for="section-bf36765a9aa8c773e66430bacfc1a549"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Basics</span></label><a class="padding" href="../../../hugo/basics/index.html">
+<b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">1.</b> 
+Basics<i class="fas fa-check read-icon"></i></a><ul id="subsections-bf36765a9aa8c773e66430bacfc1a549" class="morespace collapsible-menu">
+          <li data-nav-id="/hugo/basics/migration/index.html" class=""><a class="padding" href="../../../hugo/basics/migration/index.html">
+
+What&#39;s New<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/hugo/basics/requirements/index.html" class=""><a class="padding" href="../../../hugo/basics/requirements/index.html">
+
+Requirements<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/hugo/basics/installation/index.html" class=""><a class="padding" href="../../../hugo/basics/installation/index.html">
+
+Installation<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/hugo/basics/configuration/index.html" class=""><a class="padding" href="../../../hugo/basics/configuration/index.html">
+
+Configuration<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/hugo/basics/customization/index.html" class=""><a class="padding" href="../../../hugo/basics/customization/index.html">
+
+Customization<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/hugo/basics/generator/index.html" class=""><a class="padding" href="../../../hugo/basics/generator/index.html">
+
+Stylesheet generator<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/hugo/basics/history/index.html" class=""><a class="padding" href="../../../hugo/basics/history/index.html">
+
+History<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/hugo/cont/index.html" class="alwaysopen"><input type="checkbox" id="section-d6f3db5bc053525d7427775c2aece1c0" aria-controls="subsections-d6f3db5bc053525d7427775c2aece1c0" checked><label for="section-d6f3db5bc053525d7427775c2aece1c0"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Content</span></label><a class="padding" href="../../../hugo/cont/index.html">
+<b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">2.</b> 
+Content<i class="fas fa-check read-icon"></i></a><ul id="subsections-d6f3db5bc053525d7427775c2aece1c0" class="morespace collapsible-menu">
+          <li data-nav-id="/hugo/cont/pages/index.html" class=""><a class="padding" href="../../../hugo/cont/pages/index.html">
+
+Pages organization<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/hugo/cont/archetypes/index.html" class=""><a class="padding" href="../../../hugo/cont/archetypes/index.html">
+
+Archetypes<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/hugo/cont/markdown/index.html" class=""><a class="padding" href="../../../hugo/cont/markdown/index.html">
+
+Markdown syntax<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/hugo/cont/syntaxhighlight/index.html" class=""><a class="padding" href="../../../hugo/cont/syntaxhighlight/index.html">
+
+Code highlighting<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/hugo/cont/menushortcuts/index.html" class=""><a class="padding" href="../../../hugo/cont/menushortcuts/index.html">
+
+Menu extra shortcuts<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/hugo/cont/i18n/index.html" class=""><a class="padding" href="../../../hugo/cont/i18n/index.html">
+
+Multilingual and i18n<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/hugo/cont/tags/index.html" class=""><a class="padding" href="../../../hugo/cont/tags/index.html">
+
+Tags<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/hugo/shortcodes/index.html" class="alwaysopen"><input type="checkbox" id="section-4a0f54096b6644f67db8d27a71754ce8" aria-controls="subsections-4a0f54096b6644f67db8d27a71754ce8" checked><label for="section-4a0f54096b6644f67db8d27a71754ce8"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Shortcodes</span></label><a class="padding" href="../../../hugo/shortcodes/index.html">
+<b style="display: inline-block; font-weight: 200; padding-left: .3rem; text-align: left; width: 1.1rem;">3.</b> 
+Shortcodes<i class="fas fa-check read-icon"></i></a><ul id="subsections-4a0f54096b6644f67db8d27a71754ce8" class="morespace collapsible-menu">
+          <li data-nav-id="/hugo/shortcodes/attachments/index.html" class=""><a class="padding" href="../../../hugo/shortcodes/attachments/index.html">
+
+Attachments<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/hugo/shortcodes/badge/index.html" class=""><a class="padding" href="../../../hugo/shortcodes/badge/index.html">
+
+Badge<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/hugo/shortcodes/button/index.html" class=""><a class="padding" href="../../../hugo/shortcodes/button/index.html">
+
+Button<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/hugo/shortcodes/children/index.html" class=""><input type="checkbox" id="section-34a0009fec473cefab6ae34b194a3786" aria-controls="subsections-34a0009fec473cefab6ae34b194a3786"><label for="section-34a0009fec473cefab6ae34b194a3786"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Children</span></label><a class="padding" href="../../../hugo/shortcodes/children/index.html">
+
+Children<i class="fas fa-check read-icon"></i></a><ul id="subsections-34a0009fec473cefab6ae34b194a3786" class="morespace collapsible-menu">
+          <li data-nav-id="/hugo/shortcodes/children/test/index.html" class=""><a class="padding" href="../../../hugo/shortcodes/children/test/index.html">
+
+page X<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/hugo/shortcodes/children/children-1/index.html" class=""><input type="checkbox" id="section-4ed9e8bc3b133e1ec0c069bd91b46707" aria-controls="subsections-4ed9e8bc3b133e1ec0c069bd91b46707"><label for="section-4ed9e8bc3b133e1ec0c069bd91b46707"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Sous-menu page 1</span></label><a class="padding" href="../../../hugo/shortcodes/children/children-1/index.html">
+
+page 1<i class="fas fa-check read-icon"></i></a><ul id="subsections-4ed9e8bc3b133e1ec0c069bd91b46707" class="morespace collapsible-menu">
+          <li data-nav-id="/hugo/shortcodes/children/children-1/children-1-1/index.html" class="alwaysopen"><input type="checkbox" id="section-6df3dd5c848a0dbd803ca7a6c27bbd38" aria-controls="subsections-6df3dd5c848a0dbd803ca7a6c27bbd38" checked><label for="section-6df3dd5c848a0dbd803ca7a6c27bbd38"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Sous-menu page 1-1</span></label><a class="padding" href="../../../hugo/shortcodes/children/children-1/children-1-1/index.html">
+
+page 1-1<i class="fas fa-check read-icon"></i></a><ul id="subsections-6df3dd5c848a0dbd803ca7a6c27bbd38" class="morespace collapsible-menu">
+          <li data-nav-id="/hugo/shortcodes/children/children-1/children-1-1/children-1-1-2/index.html" class="alwaysopen"><input type="checkbox" id="section-a7faad5d49b4eb48feabfae3cd427ce9" aria-controls="subsections-a7faad5d49b4eb48feabfae3cd427ce9" checked><label for="section-a7faad5d49b4eb48feabfae3cd427ce9"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Sous-menu page 1-1-2</span></label><a class="padding" href="../../../hugo/shortcodes/children/children-1/children-1-1/children-1-1-2/index.html">
+
+page 1-1-2<i class="fas fa-check read-icon"></i></a><ul id="subsections-a7faad5d49b4eb48feabfae3cd427ce9" class="morespace collapsible-menu">
+          <li data-nav-id="/hugo/shortcodes/children/children-1/children-1-1/children-1-1-2/children-1-1-2-1/index.html" class=""><a class="padding" href="../../../hugo/shortcodes/children/children-1/children-1-1/children-1-1-2/children-1-1-2-1/index.html">
+
+page 1-1-2-1<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/hugo/shortcodes/children/children-1/children-1-1/children-1-1-2/children-1-1-2-2/index.html" class=""><a class="padding" href="../../../hugo/shortcodes/children/children-1/children-1-1/children-1-1-2/children-1-1-2-2/index.html">
+
+page 1-1-2-2<i class="fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/hugo/shortcodes/children/children-1/children-1-1/children-1-1-3/index.html" class=""><a class="padding" href="../../../hugo/shortcodes/children/children-1/children-1-1/children-1-1-3/index.html">
+
+page 1-1-3<i class="fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+          <li data-nav-id="/hugo/shortcodes/children/children-2/index.html" class=""><a class="padding" href="../../../hugo/shortcodes/children/children-2/index.html">
+
+page 2<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/hugo/shortcodes/children/children-3/index.html" class=""><input type="checkbox" id="section-c7b0a9ea7efa9cb65e42eafc1f487a68" aria-controls="subsections-c7b0a9ea7efa9cb65e42eafc1f487a68"><label for="section-c7b0a9ea7efa9cb65e42eafc1f487a68"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Sous-menu page 3</span></label><a class="padding" href="../../../hugo/shortcodes/children/children-3/index.html">
+
+page 3<i class="fas fa-check read-icon"></i></a><ul id="subsections-c7b0a9ea7efa9cb65e42eafc1f487a68" class="morespace collapsible-menu">
+          <li data-nav-id="/hugo/shortcodes/children/children-3/test3/index.html" class=""><a class="padding" href="../../../hugo/shortcodes/children/children-3/test3/index.html">
+
+page 3-1<i class="fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+          <li data-nav-id="/hugo/shortcodes/expand/index.html" class=""><a class="padding" href="../../../hugo/shortcodes/expand/index.html">
+
+Expand<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/hugo/shortcodes/icon/index.html" class=""><a class="padding" href="../../../hugo/shortcodes/icon/index.html">
+
+Icon<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/hugo/shortcodes/include/index.html" class=""><a class="padding" href="../../../hugo/shortcodes/include/index.html">
+
+Include<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/hugo/shortcodes/math/index.html" class=""><a class="padding" href="../../../hugo/shortcodes/math/index.html">
+
+Math<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/hugo/shortcodes/mermaid/index.html" class=""><a class="padding" href="../../../hugo/shortcodes/mermaid/index.html">
+
+Mermaid<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/hugo/shortcodes/notice/index.html" class=""><a class="padding" href="../../../hugo/shortcodes/notice/index.html">
+
+Notice<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/hugo/shortcodes/siteparam/index.html" class=""><a class="padding" href="../../../hugo/shortcodes/siteparam/index.html">
+
+Site param<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/hugo/shortcodes/swagger/index.html" class=""><a class="padding" href="../../../hugo/shortcodes/swagger/index.html">
+
+Swagger<i class="fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/hugo/shortcodes/tabs/index.html" class=""><a class="padding" href="../../../hugo/shortcodes/tabs/index.html">
+
+Tabs<i class="fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+        </ul>
+        <div id="shortcuts">
+          <div class="nav-title padding">Aller plus loin</div>
+          <ul class="space">
+            <li><a class="padding" href="../../../tags/index.html"><i class='fas fa-fw fa-tags'></i> Tags</a></li>
+            <li><a class="padding" href="https://github.com/oliduha/tssoc.oliduha.fr"><i class='fab fa-fw fa-github'></i> Repo GitHub</a></li>
+            <li><a class="padding" href="../../../more/credits/index.html"><i class='fas fa-fw fa-bullhorn'></i> Credits</a></li>
+            <li><a class="padding" href="https://gohugo.io/"><i class='fas fa-fw fa-bookmark'></i> Documentation Hugo</a></li>
+          </ul>
+        </div>
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showLangSwitch showVariantSwitch showVisitedLinks showFooter"></div>
+        <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showLangSwitch showVariantSwitch showVisitedLinks showFooter">
+        <div id="prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showLangSwitch showVariantSwitch showVisitedLinks">
+          <ul>
+            <li id="select-language-container" class="footerLangSwitch showLangSwitch">
+              <div class="padding select-container">
+                <i class="fas fa-language fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <label class="a11y-only" for="select-language">Langue</label>
+                  <select id="select-language" onchange="location = baseUri + this.value;">
+                    <option lang="fr" id="fr" value="/at2/at2e2/stage-cefim/index.html" selected>Français</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </div>
+            </li>
+            <li id="select-variant-container" class="footerVariantSwitch showVariantSwitch">
+              <div class="padding select-container">
+                <i class="fas fa-paint-brush fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <label class="a11y-only" for="select-variant">Thème</label>
+                  <select id="select-variant" onchange="window.variants && variants.changeVariant( this.value );">
+                    <option id="auto" value="auto" selected>Auto</option>
+                    <option id="relearn-bright" value="relearn-bright">Relearn Bright</option>
+                    <option id="relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="relearn-dark" value="relearn-dark">Relearn Dark</option>
+                    <option id="learn" value="learn">Learn</option>
+                    <option id="neon" value="neon">Neon</option>
+                    <option id="blue" value="blue">Blue</option>
+                    <option id="green" value="green">Green</option>
+                    <option id="red" value="red">Red</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </div>
+              <script>window.variants && variants.markSelectedVariant();</script>
+            </li>
+            <li class="footerVisitedLinks showVisitedLinks"><button class="padding" onclick="clearHistory();"><i class="fas fa-history fa-fw"></i><span>&nbsp;</span>Supprimer l&#39;historique</button></li>
+          </ul>
+        </div>
+        <div id="footer" class="footerFooter showFooter">
+          <style>
+            #footer {
+              font-size: .8125rem;
+              height: 6.25rem;
+              margin-left: auto;
+              margin-right: auto;
+              padding: 2rem 1rem;
+              text-align: center;
+              min-width: 14.375rem;
+              max-width: 18.75rem;
+            }
+            #footer p {
+              margin: 0;
+            }
+          </style>
+          <a class="github-button" href="https://github.com/McShelby/hugo-theme-relearn/archive/main.zip" data-icon="octicon-cloud-download" aria-label="Download McShelby/hugo-theme-relearn on GitHub">Download</a>
+          <a class="github-button" href="https://github.com/McShelby/hugo-theme-relearn" data-icon="octicon-star" data-show-count="true" aria-label="Star McShelby/hugo-theme-relearn on GitHub">Star</a>
+          <a class="github-button" href="https://github.com/McShelby/hugo-theme-relearn/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork McShelby/hugo-theme-relearn on GitHub">Fork</a>
+          <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          <script async src="../../../js/buttons.js"></script>
+        </div>
+      </div>
+    </aside>
+    <script src="../../../js/clipboard.min.js" defer></script>
+    <script src="../../../js/perfect-scrollbar.min.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+  </body>
+</html>

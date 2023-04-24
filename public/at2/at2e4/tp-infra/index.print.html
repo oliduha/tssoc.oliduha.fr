@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="Docs formation Cefim TSSR">
+    <meta name="author" content="Olivier Duhamel">
+    <title>TP Infra - TSSOC</title>
+    <link href="https://www.tssoc.oliduha.fr/at2/at2e4/tp-infra/index.html" rel="canonical" type="text/html" title="TP Infra - TSSOC">
+    <link href="../../../at2/at2e4/tp-infra/index.xml" rel="alternate" type="application/rss+xml" title="TP Infra - TSSOC">
+    <link href="../../../images/logo.svg" rel="icon" type="image/svg+xml">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="../../../css/fontawesome-all.min.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fontawesome-all.min.css" rel="stylesheet"></noscript>
+    <link href="../../../css/nucleus.css" rel="stylesheet">
+    <link href="../../../css/auto-complete.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/auto-complete.css" rel="stylesheet"></noscript>
+    <link href="../../../css/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="../../../css/fonts.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fonts.css" rel="stylesheet"></noscript>
+    <link href="../../../css/theme.css" rel="stylesheet">
+    <link href="../../../css/theme-auto.css" rel="stylesheet" id="variant-style">
+    <link href="../../../css/variant.css" rel="stylesheet">
+    <link href="../../../css/print.css" rel="stylesheet" media="print">
+    <link href="../../../css/format-print.css" rel="stylesheet">
+    <link href="../../../css/ie.css" rel="stylesheet">
+    <script src="../../../js/url.js"></script>
+    <script src="../../../js/variant.js"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      window.index_js_url="../../../index.search.js";
+      var root_url="../../../";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copier dans le presse-papiers';
+      window.T_Copied_to_clipboard = 'Copié dans le presse-papiers !';
+      window.T_Copy_link_to_clipboard = 'Copier le lien dans le presse-papiers';
+      window.T_Link_copied_to_clipboard = 'Lien copié dans le presse-papiers !';
+      window.T_No_results_found = 'Aucun résultat trouvé pour \u0022{0}\u0022';
+      window.T_N_results_found = '{1} résultats trouvés pour \u0022{0}\u0022';
+      // some further base stuff
+      var baseUriFull='https:\/\/www.tssoc.oliduha.fr/';
+      window.variants && variants.init( [ 'auto', 'relearn-bright', 'relearn-light', 'relearn-dark', 'learn', 'neon', 'blue', 'green', 'red' ] );
+    </script>
+    <style>
+      #body img.bg-white {
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="../../../at2/at2e4/tp-infra/index.html">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../index.html"><span itemprop="name">TSSOC</span></a><meta itemprop="position" content="1"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../at2/index.html"><span itemprop="name">Maintenir, exploiter et sécuriser une infrastructure centralisée</span></a><meta itemprop="position" content="2"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../at2/at2e4/index.html"><span itemprop="name">Maintenir et exploiter un environnement virtualisé</span></a><meta itemprop="position" content="3"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">TP Infra</span><meta itemprop="position" content="4"></li>
+            </ol>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable chapter narrow" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="chapter">
+<div class="article-subheading">Exemple 4</div>
+<h1 id="tp-infra">TP Infra</h1>
+
+<h2 id="tp-infra-en-cluster-esxi">TP infra en cluster ESXi</h2>
+<p>Voici les schémas réseaux du TP infra dirigé par Karl Fricker</p>
+<p>
+<a href="#image-f01774925ca0946b7da2d9c01b9c13e3" class="lightbox-link">
+<img src="../../../at2/at2e4/tp-infra/Infra.drawio.png" alt="Infra" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-f01774925ca0946b7da2d9c01b9c13e3">
+<img src="../../../at2/at2e4/tp-infra/Infra.drawio.png" alt="Infra" class="lightbox-image" loading="lazy">
+</a></p>
+<p>
+<a href="#image-82635d45b1a9fdc5a6911accce0e97cd" class="lightbox-link">
+<img src="../../../at2/at2e4/tp-infra/ClusterESXi.drawio.png" alt="Cluster ESXi" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-82635d45b1a9fdc5a6911accce0e97cd">
+<img src="../../../at2/at2e4/tp-infra/ClusterESXi.drawio.png" alt="Cluster ESXi" class="lightbox-image" loading="lazy">
+</a></p>
+<hr>
+<table>
+<thead>
+<tr>
+<th><strong>CHECKLIST</strong></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ROUTEUR /GTW</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Installation d&rsquo;un PFSense</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td>Configuration du WAN</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td>Configuration du LAN en classe B/24</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td>Définir les interfaces optionnelles pour chaque VLAN</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td>Les clients derrière le routeur ont internet</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td>Configuration de l&rsquo;accès en https only sur le port 666</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td>L&rsquo;équipement est pinguable via un FQDN pertinent ou son alias</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td>Définir un SSID petinent avec une shared key WPA2</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td>L&rsquo;équipement est pinguable via un FQDN pertinent ou son alias</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td>Sécuriser l&rsquo;équipement</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>ESXi</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Installation d&rsquo;un ESXi 7 sur une machine hôte physique</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td>1 datastore local est configuré</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td>A minima deux cartes réseaux sont configurées</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td>Les VMS ne passent pas toutes par la même IF</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td>L&quot;ESXI peut s&rsquo;authentifier sur le LDAP de DC1</td>
+<td>FAUX</td>
+</tr>
+<tr>
+<td>L&rsquo;équipement est pinguable via un FQDN pertinent ou son alias</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>DC1</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>un domaine du type toto.lan a été crée</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td>la zone reverse est crée</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td>Les roots servers DNS sont à jour</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td>Un redirecteur vers 1.1.1.1 est créé</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td>1000 users ont été déposés dans une OU sur DC1 via un script powershell (me demander si besoin)</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td>A minima un client peut joindre le domaine</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td>La console Sites &amp; Service a été configuré pour une réplication à 15 minutes</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td>La console Sites &amp; Service a été configuré pour un subnet classe B/25</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td>La console Sites &amp; Service a été configuré pour rédéfinir le default-first-site</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td>L&rsquo;équipement est pinguable via un FQDN pertinent ou son alias</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>DC2</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Le rôle active directory est installé</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td>Le DC2 réplique les users du DC1</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td>Le DC2 fait également la bascule DNS</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td>L&rsquo;équipement est pinguable via un FQDN pertinent ou son alias</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>SHARE</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>La console quotas et filtre est installé</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td>Chaque utilisateur possède un quota de 500 Mo</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td>On ne peut pas déposer de fichier MP3 sur ce partage</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td>Un dossier commun est disponible pour tout le monde en R/W</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td>Un dossier perso est disponible en R/W pour chaque User</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td>Dans chaque poste client via une GPO on doit pouvoir propager le mappage des lecteurs de partage</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td>L&rsquo;équipement est pinguable via un FQDN pertinent ou son alias</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>SWITCH</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>On peut y accéder par un cable console</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td>On peut y accéder par l&rsquo;interface web sur une IP Fixe si il le permet</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td>les vlans y sont configurés comme vu en cours packet tracer</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td>les deux IF de l&rsquo;ESXI sont sur chaque switch</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td>Le switch cisco est réinitialisé</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td>L&rsquo;équipement est pinguable via un FQDN pertinent ou son alias</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>GLPI</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Installer un debian 10/11 sur une VM</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td>Installer un LAMPS</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td>Installer la webapp GLPI</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td>L&rsquo;équipement est pinguable via un FQDN pertinent ou son alias</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td>Configurer GLPI pour offrir un helpdesk de base</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td>Configurer un connecteur LDAP</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td>Ouvrir un workflow de ticket pour un user</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>XIVO IPBX</td>
+<td></td>
+</tr>
+<tr>
+<td>Installer la dernière distribution de XIVO</td>
+<td>VRAI</td>
+</tr>
+<tr>
+<td>Configurer une entité</td>
+<td>FAUX</td>
+</tr>
+<tr>
+<td>Configurer un plan d&rsquo;adressage locale de numérotation entre 100 et 199</td>
+<td>FAUX</td>
+</tr>
+<tr>
+<td>L&rsquo;équipement est pinguable via un FQDN pertinent ou son alias</td>
+<td>FAUX</td>
+</tr>
+<tr>
+<td>Installation des greffons pour les ciscophone et les des polycom</td>
+<td>FAUX</td>
+</tr>
+<tr>
+<td>Création de 6 comptes utlisateurs</td>
+<td>FAUX</td>
+</tr>
+<tr>
+<td>Installation sur android/IOS de zoiper ou Jitsi</td>
+<td>FAUX</td>
+</tr>
+<tr>
+<td>Installation sur client windows de zoiper</td>
+<td>FAUX</td>
+</tr>
+<tr>
+<td>La communication en interne est possible</td>
+<td>FAUX</td>
+</tr>
+<tr>
+<td>Le XIVO fait DCHP pour le VLAN</td>
+<td>FAUX</td>
+</tr>
+<tr>
+<td>Configurer un connecteur LDAP</td>
+<td>FAUX</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><em>La machine Xivo n&rsquo;a pas été terminé faute de temps et d&rsquo;une mauvaise manipulation en fin de TP.</em></li>
+</ul>
+<hr>
+
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <script src="../../../js/clipboard.min.js" defer></script>
+    <script src="../../../js/perfect-scrollbar.min.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+  </body>
+</html>

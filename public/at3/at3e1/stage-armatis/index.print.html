@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="Docs formation Cefim TSSR">
+    <meta name="author" content="Olivier Duhamel">
+    <title>Stage Armatis - TSSOC</title>
+    <link href="https://www.tssoc.oliduha.fr/at3/at3e1/stage-armatis/index.html" rel="canonical" type="text/html" title="Stage Armatis - TSSOC">
+    <link href="../../../at3/at3e1/stage-armatis/index.xml" rel="alternate" type="application/rss+xml" title="Stage Armatis - TSSOC">
+    <link href="../../../images/logo.svg" rel="icon" type="image/svg+xml">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="../../../css/fontawesome-all.min.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fontawesome-all.min.css" rel="stylesheet"></noscript>
+    <link href="../../../css/nucleus.css" rel="stylesheet">
+    <link href="../../../css/auto-complete.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/auto-complete.css" rel="stylesheet"></noscript>
+    <link href="../../../css/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="../../../css/fonts.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fonts.css" rel="stylesheet"></noscript>
+    <link href="../../../css/theme.css" rel="stylesheet">
+    <link href="../../../css/theme-auto.css" rel="stylesheet" id="variant-style">
+    <link href="../../../css/variant.css" rel="stylesheet">
+    <link href="../../../css/print.css" rel="stylesheet" media="print">
+    <link href="../../../css/format-print.css" rel="stylesheet">
+    <link href="../../../css/ie.css" rel="stylesheet">
+    <script src="../../../js/url.js"></script>
+    <script src="../../../js/variant.js"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      window.index_js_url="../../../index.search.js";
+      var root_url="../../../";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copier dans le presse-papiers';
+      window.T_Copied_to_clipboard = 'Copié dans le presse-papiers !';
+      window.T_Copy_link_to_clipboard = 'Copier le lien dans le presse-papiers';
+      window.T_Link_copied_to_clipboard = 'Lien copié dans le presse-papiers !';
+      window.T_No_results_found = 'Aucun résultat trouvé pour \u0022{0}\u0022';
+      window.T_N_results_found = '{1} résultats trouvés pour \u0022{0}\u0022';
+      // some further base stuff
+      var baseUriFull='https:\/\/www.tssoc.oliduha.fr/';
+      window.variants && variants.init( [ 'auto', 'relearn-bright', 'relearn-light', 'relearn-dark', 'learn', 'neon', 'blue', 'green', 'red' ] );
+    </script>
+    <style>
+      #body img.bg-white {
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="../../../at3/at3e1/stage-armatis/index.html">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../index.html"><span itemprop="name">TSSOC</span></a><meta itemprop="position" content="1"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../at3/index.html"><span itemprop="name">Maintenir et exploiter une infrastructure distribuée et contribuer à sa sécurisation</span></a><meta itemprop="position" content="2"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../at3/at3e1/index.html"><span itemprop="name">Configurer serveur de déploiement et de terminaux légers</span></a><meta itemprop="position" content="3"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Stage Armatis</span><meta itemprop="position" content="4"></li>
+            </ol>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable chapter narrow" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="chapter">
+<div class="article-subheading">Exemple 3</div>
+<h1 id="stage-armatis">Stage Armatis</h1>
+
+<hr>
+<h2 id="déploiement-armatis"><strong>Déploiement Armatis</strong></h2>
+<p>Le déploiement des postes s&rsquo;effectue en 2 étapes :</p>
+<ol>
+<li>déploiement de l&rsquo;image souche (l&rsquo;hôte) <em>- environ 30 min</em></li>
+<li>déploiement de la VM (VMWare) selon l&rsquo;activité à laquelle sera affectée la machine <em>- environ 2 h</em></li>
+</ol>
+<p>Les machines sont déployées une à une.</p>
+<h3 id="déploiement-image-souche"><strong>Déploiement image souche</strong></h3>
+<p>Sur chaque machine, le déploiement de l&rsquo;image souche s&rsquo;effectue par boot PXE, puis sélection dans Clonezilla de l&rsquo;image à déployer. Plusieurs scripts de configuration sont ensuite appelés automatiquement.</p>
+<ul>
+<li><strong>[F10]</strong> au démarrage de la machine pour accès au BIOS
+<ul>
+<li>Boot Options
+<ul>
+<li>Mettre un délai de 5 secondes</li>
+<li><code>Activer le démarrage sur PXE</code></li>
+<li>Désactiver l&rsquo;alerte audio</li>
+</ul>
+</li>
+<li>Sécurité
+<ul>
+<li><code>Désactiver le Secure Boot (disable-disable)</code></li>
+</ul>
+</li>
+<li><strong>[F10]</strong> pour sauvegarder les modifications et quitter le BIOS
+-&gt; La machine reboot</li>
+</ul>
+</li>
+<li><strong>[F9]]</strong> pour le menu de boot
+<ul>
+<li><code>Démarrer sur PXE IPV4</code></li>
+</ul>
+</li>
+<li>Dans le menu de CloneZilla qui s&rsquo;affiche, choisir <code>TAUX - Direct Restore HP Universal</code>
+<ul>
+<li>Sur certaine machine (les plus récentes) une demande de confirmation apparaît après environ 1 minute =&gt; [Entrée]</li>
+</ul>
+</li>
+</ul>
+<p><em>Cette étape dure environ 1/2 heure.</em></p>
+<p>L&rsquo;opération terminée, la machine doit rebooter sur un compte en auto-login ; sinon (administrateur) redémarrer la machine jusqu&rsquo;à l&rsquo;obtenir.</p>
+<p>Suivant les machines il y a de petites différence (version BIOS&hellip;) :</p>
+<ul>
+<li>
+<p>400/600-G2 : C&rsquo;est la démarche de base</p>
+</li>
+<li>
+<p>400-G3 : Un code pin est demandé pour désactiver le Secure Boot</p>
+</li>
+<li>
+<p>400-G6 : Secure Boot déjà désactivé, normalement</p>
+</li>
+<li>
+<p>400-G9 :</p>
+<ul>
+<li>Vérifier Secure Boot + Boot Options + MdP BIOS (à définir si machine neuve)</li>
+<li>Il peut être nécessaire de redémarrer la machine plusieurs fois pour obtenir une session avec le compte en auto-login</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="déploiement-image-vm"><strong>Déploiement image VM</strong></h3>
+<ul>
+<li>Une fois la machine démarrée sur le compte en auto-login :
+<ul>
+<li>Lancer Post-EDF-NG -&gt; Continue + Finish</li>
+<li>Fermer VM</li>
+</ul>
+</li>
+<li>Déco + reco en administrateur
+<ul>
+<li>Post-EDF-NG -&gt; Continue + Finish (éventuellement : Take Ownership)</li>
+<li>Fermer VM</li>
+<li>Menu Démarrer :
+<ul>
+<li>TAU-INST-NG-PRO-V2 (pour un poste EDF-PRO)</li>
+<li>TAU-INST-NG-PART-V2 (pour un poste EDF-PART)</li>
+</ul>
+</li>
+<li>-&gt; Si hostname en <code>DESKTOP[...]</code> : le PC reboot, il faut alors se re-co en administrateur et relancer le script TAU&hellip;</li>
+<li>-&gt; Si clic-auto manqué : le faire manuellement = Clic + [Entrée]</li>
+</ul>
+</li>
+</ul>
+<p><em>Cette étape dure approximativement 2h30.</em></p>
+<h3 id="configuration-dune-machine-pour-le-tad-travail-a-distance-structurel"><strong>Configuration d&rsquo;une machine pour le TAD (Travail A Distance) structurel</strong></h3>
+<p>Une fois le déploiement de la VM terminé ou sur une machine déjà en production sur site :</p>
+<ol>
+<li>Fermer la VM</li>
+<li>Se déconnecter du compte utilisateur actif (en auto-login)</li>
+<li>Se connecter en administrateur</li>
+<li>Menu démarrer &gt; TAU-INST-TAD</li>
+</ol>
+<p><em>L&rsquo;opération dure environ une minute.</em></p>
+<hr>
+
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <script src="../../../js/clipboard.min.js" defer></script>
+    <script src="../../../js/perfect-scrollbar.min.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+  </body>
+</html>

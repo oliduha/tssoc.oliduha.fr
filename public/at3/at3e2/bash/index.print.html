@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="Docs formation Cefim TSSR">
+    <meta name="author" content="Olivier Duhamel">
+    <title>Bash - TSSOC</title>
+    <link href="https://www.tssoc.oliduha.fr/at3/at3e2/bash/index.html" rel="canonical" type="text/html" title="Bash - TSSOC">
+    <link href="../../../at3/at3e2/bash/index.xml" rel="alternate" type="application/rss+xml" title="Bash - TSSOC">
+    <link href="../../../images/logo.svg" rel="icon" type="image/svg+xml">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="../../../css/fontawesome-all.min.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fontawesome-all.min.css" rel="stylesheet"></noscript>
+    <link href="../../../css/nucleus.css" rel="stylesheet">
+    <link href="../../../css/auto-complete.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/auto-complete.css" rel="stylesheet"></noscript>
+    <link href="../../../css/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="../../../css/fonts.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fonts.css" rel="stylesheet"></noscript>
+    <link href="../../../css/theme.css" rel="stylesheet">
+    <link href="../../../css/theme-auto.css" rel="stylesheet" id="variant-style">
+    <link href="../../../css/variant.css" rel="stylesheet">
+    <link href="../../../css/print.css" rel="stylesheet" media="print">
+    <link href="../../../css/format-print.css" rel="stylesheet">
+    <link href="../../../css/ie.css" rel="stylesheet">
+    <script src="../../../js/url.js"></script>
+    <script src="../../../js/variant.js"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      window.index_js_url="../../../index.search.js";
+      var root_url="../../../";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copier dans le presse-papiers';
+      window.T_Copied_to_clipboard = 'Copié dans le presse-papiers !';
+      window.T_Copy_link_to_clipboard = 'Copier le lien dans le presse-papiers';
+      window.T_Link_copied_to_clipboard = 'Lien copié dans le presse-papiers !';
+      window.T_No_results_found = 'Aucun résultat trouvé pour \u0022{0}\u0022';
+      window.T_N_results_found = '{1} résultats trouvés pour \u0022{0}\u0022';
+      // some further base stuff
+      var baseUriFull='https:\/\/www.tssoc.oliduha.fr/';
+      window.variants && variants.init( [ 'auto', 'relearn-bright', 'relearn-light', 'relearn-dark', 'learn', 'neon', 'blue', 'green', 'red' ] );
+    </script>
+    <style>
+      #body img.bg-white {
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="../../../at3/at3e2/bash/index.html">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../index.html"><span itemprop="name">TSSOC</span></a><meta itemprop="position" content="1"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../at3/index.html"><span itemprop="name">Maintenir et exploiter une infrastructure distribuée et contribuer à sa sécurisation</span></a><meta itemprop="position" content="2"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../at3/at3e2/index.html"><span itemprop="name">Automatiser les tâches à l&#39;aide de scripts</span></a><meta itemprop="position" content="3"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Bash</span><meta itemprop="position" content="4"></li>
+            </ol>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable chapter narrow" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="chapter">
+<div class="article-subheading">Exemple 2</div>
+<h1 id="bash">Bash</h1>
+
+<hr>
+<h2 id="scripts-bash"><strong>Scripts bash</strong></h2>
+<hr>
+<h3 id="1-script-de-sauvegarde-des-fichiers-et-de-la-base-de-donnees-du-site-wiki">1. Script de sauvegarde des fichiers et de la base de données du site wiki</h3>
+
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Information</div>
+  <div class="box-content">
+<p><strong>Contexte :</strong> 1 VM debian 11 LAMPS avec mediawiki.</p>
+<p><em>L&rsquo;objectif est de créer une tâche automatiquement éxecutée quotidiennement qui compresse en zip un dump de la BDD ainsi que le contenu du dossier wiki et le sauvegarde dans un dossier à la date du jour.</em></p>
+  </div>
+</div>
+<ul>
+<li>on se log en <code>root</code> on édite le script dans <code>/root</code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">su -
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span>
+</span></span><span class="line"><span class="cl">nano backup.sh
+</span></span></code></pre></div><ul>
+<li>avec :</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="c1">#Scipt de backup auto de la BDD et du wiki pour le site user</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#V1.0 par UserName le Date</span>
+</span></span><span class="line"><span class="cl">clear
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> Compression des fichiers...
+</span></span><span class="line"><span class="cl">7zip -rq /home/user/<span class="k">$(</span>date +%Y%m%d%H%M%S<span class="k">)</span>_wiki_backup-fichiers.zip /home/user/wiki
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> Dump de la base de données...
+</span></span><span class="line"><span class="cl">mysqldump -u root -p <span class="s1">&#39;toor&#39;</span> --databases user &gt; /home/user/_wiki_backup-base.sql
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> Compression de la base de données...
+</span></span><span class="line"><span class="cl"><span class="c1"># zip -m supprime l&#39;original / -q quiet</span>
+</span></span><span class="line"><span class="cl">zip -qm /home/user/<span class="k">$(</span>date +%Y%m%d%H%M%S<span class="k">)</span>_wiki_backup-base.zip /home/user/_wiki_backup-base.sql
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> Terminé !
+</span></span></code></pre></div>
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Information</div>
+  <div class="box-content">
+<p>La chaine <code>'toor'</code> est le mot de passe de root sur MySQL. <em><strong>Choisir un MDP fort pour un usage en production</strong></em></p>
+  </div>
+</div>
+<ul>
+<li>on l&rsquo;enregistre <code>[CTRL+S]</code> et on quitte nano <code>[CTRL+X]</code></li>
+<li>on lui donne les droits d&rsquo;exécution</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod +x backup.sh
+</span></span></code></pre></div><h4 id="pour-tester-le-script">Pour tester le script</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> /root
+</span></span><span class="line"><span class="cl">./backup.sh
+</span></span></code></pre></div><p>ou plus simplement</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">/root/backup.sh
+</span></span></code></pre></div><h4 id="pour-automatiser-ce-script">Pour automatiser ce script</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">crontab -e
+</span></span></code></pre></div><ul>
+<li>
+<p>choisir [1] pour ouverture avec nano</p>
+</li>
+<li>
+<p>rajouter la ligne (cf <a href="http://crontab.guru" target="_blank">http://crontab.guru</a>)</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">*/5 * * * * /root/backup.sh
+</span></span></code></pre></div><p>-&gt; cette directive exécute le script toutes les 5 minutes (pour tests)</p>
+<p>ou</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="m">0</span> <span class="m">0</span> * * * /root/backup.sh
+</span></span></code></pre></div><p>-&gt; exécute le script tous les jours à 00h00</p>
+<ul>
+<li><strong>sortir du compte root avec <code>[CTRL+D]</code> ou <code>exit</code></strong></li>
+</ul>
+<hr>
+<h3 id="2-script-de-décompression-suivant-le-format-dans-bash_aliases">2. Script de décompression suivant le format dans ~/.bash_aliases</h3>
+<p>Sur une machine à mon domicile installée sous Linux Bodhi, une distribution légère basée sur Ubuntu 20.04 et disposant de Moksha Desktop, j&rsquo;ai mis en place ce fichier <code>.bash_aliases</code> pour mon compte utilisateur courant (<em>sudo configuré</em>). Il contient, outre des alias pour diverses commande que j&rsquo;utilise plus ou moins fréquemment, une fonction en bash qui extrait un fichier passé en argument.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">  GNU nano 4.8                                               .bash_aliases
+</span></span><span class="line"><span class="cl"><span class="c1"># Personnal aliases</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">maj</span><span class="o">=</span><span class="s2">&#34;sudo apt-get update &amp;&amp; sudo apt-get upgrade -y&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">tt</span><span class="o">=</span><span class="s2">&#34;sudo watch sensors&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">flic</span><span class="o">=</span><span class="s2">&#34;sudo nmap -v -Pn -A&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">pg</span><span class="o">=</span><span class="s2">&#34;ping google.fr&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">p1</span><span class="o">=</span><span class="s2">&#34;ping 1.1.1.1&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">logm</span><span class="o">=</span><span class="s2">&#34;sudo tail -f /var/log/messages | ccze -A&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">logs</span><span class="o">=</span><span class="s2">&#34;sudo tail -f /var/log/syslog | ccze -A&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">logi</span><span class="o">=</span><span class="s2">&#34;sudo tail -f /var/log/iptables.log | ccze -A&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">logii</span><span class="o">=</span><span class="s2">&#34;sudo tail -f /var/log/iptables-input.log | ccze -A&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">logio</span><span class="o">=</span><span class="s2">&#34;sudo tail -f /var/log/iptables-output.log | ccze -A&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">logif</span><span class="o">=</span><span class="s2">&#34;sudo tail -f /var/log/iptables-forward.log | ccze -A&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">iptln</span><span class="o">=</span><span class="s2">&#34;sudo iptables -L --line-numbers&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">beton</span><span class="o">=</span><span class="s2">&#34;mplayer https://stream.radiobeton.com:8001/stream.mp3&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">lynis</span><span class="o">=</span><span class="s2">&#34;/usr/local/lynis/lynis audit system&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">srcali</span><span class="o">=</span><span class="s2">&#34;source ~/.bash_aliases&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">srcrc</span><span class="o">=</span><span class="s2">&#34;source ~/.bashrc&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">rcwgui</span><span class="o">=</span><span class="s2">&#34;rclone rcd --rc-web-gui&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">bd</span><span class="o">=</span><span class="s2">&#34;cd ..&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Fonction to extract file passed as arg</span>
+</span></span><span class="line"><span class="cl">xtrct <span class="o">()</span>
+</span></span><span class="line"><span class="cl"><span class="o">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="o">[</span> -f <span class="nv">$1</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="nv">$1</span> in
+</span></span><span class="line"><span class="cl">      *.tar.bz2<span class="o">)</span>   tar xjf <span class="nv">$1</span>   <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">      *.tar.gz<span class="o">)</span>    tar xzf <span class="nv">$1</span>   <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">      *.bz2<span class="o">)</span>       bunzip2 <span class="nv">$1</span>   <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">      *.rar<span class="o">)</span>       unrar x <span class="nv">$1</span>   <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">      *.gz<span class="o">)</span>        gunzip <span class="nv">$1</span>    <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">      *.tar<span class="o">)</span>       tar xf <span class="nv">$1</span>    <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">      *.tar.xz<span class="o">)</span>    tar xf <span class="nv">$1</span>    <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">      *.tbz2<span class="o">)</span>      tar xjf <span class="nv">$1</span>   <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">      *.tgz<span class="o">)</span>       tar xzf <span class="nv">$1</span>   <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">      *.zip<span class="o">)</span>       unzip <span class="nv">$1</span>     <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">      *.Z<span class="o">)</span>         uncompress <span class="nv">$1</span><span class="p">;;</span>
+</span></span><span class="line"><span class="cl">      *.7z<span class="o">)</span>        7z x <span class="nv">$1</span>      <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">      *<span class="o">)</span>           <span class="nb">echo</span> <span class="s2">&#34;&#39;</span><span class="nv">$1</span><span class="s2">&#39; ne peut etre extrait par xtrct()&#34;</span> <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">esac</span>
+</span></span><span class="line"><span class="cl">  <span class="k">else</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;&#39;</span><span class="nv">$1</span><span class="s2">&#39; : format de fichier invalide&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Usage : xtrct [fichier]&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">fi</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><hr>
+<h3 id="3-automatisation-du-renouvellement-dun-certificat-lets-encrypt-tous-les-3-mois">3. Automatisation du renouvellement d&rsquo;un certificat Let&rsquo;s Encrypt tous les 3 mois</h3>
+<p><em><code>certbot</code> doit être installé sur la machine et un certificat doit être configuré sur son nom de domain.</em></p>
+<p>L&rsquo;opération s&rsquo;effectue uniquement via crontab</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">crontab -e
+</span></span></code></pre></div><p>on ajoute :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="m">0</span> <span class="m">0</span> <span class="m">1</span> */3 * certbot renew --apache --domain oduhamel.oliduha.fr -n
+</span></span></code></pre></div><p><em>La commande sera éxectutée tous les 3 mois, le 1er jour du mois</em></p>
+<hr>
+
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <script src="../../../js/clipboard.min.js" defer></script>
+    <script src="../../../js/perfect-scrollbar.min.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+  </body>
+</html>

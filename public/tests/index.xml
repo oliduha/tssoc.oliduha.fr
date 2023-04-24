@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tests on TSSOC</title>
+    <link>https://www.tssoc.oliduha.fr/tests/index.html</link>
+    <description>Recent content in Tests on TSSOC</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language><atom:link href="https://www.tssoc.oliduha.fr/tests/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Attachments Shortcode Test</title>
+      <link>https://www.tssoc.oliduha.fr/tests/attach/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.tssoc.oliduha.fr/tests/attach/index.html</guid>
+      <description>Our attachment shortcode is a source of pleasure&amp;hellip;
+Attachments Branch Test Pièces jointes hugo.txt (20 o) Attachments Leaf Test Pièces jointes hugo.txt (20 o) Attachments Page Test Pièces jointes hugo.txt (20 o) Attachments Page Test Pièces jointes NoTreasure.txt (26 o) </description>
+    </item>
+    <item>
+      <title>Chapters</title>
+      <link>https://www.tssoc.oliduha.fr/tests/chapters/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.tssoc.oliduha.fr/tests/chapters/index.html</guid>
+      <description>Start your success story. Now!</description>
+    </item>
+    <item>
+      <title>Code</title>
+      <link>https://www.tssoc.oliduha.fr/tests/code/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.tssoc.oliduha.fr/tests/code/index.html</guid>
+      <description>Some testing for different styles used in syntax highlighting and preformatted blocks.
+Inline Code This is some very long inline code. Where does it wrap?
+What about wrapping short inline code if multiple sections are written side by side?
+What about wrapping short inline code if multiple sections are written side/by/side?
+What about wrapping long inline code if multiple sections are written side567 by34567 side567?
+What about wrapping long inline code if multiple sections are written side567/by34567/side567?</description>
+    </item>
+    <item>
+      <title>Images</title>
+      <link>https://www.tssoc.oliduha.fr/tests/images/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.tssoc.oliduha.fr/tests/images/index.html</guid>
+      <description>Some testing for different styles of image links.
+Markdown Resource SVG Relative to page Relative to page up level Static SVG External fully qualified External without scheme External without scheme and scheme separator HTML Resource SVG Relative to page Relative to page up level Static SVG External fully qualified External without scheme External without scheme and scheme separator </description>
+    </item>
+    <item>
+      <title>Tables</title>
+      <link>https://www.tssoc.oliduha.fr/tests/tables/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.tssoc.oliduha.fr/tests/tables/index.html</guid>
+      <description>Lines and Paragraphs i HTML Paragraph I
+HTML Paragraph II
+i HTML Line I
+HTML Line II i HTML Line I
+HTML Line II i Markdown Multicell I Markdown Multicell II Headings i HTML h1 i HTML h2 i HTML h3 i HTML h4 i HTML h5 i HTML h6 Lists i HTML List Item IHTML List Item II Code i Markdown Inline i HTML Inline i HTML Block Links &amp;amp; Images i Markdown Link i https://example.</description>
+    </item>
+    <item>
+      <title>VSCode Front Matter</title>
+      <link>https://www.tssoc.oliduha.fr/tests/frontmatter/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.tssoc.oliduha.fr/tests/frontmatter/index.html</guid>
+      <description>Empty Properties Pièces jointes Déroulez-moi&amp;hellip; aa</description>
+    </item>
+    <item>
+      <title>Width</title>
+      <link>https://www.tssoc.oliduha.fr/tests/width/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.tssoc.oliduha.fr/tests/width/index.html</guid>
+      <description>Make a visible block
+And another one</description>
+    </item>
+  </channel>
+</rss>

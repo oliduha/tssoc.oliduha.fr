@@ -10,8 +10,10 @@ weight = 2
 
 #### 2. [Bash]({{% relref "at3/AT3E2/bash" %}})
 
-#### 3. [Stage Cefim]({{% relref "at3/AT3E2/stage-cefim" %}})
+#### 3. [PowerShell]({{% relref "at3/AT3E2/powershell" %}})
 
-#### 4. [Python]({{% relref "at3/AT3E2/python" %}})
+#### 4. [Stage Cefim]({{% relref "at3/AT3E2/stage-cefim" %}})
+
+#### 5. [Python]({{% relref "at3/AT3E2/python" %}})
 
 ---

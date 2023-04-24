@@ -60,7 +60,7 @@ Développer un script 'Apps Script' (le langage de script Google Workspace - une
 
 - Afficher un formulaire simplifiant la saisie des informations nécessaires à l'extraction par les opérateurs.
 - Extraire et réserver le nombre de vouchers nécessaires de la liste.
-- Créer un Google Document présentant les vouchers mis en page, prêt à être imprimé (si besoin).
+- Créer un Google Document présentant les vouchers mis en page, prêt à être imprimé.
 - Envoyer un email d'alerte à l'administrateur lorsque la liste de vouchers disponibles arrive à épuisement.
 
 Fonctionnalité supplémentaire : Disposer d'une liste de secours afin de simplifier l'ajout de vouchers par l'admin s'il n'est pas présent sur site (en congés, en déplacement, etc.) lorsque la liste courante arrive à épuisement.

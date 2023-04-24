@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Basics on TSSOC</title>
+    <link>https://www.tssoc.oliduha.fr/en/hugo/basics/index.html</link>
+    <description>Recent content in Basics on TSSOC</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language><atom:link href="https://www.tssoc.oliduha.fr/en/hugo/basics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What&#39;s New</title>
+      <link>https://www.tssoc.oliduha.fr/en/hugo/basics/migration/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.tssoc.oliduha.fr/en/hugo/basics/migration/index.html</guid>
+      <description>This document shows you what&amp;rsquo;s new in the latest release. For a detailed list of changes, see the history page.
+0.95.0 The minimum required Hugo version.
+Breaking A change that requires action by you after upgrading to assure the site is still functional.
+Change A change in default behavior that may requires action by you if you want to revert it.
+New Marks new behavior you might find interesting or comes configurable.</description>
+    </item>
+    <item>
+      <title>Requirements</title>
+      <link>https://www.tssoc.oliduha.fr/en/hugo/basics/requirements/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.tssoc.oliduha.fr/en/hugo/basics/requirements/index.html</guid>
+      <description>Thanks to the simplicity of Hugo, this page is as empty as this theme needs requirements.
+Just download at least version 0.95.0 of the Hugo binary for your OS (Windows, Linux, Mac).</description>
+    </item>
+    <item>
+      <title>Installation</title>
+      <link>https://www.tssoc.oliduha.fr/en/hugo/basics/installation/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.tssoc.oliduha.fr/en/hugo/basics/installation/index.html</guid>
+      <description>The following steps are here to help you initialize your new website. If you don&amp;rsquo;t know Hugo at all, we strongly suggest you learn more about it by following this great documentation for beginners.
+Create your project Hugo provides a new command to create a new website.
+hugo new site &amp;lt;new_project&amp;gt; Install the theme Install the Relearn theme by following this documentation using Hugo&amp;rsquo;s module system.
+This theme&amp;rsquo;s repository is: https://github.</description>
+    </item>
+    <item>
+      <title>Configuration</title>
+      <link>https://www.tssoc.oliduha.fr/en/hugo/basics/configuration/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.tssoc.oliduha.fr/en/hugo/basics/configuration/index.html</guid>
+      <description>Global site parameters On top of Hugo global configuration, the Relearn theme lets you define the following parameters in your config.toml (here, values are default).
+Note that some of these parameters are explained in details in other sections of this documentation.
+[params] # This controls whether submenus will be expanded (true), or collapsed (false) in the # menu; if no setting is given, the first menu level is set to false, all others to true; # this can be overridden in the pages frontmatter alwaysopen = true # Prefix URL to edit current page.</description>
+    </item>
+    <item>
+      <title>Customization</title>
+      <link>https://www.tssoc.oliduha.fr/en/hugo/basics/customization/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.tssoc.oliduha.fr/en/hugo/basics/customization/index.html</guid>
+      <description>The Relearn theme has been built to be as configurable as possible by defining multiple partials
+In themes/hugo-theme-relearn/layouts/partials/, you will find all the partials defined for this theme. If you need to overwrite something, don&amp;rsquo;t change the code directly. Instead follow this page. You&amp;rsquo;d create a new partial in the layouts/partials folder of your local project. This partial will have the priority.
+This theme defines the following partials :
+header.html: the header of the page.</description>
+    </item>
+    <item>
+      <title>Stylesheet generator</title>
+      <link>https://www.tssoc.oliduha.fr/en/hugo/basics/generator/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.tssoc.oliduha.fr/en/hugo/basics/generator/index.html</guid>
+      <description>This interactive tool may help you to generate your own color variant stylesheet.
+Show usage instructions To get started, first select a color variant from the variant switch in the lower left sidebar that fits you best as a starting point.
+The graph is interactive and reflect the current colors. You can click on any of the colored boxes to adjust the respective color. The graph and the page will update accordingly.</description>
+    </item>
+    <item>
+      <title>History</title>
+      <link>https://www.tssoc.oliduha.fr/en/hugo/basics/history/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.tssoc.oliduha.fr/en/hugo/basics/history/index.html</guid>
+      <description>Changelog 5.12.4 (2023-03-24) Fixes [bug] theme: disableExplicitIndexURLs param is not working as expected #505 5.12.3 (2023-03-14) Fixes [bug] attachments: fix links if only one language is present #503 [bug] shortcodes: allow markdown for title and content #502 5.12.2 (2023-03-03) Fixes [bug] menu: fix state for alwaysopen=false + collapsibleMenu=false #498 5.12.1 (2023-02-26) Enhancements [feature] variant: add relearn bright theme #493 Fixes [bug] generator: fix setting of colors #494 5.12.0 (2023-02-24) Enhancements [feature] frontmatter: support VSCode Front Matter extension #481 [feature] theme: make expand and image ids stable #477 [feature] variant: set scrollbar color to dark for dark variants #471 [feature] i18n: add full RTL support #470 [feature] piratify: fix some quirks, arrr #469 [feature][change] theme: optimization for huge screen sizes #466 Fixes [bug] i18n: write code ltr even for rtl languages #492 [bug] anchor: fix link in FF when served from filesystem #482 [bug] shortcodes: don&amp;rsquo;t break build and render for invalid parameters #480 [bug] nav: restore scroll position on browser back #476 [bug] variant: avoid style leak for auto style #473 Maintenance [task] build: add imagebot #485 5.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mettre en service un équipement numérique on TSSOC</title>
+    <link>https://www.tssoc.oliduha.fr/at1/at1e1/index.html</link>
+    <description>Recent content in Mettre en service un équipement numérique on TSSOC</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language><atom:link href="https://www.tssoc.oliduha.fr/at1/at1e1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Stage Armatis</title>
+      <link>https://www.tssoc.oliduha.fr/at1/at1e1/stage-armatis/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.tssoc.oliduha.fr/at1/at1e1/stage-armatis/index.html</guid>
+      <description>Préparation et mise en place de postes de travail dans le cadre d’un renouvellement de matériel ou d’une modification d’affectation pour des télé-conseillés et configuration d’un switch Aruba neuf.
+Mise à jour des équipements dans BMC Noumara (entrer le nouveau matériel et passer l’ancien en « spare ») avec une nomenclature normalisée reprenant le numéro de série de la machine. Préparation des nouvelles machines par déploiement de l’image souche (l’hôte) via Clonezilla en PXE puis déploiement de l’image de la VM (VMWare Workstation) spécifique à l’activité ciblée via un script faisant appel à MDT et un ensemble de scripts (Powershell) de configuration.</description>
+    </item>
+  </channel>
+</rss>

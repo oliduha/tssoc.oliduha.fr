@@ -1,0 +1,1987 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="Docs formation Cefim TSSR">
+    <meta name="author" content="Olivier Duhamel">
+    <title>Migrations Active Directory - TSSOC</title>
+    <link href="https://www.tssoc.oliduha.fr/at2/at2e5/ad/index.html" rel="canonical" type="text/html" title="Migrations Active Directory - TSSOC">
+    <link href="../../../at2/at2e5/ad/index.xml" rel="alternate" type="application/rss+xml" title="Migrations Active Directory - TSSOC">
+    <link href="../../../images/logo.svg" rel="icon" type="image/svg+xml">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="../../../css/fontawesome-all.min.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fontawesome-all.min.css" rel="stylesheet"></noscript>
+    <link href="../../../css/nucleus.css" rel="stylesheet">
+    <link href="../../../css/auto-complete.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/auto-complete.css" rel="stylesheet"></noscript>
+    <link href="../../../css/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="../../../css/fonts.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fonts.css" rel="stylesheet"></noscript>
+    <link href="../../../css/theme.css" rel="stylesheet">
+    <link href="../../../css/theme-auto.css" rel="stylesheet" id="variant-style">
+    <link href="../../../css/variant.css" rel="stylesheet">
+    <link href="../../../css/print.css" rel="stylesheet" media="print">
+    <link href="../../../css/format-print.css" rel="stylesheet">
+    <link href="../../../css/ie.css" rel="stylesheet">
+    <script src="../../../js/url.js"></script>
+    <script src="../../../js/variant.js"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      window.index_js_url="../../../index.search.js";
+      var root_url="../../../";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copier dans le presse-papiers';
+      window.T_Copied_to_clipboard = 'Copié dans le presse-papiers !';
+      window.T_Copy_link_to_clipboard = 'Copier le lien dans le presse-papiers';
+      window.T_Link_copied_to_clipboard = 'Lien copié dans le presse-papiers !';
+      window.T_No_results_found = 'Aucun résultat trouvé pour \u0022{0}\u0022';
+      window.T_N_results_found = '{1} résultats trouvés pour \u0022{0}\u0022';
+      // some further base stuff
+      var baseUriFull='https:\/\/www.tssoc.oliduha.fr/';
+      window.variants && variants.init( [ 'auto', 'relearn-bright', 'relearn-light', 'relearn-dark', 'learn', 'neon', 'blue', 'green', 'red' ] );
+    </script>
+    <style>
+      #body img.bg-white {
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="../../../at2/at2e5/ad/index.html">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../index.html"><span itemprop="name">TSSOC</span></a><meta itemprop="position" content="1"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../at2/index.html"><span itemprop="name">Maintenir, exploiter et sécuriser une infrastructure centralisée</span></a><meta itemprop="position" content="2"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../at2/at2e5/index.html"><span itemprop="name">Maintenir et exploiter un domaine Active Directory et les serveurs Windows</span></a><meta itemprop="position" content="3"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Migrations Active Directory</span><meta itemprop="position" content="4"></li>
+            </ol>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable chapter narrow" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="chapter">
+<div class="article-subheading">Exemple 1</div>
+<h1 id="migrations-active-directory">Migrations Active Directory</h1>
+
+<p>
+<a href="#image-51ff8341482606a66c4ab0e63afed2e0" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/001-logoAD.png" alt="logo" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-51ff8341482606a66c4ab0e63afed2e0">
+<img src="../../../at2/at2e5/ad/001-logoAD.png" alt="logo" class="lightbox-image" loading="lazy">
+</a></p>
+<h2 id="introduction">Introduction</h2>
+<p>Entreprise : 2 DNS : interne et externe<br>
+L&rsquo;AD et le DNS sont fusionnés en entreprise.<br>
+L&rsquo;AD est le rôle principal dans une entreprise, il permet la sécurité, l&rsquo;authentification utilisateur. On y retrouve les comptes, les mdp, les groupes, les serveurs.<br>
+C&rsquo;est le noyau d&rsquo;une infrastructure système. Tout tourne autour de lui.<br>
+C&rsquo;est grâce à l&rsquo;AD qu&rsquo;on peut faire du SSO (jeton pour la &ldquo;journée&rdquo; d&rsquo;authentification).</p>
+<h2 id="dns">DNS</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">DNS exterieur</th>
+<th style="text-align:center">DNS interne lié à l&rsquo;AD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">(<strong>1</strong>) FAI &gt; pool IP publique + ligne internet</td>
+<td style="text-align:center">(1)Onglet redirecteur : les 2 IP publique des DNS externes (pour rebalancer si non connnu en interne)</td>
+</tr>
+<tr>
+<td style="text-align:center">NAT IP internet vers IP publique</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">(<strong>2</strong>) Fournisseur nom de domaine &gt; DNS public + zone DNS exterieure</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">Mep lien DNS publique sur IP publique</td>
+<td style="text-align:center">mep lien vers IP privées/internes sur enregistrements et noms</td>
+</tr>
+<tr>
+<td style="text-align:center">A (nom&gt;ip), TXT, MX (<em>mail</em>), PTR (<em>reverse A ; pas de pointeurs dans un server DNS publique</em>), NS (<em>server DNS</em>), SOA (e<em>nr principal dns</em>), CNAME (<em>autre nom</em>)</td>
+<td style="text-align:center">Idem : A, TXT, MX, PTR, NS, SOA, CNAME</td>
+</tr>
+<tr>
+<td style="text-align:center">Zone DNS ext = on fait pointer IP publique vers ex. <code>intranet.tssr.net</code></td>
+<td style="text-align:center">IP privée ( (<strong>a</strong>) <code>192.168.20.240 srv.web)</code> &gt; <code>.lan</code> (<code>srv.web.lan</code>) en record A,  (<strong>b</strong>) CNAME &gt; vers le <code>.lan</code> (<code>intranet serv.web.lan</code>) OU (<strong>c</strong>) enregistrement zone A directement <code>icp.fr &gt; intranet.icp.fr</code> comme ça que ce soit en interne/externe, accès au serveur avec la même nomenclature)</td>
+</tr>
+</tbody>
+</table>
+<p>Les enregistrements sont les mêmes pour les zones DNS internes et externes.</p>
+<p><strong>PROGRAMME:</strong></p>
+<ul>
+<li>Monter une AD unique à nous tous, faire tout ce qu&rsquo;on vas retrouver en entreprise (ex: comptes, groupes, mdp, OU); les bonnes pratiques.</li>
+<li>On fera des GPO qui sont le plus utilisées en entreprise.</li>
+<li>Sécurité NTFS (sécurité sur les dossiers et les fichiers).</li>
+</ul>
+<h2 id="active-directory">ACTIVE DIRECTORY</h2>
+<p><em>AD = LDAP (LDAPs = fonction sécurisé) = Annuaire = Annuaire d&rsquo;identité</em></p>
+<p>Port AD 389 / Port LDAS 636</p>
+<p>
+<a href="#image-434d699d618a8bdcd16984362c700736" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/002-schemaAD1.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-434d699d618a8bdcd16984362c700736">
+<img src="../../../at2/at2e5/ad/002-schemaAD1.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p>AD =&gt; c&rsquo;est une forêt =&gt; la forêt c&rsquo;est le schéma qui est remplie d&rsquo;attributs.
+Dans cette forêt, il peut y avoir des domaines, voir des sous-domaines des domaines.
+En entreprise, pour éviter de complexifier son AD, on ne fait qu&rsquo;un domaine, voir deux sous-domaines (messagerie et compte). On peut même simuler des sous-domaines pour ne pas complexifier l&rsquo;AD. Grâce à cela on n&rsquo;as qu&rsquo;un seul et unique domaine à gérer.
+Le login côté AD s&rsquo;apelle l&rsquo;UPN (équivalent de l&rsquo;adresse mail)<br>
+AD permet de gérer: les comptes génériques, les mdp, les groupes de sécurité, listes de diffusion, machines, serveur, GPO, BALS (implicitement c&rsquo;est un compte / BALS: Boite aux lettres) générique, BALS équipements, BALS Salle.</p>
+<p>
+<a href="#image-a06a2eeedbaa1f0009f2ebd752fd2368" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/003-schemaForetAD.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-a06a2eeedbaa1f0009f2ebd752fd2368">
+<img src="../../../at2/at2e5/ad/003-schemaForetAD.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p>Les 5 étapes de l&rsquo;installtion d&rsquo;un magnifique serveur neuf :</p>
+<ul>
+<li>Configurer un RAID</li>
+<li>Installation Windows Server</li>
+<li>Configuration carte réseau (no DHCP, tout est fixé)</li>
+<li>Faire les MàJ Microsoft</li>
+<li>Antivirus</li>
+</ul>
+<p><strong>Les SERVEUR AD sont les CONTROLEURS DE DOMAINES</strong><br>
+Ils sont aussi serveurs DNS externes.<br>
+Les bonnes pratiques :</p>
+<ul>
+<li>Ce sont deux serveurs par site. Un contrôleur de domaine ne doit rien faire d&rsquo;autres.</li>
+<li>Ils doivent être physique. À la limite, un des deux peut être virtualisé (par exemple, sur une infra VMware qui crash et que les deux serveur sont virtualisé, c&rsquo;est la misère)</li>
+<li>Le principal doit rester en physique. Il héberge les rôles FSMO.</li>
+<li>La réplication AD permet de se synchroniser dans les 15 minutes entre tout les contrôleurs de domaine.</li>
+</ul>
+<p>Dans le cas d&rsquo;un multi site :</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Paris</th>
+<th style="text-align:center"></th>
+<th style="text-align:center">Marseille</th>
+<th style="text-align:center"></th>
+<th style="text-align:center">Lyon</th>
+<th style="text-align:center"></th>
+<th style="text-align:center">Clermont</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">DC Prinicpal / DC Secondaire</td>
+<td style="text-align:center">&ndash;&gt; VPN IPSEC SITE A SITE &ndash;&gt;</td>
+<td style="text-align:center">DC Secondaire / DC Secondaire</td>
+<td style="text-align:center">&ndash;&gt; VPN IPSEC SITE A SITE &ndash;&gt;</td>
+<td style="text-align:center">DC Secondaire / DC Secondaire</td>
+<td style="text-align:center">&ndash;&gt; VPN IPSEC SITE A SITE &ndash;&gt;</td>
+<td style="text-align:center">DC Secondaire / DC Secondaire</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">Replication AD dans le tunnel</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">Replication AD dans le tunnel</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">Replication AD dans le tunnel</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">Ad src 172.16.0.0/24 vers ad dest 172.30.0.0/24</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">Ad src 172.30.0.0/24 vers dest 172.62.0.0/24</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">Ad src 172.62.0.0 vers ad dest 172.16.0.0/24</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Bonne pratique</strong> :<br>
+Les 4 sites sont reliés en VPN IPSEC site à site.<br>
+Sur de l&rsquo;intersite, faire passer la réplication AD dans le tunel.<br>
+Tout les Firewalls proposent le VPN IPSEC site à site. Les configurer exterieurements (sur Paris, mettre l&rsquo;Ip publique de Marseille, ainsi que les méthodes d&rsquo;encryption. Il faut qu&rsquo;elle soit égale des 2 côtés. Idem pour la clé secrete partagée).<br>
+Mettre la même marque de firewall sur tout ces sites*</p>
+<h2 id="ad-sur-windows-serveur-2019">AD SUR WINDOWS SERVEUR 2019</h2>
+<h3 id="construire-un-contrôleur-de-domaine-principal">Construire un contrôleur de domaine principal</h3>
+<ul>
+<li>Gérer &ldquo;Ajout de rôles et des fonctionnalités&rdquo;</li>
+<li>Assisstant Ajout de rôles :
+<ul>
+<li>Rôles de serveurs</li>
+<li>Cocher Service AD DS (Gestion de Stratégie de Groupe déjà coché)</li>
+<li>Lancer l&rsquo;installation du rôle</li>
+</ul>
+</li>
+<li>Drapeau Orange en haut à droite &ldquo;Promouvoir se serveur en contrôleur de domaine&rdquo;</li>
+<li>Assistant de Configuration des services de domaines AD
+<ul>
+<li>Configuration de déploiement
+<ul>
+<li>&ldquo;Ajouter une nouvelle forêt&rdquo;</li>
+<li>Nom de domaine racine &ldquo;om.lan&rdquo;</li>
+</ul>
+</li>
+<li>Options du contrôleur de domaine
+<ul>
+<li>Serveur DNS : laissé coché</li>
+<li>Catalogue Global (rôle de base)</li>
+<li>Mot de passe: dadfba16$</li>
+</ul>
+</li>
+<li>Options supplémentaires
+<ul>
+<li>il le déduit seul &ldquo;OM&rdquo;</li>
+</ul>
+</li>
+<li>Chemin d&rsquo;accès
+<ul>
+<li>On retrouve le chemin de l&rsquo;enregistrement de la BDD.</li>
+<li><em>Bonne Pratique: sauvegarder les logs sur une partition D</em></li>
+</ul>
+</li>
+<li>Lancer l&rsquo;installation</li>
+</ul>
+</li>
+</ul>
+<p>L&rsquo;AD se crée. Cela crée le schéma, la forêt, les FSMO.<br>
+Sur un contrôleur de domaine, lorsque le domaine est crée, la notion d&rsquo;Admin local, c&rsquo;est terminé. On rentre obligatoirement en ADMINISTRATEUR DU DOMAINE.</p>
+<p><strong>Vérification et première configuration</strong></p>
+<ul>
+<li>
+<p>La première chose à faire c&rsquo;est de modifier le DNS de la carte réseau du serveur. On met l&rsquo;adresse Ip de lui-même car à partir de maintenant il est aussi serveur DNS.</p>
+</li>
+<li>
+<p><strong>Outils Administration, Utilisateur et Ordinateurs Active Directory</strong></p>
+<ul>
+<li>On verifie &hellip;. et catalogue global.</li>
+<li>Clique-droit, Maitre d&rsquo;opération :
+On a les 3 rôles FSMO</li>
+</ul>
+</li>
+<li>
+<p><strong>Outils Administration, DNS</strong></p>
+<ul>
+<li>On vérifie que notre domaine est crée en zone directe.</li>
+<li>Notre zone reverse n&rsquo;est pas crée, il faut la créer.
+<ul>
+<li>clique-droit, ajouter une nouvelle zone.</li>
+<li>Ajouter le pointeur PTR du Record A de la zone directe.</li>
+</ul>
+</li>
+<li>Clique-droit, Propriété sur le serveur DNS
+<ul>
+<li>Ajouter nos DNS de FAI dans l&rsquo;onglet Redirecteurs</li>
+</ul>
+</li>
+<li><em><strong>Cela permet à l&rsquo;exterieur (l&rsquo;internet) de pointer vers le serveur interne.</strong></em></li>
+</ul>
+</li>
+<li>
+<p><strong>Outils Administration, Sites et Services Active Directory</strong></p>
+<ul>
+<li>Default-First-Site-Name
+<ul>
+<li>C&rsquo;est le site sur lequel vous avez mis le controleur de domaine principal.</li>
+<li>On retrouve les contrôleurs de domaine ratachés à ce site.</li>
+</ul>
+</li>
+<li>Inter-Site-Transports
+<ul>
+<li>IP =&gt; DEFAULTIPSITELINK : C&rsquo;est le moteur de réplication entre les contrôleurs de domaine.
+<ul>
+<li>Clique-droit, Propriété et mettre la réplication à 15 min.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Subnets (Le plus important ! Il faut déclarer le réseau du site et le ratacher au site.)
+<ul>
+<li>Clique-droit, Nouveau sous-réseau
+<ul>
+<li>Préfixe: 192.168.20.0/24 et séléctionner le site</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Clique-droit sur Sites, Ajouter un nouveau site. (Par exemple Marseille). Penser à créer le subnet du réseau de Marseille.</li>
+</ul>
+</li>
+<li>
+<p><strong>Outils Administration, Domaine et Approbation Active Directory</strong></p>
+<ul>
+<li>Clique-droit, Propriété sur le Domaine et approbation AD.
+<ul>
+<li>On peut simuler des créations de sous-domaines ou des domaines.</li>
+<li><em><strong>Si on ajoute un nouvel utilisateur, on peut lui crée son identifiant avec la partie mail que l&rsquo;on veut.</strong></em></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Outils Administration, Modèles ADSI</strong></p>
+<ul>
+<li>Ici on a la retranscritpion de notre AD coté Forêt (CN = attribut)</li>
+<li>C&rsquo;est le coeur de l&rsquo;AD</li>
+</ul>
+</li>
+</ul>
+<p><em><strong>ATTENTION</strong></em></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">DNS</th>
+<th style="text-align:center">Suffixes UPN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">bobdy.lan</td>
+<td style="text-align:center">bobdy.com / bobdy.fr</td>
+</tr>
+<tr>
+<td style="text-align:center">zone directe: bobdy.com ou bobdy.fr</td>
+<td style="text-align:center">cela peut être les mêmes</td>
+</tr>
+<tr>
+<td style="text-align:center">SERVEUR</td>
+<td style="text-align:center">MESSAGERIE/IDENTIFIANT</td>
+</tr>
+<tr>
+<td style="text-align:center">Dans le DNS interne (voir externe)</td>
+<td style="text-align:center">Dans l&rsquo;Active Directory</td>
+</tr>
+</tbody>
+</table>
+<h3 id="préparer-le-contrôleur-de-domaine-secondaire">Préparer le contrôleur de domaine secondaire</h3>
+<ul>
+<li>1ère chose : mettre l&rsquo;IP du contrôleur principal dans les paramêtres de cartes réseau.<br>
+
+<a href="#image-6b14eafbc986d315e5ff48716f1a7551" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/004-ping.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-6b14eafbc986d315e5ff48716f1a7551">
+<img src="../../../at2/at2e5/ad/004-ping.png" alt="" class="lightbox-image" loading="lazy">
+</a></li>
+<li>2éme chose : ajouter le domaine (On arrive dans les &ldquo;computers&rdquo; sur le controleur principal)<br>
+
+<a href="#image-c8f2f9aab12a7d2b511c76eda264f8db" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/005-ajout_domaine.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-c8f2f9aab12a7d2b511c76eda264f8db">
+<img src="../../../at2/at2e5/ad/005-ajout_domaine.png" alt="" class="lightbox-image" loading="lazy">
+</a></li>
+<li>Enfin se connecter en tant qu&rsquo;administrateur du serveur (dans notre cas, login: OM\Administrateur)</li>
+<li>Désactiver le pare-feu qui vient se rajouter suite à la rentrée dans le domaine.</li>
+</ul>
+<p><em>On clique sur le drapeau orange et on lance &ldquo;promouvoir en controleur de domaine&rdquo; :</em></p>
+<ul>
+<li>Ajout contrôleur de domaine au domaine existant</li>
+<li>Verifier qu&rsquo;on est sur le bon domaine (om.lan)</li>
+<li>Vérifier qu&rsquo;on est bien sur le site de &ldquo;Paris&rdquo; et choisir le bon serveur à répliquer.</li>
+<li>Rentrer le mdp de restauration.</li>
+<li>Verifier que tout est au vert, puis lancer l&rsquo;installation.</li>
+</ul>
+<p><em>Une fois installé, voilà quelques checks et réglages à faire:</em></p>
+<ul>
+<li>Carte Réseau: Vérifier les paramêtres de carte. Mettre en DNS primaire nous (192.168.20.51) et en DNS secondaire celle du contrôleur principale (192.168.20.201).</li>
+<li>Vérifier dans l&rsquo;AD, que tout les domaines controlleurs secondaires sont bien présents.</li>
+<li>DNS: Vérifier qu&rsquo;on a bien récuperé om.lan, om.fr et la zone reverse. Supprimer les records inutiles.</li>
+<li>Créer un alias ldapjbf qui pointe sur notre serveur secondaire sur om.lan</li>
+<li>Créer un host A ldapjbf qui pointe sur notre serveur secondaire sur om.fr</li>
+<li>Allez dans Domaines et Approbation AD et vérifier qu&rsquo;on a bien récuperé les suffixes de noms de domaine.</li>
+<li>Allez dans Sites et services AD Sites/Paris/Servers, on doit tous y être. Si on dévellope notre serveur, on doit avoir notre <em>NTDS Settings</em> et enfin à droite on retrouve nos partenaires de réplications.</li>
+</ul>
+<p>Utilisateurs et ordinateurs AD :</p>
+<ul>
+<li>Builtin : on s&rsquo;en sert assez peu au quotidien</li>
+<li>Computer : OU d&rsquo;arrivée des PC et des servers dans l&rsquo;AD</li>
+<li>Domain Controller : AD secondaire</li>
+<li>Users : Compte admin + autres comptes par défaut (structures d&rsquo;OU/sous-OU)
+<ul>
+<li>Administrateur du domaine = niveau le plus bas (accès domaine pour l&rsquo;usage quotidien)</li>
+<li>Administrateur du schéma = possibilité de modifier le schéma (op d&rsquo;expertise et de migration)</li>
+<li>Administrateur de l&rsquo;entreprise = total accès à toute la structure de l&rsquo;AD</li>
+</ul>
+</li>
+</ul>
+<h3 id="comment-se-structure-un-ad">Comment se structure un AD</h3>
+<p>Une arborescence AD, ses OU et ses sous-OU, dépendent de l&rsquo;entreprise dans laquelle on se trouve.</p>
+<p><strong>Un exemple d&rsquo;organistaion (les bonnes pratiques) :</strong></p>
+<ul>
+<li>Côté machine:
+<ul>
+<li>Création OU Serveurs (donc tous serveurs qui arrive dans computers doit être déplacé dans cette OU)</li>
+<li>Création OU Machines
+<ul>
+<li>Création sous-OU: Fixes</li>
+<li>Création sous-OU: Portables</li>
+</ul>
+</li>
+<li>Création OU SallesInformatiques (y mettre les pcs de cette salle)</li>
+</ul>
+</li>
+<li>Création OU BALS Générique pour ne pas mélanger les boites aux lettres avec les comptes génériques.</li>
+</ul>
+<p>On peut décliner par types de machines, au niveau des utilisateurs.<br>
+Exemple:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">OU global</th>
+<th style="text-align:center">COMPTESOFFICE365</th>
+<th style="text-align:center">GOUPES</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">sous-OU</td>
+<td style="text-align:center">Administratifs</td>
+<td style="text-align:center">Sécutité (on peut créer 2 sous OU ex: Appli / Data)</td>
+</tr>
+<tr>
+<td style="text-align:center">sous-OU</td>
+<td style="text-align:center">Enseignants</td>
+<td style="text-align:center">Liste de Diffusion</td>
+</tr>
+<tr>
+<td style="text-align:center">sous-OU</td>
+<td style="text-align:center">Vacataires</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">sous-OU</td>
+<td style="text-align:center">Exterieurs</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><em>Ne pas mettre d&rsquo;espace ou de caractères spéciaux dans les noms d&rsquo;OU</em></p>
+<h3 id="on-va-manipuler">ON VA MANIPULER</h3>
+<p>Créer une OU principale par personne pour éviter les conflits (Delegue).</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Créer des sous-OU:</th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">ComptesUtilisateurs / Groupes / Dans la sous-OU Groupes, créer deux sous-OU / Securite /ListesDiffusions</td>
+<td style="text-align:center">
+<a href="#image-a52db4144920dc35eb8d5ce6481c1811" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/006-sous-OU.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-a52db4144920dc35eb8d5ce6481c1811">
+<img src="../../../at2/at2e5/ad/006-sous-OU.png" alt="" class="lightbox-image" loading="lazy">
+</a></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Créer nos trois premiers utilisateurs.</th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Mettre le nom en majuscule et le mettre avant le prénom</td>
+<td style="text-align:center">
+<a href="#image-1a019342edd2f3733de52d62a36c533e" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/007-ajout-user.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-1a019342edd2f3733de52d62a36c533e">
+<img src="../../../at2/at2e5/ad/007-ajout-user.png" alt="" class="lightbox-image" loading="lazy">
+</a></td>
+</tr>
+</tbody>
+</table>
+<p>Clique-droit Propriétés sur l&rsquo;user :</p>
+<ul>
+<li>Mettre le plus de renseignement possibles pour avoir quelque chose de complet, fortement apprécié des users.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Créer un groupe de sécurité</th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Créer un groupe DSI et un groupe ServiceIT. Mettre ServiceIT dépendant du groupe DSI</td>
+<td style="text-align:center">
+<a href="#image-59dfae073f01d1061a586cf97c720264" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/008-groupes.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-59dfae073f01d1061a586cf97c720264">
+<img src="../../../at2/at2e5/ad/008-groupes.png" alt="" class="lightbox-image" loading="lazy">
+</a></td>
+</tr>
+<tr>
+<td style="text-align:center">Ajouter l&rsquo;utilisateur dans le groupe ServiceIT</td>
+<td style="text-align:center">
+<a href="#image-fb3acbd6f26fb33fce0ac5976f599f5c" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/009-petit-groupe.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-fb3acbd6f26fb33fce0ac5976f599f5c">
+<img src="../../../at2/at2e5/ad/009-petit-groupe.png" alt="" class="lightbox-image" loading="lazy">
+</a></td>
+</tr>
+</tbody>
+</table>
+<p><em>AzureAD vas aspirer le compte d&rsquo;Arthur PENDRAGON et le synchroniser avant sa boite mail</em></p>
+<h2 id="gpo-et-transferts-de-fichier">GPO ET TRANSFERTS DE FICHIER</h2>
+<p>
+<a href="#image-589d4de7444633fa31493dc11a7c5cc2" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/010-annuaire-AD.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-589d4de7444633fa31493dc11a7c5cc2">
+<img src="../../../at2/at2e5/ad/010-annuaire-AD.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p><em>Tout ce dont on parle n&rsquo;est valable que si l&rsquo;entreprise n&rsquo;a pa Teams ou Sharepoint</em></p>
+<p><strong>PC Portables ou Fixes</strong></p>
+<ul>
+<li>Besoins du personnel :
+<ul>
+<li>Environnement de Bureau</li>
+<li>Données pures :
+<ul>
+<li>Personnelles</li>
+<li>partagées ou communes ou collectives</li>
+</ul>
+</li>
+<li>Images / Photos</li>
+<li>Favoris Internet (Edge)
+<em>Tout doit être sur le réseau ! Rien en dur sur le disque du PC</em></li>
+</ul>
+</li>
+</ul>
+<p>Côté GPO :</p>
+<ul>
+<li>Attention : pour les entreprises passant par TEAMS ou SHAREPOINTS pas besoin de GPO car centralisé via les logiciels</li>
+<li>Attention : les données doivent être mises sur des serveurs de fichiers donc sur le reseau via GPO
+<ul>
+<li>GPO = du bureau (va prendre le bureau local et le transposer sur le serveur de fichiers/réseau etc.)</li>
+<li>Nécessite gros serveurs de fichiers (baie de stockage) = disques VM pointés vers baie de stockage</li>
+<li>VM branchées sur baies en ESX (derrière le cluster ESX il n&rsquo;y a que des baies de stockage) = baie connectée aux ESX
+<ul>
+<li>Avenir = hyperconvergence (on s&rsquo;affranchit des baies) = VMWare sait embarquer le stockage dans son noyau, stockage embarqué dans les clusters VSAN qui deviennent aussi baie (baie de stockahe imbriquée à VMWare, disques en full flash)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Attention : les GPO ne proposent pas la redirection des ressources partagées
+<ul>
+<li>(1) nécessite script powershell pour reconnecter le lecteur réseau (script de connexion dans une GPO)</li>
+<li>(2) vous connectez sur le compte de l&rsquo;user directement le lecteur reseau des partages collectifs avec l&rsquo;onglet &hellip;</li>
+</ul>
+</li>
+</ul>
+<p><strong>Côté serveur de fichiers</strong></p>
+<p>Grosse bête pointe vers une baie de stockage. Elle projète des volumes directement sur le serveur. Et le serveur dans l&rsquo;explorateur Windows va présenter la baie.</p>
+<p>Sur le server de fichier: Arborescence dossiers<br>
+D: Dossiers Ultisateurs &ndash;&gt; partagé &ndash;&gt; Sécurité NTFS</p>
+<ul>
+<li>Dossier individuel des utilisateurs &ndash;&gt; Pas de partage &ndash;&gt; Sécurité NTFS</li>
+<li>Le dossier pour qu&rsquo;il redescende en GPO doit s&rsquo;appeller avec le SAM (S. Acompte Mail.) &ndash;&gt; %UserName%</li>
+<li>Partages &ndash;&gt; partagé &ndash;&gt; Sécurité NTFS</li>
+</ul>
+<p><strong>Première GPO</strong></p>
+<p>Toujours faire ses GPO sur la dernières sous-OU.<br>
+Outilis / Gestion des stratégies de Groupes.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Creer une GPO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">
+<a href="#image-ad0bfb34d70d4841b254804f44d70260" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/011-creer-GPO.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-ad0bfb34d70d4841b254804f44d70260">
+<img src="../../../at2/at2e5/ad/011-creer-GPO.png" alt="" class="lightbox-image" loading="lazy">
+</a></td>
+</tr>
+</tbody>
+</table>
+<p>Clique-droit / Propriétés sur la GPO qui vient d&rsquo;être créée.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Script Powershell</th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Mettre le script dans le dossier (en bas l&rsquo;image), puis le charger dans le gestionnaire.</td>
+<td style="text-align:center">
+<a href="#image-7be0bda818b102c5816a3c3fc7b6b200" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/012-scrip-powershell.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-7be0bda818b102c5816a3c3fc7b6b200">
+<img src="../../../at2/at2e5/ad/012-scrip-powershell.png" alt="" class="lightbox-image" loading="lazy">
+</a></td>
+</tr>
+</tbody>
+</table>
+<p>Création de notre arborescence de fichier sur le lecteur C:</p>
+<ul>
+<li>
+<blockquote>
+<p>C:\Partages\DSI\Service_IT</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="sur-le-dossier-parent-dossiersutilisateurs">Sur le dossier parent DossiersUtilisateurs</h3>
+<p>Clique-droit sur le dossier Partages/Propriétés bouton &ldquo;Partage avancé&rdquo; pui cocher &ldquo;Partager ce dossier&rdquo;. Puis bouton &ldquo;Authorisations&rdquo; et Autoriser le contrôle total. Les vrais droits sont gérés par l&rsquo;onglet &ldquo;Sécurité&rdquo;.
+
+<a href="#image-14fd3bf32a45ded5110efadf2597bc22" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/013-partage-GPO.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-14fd3bf32a45ded5110efadf2597bc22">
+<img src="../../../at2/at2e5/ad/013-partage-GPO.png" alt="" class="lightbox-image" loading="lazy">
+</a>
+<em>Ne pas oublier l&rsquo;autorisation partage sinon pas de partage</em></p>
+<p>Dans l&rsquo;onglet &ldquo;Sécurité&rdquo;, donc, cliquez le bouton &ldquo;Avancé&rdquo; puis le bouton &ldquo;Désactiver l&rsquo;héritage&rdquo; et choisissez &ldquo;Convertir [&hellip;] sur cet objet&rdquo; puis &ldquo;Appliquer&rdquo; et OK. Cliquez ensuite le bouton &ldquo;Modifier&rdquo; un peu plus haut et là définissez les autorisations finement.</p>
+<p>
+<a href="#image-2c6f8f0cfd2bb8af17d988183841e29f" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/014-heritage-GPO.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-2c6f8f0cfd2bb8af17d988183841e29f">
+<img src="../../../at2/at2e5/ad/014-heritage-GPO.png" alt="" class="lightbox-image" loading="lazy">
+</a>
+<strong>À mettre partout pour éviter les problèmese :</strong></p>
+<ul>
+<li>Système: Accès machine, <strong>INDISPENSABLE</strong></li>
+<li>Admins du domaine (OM\Admins du domaine) : On fait ajouter, rechercher puis on trouve &ldquo;admins du domaine&rdquo; dans la liste (tous les utilisateurs et groupes sont listés ici).</li>
+<li>Utilisateurs Authentifiés (suivant le cas, peut être remplacé par un groupe ou un utilisateur spécifique).</li>
+</ul>
+<p>
+<a href="#image-a87adb90b36206057dd61b03d41d5a8b" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/015-GPO-secu.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-a87adb90b36206057dd61b03d41d5a8b">
+<img src="../../../at2/at2e5/ad/015-GPO-secu.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<ul>
+<li>Ajouter/Avancé/Recherche/Utilisateurs authentifiés/OK</li>
+</ul>
+<p>
+<a href="#image-dc044aa27f6990379e6ed9d116951903" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/016-user-auth-GPO.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-dc044aa27f6990379e6ed9d116951903">
+<img src="../../../at2/at2e5/ad/016-user-auth-GPO.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<h3 id="sur-le-dossier-enfant-dsi">Sur le dossier enfant DSI</h3>
+<p>
+<a href="#image-75fea00915d6fbf86758241b578b4e44" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/017-GPO-dsi-secu.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-75fea00915d6fbf86758241b578b4e44">
+<img src="../../../at2/at2e5/ad/017-GPO-dsi-secu.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p><strong>Ne pas laisser le <em>CONTROLE TOTAL</em> pour les utilisateurs car cela leur donne accès à l&rsquo;onglet de sécurité ce qui est une faille de sécuité énorme.</strong></p>
+<h3 id="faire-la-même-procédure-pour-le-dossier-enfant-service_it">Faire la même procédure pour le dossier enfant Service_IT</h3>
+<p>On vas s&rsquo;occuper de l&rsquo;arborescence des dossiers utisateurs :</p>
+<ul>
+<li>On crée le dossier à la racine du disque :
+<ul>
+<li>
+<blockquote>
+<p>C:\DossiersUtilisateurs</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>On applique le partage sur ce dossier (comme vu précedemment).</li>
+<li>Sécurité :
+<ul>
+<li>On désactive l&rsquo;héritage (comme vu précédemment).</li>
+<li>On active la sécurité système, administrateur du domaine et utilisateurs authentifiés.</li>
+</ul>
+</li>
+<li>Dans le dossier parent, on crée un dossier enfant avec le SAM de l&rsquo;utilisateur (apendragon).
+<ul>
+<li>On gère la sécurité (comme vu précedemment) mais on enlève l&rsquo;utilisateur authentifié et qu&rsquo;on remplace par l&rsquo;user, avec les rêgles qui vont bien (tout sauf <em>contrôle total</em>)</li>
+</ul>
+</li>
+</ul>
+<p>
+<a href="#image-eba8e44ba5ec85aeb23e05bcb1827d2b" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/018-secu-user-GPO.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-eba8e44ba5ec85aeb23e05bcb1827d2b">
+<img src="../../../at2/at2e5/ad/018-secu-user-GPO.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<h3 id="quotas">Quotas</h3>
+<p>Sur C: Clique-droit/propriétés/onglet &ldquo;Quota&rdquo; :</p>
+<ul>
+<li>Afficher les paramètres de quota</li>
+<li>Cocher Activer la gestion</li>
+<li>Refuser de l&rsquo;espace disque &hellip;</li>
+</ul>
+<p>Si on ne rend pas l&rsquo;utilisateur propriétaire de son dossier, il n&rsquo;aura pas son quota.
+Pour faire de l&rsquo;individuel, il faut cliquer-droit sur l&rsquo;user pour gérer son espace disque.</p>
+<p>
+<a href="#image-506fad676c64e70f5196c8472e462eb3" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/019-quota-GPO.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-506fad676c64e70f5196c8472e462eb3">
+<img src="../../../at2/at2e5/ad/019-quota-GPO.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p>Clique-droit sur le dossier /Propriétés/Sécurité/Avancé/Modifier et choisir l&rsquo;utilisateur.<br>
+
+<a href="#image-522f0e34f47ca976945252a194cdf491" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/020-proprio-dossier_user.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-522f0e34f47ca976945252a194cdf491">
+<img src="../../../at2/at2e5/ad/020-proprio-dossier_user.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<h3 id="dossiers-des-utilisateurs">Dossiers des utilisateurs</h3>
+<p>Ouvrir l&rsquo;éditeur de Gestion des stratégies de groupes
+Bureau :</p>
+<ul>
+<li>Clique-droit/propriétés/Cible
+<ul>
+<li>Paramêtres: <em>De base</em></li>
+<li>Rentrer le chemain d&rsquo;accès à la racine \\WS19\DossiersUtilisateurs</li>
+</ul>
+</li>
+</ul>
+<p>
+<a href="#image-0e0639d7d38ee280814d985a4109bf74" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/021-proprio-bureau-GPO-1.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-0e0639d7d38ee280814d985a4109bf74">
+<img src="../../../at2/at2e5/ad/021-proprio-bureau-GPO-1.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<ul>
+<li>Clique-droit/propriétés/Paramètres
+<ul>
+<li>Décocher <em>Accorder à l&rsquo;utilisateus des droits exclusifs sur Bureau</em> (sinon les admins ne peuvent plus y accèder pour régler des problèmes)</li>
+</ul>
+</li>
+</ul>
+<p>
+<a href="#image-0a6324da76875ee22ee8a412472a0f21" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/022-proprio-bureau-GPO-2.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-0a6324da76875ee22ee8a412472a0f21">
+<img src="../../../at2/at2e5/ad/022-proprio-bureau-GPO-2.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p>Favoris :</p>
+<ul>
+<li>Clique-droit /propriétés/Cible
+<ul>
+<li>Paramêtres: <em>De base</em></li>
+<li>Rentrer le chemain d&rsquo;accès à la racine \WS19\DossiersUtilisateurs</li>
+</ul>
+</li>
+</ul>
+<p>Documents :</p>
+<ul>
+<li>Clique-droit /propriétés/Cible
+<ul>
+<li>Paramêtres: <em>De base</em></li>
+<li>Rentrer le chemin d&rsquo;accès à la racine \WS19\DossiersUtilisateurs</li>
+</ul>
+</li>
+</ul>
+<p>Images :</p>
+<ul>
+<li>Clique-droit /propriétés/Cible
+<ul>
+<li>Paramêtres: <em>Suivre les documents</em></li>
+</ul>
+</li>
+</ul>
+<p>
+<a href="#image-8b4e543eaa0e6b7955c7be1e8e27d72e" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/023-suivre-doc-GPO.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-8b4e543eaa0e6b7955c7be1e8e27d72e">
+<img src="../../../at2/at2e5/ad/023-suivre-doc-GPO.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p>Pour le partage colléctif :</p>
+<ul>
+<li>AD</li>
+<li>User / Compte Utilisateurs / Delegue / ComptesUtilisateurs</li>
+<li>clique-droit / Propriété / Profil / chemin d&rsquo;accès local
+<ul>
+<li>Z:\\WS19\Partages\DSI</li>
+</ul>
+</li>
+</ul>
+<p>
+<a href="#image-244c6e50eeaf4294f0d84e4076cbfd8a" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/024-partage-co-GPO.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-244c6e50eeaf4294f0d84e4076cbfd8a">
+<img src="../../../at2/at2e5/ad/024-partage-co-GPO.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p>Vérification du bon fonctionnement des GPO :</p>
+<ul>
+<li>Monter un W10</li>
+<li>Créer un user à rattaché au domaine (check dans computer dans l&rsquo;AD pour l&rsquo;arrivée)</li>
+<li>Mettre un fichier dans un des dossiers Documents/Images/&hellip;</li>
+<li>Check dans l&rsquo;AD s&rsquo;il apparait bien dans l&rsquo;arborescence de l&rsquo;AD par DossierUser</li>
+</ul>
+<p>
+<a href="#image-9837cb7bcaf858166aeea1983642e60a" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/025-win10-resultat.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-9837cb7bcaf858166aeea1983642e60a">
+<img src="../../../at2/at2e5/ad/025-win10-resultat.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p><strong>Ressources :</strong></p>
+<ul>
+<li><a href="https://www.active-directory.info/comment-bien-entretenir-son-annuaire-active-directory%E2%80%89/" target="_blank">Entretien AD</a></li>
+</ul>
+<hr>
+<h2 id="migration-active-directory-2016-vers-2019-lvl-ingénieur">MIGRATION ACTIVE DIRECTORY 2016 vers 2019 (lvl ingénieur)</h2>
+<p><em><strong>Migration de version d&rsquo;AD / Passer de 2016 à 2019</strong></em></p>
+<p><strong>Ressources web :</strong></p>
+<ul>
+<li><a href="https://docs.microsoft.com/fr-fr/windows-server/get-started/install-upgrade-migrate" target="_blank">Docs microsoft : Installer, mettre à niveau ou migrer vers Windows Serveur</a></li>
+<li><a href="https://www.system-net.fr/windows-server-2019/" target="_blank">System-net : Migration Windows Server 2019 : Les étapes</a></li>
+<li><a href="https://www.zinstall.com/how-to/how-to-server-2016-migration-software-for-windows-server-2003-2008-2012" target="_blank">How to: Migration to Windows Server 2019 / 2016, including applications, profiles, shares and data</a></li>
+<li><a href="https://laboiteajb.fr/migration-dune-infra-simple-dun-serveur-active-directory-2012r2-vers-2016/" target="_blank">Migration d’une infra simple d’un serveur Active Directory 2012R2 vers 2016</a></li>
+</ul>
+<h3 id="elements-de-compréhension-et-étapes-à-suivre">Elements de compréhension et étapes à suivre</h3>
+<p><em>Attention : Nécessite de monter de niveau fonctionnel 2012 vers 2016 (niveau fonctionnel toujours au plus haut pour migration)</em></p>
+<h4 id="migration-simple">Migration simple</h4>
+<p>
+<a href="#image-924885e8e664a09c2db509553e476930" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/101-migration-simple.png" alt="*" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-924885e8e664a09c2db509553e476930">
+<img src="../../../at2/at2e5/ad/101-migration-simple.png" alt="*" class="lightbox-image" loading="lazy">
+</a></p>
+<p><strong>Existant</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">DC Principal</th>
+<th style="text-align:center">DC secondaire</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Rôle FSMO</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">AD WServer 2016</td>
+<td style="text-align:center">AD WServer 2016</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Préparation à la migration</strong></p>
+<p>Faire venir une forêt 2019 dans une forêt 2016 = trois étapes exclusives au prinicpal (puisque possède les FSMO) pour préparation :</p>
+<ol>
+<li>couper les réplications AD entre contollers (1 ligne de commande à passer)</li>
+<li>préparer la forêt (1 ligne de commande à passer)</li>
+<li>préparer le domaine (1 ligne de commande à passer)</li>
+</ol>
+<p><strong>Première étape de migration</strong></p>
+<ul>
+<li>Préparation d&rsquo;un WServer 2019 : NIC, antivirus etc.</li>
+<li>Insérer le WServer 2019 en controller de domaine secondaire dans la forêt 2016
+<ul>
+<li>Va se coller à la forêt 2016</li>
+<li>Mode dit &ldquo;mixte&rdquo; (possible de rester ainsi plusieus mois)</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">DC Principal</th>
+<th style="text-align:center">DC secondaire</th>
+<th style="text-align:center">DC secondaire</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Rôle FSMO</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">AD WServer 2016</td>
+<td style="text-align:center">AD WServer 2016</td>
+<td style="text-align:center">AD WServer 2019</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Seconde étape de migration</strong></p>
+<ul>
+<li>On migre les FSMO (les 5) doivent migrer vers DC secondaire 2019
+<ul>
+<li>Via interface graphique</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">DC secondaire</th>
+<th style="text-align:center">DC secondaire</th>
+<th style="text-align:center">DC principal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">Rôle FSMO</td>
+</tr>
+<tr>
+<td style="text-align:center">AD WServer 2016</td>
+<td style="text-align:center">AD WServer 2016</td>
+<td style="text-align:center">AD WServer 2019</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Troisième étape de migration</strong></p>
+<ul>
+<li>Rétrogradation du second controller secondaires
+<ul>
+<li>Plus DNS ni AD</li>
+<li>Redevient server simple</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">DC secondaire</th>
+<th style="text-align:center">Server simple</th>
+<th style="text-align:center">DC principal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">Rôle FSMO</td>
+</tr>
+<tr>
+<td style="text-align:center">AD WServer 2016</td>
+<td style="text-align:center">AD WServer 2016</td>
+<td style="text-align:center">AD WServer 2019</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Quatrième étape de migration</strong></p>
+<ul>
+<li>On crash/réinstalle le server simple en WServer2019</li>
+<li>On le fait venir en secondaire en 2019</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">DC secondaire</th>
+<th style="text-align:center">DC secondaire</th>
+<th style="text-align:center">DC principal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">Rôle FSMO</td>
+</tr>
+<tr>
+<td style="text-align:center">AD WServer 2016</td>
+<td style="text-align:center">AD WServer 2019</td>
+<td style="text-align:center">AD WServer 2019</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Bis repetita pour le premier controller</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">DC secondaire</th>
+<th style="text-align:center">DC secondaire</th>
+<th style="text-align:center">DC principal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">Rôle FSMO</td>
+</tr>
+<tr>
+<td style="text-align:center">AD WServer 2019</td>
+<td style="text-align:center">AD WServer 2019</td>
+<td style="text-align:center">AD WServer 2019</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="migration-de-forêts">Migration de forêts</h2>
+<ul>
+<li>Entreprise : acab.lan</li>
+<li>Achat ou fusion : nouveau nom, nécessite une nouvelle forêt (ex. anar.lan)</li>
+<li>Annunaire unique, identifiant unique à partir de plusieurs annuaires/identifiants</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Forêt 1</th>
+<th style="text-align:center">Forêt 2</th>
+<th style="text-align:center">&gt;</th>
+<th style="text-align:center">Nouvelle forêt 1</th>
+<th style="text-align:center">Nouvele forêt 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">acab.lan</td>
+<td style="text-align:center">acab.lan</td>
+<td style="text-align:center">&gt;</td>
+<td style="text-align:center">anar.lan</td>
+<td style="text-align:center">anar.lan</td>
+</tr>
+<tr>
+<td style="text-align:center">Controller 1</td>
+<td style="text-align:center">Controller 2</td>
+<td style="text-align:center">&gt;</td>
+<td style="text-align:center">NvController 1</td>
+<td style="text-align:center">NvController 2</td>
+</tr>
+</tbody>
+</table>
+<p>
+<a href="#image-c6ef192ff0029c1d10a9d7ec3a01be4f" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/201-admt.png" alt="*" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-c6ef192ff0029c1d10a9d7ec3a01be4f">
+<img src="../../../at2/at2e5/ad/201-admt.png" alt="*" class="lightbox-image" loading="lazy">
+</a></p>
+<ul>
+<li>Temps long :
+<ul>
+<li>Mise en place DNS (Zone de stub, redirecteurs conditionnels) + relations d&rsquo;approbation bi-directionnelle entre les deux domaines/forêts = permet la communication entre les deux forêts</li>
+<li>Utilisation d&rsquo;un <a href="https://rdr-it.com/admt-outil-de-migration-de-domaine-active-directory/3/" target="_blank">server ADMT</a> pour la migration les objets de la source vers la cible</li>
+<li>Installation de <a href="http://pbarth.fr/node/112" target="_blank">Password Export Server</a> : utilitaire de migration des mots de passe</li>
+<li>Une fois cela effectué on peut commencer à migrer</li>
+</ul>
+</li>
+<li>On ne supprime les deux controllers de base qu&rsquo;une fois l&rsquo;ensemble de la migration effectuée</li>
+</ul>
+<h4 id="migration-via-azure-ad">Migration via Azure AD</h4>
+<ul>
+<li>Azure AD se base sur l&rsquo;AD local</li>
+<li>Azure récupère et transpose directement dans Office365</li>
+</ul>
+<p>
+<a href="#image-504a4d2bdfdeadcd77fd43191221dbe9" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/202-migration-via-azureAD.png" alt="*" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-504a4d2bdfdeadcd77fd43191221dbe9">
+<img src="../../../at2/at2e5/ad/202-migration-via-azureAD.png" alt="*" class="lightbox-image" loading="lazy">
+</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">DC Principal</th>
+<th style="text-align:center">DC secondaire</th>
+<th style="text-align:center">&lt;- AZURE AD Source -&gt;</th>
+<th style="text-align:center">Office 365</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Rôle FSMO</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">AD WServer 2016</td>
+<td style="text-align:center">AD WServer 2016</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">local 2019</td>
+<td style="text-align:center">local 2019</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+</tbody>
+</table>
+<p>
+<a href="#image-c99af30b362a1b10e8af9eb261ef6cc4" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/203-staging-server-1.png" alt="*" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-c99af30b362a1b10e8af9eb261ef6cc4">
+<img src="../../../at2/at2e5/ad/203-staging-server-1.png" alt="*" class="lightbox-image" loading="lazy">
+</a></p>
+<ul>
+<li>UPN : obligé de passer par ligne de commande</li>
+</ul>
+<h3 id="on-va-manipuler---migration-windows-serveur-2016-a-windows-serveur-2019">ON VA MANIPULER - MIGRATION WINDOWS SERVEUR 2016 A WINDOWS SERVEUR 2019</h3>
+<p>Sur Windows Serveur 2016<br>
+Ouvrir l&rsquo;invite de commande dans la VM et se rendre à la racine de C.</p>
+<p>On coupe les réplications :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">repadmin /options WS16 +disable_outbound_repl
+</span></span></code></pre></div><p>
+<a href="#image-710e479e6647ff4ac7c1497c81b4ca8c" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/204-mig-repadmin.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-710e479e6647ff4ac7c1497c81b4ca8c">
+<img src="../../../at2/at2e5/ad/204-mig-repadmin.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p>Pour préparer l&rsquo;AD 2016 à recevoir la fôret de 2019.
+On charge l&rsquo;ISO de Windows Serveur 2019 dans le lecteur virtuel.<br>
+On se met dans le répertoire support puis adprep.</p>
+<blockquote>
+<p>D:\support\aprep&gt;</p>
+</blockquote>
+<p>On tape la commande :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">adprep /forestprep
+</span></span></code></pre></div><p>
+<a href="#image-499817a5e569349c750c50e851dcbdf6" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/205-mig-adprep.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-499817a5e569349c750c50e851dcbdf6">
+<img src="../../../at2/at2e5/ad/205-mig-adprep.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p>Toujours dans D:\support\adprep&gt; , on met à jour le domaine :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">adprep /domainprep
+</span></span></code></pre></div><p>
+<a href="#image-e68e08466b0020e7f6c00d797c4a08ad" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/206-mig-domain.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-e68e08466b0020e7f6c00d797c4a08ad">
+<img src="../../../at2/at2e5/ad/206-mig-domain.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p><strong>Ajouter un contrôleur AD 2019 dans notre AD 2016</strong></p>
+<p>Maintenant, on peut ajouter un contrôleur AD 2019 dans notre AD 2016.<br>
+On réactive les répliques et on y touche plus. Pas besoin de les couper à nouveau, même si on reprends la migration des mois plus tard.<br>
+Retour dans C:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">repadmin /options WS16 -
+</span></span></code></pre></div><p>
+<a href="#image-143d1c7b682eb65dc35141d709a8e0c0" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/207-mig-activrepl.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-143d1c7b682eb65dc35141d709a8e0c0">
+<img src="../../../at2/at2e5/ad/207-mig-activrepl.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p>On monte un Windows Serveur 2019.<br>
+On désactive le firewall et on met l&rsquo;adresse du controlleur de domaine 2016 en DNS primaire.<br>
+On prends une petite sureté, on ping les machines entre elles.</p>
+<p>Ensuite, il faut ajouter le Windows Serveur 2019 dans le <strong>domaine</strong> bobdy.lan</p>
+<p>
+<a href="#image-53806b64bf5db217e8c11648cc553bd0" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/208-mig-mise-domaine.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-53806b64bf5db217e8c11648cc553bd0">
+<img src="../../../at2/at2e5/ad/208-mig-mise-domaine.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p><strong>Se reconnecter dans le Windows Serveur 2019 en compte bobdy\administrateur.</strong></p>
+<p>Installer les rôle AD DS.</p>
+<p>Promouvoir en Controlleur de Domaine.<br>
+Verifier qu&rsquo;on soit bien dans le bon domaine.</p>
+<p>
+<a href="#image-e63fe7e6505f326606e322cfcdab970b" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/209-mig-promo-dc.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-e63fe7e6505f326606e322cfcdab970b">
+<img src="../../../at2/at2e5/ad/209-mig-promo-dc.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p>On passe aux vérifications, pour être sûr que tout se soit bien passé :</p>
+<ul>
+<li>Dans l&rsquo;AD19, Carte Réseau : mettre l&rsquo;AD 2019 en DNS primaire et l&rsquo;AD 2016 en DNS Secondaire.</li>
+<li>Dans l&rsquo;AD19, Gestionnaire DNS: Verifier qu&rsquo;il y ai bien :
+<ul>
+<li>les zones, les records et les zones inversées.<br>
+
+<a href="#image-f9ac6c47bfc3205cd9325fe51972f17c" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/210-mig-gest-dns-1.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-f9ac6c47bfc3205cd9325fe51972f17c">
+<img src="../../../at2/at2e5/ad/210-mig-gest-dns-1.png" alt="" class="lightbox-image" loading="lazy">
+</a></li>
+<li>les serveurs de noms
+
+<a href="#image-657015a3256c9dda3eccc449b9af23af" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/211-mig-gest-dns-2.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-657015a3256c9dda3eccc449b9af23af">
+<img src="../../../at2/at2e5/ad/211-mig-gest-dns-2.png" alt="" class="lightbox-image" loading="lazy">
+</a></li>
+<li>les suffixes UPN<br>
+
+<a href="#image-ff98da2df76ae8abd4abd6b4256ba64f" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/212-mig-gest-dns-3.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-ff98da2df76ae8abd4abd6b4256ba64f">
+<img src="../../../at2/at2e5/ad/212-mig-gest-dns-3.png" alt="" class="lightbox-image" loading="lazy">
+</a></li>
+<li>les sites et services<br>
+
+<a href="#image-76c197c2edcc37452aa9bb289e536433" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/213-mig-gest-dns-4.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-76c197c2edcc37452aa9bb289e536433">
+<img src="../../../at2/at2e5/ad/213-mig-gest-dns-4.png" alt="" class="lightbox-image" loading="lazy">
+</a></li>
+<li>les réplications</li>
+<li>les OU et sous-OU</li>
+<li>Dans l&rsquo;AD 2016, dans les paramêtres de carte réseau, mettre comme DNS secondaire l&rsquo;AD 2019.</li>
+</ul>
+</li>
+</ul>
+<p><strong>MIGRATION DES ROLES FSMO DE l&rsquo;AD2016 à L&rsquo;AD2019</strong></p>
+<p>Le premier rôle a migrer est caché. Il faut donc le faire apparaitre via une <em>petite commande</em>. Ouvrir l&rsquo;invite de commande et se renre à la racine C:\</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">regsvr32 schmmgmt.dll
+</span></span></code></pre></div><p>On vas lancer une console vierge :</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">windows + R et <strong>mmc</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">
+<a href="#image-d52e0e8a37cbe2138d5341e2d92df0d3" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/214-winR.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-d52e0e8a37cbe2138d5341e2d92df0d3">
+<img src="../../../at2/at2e5/ad/214-winR.png" alt="" class="lightbox-image" loading="lazy">
+</a></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Faire &ldquo;Ajouter[&hellip;]enfichables&rdquo; puis ajouter le Schéma Active Directory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">
+<a href="#image-47d6dd9d04442b37b114c5193edad776" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/215-fsmo-mmc-1.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-47d6dd9d04442b37b114c5193edad776">
+<img src="../../../at2/at2e5/ad/215-fsmo-mmc-1.png" alt="" class="lightbox-image" loading="lazy">
+</a></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Clique-droit sur &ldquo;Schéma Active Directory&rdquo;, Changer de contrôleur de domaine Active Directory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">
+<a href="#image-6c0e975395c0c0c45856053612230044" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/216-fsmo-mmc-2.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-6c0e975395c0c0c45856053612230044">
+<img src="../../../at2/at2e5/ad/216-fsmo-mmc-2.png" alt="" class="lightbox-image" loading="lazy">
+</a></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Clique-droit sur &ldquo;Schéma Active Directory&rdquo;, Maitre d&rsquo;Opérations</th>
+<th style="text-align:center">Cliquez sur Modifier</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">
+<a href="#image-82483e58ddbd8deae0d57d8b455a0135" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/217-fsmo-mmc-3.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-82483e58ddbd8deae0d57d8b455a0135">
+<img src="../../../at2/at2e5/ad/217-fsmo-mmc-3.png" alt="" class="lightbox-image" loading="lazy">
+</a></td>
+<td style="text-align:center">
+<a href="#image-b6bdd0e983bf740638ec8e0dc4ef2e45" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/218-fsmo-mmc-4.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-b6bdd0e983bf740638ec8e0dc4ef2e45">
+<img src="../../../at2/at2e5/ad/218-fsmo-mmc-4.png" alt="" class="lightbox-image" loading="lazy">
+</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>2ème ROLE</strong></p>
+<p>Dans Domaines et Approbations Active Directory
+Clique-droit, Changer de contrôleur de domaine Active Directory et promouvoir l&rsquo;AD 2019
+Clique droit, Maitre d&rsquo;Opérations, Cliquez sur Modifier</p>
+<p><strong>3 DERNIERS ROLES</strong></p>
+<p>Dans Utilisateurs et ordinateurs Active Directory
+Clique-droit, Changer de contrôleur de domaine Active Directory et promouvoir l&rsquo;AD 2019
+Clique-droit sur notre nom de domaine, Maitre d&rsquo;opérations:</p>
+<ul>
+<li>RID : Modifier, OUI, OK</li>
+<li>CDP: Modifier, OUI, Ok</li>
+<li>Infrastructure: Modifier, OUI, Ok</li>
+</ul>
+<p>
+<a href="#image-47bf2f5c5f26093db7f12a3b4b42d824" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/219-fsmo-mmc-5.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-47bf2f5c5f26093db7f12a3b4b42d824">
+<img src="../../../at2/at2e5/ad/219-fsmo-mmc-5.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p><strong>RETROGRADATION DE WINDOWS SERVEUR 2016</strong></p>
+<p>Gestionnaire de Serveurs, Gérer, Supprimer des rôles et des fonctionnalités.
+Il nous propose une méthode de rétrogradation à la décoche.</p>
+<p>Décocher Service AD DS<br>
+
+<a href="#image-7f3571800a9086df36f95858a3d5d24a" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/220-mig-retro-AD-1.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-7f3571800a9086df36f95858a3d5d24a">
+<img src="../../../at2/at2e5/ad/220-mig-retro-AD-1.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p>Cocher &ldquo;Procéder à la suppression&rdquo;<br>
+
+<a href="#image-a0a26b315fac6649f322c84b64618e16" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/221-mig-retro-AD-2.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-a0a26b315fac6649f322c84b64618e16">
+<img src="../../../at2/at2e5/ad/221-mig-retro-AD-2.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p>Cliquez sur Retrograder<br>
+
+<a href="#image-13e4d0f058022dd1a69dfdd1bdb4a26f" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/222-mig-retro-AD-3.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-13e4d0f058022dd1a69dfdd1bdb4a26f">
+<img src="../../../at2/at2e5/ad/222-mig-retro-AD-3.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p>Enfin refaire supprimer les rôles et décocher les deux rôles et cette fois-ci il ne vas pas discuter.<br>
+On va dans les paramêtres de carte réseau et on retire l&rsquo;adresse IP du DNS du Windows Serveur 2016.<br>
+
+<a href="#image-9ca4f7471ae70ae4eb8d54a4acbc4910" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/223-mig-retro-AD-4.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-9ca4f7471ae70ae4eb8d54a4acbc4910">
+<img src="../../../at2/at2e5/ad/223-mig-retro-AD-4.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p><strong>QUELQUES NETOYAGES SUR LE NOUVEAU CONTROLLEUR PRINCIPALE WINDOWS 2019</strong></p>
+<p>Gestionnaire DNS<br>
+Clique-droit sur <strong>bobdy.lan</strong> et vérifier que dans les serveurs de noms, l&rsquo;ancien serveur 2016 n&rsquo;y soit plus et sinon supprimez le.<br>
+Idem dans <strong>bobdy.fr</strong></p>
+<p>Sites and Services Active Directory<br>
+Supprimez le serveur WS16.<br>
+
+<a href="#image-6c83d6d86d2f1e3219a181e7ce0fe4dd" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/224-net-AD19.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-6c83d6d86d2f1e3219a181e7ce0fe4dd">
+<img src="../../../at2/at2e5/ad/224-net-AD19.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p>Utilisateur et ordinateurs Active Directory<br>
+Supprimez le serveur des computers.</p>
+<p>Gestionnaire DNS
+Supprime le record du Windows Serveur 2019</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><em><strong>Dernière opération, dans Domaines et approbations Active Directory, clique-droit, augmenté le niveau fonctionnel de la forêt. Sur une migration AD2016 à AD2019, il n&rsquo;y en a pas besoin. Par contre de AD2008 à AD2012, deAD2012 à AD2012R2 et AD2012R2 à AD2016 il y a un niveau fonctionnel à monter.</strong></em></th>
+</tr>
+</thead>
+</table>
+<h3 id="on-va-maniper---migration-inter-foret">ON VA MANIPER - MIGRATION INTER-FORET</h3>
+<p><strong>Pour supprimer une OU :</strong> <em>Affichage, fonctionnalités avancées, clique-droit sur propriétés l&rsquo;OU désirée, supprimer, onglet sécurité, décoché la case.</em></p>
+<p><strong>Préparation de la base pour l&rsquo;AD19 source et cible :</strong></p>
+<ul>
+<li>Désactiver les firewalls des 2 Windows Serveur.</li>
+<li>Sur la carte réseau du WS19CIBLE, on fixe l&rsquo;IP: 192.168.20.53</li>
+<li>Renommerla machine en WS19CIBLE</li>
+<li>On installe les rôles Services AD DS et rôles DNS</li>
+<li>Promouvoir en contrôleur de domaine complétement indépendant : <strong>paradise.lan</strong></li>
+<li>Faire les réglages de bases classiques</li>
+<li>Mettre la réplication à 15 minutes</li>
+<li>Créer son subnet dans Sites and Services AD</li>
+<li>Créer son domaine commercial dans les suffixes UPN en .fr</li>
+<li>On prépare les OU en prévision de la prochaine migration.</li>
+<li>Même si ca ne communique pas encore: Mettre sur les deux cartes réseaux, les deux DNS.</li>
+</ul>
+<p><strong>Contrôleur Source:</strong></p>
+<p><em>On va créer une zone de stub</em></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">
+<a href="#image-03e288857021b12d8c1e817a9330040f" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/225-foret-stub-1.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-03e288857021b12d8c1e817a9330040f">
+<img src="../../../at2/at2e5/ad/225-foret-stub-1.png" alt="" class="lightbox-image" loading="lazy">
+</a></td>
+<td style="text-align:center">La zone de stub va permettre de joindre la deuxième forêt.</td>
+</tr>
+<tr>
+<td style="text-align:center">
+<a href="#image-9cd7d81771bffc70351c2880254baa7d" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/226-foret-stub-2.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-9cd7d81771bffc70351c2880254baa7d">
+<img src="../../../at2/at2e5/ad/226-foret-stub-2.png" alt="" class="lightbox-image" loading="lazy">
+</a></td>
+<td style="text-align:center">On ajoute notre domaine cible <strong>paradise.lan</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">
+<a href="#image-70824ba42c7db79a253e0b9c674131a2" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/227-foret-stub-3.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-70824ba42c7db79a253e0b9c674131a2">
+<img src="../../../at2/at2e5/ad/227-foret-stub-3.png" alt="" class="lightbox-image" loading="lazy">
+</a></td>
+<td style="text-align:center">L&rsquo;adresse IP de notre controlleur cible: 192.168.20.53</td>
+</tr>
+</tbody>
+</table>
+<p>Vérifier que la zone est bien tombé dans les Zones de recherches directes.</p>
+<p><strong>Contrôleur Cible:</strong></p>
+<p><em>Dans le gestionnaire DNS, on va créer un redirecteur conditionnel.</em></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">
+<a href="#image-54c6c20b3d3a0c512dd301547a6a39b2" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/228-foret-redir-1.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-54c6c20b3d3a0c512dd301547a6a39b2">
+<img src="../../../at2/at2e5/ad/228-foret-redir-1.png" alt="" class="lightbox-image" loading="lazy">
+</a></td>
+<td style="text-align:center">
+<a href="#image-e8937d33bf590c8f9823447ca5e0a185" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/229-foret-redir-2.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-e8937d33bf590c8f9823447ca5e0a185">
+<img src="../../../at2/at2e5/ad/229-foret-redir-2.png" alt="" class="lightbox-image" loading="lazy">
+</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Contrôleur Source:</strong></p>
+<p>On va faire communiquer les deux forêts et les deux domaines.</p>
+<p>Domaines et approbations Active Directory<br>
+Clique-droit sur la propriété, puis Approbations</p>
+<p>
+<a href="#image-a0497f8c76a5902a5c1129c9b8d5b2b8" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/230-foret-approb-1.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-a0497f8c76a5902a5c1129c9b8d5b2b8">
+<img src="../../../at2/at2e5/ad/230-foret-approb-1.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p>
+<a href="#image-f5c6efcf2e1c27ca54ea914eb03b2f53" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/231-foret-approb-2.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-f5c6efcf2e1c27ca54ea914eb03b2f53">
+<img src="../../../at2/at2e5/ad/231-foret-approb-2.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p>
+<a href="#image-4b422e655480d2722958942373a0b6d9" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/232-foret-approb-3.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-4b422e655480d2722958942373a0b6d9">
+<img src="../../../at2/at2e5/ad/232-foret-approb-3.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p>
+<a href="#image-46fed187240d41ebbab0f3ee833aebdf" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/233-foret-approb-4.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-46fed187240d41ebbab0f3ee833aebdf">
+<img src="../../../at2/at2e5/ad/233-foret-approb-4.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p>
+<a href="#image-5eccfa6da1eddbecf90297449c040aba" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/234-foret-approb-5.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-5eccfa6da1eddbecf90297449c040aba">
+<img src="../../../at2/at2e5/ad/234-foret-approb-5.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p>
+<a href="#image-b386e05b9335abe3973ea6297c868f88" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/235-foret-approb-6.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-b386e05b9335abe3973ea6297c868f88">
+<img src="../../../at2/at2e5/ad/235-foret-approb-6.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p>
+<a href="#image-d2ff32dceeabe48b50daa49486a14a51" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/236-foret-approb-7.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-d2ff32dceeabe48b50daa49486a14a51">
+<img src="../../../at2/at2e5/ad/236-foret-approb-7.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p>Si la zone d&rsquo;approbation est passé c&rsquo;est que la zone de stub et le redirecteur conditionnel sont bons.</p>
+<p>On va vérifier côté Contrôleur Cible :</p>
+<ul>
+<li>L&rsquo;approbation est faite dans l&rsquo;autre sens.</li>
+</ul>
+<p>
+<a href="#image-29c9f77efe42d0183434551812a501ba" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/237-foret-approb-8.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-29c9f77efe42d0183434551812a501ba">
+<img src="../../../at2/at2e5/ad/237-foret-approb-8.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<ul>
+<li>Sur le contrôleur cible, changer de domaine pour vérifier que les deux forêts communiquent.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">
+<a href="#image-c14572843a7154c23a3f8d9226882135" class="lightbox-link">
+<img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/foret_approb9.png?raw=true" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-c14572843a7154c23a3f8d9226882135">
+<img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/foret_approb9.png?raw=true" alt="" class="lightbox-image" loading="lazy">
+</a></td>
+<td style="text-align:center">
+<a href="#image-be4de8ea93f5d435eafaf7a43503afb2" class="lightbox-link">
+<img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/foret_approb10.png?raw=true" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-be4de8ea93f5d435eafaf7a43503afb2">
+<img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/foret_approb10.png?raw=true" alt="" class="lightbox-image" loading="lazy">
+</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>GESTION DES DROITS</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Contrôleur Source</th>
+<th style="text-align:center">Contrôle Cible</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">
+<a href="#image-23286cc9ae4981df776e6d701d313f05" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/238-foret-droits-1.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-23286cc9ae4981df776e6d701d313f05">
+<img src="../../../at2/at2e5/ad/238-foret-droits-1.png" alt="" class="lightbox-image" loading="lazy">
+</a></td>
+<td style="text-align:center">
+<a href="#image-29a6506cec840a0bb6e7f5ea5602d016" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/239-foret-droits-2.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-29a6506cec840a0bb6e7f5ea5602d016">
+<img src="../../../at2/at2e5/ad/239-foret-droits-2.png" alt="" class="lightbox-image" loading="lazy">
+</a></td>
+</tr>
+</tbody>
+</table>
+<p>On vas permettre une délégation de contrôle sur le domaine cible, pour rajouter le compte administrateur du domaine source aux OU du domaine cible.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">
+<a href="#image-f7d38cfb64b8019277c11a0db75424bc" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/240-foret-droits-3.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-f7d38cfb64b8019277c11a0db75424bc">
+<img src="../../../at2/at2e5/ad/240-foret-droits-3.png" alt="" class="lightbox-image" loading="lazy">
+</a></td>
+<td style="text-align:center">
+<a href="#image-bcd84119b729329331043e452386c3a0" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/241-foret-droits-4.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-bcd84119b729329331043e452386c3a0">
+<img src="../../../at2/at2e5/ad/241-foret-droits-4.png" alt="" class="lightbox-image" loading="lazy">
+</a></td>
+</tr>
+</tbody>
+</table>
+<p><em><strong>Pour afficher l&rsquo;onglet sécurité, il faut faire affichage, fonctionnalité avancée.</strong></em></p>
+<p>On rajoute l&rsquo;Administrateur en contrôle total du groupe sécurité. Idem pour le groupe Staff.<br>
+
+<a href="#image-272d96196fb91f052536fe55ac4d4743" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/242-foret-droits-5.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-272d96196fb91f052536fe55ac4d4743">
+<img src="../../../at2/at2e5/ad/242-foret-droits-5.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p>On change de domaine, et on donne les mêmes droits aux administrateurs sur les OU du domaine source.<br>
+
+<a href="#image-8a726552d3bd3a43d896b66cfe4744c7" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/243-foret-droits-6.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-8a726552d3bd3a43d896b66cfe4744c7">
+<img src="../../../at2/at2e5/ad/243-foret-droits-6.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p><strong>Controleur Source</strong></p>
+<p>Dans l&rsquo;OU Builtin, il faut créer un groupe avec le nom netbios du domaine source avec 3 fois $ : BOBDY$$$<br>
+Il sert à ADMT(logiciel qui permet la migration) de pouvoir migrer les objets.<br>
+Et il ne faut pas mettre de membre ! (very important)<br>
+
+<a href="#image-70e6df6d3ed4e0fe96116244254c6699" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/244-foret-droits-7.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-70e6df6d3ed4e0fe96116244254c6699">
+<img src="../../../at2/at2e5/ad/244-foret-droits-7.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p>Ouvrir la base de registre (créer la clé si elle n&rsquo;existe pas)</p>
+<ul>
+<li>
+<p>Clé de registre :</p>
+<blockquote>
+<p>[HKEY_LOCAL_MACHINE\SYSTEM\Current\ControlSet\Control\Lsa]
+&ldquo;TcpipClientSupport&rdquo;=dword:00000001</p>
+</blockquote>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">
+<a href="#image-3daf363701199f673437702a2ff47290" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/245-foret-droits-8.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-3daf363701199f673437702a2ff47290">
+<img src="../../../at2/at2e5/ad/245-foret-droits-8.png" alt="" class="lightbox-image" loading="lazy">
+</a></td>
+<td style="text-align:center">
+<a href="#image-5997c82069f6e0b3a498fb5e9babbc82" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/246-foret-droits-9.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-5997c82069f6e0b3a498fb5e9babbc82">
+<img src="../../../at2/at2e5/ad/246-foret-droits-9.png" alt="" class="lightbox-image" loading="lazy">
+</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Contrôleur Source et Cible</strong></p>
+<p>Gestion de Stragtégie de groupe.<br>
+Il faut mettre une GPO en place, dans le domaine, Domain Controllers, Default Domain Controllers Policy<br>
+Clique-droit Modifier<br>
+Stratégie
+Paramêtre windows<br>
+Paramêtre de sécurtié<br>
+Stratégie Local<br>
+Stratégie d&rsquo;audit<br>
+Auditer la gestion des comptes.<br>
+Cocher les cases.<br>
+
+<a href="#image-c2c341658ad1bda0364879d792134103" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/247-mig-gpo.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-c2c341658ad1bda0364879d792134103">
+<img src="../../../at2/at2e5/ad/247-mig-gpo.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p><strong>Ligne de Commande</strong></p>
+<p>Commande pour désactiver le SID filtering.<br>
+On commence par le contrôleur cible.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">netdom trust (domaine cible) /domain:(domaine source) /quarantine:no /usero: (compte admin du controleur cible) /passwordo: (password du compte admin du controleur cible)
+</span></span></code></pre></div><p>donc</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">netdom trust paradise.lan /domain:bobdy.lan /quarantine:no /usero:administrateur /passwordo:Dadfba16
+</span></span></code></pre></div><p>
+<a href="#image-b54d9cb1a1209a9fbf97efde5af6a96d" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/248-mig-cmd-1.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-b54d9cb1a1209a9fbf97efde5af6a96d">
+<img src="../../../at2/at2e5/ad/248-mig-cmd-1.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p>Même commande pour le contrôleur source. (évidemment on adapte la commande.)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">netdom trust bobdy.lan /domain:paradise.lan /quarantine:no /usero:administrateur /passwordo:Dadfba16
+</span></span></code></pre></div><p>Commande pour activer le SID History :<br>
+On commence par le contrôleur source.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">netdom trust (domain source) /domain:(domaine cible) /enablesidhistory:yes /usero:(compte source) /passwordo:(password source)
+</span></span></code></pre></div><p>donc</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">netdom trust bobdy.lan /domain:paradise.lan /enablesidhistory:yes /usero:administrateur /passwordo:Dadfba16
+</span></span></code></pre></div><p>
+<a href="#image-35f417526e71869b22ea4782504300f1" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/249-mig-cmd-2.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-35f417526e71869b22ea4782504300f1">
+<img src="../../../at2/at2e5/ad/249-mig-cmd-2.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p>Même commande pour le contrôleur cible. (évidemment on adapte la commande.)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">netdom trust paradise.lan /domain:bobdy.lan /enablesidhistory:yes /usero:administrateur /passwordo:Dadfba16
+</span></span></code></pre></div><p><strong>ADMT</strong></p>
+<p>Cloner un windows serveur 2016 et l&rsquo;appeller ADMT<br>
+Désactiver le pare-feu et régler la carte réseau. (192.168.20.54/24 et DNS : contrôleur cible)<br>
+On lui donne le nom ADMT et on le met dans le domaine cible (paradise.lan)<br>
+On redemarre.<br>
+Et on se log en nomdedomaine\administrateur (paradise\administrateur)</p>
+<p>AMDT fonctionnant avec une BDD, il faut lui installer un SQL express.<br>
+<a href="https://www.microsoft.com/fr-fr/download/details.aspx?id=55994" target="_blank">Lien SQL Server Express</a><br>
+<a href="https://www.microsoft.com/fr-fr/download/details.aspx?id=56570" target="_blank">Lien ADMT</a><br>
+<a href="https://www.microsoft.com/en-us/download/details.aspx?id=1838" target="_blank">Lien PES</a></p>
+<p>On installe SQL express. (Déclaré en instance et serveur ADMT)<br>
+On install ADMT (ADMT\ADMT)<br>
+Une fois ADMT installé on peut le lancer.</p>
+<p>
+<a href="#image-43eee49c43abbf81846509f0be193943" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/250-admt-install.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-43eee49c43abbf81846509f0be193943">
+<img src="../../../at2/at2e5/ad/250-admt-install.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p>On va généré sa clé de chiffrement pour la donner à PASSWORD EXPORT SERVER. C&rsquo;est pour que PES et ADMT puissent migrer<br>
+Invite de commande :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">admt key /option:create /sourcedomain:(domainesource) /keyfile:(dans le répertoire que vous voulez)\admt_key /keypassword:(mdp que vous voulez)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">admt key /option:create /sourcedomain:paradise.lan /keyfile:c:\admt_key /keypassword:Dadfba16
+</span></span></code></pre></div><p>
+<a href="#image-909cb40fd5ac8fced4269ec6b0f192d0" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/251-admt-prep-1.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-909cb40fd5ac8fced4269ec6b0f192d0">
+<img src="../../../at2/at2e5/ad/251-admt-prep-1.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p>On install PES sur le contrôleur de domaine source.<br>
+Récuperer le fichier admt_key.pes crée sur le contrôleur ADMT et le mettre dans le contrôleur source pour le charger lors de l&rsquo;installation.<br>
+Prendre le compte BOBDY\administrateur (domainesource\administrateur) pour se log à PES (dans la bonne pratique, il faudrait créer un compte PES exprès)</p>
+<p>Maintenant, il faut vérifier plusieurs points sur le contrôleur source :</p>
+<ul>
+<li>
+<p>Clé de registre :</p>
+<blockquote>
+<p>[HKEY_LOCAL_MACHINE\SYSTEM\Current\ControlSet\Control\Lsa]
+&ldquo;AllowPasswordExport&rdquo;=dword:00000001</p>
+</blockquote>
+</li>
+</ul>
+<p>
+<a href="#image-9f1087315189b20c5a459244e8cf5bba" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/252-admt-prep-2.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-9f1087315189b20c5a459244e8cf5bba">
+<img src="../../../at2/at2e5/ad/252-admt-prep-2.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<ul>
+<li>Services.msc
+<ul>
+<li>Il faut vérifier que le service de Password Export Serveur est bien en démarré en automatique et qu&rsquo;il soit démarré.</li>
+</ul>
+</li>
+</ul>
+<p>
+<a href="#image-a895bce388f6fc31e1665a3d845c39b2" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/253-admt-prep-3.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-a895bce388f6fc31e1665a3d845c39b2">
+<img src="../../../at2/at2e5/ad/253-admt-prep-3.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p><strong>Migration des utilisateurs</strong></p>
+<p>Vérifier que le service, PASSWORD EXPORT SERVICE, soit bien démarré.<br>
+Clique droit, assistant de migrations des comptes d&rsquo;utilisateurs</p>
+<p>
+<a href="#image-d99e6f583d003d19c401bca03d96cbf9" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/254-admt-mig-user-1.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-d99e6f583d003d19c401bca03d96cbf9">
+<img src="../../../at2/at2e5/ad/254-admt-mig-user-1.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p>
+<a href="#image-76bbb17e841eca0360d5306c0defa276" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/255-admt-mig-user-2.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-76bbb17e841eca0360d5306c0defa276">
+<img src="../../../at2/at2e5/ad/255-admt-mig-user-2.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p>
+<a href="#image-fdf68b95932bd9c55f38f69e1d2a5a19" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/256-admt-mig-user-3.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-fdf68b95932bd9c55f38f69e1d2a5a19">
+<img src="../../../at2/at2e5/ad/256-admt-mig-user-3.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p>
+<a href="#image-091cfeb926c966b09c7b1d94554a8bca" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/257-admt-mig-user-4.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-091cfeb926c966b09c7b1d94554a8bca">
+<img src="../../../at2/at2e5/ad/257-admt-mig-user-4.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p>
+<a href="#image-ad9122c07ccaf3c5aca33b8adf98475b" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/258-admt-mig-user-5.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-ad9122c07ccaf3c5aca33b8adf98475b">
+<img src="../../../at2/at2e5/ad/258-admt-mig-user-5.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p>
+<a href="#image-5889858366792f014dd8fcaf66e24066" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/259-admt-mig-user-6.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-5889858366792f014dd8fcaf66e24066">
+<img src="../../../at2/at2e5/ad/259-admt-mig-user-6.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p>
+<a href="#image-a5ddf331ec5091764666794887917ce4" class="lightbox-link">
+<img src="../../../at2/at2e5/ad/260-admt-mig-user-7.png" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-a5ddf331ec5091764666794887917ce4">
+<img src="../../../at2/at2e5/ad/260-admt-mig-user-7.png" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p>Une fois les utilisateurs migrés, vérifier que les utilisateurs aient bien leurs nouveaux suffixes UPN.</p>
+<p>
+<a href="#image-f5ad05004a2cdac2755d527dfbca5bac" class="lightbox-link">
+<img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/admit_mig6.png?raw=true" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-f5ad05004a2cdac2755d527dfbca5bac">
+<img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/admit_mig6.png?raw=true" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p>
+<a href="#image-84923ce8c956959d77eeb52e13c748bf" class="lightbox-link">
+<img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/admit_mig7.png?raw=true" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-84923ce8c956959d77eeb52e13c748bf">
+<img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/admit_mig7.png?raw=true" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p><strong>Migration des groupes</strong></p>
+<p>C&rsquo;est identique.</p>
+<p>
+<a href="#image-147813f8c6bff4ebacc7419354a1b0de" class="lightbox-link">
+<img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/admit_mig_compte.png?raw=true" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-147813f8c6bff4ebacc7419354a1b0de">
+<img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/admit_mig_compte.png?raw=true" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p>
+<a href="#image-f4557d6a044f16d6f4ec91453f537608" class="lightbox-link">
+<img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/admit_mig_compte1.png?raw=true" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-f4557d6a044f16d6f4ec91453f537608">
+<img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/admit_mig_compte1.png?raw=true" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p>
+<a href="#image-90395e1705fe581a773e0ddc2ae5c108" class="lightbox-link">
+<img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/admit_mig_compte2.png?raw=true" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-90395e1705fe581a773e0ddc2ae5c108">
+<img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/admit_mig_compte2.png?raw=true" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p>
+<a href="#image-ac5f18fc0e96e3d445c1316d677afc18" class="lightbox-link">
+<img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/admit_mig_compte3.png?raw=true" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-ac5f18fc0e96e3d445c1316d677afc18">
+<img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/admit_mig_compte3.png?raw=true" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p>
+<a href="#image-763bfb410a581bae3a56c4a9e97d8df3" class="lightbox-link">
+<img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/admit_mig_compte4.png?raw=true" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-763bfb410a581bae3a56c4a9e97d8df3">
+<img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/admit_mig_compte4.png?raw=true" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p>
+<a href="#image-39b4cae12d1096d8a809d06eaccd985f" class="lightbox-link">
+<img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/admit_mig_compte5.png?raw=true" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-39b4cae12d1096d8a809d06eaccd985f">
+<img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/admit_mig_compte5.png?raw=true" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p>
+<a href="#image-c9056d718ad876f41b05d9e1c2c6e9ec" class="lightbox-link">
+<img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/admit_mig_compte6.png?raw=true" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-c9056d718ad876f41b05d9e1c2c6e9ec">
+<img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/admit_mig_compte6.png?raw=true" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p>
+<a href="#image-e4fc6589e0a315a7b30b9fc706f0e8d9" class="lightbox-link">
+<img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/admit_mig_compte7.png?raw=true" alt="" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-e4fc6589e0a315a7b30b9fc706f0e8d9">
+<img src="https://github.com/cromm24/Hello_World/blob/main/AT2/AT2C1/AD/admit_mig_compte7.png?raw=true" alt="" class="lightbox-image" loading="lazy">
+</a></p>
+<p><strong>Ressources</strong></p>
+<p><a href="https://activedirectoryfaq.com/2015/10/active-directory-sid-filtering/" target="_blank">AD</a></p>
+<h2 id="azure-ad-connect">AZURE AD CONNECT</h2>
+<p>Il s&rsquo;installe sur une VM sur un AD local. Il faut le mettre sur un serveur dédié et il ne fait que ca. Il ne s&rsquo;occupe que de la synchro.<br>
+On crée un compte AD CONNECT, on le met administrateur général de MS365.</p>
+<p><strong>Commande POWERSHELL</strong></p>
+<p>Pour forcer la synchro :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Start-ADSyncSyncCycle</span> <span class="n">-PolicyType</span> <span class="n">Delta</span>
+</span></span></code></pre></div><p>Pour forcer le changement d&rsquo;UPN :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">set-MsolUserPrincipal</span> <span class="n">-UserPrincipalName</span> <span class="n">ancienUPN</span> <span class="n">-NewUserPrincipalName</span> <span class="n">nouveauUPN</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">set-MsolUserPrincipal</span> <span class="n">-UserPrincipalName</span> <span class="n">k</span><span class="p">.</span><span class="n">novoselic</span><span class="nv">@cefim</span><span class="p">.</span><span class="py">eu</span> <span class="n">-NewUserPrincipalName</span> <span class="n">s</span><span class="p">.</span><span class="n">julie</span><span class="nv">@cefim</span><span class="p">.</span><span class="py">eu</span>
+</span></span></code></pre></div>
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <script src="../../../js/clipboard.min.js" defer></script>
+    <script src="../../../js/perfect-scrollbar.min.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+  </body>
+</html>

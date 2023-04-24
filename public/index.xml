@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TSSOC</title>
+    <link>https://www.tssoc.oliduha.fr/index.html</link>
+    <description>Recent content on TSSOC</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language><atom:link href="https://www.tssoc.oliduha.fr/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Assister les utilisateurs en centre de services</title>
+      <link>https://www.tssoc.oliduha.fr/at1/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.tssoc.oliduha.fr/at1/index.html</guid>
+      <description> 1. Mettre en service un équipement numérique 2. Assister les utilisateurs sur leurs équipements numériques 3. Gérer les incidents et les problèmes 4. Assister à l&amp;rsquo;utilisation des ressources collaboratives </description>
+    </item>
+    <item>
+      <title>Maintenir, exploiter et sécuriser une infrastructure centralisée</title>
+      <link>https://www.tssoc.oliduha.fr/at2/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.tssoc.oliduha.fr/at2/index.html</guid>
+      <description> 1. Maintenir et exploiter le réseau local et la téléphonie 2. Sécuriser les accès à Internet 3. Maintenir et exploiter un serveur Linux 4. Maintenir et exploiter un environnement virtualisé 5. Maintenir et exploiter un domaine Active Directory et les serveurs Windows </description>
+    </item>
+    <item>
+      <title>Maintenir et exploiter une infrastructure distribuée et contribuer à sa sécurisation</title>
+      <link>https://www.tssoc.oliduha.fr/at3/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.tssoc.oliduha.fr/at3/index.html</guid>
+      <description> 1. Configurer serveur de déploiement et de terminaux légers 2. Automatiser les tâches à l&amp;rsquo;aide de scripts 3. Maintenir et sécuriser les accès réseaux distants 4. Superviser l&amp;rsquo;infrastructure 5. Intervenir dans un environnement de Cloud Computing 6. Assurer sa veille technologique </description>
+    </item>
+    <item>
+      <title>Hugo Relearn Documentation</title>
+      <link>https://www.tssoc.oliduha.fr/hugo/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.tssoc.oliduha.fr/hugo/index.html</guid>
+      <description>BasicsDiscover what this Hugo theme is all about and the core-concepts behind it.
+ContentFind out how to create and organize your content quickly and intuitively.
+ShortcodesHugo uses Markdown for its simple content format. However, there are a lot of things that Markdown doesn’t support well. You could use pure HTML to expand possibilities.</description>
+    </item>
+  </channel>
+</rss>

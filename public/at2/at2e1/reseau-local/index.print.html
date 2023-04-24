@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="Docs formation Cefim TSSR">
+    <meta name="author" content="Olivier Duhamel">
+    <title>Réseau local - TSSOC</title>
+    <link href="https://www.tssoc.oliduha.fr/at2/at2e1/reseau-local/index.html" rel="canonical" type="text/html" title="Réseau local - TSSOC">
+    <link href="../../../at2/at2e1/reseau-local/index.xml" rel="alternate" type="application/rss+xml" title="Réseau local - TSSOC">
+    <link href="../../../images/logo.svg" rel="icon" type="image/svg+xml">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="../../../css/fontawesome-all.min.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fontawesome-all.min.css" rel="stylesheet"></noscript>
+    <link href="../../../css/nucleus.css" rel="stylesheet">
+    <link href="../../../css/auto-complete.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/auto-complete.css" rel="stylesheet"></noscript>
+    <link href="../../../css/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="../../../css/fonts.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../../css/fonts.css" rel="stylesheet"></noscript>
+    <link href="../../../css/theme.css" rel="stylesheet">
+    <link href="../../../css/theme-auto.css" rel="stylesheet" id="variant-style">
+    <link href="../../../css/variant.css" rel="stylesheet">
+    <link href="../../../css/print.css" rel="stylesheet" media="print">
+    <link href="../../../css/format-print.css" rel="stylesheet">
+    <link href="../../../css/ie.css" rel="stylesheet">
+    <script src="../../../js/url.js"></script>
+    <script src="../../../js/variant.js"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      window.index_js_url="../../../index.search.js";
+      var root_url="../../../";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copier dans le presse-papiers';
+      window.T_Copied_to_clipboard = 'Copié dans le presse-papiers !';
+      window.T_Copy_link_to_clipboard = 'Copier le lien dans le presse-papiers';
+      window.T_Link_copied_to_clipboard = 'Lien copié dans le presse-papiers !';
+      window.T_No_results_found = 'Aucun résultat trouvé pour \u0022{0}\u0022';
+      window.T_N_results_found = '{1} résultats trouvés pour \u0022{0}\u0022';
+      // some further base stuff
+      var baseUriFull='https:\/\/www.tssoc.oliduha.fr/';
+      window.variants && variants.init( [ 'auto', 'relearn-bright', 'relearn-light', 'relearn-dark', 'learn', 'neon', 'blue', 'green', 'red' ] );
+    </script>
+    <style>
+      #body img.bg-white {
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="../../../at2/at2e1/reseau-local/index.html">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../index.html"><span itemprop="name">TSSOC</span></a><meta itemprop="position" content="1"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../at2/index.html"><span itemprop="name">Maintenir, exploiter et sécuriser une infrastructure centralisée</span></a><meta itemprop="position" content="2"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../../at2/at2e1/index.html"><span itemprop="name">Maintenir et exploiter le réseau local et la téléphonie</span></a><meta itemprop="position" content="3"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Réseau local</span><meta itemprop="position" content="4"></li>
+            </ol>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable chapter narrow" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="chapter">
+<div class="article-subheading">Exemple 1</div>
+<h1 id="réseau-local">Réseau local</h1>
+
+<hr>
+<h3 id="pi-hole">Pi-Hole</h3>
+<p>Une capture d&rsquo;écran après plusieurs mois d&rsquo;utilisation :
+
+<a href="#image-1c9865464f58820b83eb44b0c17157b9" class="lightbox-link">
+<img src="../../../at2/at2e1/reseau-local/pi-hole.png" alt="Pi-Hole" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-1c9865464f58820b83eb44b0c17157b9">
+<img src="../../../at2/at2e1/reseau-local/pi-hole.png" alt="Pi-Hole" class="lightbox-image" loading="lazy">
+</a></p>
+<hr>
+<h3 id="fwknop">FwKnop</h3>
+<p>L&rsquo;interface utilisateur sous Windows :
+
+<a href="#image-e562711b24e28c57b08eff7374512dd4" class="lightbox-link">
+<img src="../../../at2/at2e1/reseau-local/fwknop-gui.png" alt="FwKnop" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-e562711b24e28c57b08eff7374512dd4">
+<img src="../../../at2/at2e1/reseau-local/fwknop-gui.png" alt="FwKnop" class="lightbox-image" loading="lazy">
+</a></p>
+<p>Ouverture et fermeture du port ssh par FwKnop dans iptables :
+
+<a href="#image-46e8408de87f58f51694c042d5a8d5ec" class="lightbox-link">
+<img src="../../../at2/at2e1/reseau-local/Deb-min_fwknop_iptables.png" alt="Deb-min fwknop iptables" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-46e8408de87f58f51694c042d5a8d5ec">
+<img src="../../../at2/at2e1/reseau-local/Deb-min_fwknop_iptables.png" alt="Deb-min fwknop iptables" class="lightbox-image" loading="lazy">
+</a></p>
+<p><em>Il faut initier la connexion ssh pendant que le port est ouvert, FxKnop refermant le port automatiquement à la fin du timeout défini. Si la connexion est effective, elle le reste une fois le port refermé.</em></p>
+<hr>
+<h3 id="lynis">Lynis</h3>
+<p>Audit, renforcement des systèmes, tests de conformité</p>
+<p>Lynis est un outil de sécurité éprouvé pour les systèmes fonctionnant sous Linux, macOS ou Unix. Il effectue une analyse approfondie de l&rsquo;état de santé de vos systèmes afin de soutenir le durcissement du système et les tests de conformité. Le projet est un logiciel open source sous licence GPL, disponible depuis 2007.</p>
+<p>Lynis en cours d&rsquo;audit :
+
+<a href="#image-5ef7b8f0cae4cc98b747502354c0a14c" class="lightbox-link">
+<img src="../../../at2/at2e1/reseau-local/lynis-screenshot.png" alt="lynis audit" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-5ef7b8f0cae4cc98b747502354c0a14c">
+<img src="../../../at2/at2e1/reseau-local/lynis-screenshot.png" alt="lynis audit" class="lightbox-image" loading="lazy">
+</a></p>
+<p>Résultat :
+
+<a href="#image-9fff001846d89e44b17e405f3f55d132" class="lightbox-link">
+<img src="../../../at2/at2e1/reseau-local/lynis-res.png" alt="lynis result" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-9fff001846d89e44b17e405f3f55d132">
+<img src="../../../at2/at2e1/reseau-local/lynis-res.png" alt="lynis result" class="lightbox-image" loading="lazy">
+</a></p>
+<p><em>Après résolution de bon nombre d&rsquo;avertissements en suivant les conseils prodigués, l&rsquo;indice de durcissement de ma machine sous Linux Bodhi 6 a atteint un score de 85.</em></p>
+<hr>
+
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <script src="../../../js/clipboard.min.js" defer></script>
+    <script src="../../../js/perfect-scrollbar.min.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+  </body>
+</html>

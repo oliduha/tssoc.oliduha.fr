@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+    <meta name="description" content="Recipe to create various documentation screenshots">
+    <meta name="author" content="Olivier Duhamel">
+    <title>Screenshots - TSSOC</title>
+    <link href="https://www.tssoc.oliduha.fr/en/dev/screenshots/index.html" rel="alternate" hreflang="x-default">
+    <link href="https://www.tssoc.oliduha.fr/en/dev/screenshots/index.html" rel="alternate" hreflang="en">
+    <link href="https://www.tssoc.oliduha.fr/dev/screenshots/index.html" rel="alternate" hreflang="fr">
+    <link href="../../images/logo.svg" rel="icon" type="image/svg+xml">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="../../css/fontawesome-all.min.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css" rel="stylesheet">
+    <link href="../../css/auto-complete.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="../../css/fonts.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css" rel="stylesheet">
+    <link href="../../css/theme-auto.css" rel="stylesheet" id="variant-style">
+    <link href="../../css/variant.css" rel="stylesheet">
+    <link href="../../css/print.css" rel="stylesheet" media="print">
+    <link href="../../css/format-print.css" rel="stylesheet">
+    <link href="../../css/ie.css" rel="stylesheet">
+    <script src="../../js/url.js"></script>
+    <script src="../../js/variant.js"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      window.index_js_url="../../index.search.js";
+      var root_url="../../";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copier dans le presse-papiers';
+      window.T_Copied_to_clipboard = 'Copié dans le presse-papiers !';
+      window.T_Copy_link_to_clipboard = 'Copier le lien dans le presse-papiers';
+      window.T_Link_copied_to_clipboard = 'Lien copié dans le presse-papiers !';
+      window.T_No_results_found = 'Aucun résultat trouvé pour \u0022{0}\u0022';
+      window.T_N_results_found = '{1} résultats trouvés pour \u0022{0}\u0022';
+      // some further base stuff
+      var baseUriFull='https:\/\/www.tssoc.oliduha.fr/';
+      window.variants && variants.init( [ 'auto', 'relearn-bright', 'relearn-light', 'relearn-dark', 'learn', 'neon', 'blue', 'green', 'red' ] );
+    </script>
+    <style>
+      #body img.bg-white {
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="../../dev/screenshots/index.html">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../index.html"><span itemprop="name">TSSOC</span></a><meta itemprop="position" content="1"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../dev/index.html"><span itemprop="name">Development</span></a><meta itemprop="position" content="2"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Screenshots</span><meta itemprop="position" content="3"></li>
+            </ol>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="default">
+<h1 id="screenshots">Screenshots</h1>
+
+<p>Sometimes screenshots need to be redone. This page explains how to create the different screenshots, tools and settings</p>
+<h2 id="common">Common</h2>
+<p><strong>Creation</strong>:</p>
+<ul>
+<li>Use English translation</li>
+<li>Empty search</li>
+<li>Remove history checkmarks but leave it on the page thats used for the screenshot</li>
+<li>After resize of the page into the required resolution, reload the page to have all scrollbars in default loading position</li>
+</ul>
+<h2 id="demo-screenshot">Demo Screenshot</h2>
+<p><strong>Content</strong>:</p>
+<p>A meaningful full-screen screenshot of an interesting page.</p>
+<p>The content should be:</p>
+<ul>
+<li>timeless: not showing any dates or often edited content</li>
+<li>interesting: show a bunch of interesting elements like headings, code, etc</li>
+<li>balanced: no cluttering with overpresent elements or coloring</li>
+<li>aligned: aligned outlines</li>
+</ul>
+<p><strong>Used by</strong>:</p>
+<ul>
+<li>Hugo Themes info: <a href="https://themes.gohugo.io/themes/hugo-theme-relearn/" target="_blank">https://themes.gohugo.io/themes/hugo-theme-relearn/</a> <em>1000 x 1500 @ 1</em></li>
+</ul>
+<p><strong>Page URL</strong>: <a href="../../hugo/shortcodes/include/">Screenshot Link</a></p>
+<p><strong>Creation</strong>:</p>
+<ul>
+<li>save as <code>images/screenshot.png</code></li>
+</ul>
+<p><strong>Remarks</strong>:</p>
+<p>The location is mandatory due to Hugo&rsquo;s theme site builder.</p>
+<h3 id="preview-imagesscreenshotpng">Preview <code>images/screenshot.png</code></h3>
+<p>
+		
+		
+<a href="#image-0b86073bf9a234c49314a6da149d96e2" class="lightbox-link">
+<img src="../../images/screenshot.png?classes=shadow&amp;width=100%25&amp;height=100%25" alt="Screenshot" class="shadow" style="height: 100%; width: 100%;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-0b86073bf9a234c49314a6da149d96e2">
+<img src="../../images/screenshot.png?classes=shadow&amp;width=100%25&amp;height=100%25" alt="Screenshot" class="lightbox-image" loading="lazy">
+</a></p>
+<h2 id="hero-image">Hero Image</h2>
+<p><strong>Content</strong>:</p>
+<p>Show the <a href="#demo-screenshot">Demo Screenshot</a> page on different devices and different themes. Composition of the different device screenshots into a template.</p>
+<p>The content should be:</p>
+<ul>
+<li>consistent: always use the same page for all devices</li>
+<li>pleasing: use a delightful background</li>
+</ul>
+<p><strong>Used by</strong>:</p>
+<ul>
+<li>Hugo Themes gallery: <a href="https://themes.gohugo.io/tags/docs/" target="_blank">https://themes.gohugo.io/tags/docs/</a>                              <em>900 x 600</em></li>
+<li>Hugo Themes notes: <a href="https://themes.gohugo.io/themes/hugo-theme-relearn/" target="_blank">https://themes.gohugo.io/themes/hugo-theme-relearn/</a>               <em>1280 x 640</em></li>
+<li>GitHub project site: <a href="https://github.com/McShelby/hugo-theme-relearn" target="_blank">https://github.com/McShelby/hugo-theme-relearn</a>                  <em>1280 x 640</em></li>
+<li>GitHub social media preview: <a href="https://github.com/McShelby/hugo-theme-relearn/settings" target="_blank">https://github.com/McShelby/hugo-theme-relearn/settings</a> <em>1280 x 640</em></li>
+</ul>
+<p><strong>Page URL</strong>: <a href="../../hugo/shortcodes/include/">Hero Image Link</a></p>
+<p><strong>Creation</strong>:</p>
+<ul>
+<li>Template: <a href="http://www.pixeden.com/psd-web-elements/psd-screen-web-showcase" target="_blank">http://www.pixeden.com/psd-web-elements/psd-screen-web-showcase</a></li>
+<li>Desktop: light theme <em>1440 x 900 @ 1</em></li>
+<li>Tablet: light theme <em>778 x 1038 @ 1</em></li>
+<li>Phone: dark theme <em>450 x 801 @ .666</em></li>
+<li>From original template size resize to <em>2700 x 1800</em> centered, scale to <em>900 x 600</em> and save as <code>images/tn.png</code></li>
+<li>From original template size resize to <em>3000 x 1500</em> offset y: <em>-330</em>, scale to <em>1280 x 640</em> and save as <code>images/hero.png</code></li>
+</ul>
+<p><strong>Remarks</strong>:</p>
+<p>The location of <code>images/tn.png</code> is mandatory due to Hugo&rsquo;s theme site builder.</p>
+<h3 id="preview-imagesheropng">Preview <code>images/hero.png</code></h3>
+<p>
+		
+		
+<a href="#image-c7e9ddaab74b618b5e52e4ac485c60ea" class="lightbox-link">
+<img src="../../images/hero.png?classes=shadow&amp;width=100%25&amp;height=100%25" alt="Hero" class="shadow" style="height: 100%; width: 100%;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-c7e9ddaab74b618b5e52e4ac485c60ea">
+<img src="../../images/hero.png?classes=shadow&amp;width=100%25&amp;height=100%25" alt="Hero" class="lightbox-image" loading="lazy">
+</a></p>
+<h3 id="preview-imagestnpng">Preview <code>images/tn.png</code></h3>
+<p>
+		
+		
+<a href="#image-bff512bada989dd61e31e6660a1ac141" class="lightbox-link">
+<img src="../../images/tn.png?classes=shadow&amp;width=100%25&amp;height=100%25" alt="tn" class="shadow" style="height: 100%; width: 100%;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-bff512bada989dd61e31e6660a1ac141">
+<img src="../../images/tn.png?classes=shadow&amp;width=100%25&amp;height=100%25" alt="tn" class="lightbox-image" loading="lazy">
+</a></p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <script src="../../js/clipboard.min.js" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+  </body>
+</html>

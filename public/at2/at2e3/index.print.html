@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="Docs formation Cefim TSSR">
+    <meta name="author" content="Olivier Duhamel">
+    <title>Maintenir et exploiter un serveur Linux - TSSOC</title>
+    <link href="https://www.tssoc.oliduha.fr/at2/at2e3/index.html" rel="canonical" type="text/html" title="Maintenir et exploiter un serveur Linux - TSSOC">
+    <link href="../../at2/at2e3/index.xml" rel="alternate" type="application/rss+xml" title="Maintenir et exploiter un serveur Linux - TSSOC">
+    <link href="../../images/logo.svg" rel="icon" type="image/svg+xml">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="../../css/fontawesome-all.min.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css" rel="stylesheet">
+    <link href="../../css/auto-complete.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="../../css/fonts.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css" rel="stylesheet">
+    <link href="../../css/theme-auto.css" rel="stylesheet" id="variant-style">
+    <link href="../../css/variant.css" rel="stylesheet">
+    <link href="../../css/print.css" rel="stylesheet" media="print">
+    <link href="../../css/format-print.css" rel="stylesheet">
+    <link href="../../css/ie.css" rel="stylesheet">
+    <script src="../../js/url.js"></script>
+    <script src="../../js/variant.js"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      window.index_js_url="../../index.search.js";
+      var root_url="../../";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copier dans le presse-papiers';
+      window.T_Copied_to_clipboard = 'Copié dans le presse-papiers !';
+      window.T_Copy_link_to_clipboard = 'Copier le lien dans le presse-papiers';
+      window.T_Link_copied_to_clipboard = 'Lien copié dans le presse-papiers !';
+      window.T_No_results_found = 'Aucun résultat trouvé pour \u0022{0}\u0022';
+      window.T_N_results_found = '{1} résultats trouvés pour \u0022{0}\u0022';
+      // some further base stuff
+      var baseUriFull='https:\/\/www.tssoc.oliduha.fr/';
+      window.variants && variants.init( [ 'auto', 'relearn-bright', 'relearn-light', 'relearn-dark', 'learn', 'neon', 'blue', 'green', 'red' ] );
+    </script>
+    <style>
+      #body img.bg-white {
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="../../at2/at2e3/index.html">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../index.html"><span itemprop="name">TSSOC</span></a><meta itemprop="position" content="1"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../at2/index.html"><span itemprop="name">Maintenir, exploiter et sécuriser une infrastructure centralisée</span></a><meta itemprop="position" content="2"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Maintenir et exploiter un serveur Linux</span><meta itemprop="position" content="3"></li>
+            </ol>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable chapter narrow" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="chapter">
+<div class="article-subheading">Chapitre 3</div>
+<h1 id="maintenir-et-exploiter-un-serveur-linux">Maintenir et exploiter un serveur Linux</h1>
+
+<hr>
+<h4 id="1-serveur-lampsat2at2e3lamps">1. <a href="../../at2/at2e3/lamps/">Serveur LAMPS</a></h4>
+<hr>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <section>
+            <h1 class="a11y-only">Sous-sections de Maintenir et exploiter un serveur Linux</h1>
+          <article class="chapter">
+<div class="article-subheading">Exemple 3</div>
+<h1 id="serveur-lamps">Serveur LAMPS</h1>
+
+<h2 id="serveur-lamps-avec-mediawiki">Serveur LAMPS avec MediaWiki</h2>
+<p>
+<a href="#image-0bfcd1182d25f4894acb6a44ccdca52f" class="lightbox-link">
+<img src="../../at2/at2e3/lamps/0_1_architecture.png" alt="Architecture" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-0bfcd1182d25f4894acb6a44ccdca52f">
+<img src="../../at2/at2e3/lamps/0_1_architecture.png" alt="Architecture" class="lightbox-image" loading="lazy">
+</a>
+<em>Ici, nous installerons MediaWiki en lieu et place de Wordpress</em></p>
+<h2 id="1---préambule">1 - Préambule</h2>
+<p><a href="https://files.fosswire.com/2007/08/fwunixref.pdf" target="_blank">cheat sheet linux</a></p>
+<p>Avoir une machine debian 11 en ip fixe avec :</p>
+<ul>
+<li>une connexion ssh</li>
+<li>.bashrc configuré</li>
+<li>(ssh) nmap zip dnsutils net-tools tzdata lynx sudo curl git screen locate ncdu</li>
+<li>la dernière version de webmin (finir l&rsquo;installation avec apt -f install)</li>
+<li>winbind samba</li>
+</ul>
+<p>Configurer :</p>
+<ul>
+<li>resolv.conf</li>
+<li>hosts</li>
+<li>hostname</li>
+<li>nsswitch</li>
+<li>timezone (dpkg-reconfigure tzdata)</li>
+</ul>
+<p><em>Sur Windows</em> : ajouter AdresseIp[TAB]fqdn dans le fichier <code>C:\Windows\System32\drivers\etc\hosts</code> de Windows <strong>en Administrateur</strong></p>
+<p>dans mon cas :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">92.168.0.200  wiki.infra.lan
+</span></span></code></pre></div>
+<div class="box notices cstyle warning">
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-triangle"></i> Attention</div>
+  <div class="box-content">
+<p><em><strong>Choisir des mots de passe forts si utilisation en production.</strong></em></p>
+  </div>
+</div>
+<h2 id="2---apache-2">2 - APACHE 2</h2>
+<h3 id="installation-et-configuration-dapache-24">installation et configuration d&rsquo;apache 2.4</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">apt install apache2
+</span></span></code></pre></div><ul>
+<li>activation du module SSL</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">a2enmod ssl
+</span></span></code></pre></div><ul>
+<li>activation du site SSL</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">a2ensite default-ssl
+</span></span></code></pre></div><ul>
+<li>relancer le service (systemctl restart apache2)</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">service apache2 restart
+</span></span></code></pre></div><h3 id="--génération-du-certificat-auto-signé-pour-10-ans">- génération du certificat auto signé pour 10 ans</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">openssl req <span class="nv">$@</span> -new -x509 -days <span class="m">3650</span> -nodes -out /etc/apache2/apache.pem -keyout /etc/apache2/apache.pem
+</span></span></code></pre></div><p>
+<a href="#image-7f05abc9d0da4179f4ada9d398fda770" class="lightbox-link">
+<img src="../../at2/at2e3/lamps/2_1_apache_pem.PNG" alt="capture" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-7f05abc9d0da4179f4ada9d398fda770">
+<img src="../../at2/at2e3/lamps/2_1_apache_pem.PNG" alt="capture" class="lightbox-image" loading="lazy">
+</a></p>
+<h3 id="--activation-des-modules-populaires">- activation des modules populaires</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">a2enmod rewrite
+</span></span><span class="line"><span class="cl">a2enmod headers
+</span></span></code></pre></div><h3 id="--écriture-du-nouveau-certificat-ssl-dans-la-conf-apache-et-changement-du-documentroot-et-redirection">- écriture du nouveau certificat ssl dans la conf apache et changement du documentroot et redirection</h3>
+<p>
+<a href="#image-85bbfa83af22cc47ad48c8d0882d038c" class="lightbox-link">
+<img src="../../at2/at2e3/lamps/2_2_apache_default-ssl.conf.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-85bbfa83af22cc47ad48c8d0882d038c">
+<img src="../../at2/at2e3/lamps/2_2_apache_default-ssl.conf.PNG" alt="Capture" class="lightbox-image" loading="lazy">
+</a></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> /etc/apache2/sites-available/
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nano default-ssl.conf
+</span></span></code></pre></div><h3 id="--nettoyage-et-redirection">- nettoyage et redirection</h3>
+<p>(pour une meilleure lisibilité, on peut retirer les commentaires de 000-default.conf et default-ssl.conf)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nano /etc/apache2/sites-available/000-default.conf
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">&lt;VirtualHost *:80&gt;  
+</span></span><span class="line"><span class="cl">	Redirect Permanent / https://wiki.infra.lan  
+</span></span><span class="line"><span class="cl">&lt;/VirtualHost&gt;
+</span></span></code></pre></div><p>
+<a href="#image-c06c6fd3caf93842a1f18c411ce4b4b0" class="lightbox-link">
+<img src="../../at2/at2e3/lamps/2_3_apache_000-default.conf.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-c06c6fd3caf93842a1f18c411ce4b4b0">
+<img src="../../at2/at2e3/lamps/2_3_apache_000-default.conf.PNG" alt="Capture" class="lightbox-image" loading="lazy">
+</a></p>
+<ul>
+<li>redémarrer le serveur apache</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">service apache2 restart
+</span></span></code></pre></div><ul>
+<li>commenter la section &lt;Directory /var/www/html&gt;&hellip;</Directory> de apache2.conf</li>
+</ul>
+<pre tabindex="0"><code>nano /etc/apache2/apache2.conf
+</code></pre><p>
+<a href="#image-06d782b043ee096860237d5d0e768dd8" class="lightbox-link">
+<img src="../../at2/at2e3/lamps/2_4_apache_apache2.conf.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-06d782b043ee096860237d5d0e768dd8">
+<img src="../../at2/at2e3/lamps/2_4_apache_apache2.conf.PNG" alt="Capture" class="lightbox-image" loading="lazy">
+</a></p>
+<ul>
+<li>
+<p>création en mode user du dossier wiki et d’un index dans /home/user/</p>
+</li>
+<li>
+<p>débrayage temporaire en mode user pour la création</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">su user
+</span></span><span class="line"><span class="cl">mkdir /home/user/wiki
+</span></span></code></pre></div><ul>
+<li>créer du contenu dans index.html</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nano /home/user/wiki/index.html
+</span></span></code></pre></div><ul>
+<li>repasser en root</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">su -
+</span></span></code></pre></div><p>ou</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">exit</span>
+</span></span></code></pre></div><h3 id="--changement-récursif-de-propriétaire-et-cest-apache-le-nouveau-proprio">- changement récursif de propriétaire et c&rsquo;est apache le nouveau proprio</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chown -R www-data:www-data /home/user/wiki
+</span></span></code></pre></div><ul>
+<li>ajout de user au groupe www-data</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">usermod -aG www-data user
+</span></span></code></pre></div><ul>
+<li>changement récursif des droits pour le dossier wiki pour ftp et samba</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod -R <span class="m">775</span> /home/user/wiki
+</span></span></code></pre></div><p>
+<a href="#image-0a6c8c59cbaf199a1b3a6eb1dc0b62aa" class="lightbox-link">
+<img src="../../at2/at2e3/lamps/2_5_apache_chown.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-0a6c8c59cbaf199a1b3a6eb1dc0b62aa">
+<img src="../../at2/at2e3/lamps/2_5_apache_chown.PNG" alt="Capture" class="lightbox-image" loading="lazy">
+</a></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">service apache2 restart
+</span></span></code></pre></div><h3 id="--fusion-des-2-fichiers-de-conf">- fusion des 2 fichiers de conf</h3>
+<ul>
+<li>copier le contenu des 2 fichiers de conf (000 et default ssl) dans un seul fichier dans sites-available nommé site.conf</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> /etc/apache2/sites-available
+</span></span><span class="line"><span class="cl">cat 000-default.conf &gt; site.conf
+</span></span><span class="line"><span class="cl">cat default-ssl.conf &gt;&gt; site.conf
+</span></span></code></pre></div><ul>
+<li>désactivation des 2 fichiers de conf qui ne vont plus servir</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">a2dissite 000-default
+</span></span><span class="line"><span class="cl">a2dissite default-ssl
+</span></span></code></pre></div><ul>
+<li>effacement de ces 2 fichiers</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rm 000-default.conf
+</span></span><span class="line"><span class="cl">rm default-ssl.conf
+</span></span></code></pre></div><ul>
+<li>activation de la nouvelle et unique conf</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">a2ensite site.conf
+</span></span></code></pre></div><ul>
+<li>ajout de la section &lt;Directory&hellip; </Directory> dans site.conf qui doit maintenant ressembler à ça :</li>
+</ul>
+<p>
+<a href="#image-f02608cc252ded78246782da7900714b" class="lightbox-link">
+<img src="../../at2/at2e3/lamps/2_6_apache_site.conf.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-f02608cc252ded78246782da7900714b">
+<img src="../../at2/at2e3/lamps/2_6_apache_site.conf.PNG" alt="Capture" class="lightbox-image" loading="lazy">
+</a></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">service apache2 restart
+</span></span></code></pre></div><p><strong>à ce stade la page html doit s&rsquo;afficher dans le navigateur de Windows à l&rsquo;adresse <a href="https://wiki.infra.lan" target="_blank">https://wiki.infra.lan</a></strong></p>
+<p>
+<a href="#image-aa7f21ff2617856ef28cfa81dbf38a1a" class="lightbox-link">
+<img src="../../at2/at2e3/lamps/2_7_apache_nav.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-aa7f21ff2617856ef28cfa81dbf38a1a">
+<img src="../../at2/at2e3/lamps/2_7_apache_nav.PNG" alt="Capture" class="lightbox-image" loading="lazy">
+</a></p>
+<h2 id="3---mysql">3 - MySQL</h2>
+<h3 id="installation-et-configuration-de-mysql">Installation et configuration de MySQL</h3>
+<ul>
+<li>installation de mysql8 en lieu et place de maria</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">wget https://repo.mysql.com/mysql-apt-config_0.8.23-1_all.deb
+</span></span><span class="line"><span class="cl">dpkg -i mysql-apt-config_0.8.23-1_all.deb
+</span></span></code></pre></div><blockquote>
+<p>Sélectionner &lsquo;MySQL Server &amp; Cluster&hellip;&rsquo; + [entrée]</p>
+</blockquote>
+<p>
+<a href="#image-8e3d1c5e668c98157ddd1b206e351bd9" class="lightbox-link">
+<img src="../../at2/at2e3/lamps/3_1_mysql_install.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-8e3d1c5e668c98157ddd1b206e351bd9">
+<img src="../../at2/at2e3/lamps/3_1_mysql_install.PNG" alt="Capture" class="lightbox-image" loading="lazy">
+</a></p>
+<blockquote>
+<p>Sélectionner &lsquo;mysql-8.0&rsquo; + [entrée]</p>
+</blockquote>
+<p>
+<a href="#image-dccafea941d3d590ef4736ca261b522e" class="lightbox-link">
+<img src="../../at2/at2e3/lamps/3_2_mysql_install.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-dccafea941d3d590ef4736ca261b522e">
+<img src="../../at2/at2e3/lamps/3_2_mysql_install.PNG" alt="Capture" class="lightbox-image" loading="lazy">
+</a></p>
+<blockquote>
+<p>Sélectionner &lsquo;Ok&rsquo; dans la liste + [entrée]</p>
+</blockquote>
+<p>
+<a href="#image-eb754fc8d2c77aef7180b16b9ba5632e" class="lightbox-link">
+<img src="../../at2/at2e3/lamps/3_3_mysql_install.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-eb754fc8d2c77aef7180b16b9ba5632e">
+<img src="../../at2/at2e3/lamps/3_3_mysql_install.PNG" alt="Capture" class="lightbox-image" loading="lazy">
+</a></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">apt update
+</span></span><span class="line"><span class="cl">apt upgrade
+</span></span><span class="line"><span class="cl">apt install mysql-server
+</span></span></code></pre></div><ul>
+<li>indiquer le mot de passe pour l&rsquo;accès à mysql en root et confimer à l&rsquo;écran suivant</li>
+</ul>
+<p>
+<a href="#image-45f7268ff2a5e555929716bdfa61461c" class="lightbox-link">
+<img src="../../at2/at2e3/lamps/3_4_mysql_apt_install.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-45f7268ff2a5e555929716bdfa61461c">
+<img src="../../at2/at2e3/lamps/3_4_mysql_apt_install.PNG" alt="Capture" class="lightbox-image" loading="lazy">
+</a></p>
+<blockquote>
+<p>choisir l&rsquo;option recommandée (strong password encryption) + [entrée]</p>
+</blockquote>
+<p>
+<a href="#image-e4ddbe8c5156e43b96553e0dd541ea2b" class="lightbox-link">
+<img src="../../at2/at2e3/lamps/3_5_mysql_apt_install.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-e4ddbe8c5156e43b96553e0dd541ea2b">
+<img src="../../at2/at2e3/lamps/3_5_mysql_apt_install.PNG" alt="Capture" class="lightbox-image" loading="lazy">
+</a></p>
+<ul>
+<li>test de mysql en CLI</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mysql -u root -p
+</span></span></code></pre></div><p>puis entrer le mot de passe choisi juste avant</p>
+<p>
+<a href="#image-370f66652586dbcf8093ea41cec99445" class="lightbox-link">
+<img src="../../at2/at2e3/lamps/3_6_mysql_post_install.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-370f66652586dbcf8093ea41cec99445">
+<img src="../../at2/at2e3/lamps/3_6_mysql_post_install.PNG" alt="Capture" class="lightbox-image" loading="lazy">
+</a></p>
+<p><code>exit</code> pour sortir</p>
+<h2 id="4---php">4 - PHP</h2>
+<h3 id="installation-et-configuration-du-langage-php-7x">Installation et configuration du langage PHP 7.x</h3>
+<ul>
+<li>installation PHP 7.4 sur deb 11</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">apt install php
+</span></span></code></pre></div><ul>
+<li>édition du fichier php.ini pour modifier le upload max filesize</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nano /etc/php/7.4/apache2/php.ini
+</span></span></code></pre></div><p><em>pour faire une recherche dans nano :
+tapper ctrl+w et entrer le texte à rechercher (upload_max) puis entrée</em></p>
+<p>
+<a href="#image-d24062ae6883e46f889dfd1a21b5d5b5" class="lightbox-link">
+<img src="../../at2/at2e3/lamps/4_1_php.ini.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-d24062ae6883e46f889dfd1a21b5d5b5">
+<img src="../../at2/at2e3/lamps/4_1_php.ini.PNG" alt="Capture" class="lightbox-image" loading="lazy">
+</a></p>
+<ul>
+<li>redémarrer le service apache2</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">service apache2 restart
+</span></span></code></pre></div><h3 id="création-dun-fichier-info-dans-homeuserwiki-nommé-infophp-avec-le-compte-user">création d’un fichier info dans /home/user/wiki/ nommé info.php avec le compte user</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">su user
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nano /home/user/wiki/info.php
+</span></span></code></pre></div><p>
+<a href="#image-5bd47ff0e95c438dbef2f49c6b45d659" class="lightbox-link">
+<img src="../../at2/at2e3/lamps/4_2_info.php.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-5bd47ff0e95c438dbef2f49c6b45d659">
+<img src="../../at2/at2e3/lamps/4_2_info.php.PNG" alt="Capture" class="lightbox-image" loading="lazy">
+</a></p>
+<ul>
+<li>repasser en root</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">su -
+</span></span></code></pre></div><p>ou</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">exit</span>
+</span></span></code></pre></div><ul>
+<li>lancer un navigateur sur <a href="https://wiki.infra.lan/info.php" target="_blank">https://wiki.infra.lan/info.php</a></li>
+</ul>
+<p>
+<a href="#image-6087dee9c8fafb16e5370c6a79438b8c" class="lightbox-link">
+<img src="../../at2/at2e3/lamps/4_3_info_php.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-6087dee9c8fafb16e5370c6a79438b8c">
+<img src="../../at2/at2e3/lamps/4_3_info_php.PNG" alt="Capture" class="lightbox-image" loading="lazy">
+</a></p>
+<h3 id="installation-des-libs-php-souvent-utilisées-par-les-cms">installation des libs PHP souvent utilisées par les cms</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">apt install php-curl php-gd php-zip php-apcu php-xml php-ldap php-mbstring
+</span></span><span class="line"><span class="cl">apt install php-mysql
+</span></span></code></pre></div><ul>
+<li>recharger apache2</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">service apache2 restart
+</span></span></code></pre></div><h2 id="5---phpmyadmin">5 - PhpMyAdmin</h2>
+<h3 id="installation-et-configuration-de-phpmyadmin">Installation et configuration de PhpMyAdmin</h3>
+<ul>
+<li>installation de PhpMyAdmin</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">apt install phpmyadmin
+</span></span></code></pre></div><p><strong>ATTENTION</strong> : à la page de sélection du serveur web, appuyer sur [espace] pour sélectionner &lsquo;apache2&rsquo; avant de valider :</p>
+<p>
+<a href="#image-05a89411bd881e09a212609e0267051d" class="lightbox-link">
+<img src="../../at2/at2e3/lamps/5_1_pma_install.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-05a89411bd881e09a212609e0267051d">
+<img src="../../at2/at2e3/lamps/5_1_pma_install.PNG" alt="Capture" class="lightbox-image" loading="lazy">
+</a></p>
+<blockquote>
+<p>répondre OUI pour utiliser dbconfig-common</p>
+</blockquote>
+<p>
+<a href="#image-5466b8db8e9d42cb1736544b554321af" class="lightbox-link">
+<img src="../../at2/at2e3/lamps/5_2_pma_install.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-5466b8db8e9d42cb1736544b554321af">
+<img src="../../at2/at2e3/lamps/5_2_pma_install.PNG" alt="Capture" class="lightbox-image" loading="lazy">
+</a></p>
+<blockquote>
+<p>entrer un mot de passe pour PhpMyAdmin dans mysql et confirmer à l&rsquo;écran suivant</p>
+</blockquote>
+<blockquote>
+<p>entrer un mot de passe pour l&rsquo;administrateur de PhpMyAdmin</p>
+</blockquote>
+<ul>
+<li>et voir ce <a href="https://www.digitalocean.com/community/questions/how-do-i-change-phpmyadmin-access-url" target="_blank">lien</a> pour l&rsquo;alias (pour accéder à PhpMyAdmin via pma) =&gt;</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nano /etc/phpmyadmin/apache.conf
+</span></span></code></pre></div><p>
+<a href="#image-1525d93bfc180b3d473d9bca24558100" class="lightbox-link">
+<img src="../../at2/at2e3/lamps/5_3_pma_alias.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-1525d93bfc180b3d473d9bca24558100">
+<img src="../../at2/at2e3/lamps/5_3_pma_alias.PNG" alt="Capture" class="lightbox-image" loading="lazy">
+</a></p>
+<ul>
+<li>recharger apache2</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">service apache2 restart
+</span></span></code></pre></div><h3 id="changement-des-droits-root-avec-">Changement des droits root avec %</h3>
+<ul>
+<li>
+<p>se connecter en root sur phpmyadmin sur un navigateur à l&rsquo;url <a href="https://wiki.infra.lan/pma" target="_blank">https://wiki.infra.lan/pma</a></p>
+</li>
+<li>
+<p>dans le cadre de gauche, déplier l&rsquo;entrée mysql et sélectioner la table &lsquo;user&rsquo;</p>
+</li>
+<li>
+<p>dans la ligne &lsquo;root&rsquo; du cadre principal, entrer % à la place de localhost</p>
+</li>
+</ul>
+<p>
+<a href="#image-50130b4b0082b4ed1d8096977780890a" class="lightbox-link">
+<img src="../../at2/at2e3/lamps/5_4_pma_root.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-50130b4b0082b4ed1d8096977780890a">
+<img src="../../at2/at2e3/lamps/5_4_pma_root.PNG" alt="Capture" class="lightbox-image" loading="lazy">
+</a></p>
+<h3 id="création-via-pma-dans-mysql-dun-utilisateur-user-qui-aura-tous-les-droits-sur-la-base-user-mais-pas-ailleurs">Création via PMA dans MYSQL d&rsquo;un utilisateur &lsquo;user&rsquo; qui aura tous les droits sur la base &lsquo;user&rsquo; mais pas ailleurs</h3>
+<ul>
+<li>aller à l&rsquo;accueil de pma</li>
+</ul>
+<p>
+<a href="#image-2d5524a2e403e280212105ac4964c0c0" class="lightbox-link">
+<img src="../../at2/at2e3/lamps/5_5_pma_user.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-2d5524a2e403e280212105ac4964c0c0">
+<img src="../../at2/at2e3/lamps/5_5_pma_user.PNG" alt="Capture" class="lightbox-image" loading="lazy">
+</a></p>
+<ul>
+<li>cliquer sur l&rsquo;onglet &lsquo;Comptes utilisateurs&rsquo; puis le lien &lsquo;Ajouter un compte utilisateur&rsquo;</li>
+</ul>
+<p>
+<a href="#image-fc749e5c2bc8c587c26426ab833a7d49" class="lightbox-link">
+<img src="../../at2/at2e3/lamps/5_6_pma_user.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-fc749e5c2bc8c587c26426ab833a7d49">
+<img src="../../at2/at2e3/lamps/5_6_pma_user.PNG" alt="Capture" class="lightbox-image" loading="lazy">
+</a></p>
+<ul>
+<li>saisir le nom d&rsquo;utilisateur et son mot de passe + confirmation puis activer la case à cocher &lsquo;Créer une base portant son nom&hellip;&rsquo; et rien d&rsquo;autre. Cliquer le bouton &lsquo;Exécuter&rsquo; tout en bas à droite de la page.</li>
+</ul>
+<p>
+<a href="#image-317a089c2ebabd0aab1c2e153cc7cdc9" class="lightbox-link">
+<img src="../../at2/at2e3/lamps/5_7_pma_user.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-317a089c2ebabd0aab1c2e153cc7cdc9">
+<img src="../../at2/at2e3/lamps/5_7_pma_user.PNG" alt="Capture" class="lightbox-image" loading="lazy">
+</a></p>
+<ul>
+<li>Recharger les privileges (droits) via la zone de texte de l&rsquo;onglet SQL en saisissant la commande :</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="n">FLUSH</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><ul>
+<li>Se déconnecter en haut à gauche et tester les droits du nouvel utilisateur</li>
+</ul>
+<h2 id="6---ftp">6 - FTP</h2>
+<h3 id="installation-et-configuration-du-service-ftp">Installation et configuration du service FTP</h3>
+<ul>
+<li>installation du service ftp</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">apt install vsftpd
+</span></span></code></pre></div><ul>
+<li>copie de sauvegarde de /etc/vsftpd.conf avant édition</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mv /etc/vsftpd.conf /etc/vsftpd.bak
+</span></span></code></pre></div><ul>
+<li>configuration du service avec chrootage, passv et ssl</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nano /etc/vsftpd.conf
+</span></span></code></pre></div><p><a href="../../at2/at2e3/lamps/vsftpd.conf.txt">Un exemple de fichier vsftpd.conf</a> (ici renommé en .txt pour en faciliter la lecture)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">service vsftpd restart
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nmap 127.0.0.1
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nmap votre_ip
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">service vsftpd status
+</span></span></code></pre></div><ul>
+<li>se connecter en sftp avec filezilla client</li>
+</ul>
+<p>
+<a href="#image-229aae0e6d3741fa5e4505ea419153d2" class="lightbox-link">
+<img src="../../at2/at2e3/lamps/6_1_ftp_filezilla.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-229aae0e6d3741fa5e4505ea419153d2">
+<img src="../../at2/at2e3/lamps/6_1_ftp_filezilla.PNG" alt="Capture" class="lightbox-image" loading="lazy">
+</a></p>
+<h2 id="7---samba">7 - SAMBA</h2>
+<h3 id="installation-et-configuration-du-partage-samba">Installation et configuration du partage SAMBA</h3>
+<ul>
+<li>config de samba (samba pré-installé en amont)</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cp /etc/samba/smb.conf /etc/samba/smb.bak
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nano /etc/samba/smb.conf
+</span></span></code></pre></div><p>
+<a href="#image-5631a0cda1c7944796d8cb44d51967db" class="lightbox-link">
+<img src="../../at2/at2e3/lamps/7_1_samba_smb.conf.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-5631a0cda1c7944796d8cb44d51967db">
+<img src="../../at2/at2e3/lamps/7_1_samba_smb.conf.PNG" alt="Capture" class="lightbox-image" loading="lazy">
+</a></p>
+<ul>
+<li>relancer les 2 services</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">service nmbd restart
+</span></span><span class="line"><span class="cl">service smbd restart
+</span></span></code></pre></div><ul>
+<li>tester notre fichier de conf</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">testparm
+</span></span></code></pre></div><ul>
+<li>chiffrer le user de la base de compte local Linux à la sauce windows</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">smbpasswd -a user
+</span></span></code></pre></div><h3 id="il-n-y-a-plus-quà-tester-via-lexplorateur-de-fichier-avec">il n&rsquo; y a plus qu&rsquo;à tester via l&rsquo;explorateur de fichier avec</h3>
+<p>
+<a href="#image-a326c2bbb50bb09564446948c44f9e4f" class="lightbox-link">
+<img src="../../at2/at2e3/lamps/7_2_samba_explorer.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-a326c2bbb50bb09564446948c44f9e4f">
+<img src="../../at2/at2e3/lamps/7_2_samba_explorer.PNG" alt="Capture" class="lightbox-image" loading="lazy">
+</a></p>
+<h2 id="8---script-de-sauvegarde-des-bases-de-donnees">8 - Script de sauvegarde des bases de données</h2>
+<p><em><strong>Le but est de créer une tâche automatique qui compresse en zip le dossier contenant les bases et qui le sauve dans un dossier à la date du jour ainsi que le contenu du dossier wiki</strong></em></p>
+<ul>
+<li>on crée le script dans /root</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> /root
+</span></span><span class="line"><span class="cl">touch backup.sh
+</span></span></code></pre></div><ul>
+<li>on lui donne les droits d&rsquo;exécution</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod +x backup.sh
+</span></span></code></pre></div><ul>
+<li>on l&rsquo;édite</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nano backup.sh
+</span></span></code></pre></div><p>avec :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash  
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="c1">#Scipt de backup auto de la BDD et du wiki pour le site user  </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#V1.0 par UserName le Date  </span>
+</span></span><span class="line"><span class="cl">clear  
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> Compression des fichiers...  
+</span></span><span class="line"><span class="cl">7zip -rq /home/user/<span class="k">$(</span>date +%Y%m%d%H%M%S<span class="k">)</span>_wiki_backup-fichiers.zip /home/user/wiki  
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> Dump de la base de données...  
+</span></span><span class="line"><span class="cl">mysqldump -u root -p <span class="s1">&#39;toor&#39;</span> --databases user &gt; /home/user/_wiki_backup-base.sql  
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> Compression de la base de données...  
+</span></span><span class="line"><span class="cl">zip -q /home/user/<span class="k">$(</span>date +%Y%m%d%H%M%S<span class="k">)</span>_wiki_backup-base.zip /home/user/_wiki_backup-base.sql  
+</span></span><span class="line"><span class="cl">rm /home/user/_wiki_backup-base.sql  
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> Terminé !
+</span></span></code></pre></div><p>(La chaine &rsquo;toor&rsquo; est le mot de passe de root sur mysql. Choisir un MDP fort pour un usage en production)</p>
+<h3 id="pour-tester-le-script">Pour tester le script</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> /root
+</span></span><span class="line"><span class="cl">./backup.sh
+</span></span></code></pre></div><p>ou plus simplement</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">/root/backup.sh
+</span></span></code></pre></div><h3 id="pour-automatiser-ce-script-">Pour automatiser ce script :</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">crontab -e
+</span></span></code></pre></div><ul>
+<li>choisir [1] pour ouverture avec nano</li>
+</ul>
+<h3 id="rajouter-la-ligne-cf-httpcrontabguruhttpcrontabguru">rajouter la ligne (cf <a href="http://crontab.guru" target="_blank">http://crontab.guru</a>)</h3>
+<blockquote>
+<p>*/5 * * * * /root/backup.sh</p>
+</blockquote>
+<ul>
+<li>cette directive exécute le script toutes les 5 minutes</li>
+</ul>
+<h2 id="9---installation-du-certificat-dans-webmin">9 - Installation du certificat dans Webmin</h2>
+<p>Dans un navigateur, accéder à l&rsquo;url : <a href="https://wiki.infra.lan:10000" target="_blank">https://wiki.infra.lan:10000</a> et se connercter avec root</p>
+<p>Puis dans Webmin &gt; Webmin Configuration &gt; SSL encryption (version en) :</p>
+<p>
+<a href="#image-fb423c990ce2eec8d86036d1aacd5c9b" class="lightbox-link">
+<img src="../../at2/at2e3/lamps/9_1_webmin_cert.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-fb423c990ce2eec8d86036d1aacd5c9b">
+<img src="../../at2/at2e3/lamps/9_1_webmin_cert.PNG" alt="Capture" class="lightbox-image" loading="lazy">
+</a></p>
+<p>Appliquer les changements en cliquant le bouton &lsquo;Save&rsquo; en bas à gauche de la page ; attendre quelques secondes puis recharger la page.</p>
+<h2 id="10---mediawiki">10 - MediaWiki</h2>
+<h3 id="installation-de-mediawiki">installation de MediaWiki</h3>
+<ul>
+<li>installation de l&rsquo;extention PHP intl (requise pour MediaWiki)</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">apt install php-intl
+</span></span><span class="line"><span class="cl">service apache2 restart
+</span></span></code></pre></div><ul>
+<li>installation de MediaWiki</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> /home/user
+</span></span><span class="line"><span class="cl">wget https://releases.wikimedia.org/mediawiki/1.38/mediawiki-1.38.2.zip
+</span></span><span class="line"><span class="cl">unzip mediawiki-1.38.2.zip
+</span></span><span class="line"><span class="cl">rm -R wiki
+</span></span><span class="line"><span class="cl">mv mediawiki-1.38.2 wiki
+</span></span><span class="line"><span class="cl">chown -R www-data:www-data /home/user/wiki
+</span></span><span class="line"><span class="cl">chmod -R <span class="m">775</span> /home/user/wiki
+</span></span></code></pre></div><h3 id="terminer-linstallation-de-mediawiki-via-le-navigateur">Terminer l&rsquo;installation de MediaWiki via le navigateur</h3>
+<ul>
+<li>
+<p>Dans le navigateur, aller à <a href="https://wiki.infra.lan" target="_blank">https://wiki.infra.lan</a></p>
+</li>
+<li>
+<p>cliquer sur le lien proposé pour démarrer l&rsquo;installation</p>
+</li>
+<li>
+<p>à la page &lsquo;Connexion à la base de données&rsquo;, choisir :</p>
+</li>
+</ul>
+<blockquote>
+<ul>
+<li><em>Type de base de données</em> : MariaDB, MySQL , ou compatible</li>
+<li><em>Nom d’hôte de la base de données</em> : localhost</li>
+<li><em>Nom de la base de données (sans tirets)</em> : user</li>
+<li><em>Préfixe des tables de la base de données (sans tirets)</em> : mw_</li>
+<li><em>Nom d’utilisateur de la base de données</em> : user</li>
+<li><em>Mot de passe de la base de données</em> : le mot de passe pour user défini plus haut dans PhpMyAdmin</li>
+</ul>
+</blockquote>
+<ul>
+<li>
+<p>à la page &lsquo;Nom&rsquo;, nommer le wiki (ie : wiki infra.lan) ; c&rsquo;est le nom qui figurera dans la barre de titre du navigateur ; puis renseigner un utilisateur qui sera administrateur du wiki (MDP 10 caractères minimum)</p>
+</li>
+<li>
+<p>On peut s&rsquo;arrêter là pour cet exemple. Il est néanmoins possible de spécifier des greffons supplémentaires en poursuivant l&rsquo;installation.</p>
+</li>
+<li>
+<p>Un fichier (LocalSettings.php) est généré et téléchargé par le navigateur. Il doit être copié à la racine wiki (dossier /home/user/wiki) avec Filezilla ou Samba. Si problème d&rsquo;écriture dans le dossier wiki, ressaisir les 3 commandes chown, usermod et chmod de la section apache telles que décrites au début de ce document.</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chown -R www-data:www-data /home/user/wiki
+</span></span><span class="line"><span class="cl">usermod -a -G www-data user
+</span></span><span class="line"><span class="cl">chmod -R <span class="m">775</span> /home/user/wiki
+</span></span></code></pre></div><h2 id="le-wiki-est-opérationnel-sur-httpswikiinfralanhttpswikiinfralan">Le wiki est opérationnel sur <a href="https://wiki.infra.lan" target="_blank">https://wiki.infra.lan</a></h2>
+<p>
+<a href="#image-9f305a4eb3b62699ae27e3b52dc33113" class="lightbox-link">
+<img src="../../at2/at2e3/lamps/10_1_wiki.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-9f305a4eb3b62699ae27e3b52dc33113">
+<img src="../../at2/at2e3/lamps/10_1_wiki.PNG" alt="Capture" class="lightbox-image" loading="lazy">
+</a></p>
+<p>On peut consulter la base de donnée en se connectant avec user à PhpMyAdmin sur <a href="https://wiki.infra.lan/pma" target="_blank">https://wiki.infra.lan/pma</a> : l&rsquo;installation de MediaWiki a généré 58 tables.</p>
+<p>
+<a href="#image-1ef5a0a255b896c308604645bb80188e" class="lightbox-link">
+<img src="../../at2/at2e3/lamps/10_1_wiki_pma.PNG" alt="Capture" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-1ef5a0a255b896c308604645bb80188e">
+<img src="../../at2/at2e3/lamps/10_1_wiki_pma.PNG" alt="Capture" class="lightbox-image" loading="lazy">
+</a></p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          </section>        </div>
+      </main>
+    </div>
+    <script src="../../js/clipboard.min.js" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+  </body>
+</html>

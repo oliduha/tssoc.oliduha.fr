@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="Docs formation Cefim TSSR">
+    <meta name="author" content="Olivier Duhamel">
+    <title>Automatiser les tâches à l&#39;aide de scripts - TSSOC</title>
+    <link href="https://www.tssoc.oliduha.fr/at3/at3e2/index.html" rel="canonical" type="text/html" title="Automatiser les tâches à l&#39;aide de scripts - TSSOC">
+    <link href="../../at3/at3e2/index.xml" rel="alternate" type="application/rss+xml" title="Automatiser les tâches à l&#39;aide de scripts - TSSOC">
+    <link href="../../images/logo.svg" rel="icon" type="image/svg+xml">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="../../css/fontawesome-all.min.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fontawesome-all.min.css" rel="stylesheet"></noscript>
+    <link href="../../css/nucleus.css" rel="stylesheet">
+    <link href="../../css/auto-complete.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/auto-complete.css" rel="stylesheet"></noscript>
+    <link href="../../css/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="../../css/fonts.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="../../css/fonts.css" rel="stylesheet"></noscript>
+    <link href="../../css/theme.css" rel="stylesheet">
+    <link href="../../css/theme-auto.css" rel="stylesheet" id="variant-style">
+    <link href="../../css/variant.css" rel="stylesheet">
+    <link href="../../css/print.css" rel="stylesheet" media="print">
+    <link href="../../css/format-print.css" rel="stylesheet">
+    <link href="../../css/ie.css" rel="stylesheet">
+    <script src="../../js/url.js"></script>
+    <script src="../../js/variant.js"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      window.index_js_url="../../index.search.js";
+      var root_url="../../";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copier dans le presse-papiers';
+      window.T_Copied_to_clipboard = 'Copié dans le presse-papiers !';
+      window.T_Copy_link_to_clipboard = 'Copier le lien dans le presse-papiers';
+      window.T_Link_copied_to_clipboard = 'Lien copié dans le presse-papiers !';
+      window.T_No_results_found = 'Aucun résultat trouvé pour \u0022{0}\u0022';
+      window.T_N_results_found = '{1} résultats trouvés pour \u0022{0}\u0022';
+      // some further base stuff
+      var baseUriFull='https:\/\/www.tssoc.oliduha.fr/';
+      window.variants && variants.init( [ 'auto', 'relearn-bright', 'relearn-light', 'relearn-dark', 'learn', 'neon', 'blue', 'green', 'red' ] );
+    </script>
+    <style>
+      #body img.bg-white {
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="../../at3/at3e2/index.html">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../index.html"><span itemprop="name">TSSOC</span></a><meta itemprop="position" content="1"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="../../at3/index.html"><span itemprop="name">Maintenir et exploiter une infrastructure distribuée et contribuer à sa sécurisation</span></a><meta itemprop="position" content="2"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Automatiser les tâches à l&#39;aide de scripts</span><meta itemprop="position" content="3"></li>
+            </ol>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable chapter narrow" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="chapter">
+<div class="article-subheading">Chapitre 2</div>
+<h1 id="automatiser-les-tâches-à-laide-de-scripts">Automatiser les tâches à l&#39;aide de scripts</h1>
+
+<hr>
+<h4 id="1-batchat3at3e2batch">1. <a href="../../at3/at3e2/batch/">Batch</a></h4>
+<h4 id="2-bashat3at3e2bash">2. <a href="../../at3/at3e2/bash/">Bash</a></h4>
+<h4 id="3-powershellat3at3e2powershell">3. <a href="../../at3/at3e2/powershell/">PowerShell</a></h4>
+<h4 id="4-stage-cefimat3at3e2stage-cefim">4. <a href="../../at3/at3e2/stage-cefim/">Stage Cefim</a></h4>
+<h4 id="5-pythonat3at3e2python">5. <a href="../../at3/at3e2/python/">Python</a></h4>
+<hr>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <section>
+            <h1 class="a11y-only">Sous-sections de Automatiser les tâches à l&#39;aide de scripts</h1>
+          <article class="chapter">
+<div class="article-subheading">Exemple 1</div>
+<h1 id="batch">Batch</h1>
+
+<hr>
+<h2 id="scripts-batch"><strong>Scripts batch</strong></h2>
+
+<div class="box notices cstyle note">
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Remarque</div>
+  <div class="box-content">
+<p>Le caractère <code>ESC</code> dans le code s&rsquo;obtient avec <code>ALT+027</code>.</p>
+<p><em>Il correpond au caractère d&rsquo;échappement ASCII.</em></p>
+  </div>
+</div>
+<hr>
+<h3 id="1-simple-ping">1. Simple ping</h3>
+<p>Simple script batch pour un outil de ping qui m&rsquo;a permis d&rsquo;expérimenter le rendu de couleur.</p>
+<p>
+<a href="#image-10798e371789e0561f48e90d02d5230a" class="lightbox-link">
+<img src="../../at3/at3e2/batch/myping_bat.png" alt="myping.bat" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-10798e371789e0561f48e90d02d5230a">
+<img src="../../at3/at3e2/batch/myping_bat.png" alt="myping.bat" class="lightbox-image" loading="lazy">
+</a></p>
+<hr>
+<h3 id="2-connexion-ssh">2. Connexion ssh</h3>
+<p>Un script offrant un menu permettant de choisir parmi différentes connexions ssh récurentes via cmd ou putty.</p>
+<p>
+<a href="#image-047b85f474709d8d77468f7d799232bd" class="lightbox-link">
+<img src="../../at3/at3e2/batch/cssh_bat.png" alt="cssh.bat" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-047b85f474709d8d77468f7d799232bd">
+<img src="../../at3/at3e2/batch/cssh_bat.png" alt="cssh.bat" class="lightbox-image" loading="lazy">
+</a></p>
+<hr>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="chapter">
+<div class="article-subheading">Exemple 2</div>
+<h1 id="bash">Bash</h1>
+
+<hr>
+<h2 id="scripts-bash"><strong>Scripts bash</strong></h2>
+<hr>
+<h3 id="1-script-de-sauvegarde-des-fichiers-et-de-la-base-de-donnees-du-site-wiki">1. Script de sauvegarde des fichiers et de la base de données du site wiki</h3>
+
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Information</div>
+  <div class="box-content">
+<p><strong>Contexte :</strong> 1 VM debian 11 LAMPS avec mediawiki.</p>
+<p><em>L&rsquo;objectif est de créer une tâche automatiquement éxecutée quotidiennement qui compresse en zip un dump de la BDD ainsi que le contenu du dossier wiki et le sauvegarde dans un dossier à la date du jour.</em></p>
+  </div>
+</div>
+<ul>
+<li>on se log en <code>root</code> on édite le script dans <code>/root</code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">su -
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span>
+</span></span><span class="line"><span class="cl">nano backup.sh
+</span></span></code></pre></div><ul>
+<li>avec :</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="c1">#Scipt de backup auto de la BDD et du wiki pour le site user</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#V1.0 par UserName le Date</span>
+</span></span><span class="line"><span class="cl">clear
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> Compression des fichiers...
+</span></span><span class="line"><span class="cl">7zip -rq /home/user/<span class="k">$(</span>date +%Y%m%d%H%M%S<span class="k">)</span>_wiki_backup-fichiers.zip /home/user/wiki
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> Dump de la base de données...
+</span></span><span class="line"><span class="cl">mysqldump -u root -p <span class="s1">&#39;toor&#39;</span> --databases user &gt; /home/user/_wiki_backup-base.sql
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> Compression de la base de données...
+</span></span><span class="line"><span class="cl"><span class="c1"># zip -m supprime l&#39;original / -q quiet</span>
+</span></span><span class="line"><span class="cl">zip -qm /home/user/<span class="k">$(</span>date +%Y%m%d%H%M%S<span class="k">)</span>_wiki_backup-base.zip /home/user/_wiki_backup-base.sql
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> Terminé !
+</span></span></code></pre></div>
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Information</div>
+  <div class="box-content">
+<p>La chaine <code>'toor'</code> est le mot de passe de root sur MySQL. <em><strong>Choisir un MDP fort pour un usage en production</strong></em></p>
+  </div>
+</div>
+<ul>
+<li>on l&rsquo;enregistre <code>[CTRL+S]</code> et on quitte nano <code>[CTRL+X]</code></li>
+<li>on lui donne les droits d&rsquo;exécution</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod +x backup.sh
+</span></span></code></pre></div><h4 id="pour-tester-le-script">Pour tester le script</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> /root
+</span></span><span class="line"><span class="cl">./backup.sh
+</span></span></code></pre></div><p>ou plus simplement</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">/root/backup.sh
+</span></span></code></pre></div><h4 id="pour-automatiser-ce-script">Pour automatiser ce script</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">crontab -e
+</span></span></code></pre></div><ul>
+<li>
+<p>choisir [1] pour ouverture avec nano</p>
+</li>
+<li>
+<p>rajouter la ligne (cf <a href="http://crontab.guru" target="_blank">http://crontab.guru</a>)</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">*/5 * * * * /root/backup.sh
+</span></span></code></pre></div><p>-&gt; cette directive exécute le script toutes les 5 minutes (pour tests)</p>
+<p>ou</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="m">0</span> <span class="m">0</span> * * * /root/backup.sh
+</span></span></code></pre></div><p>-&gt; exécute le script tous les jours à 00h00</p>
+<ul>
+<li><strong>sortir du compte root avec <code>[CTRL+D]</code> ou <code>exit</code></strong></li>
+</ul>
+<hr>
+<h3 id="2-script-de-décompression-suivant-le-format-dans-bash_aliases">2. Script de décompression suivant le format dans ~/.bash_aliases</h3>
+<p>Sur une machine à mon domicile installée sous Linux Bodhi, une distribution légère basée sur Ubuntu 20.04 et disposant de Moksha Desktop, j&rsquo;ai mis en place ce fichier <code>.bash_aliases</code> pour mon compte utilisateur courant (<em>sudo configuré</em>). Il contient, outre des alias pour diverses commande que j&rsquo;utilise plus ou moins fréquemment, une fonction en bash qui extrait un fichier passé en argument.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">  GNU nano 4.8                                               .bash_aliases
+</span></span><span class="line"><span class="cl"><span class="c1"># Personnal aliases</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">maj</span><span class="o">=</span><span class="s2">&#34;sudo apt-get update &amp;&amp; sudo apt-get upgrade -y&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">tt</span><span class="o">=</span><span class="s2">&#34;sudo watch sensors&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">flic</span><span class="o">=</span><span class="s2">&#34;sudo nmap -v -Pn -A&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">pg</span><span class="o">=</span><span class="s2">&#34;ping google.fr&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">p1</span><span class="o">=</span><span class="s2">&#34;ping 1.1.1.1&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">logm</span><span class="o">=</span><span class="s2">&#34;sudo tail -f /var/log/messages | ccze -A&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">logs</span><span class="o">=</span><span class="s2">&#34;sudo tail -f /var/log/syslog | ccze -A&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">logi</span><span class="o">=</span><span class="s2">&#34;sudo tail -f /var/log/iptables.log | ccze -A&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">logii</span><span class="o">=</span><span class="s2">&#34;sudo tail -f /var/log/iptables-input.log | ccze -A&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">logio</span><span class="o">=</span><span class="s2">&#34;sudo tail -f /var/log/iptables-output.log | ccze -A&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">logif</span><span class="o">=</span><span class="s2">&#34;sudo tail -f /var/log/iptables-forward.log | ccze -A&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">iptln</span><span class="o">=</span><span class="s2">&#34;sudo iptables -L --line-numbers&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">beton</span><span class="o">=</span><span class="s2">&#34;mplayer https://stream.radiobeton.com:8001/stream.mp3&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">lynis</span><span class="o">=</span><span class="s2">&#34;/usr/local/lynis/lynis audit system&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">srcali</span><span class="o">=</span><span class="s2">&#34;source ~/.bash_aliases&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">srcrc</span><span class="o">=</span><span class="s2">&#34;source ~/.bashrc&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">rcwgui</span><span class="o">=</span><span class="s2">&#34;rclone rcd --rc-web-gui&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">bd</span><span class="o">=</span><span class="s2">&#34;cd ..&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Fonction to extract file passed as arg</span>
+</span></span><span class="line"><span class="cl">xtrct <span class="o">()</span>
+</span></span><span class="line"><span class="cl"><span class="o">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="o">[</span> -f <span class="nv">$1</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="nv">$1</span> in
+</span></span><span class="line"><span class="cl">      *.tar.bz2<span class="o">)</span>   tar xjf <span class="nv">$1</span>   <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">      *.tar.gz<span class="o">)</span>    tar xzf <span class="nv">$1</span>   <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">      *.bz2<span class="o">)</span>       bunzip2 <span class="nv">$1</span>   <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">      *.rar<span class="o">)</span>       unrar x <span class="nv">$1</span>   <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">      *.gz<span class="o">)</span>        gunzip <span class="nv">$1</span>    <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">      *.tar<span class="o">)</span>       tar xf <span class="nv">$1</span>    <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">      *.tar.xz<span class="o">)</span>    tar xf <span class="nv">$1</span>    <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">      *.tbz2<span class="o">)</span>      tar xjf <span class="nv">$1</span>   <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">      *.tgz<span class="o">)</span>       tar xzf <span class="nv">$1</span>   <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">      *.zip<span class="o">)</span>       unzip <span class="nv">$1</span>     <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">      *.Z<span class="o">)</span>         uncompress <span class="nv">$1</span><span class="p">;;</span>
+</span></span><span class="line"><span class="cl">      *.7z<span class="o">)</span>        7z x <span class="nv">$1</span>      <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">      *<span class="o">)</span>           <span class="nb">echo</span> <span class="s2">&#34;&#39;</span><span class="nv">$1</span><span class="s2">&#39; ne peut etre extrait par xtrct()&#34;</span> <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">esac</span>
+</span></span><span class="line"><span class="cl">  <span class="k">else</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;&#39;</span><span class="nv">$1</span><span class="s2">&#39; : format de fichier invalide&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Usage : xtrct [fichier]&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">fi</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><hr>
+<h3 id="3-automatisation-du-renouvellement-dun-certificat-lets-encrypt-tous-les-3-mois">3. Automatisation du renouvellement d&rsquo;un certificat Let&rsquo;s Encrypt tous les 3 mois</h3>
+<p><em><code>certbot</code> doit être installé sur la machine et un certificat doit être configuré sur son nom de domain.</em></p>
+<p>L&rsquo;opération s&rsquo;effectue uniquement via crontab</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">crontab -e
+</span></span></code></pre></div><p>on ajoute :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="m">0</span> <span class="m">0</span> <span class="m">1</span> */3 * certbot renew --apache --domain oduhamel.oliduha.fr -n
+</span></span></code></pre></div><p><em>La commande sera éxectutée tous les 3 mois, le 1er jour du mois</em></p>
+<hr>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="chapter">
+<div class="article-subheading">Exemple 3</div>
+<h1 id="powershell">PowerShell</h1>
+
+<hr>
+<h2 id="scripts-powershell"><strong>Scripts PowerShell</strong></h2>
+<hr>
+<h3 id="1-script-powershell-dimport-dutilisateurs-dans-un-ad-à-partir-dun-csv">1. Script PowerShell d’import d’utilisateurs dans un AD à partir d’un .csv</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span>
+</span></span><span class="line"><span class="cl"><span class="c"># Script d&#39;import d&#39;utisateur dans un AD depuis un .csv</span>
+</span></span><span class="line"><span class="cl"><span class="c"># xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$users</span> <span class="p">=</span> <span class="nb">import-csv</span> <span class="n">-path</span> <span class="s2">&#34;C:\Users\Olivier\Desktop\import.csv&#34;</span> <span class="n">-delimiter</span> <span class="s2">&#34;;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">foreach</span><span class="p">(</span><span class="nv">$user</span> <span class="k">in</span> <span class="nv">$users</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$nom</span> <span class="p">=</span> <span class="nv">$user</span><span class="p">.</span><span class="py">nom</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$prenom</span><span class="p">=</span> <span class="nv">$user</span><span class="p">.</span><span class="py">prenom</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$nomComplet</span> <span class="p">=</span> <span class="nv">$prenom</span> <span class="p">+</span> <span class="s2">&#34; &#34;</span> <span class="p">+</span><span class="nv">$nom</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$idSAM</span> <span class="p">=</span> <span class="nv">$prenom</span><span class="p">.</span><span class="py">substring</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="mf">1</span><span class="p">)</span> <span class="p">+</span> <span class="nv">$nom</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$id</span> <span class="p">=</span> <span class="nv">$idSAM</span> <span class="p">+</span> <span class="s2">&#34;@tssr.lan&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$pass</span><span class="p">=</span> <span class="nb">ConvertTo-SecureString</span> <span class="s2">&#34;1234&#34;</span> <span class="n">-AsPlaintext</span> <span class="n">-Force</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="nb">New-ADuser</span> <span class="n">-name</span> <span class="nv">$idSAM</span> <span class="n">-DisplayName</span> <span class="nv">$nomComplet</span> <span class="n">-givenname</span> <span class="nv">$prenom</span> <span class="n">-surname</span> <span class="nv">$nom</span> <span class="n">-Path</span> <span class="s2">&#34;OU=usagers,DC=tssr,DC=lan&#34;</span> <span class="n">-UserPrincipalName</span> <span class="nv">$id</span> <span class="n">-AccountPassword</span> <span class="nv">$pass</span> <span class="n">-Enabled</span> <span class="vm">$true</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
+<div class="box notices cstyle warning">
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-triangle"></i> Attention</div>
+  <div class="box-content">
+<p><strong>Pour l&rsquo;option <code>-Path</code> de la commande <code>New-ADuser</code> l&rsquo;ordre des OU et DC est important (surtout dans le cas d&rsquo;OU imbiquées) : il faut commencer par l&rsquo;extrémité et décrire le chemin en remontant dans l&rsquo;arborescence.</strong></p>
+<p><em>Par exemple</em> : pour une sous-OU telle que <code>users\si\network</code> du domaine <code>tssr.lan</code> il faudrait indiquer : <code>-Path &quot;OU=network,OU=si,OU=users,DC=tssr,DC=lan&quot;</code>.</p>
+  </div>
+</div>
+<hr>
+<h3 id="2-script-powershell-dajout-dutilisateurs-fictifs-dans-un-ad-pour-tests">2. Script PowerShell d’ajout d’utilisateurs fictifs dans un AD pour tests</h3>
+<p><em>Cette variante du script précédent ne nécessite pas de fichier .csv et génère des noms d&rsquo;utilisateurs fictifs</em></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span>
+</span></span><span class="line"><span class="cl"><span class="c"># Script d’ajout d’utilisateurs fictifs dans un AD pour tests</span>
+</span></span><span class="line"><span class="cl"><span class="c"># xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span><span class="p">(</span><span class="nv">$num</span><span class="p">=</span><span class="mf">1</span><span class="p">;</span> <span class="nv">$num</span> <span class="o">-le</span> <span class="mf">50</span><span class="p">;</span> <span class="nv">$num</span><span class="p">++)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$nom</span> <span class="p">=</span> <span class="s2">&#34;utilisateur&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$nomComplet</span> <span class="p">=</span> <span class="nv">$nom</span><span class="p">.</span><span class="py">ToTitleCase</span> <span class="p">+</span> <span class="s2">&#34; &#34;</span> <span class="p">+</span> <span class="nv">$num</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$idSAM</span> <span class="p">=</span> <span class="nv">$nom</span> <span class="p">+</span> <span class="nv">$num</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$id</span> <span class="p">=</span> <span class="nv">$idSAM</span> <span class="p">+</span> <span class="s2">&#34;@lyon2024.intra&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$mail</span> <span class="p">=</span> <span class="nv">$idSAM</span> <span class="p">+</span> <span class="s2">&#34;@lyon.com&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$city</span> <span class="p">=</span> <span class="s2">&#34;Lyon&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$company</span> <span class="p">=</span> <span class="s2">&#34;Worldskills&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$group</span> <span class="p">=</span> <span class="s2">&#34;Finances&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$pass</span><span class="p">=</span> <span class="nb">ConvertTo-SecureString</span> <span class="s2">&#34;P@ssw0rd&#34;</span> <span class="n">-AsPlaintext</span> <span class="n">-Force</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="nb">New-ADuser</span> <span class="n">-name</span> <span class="nv">$idSAM</span> <span class="n">-DisplayName</span> <span class="nv">$nomComplet</span> <span class="n">-Path</span> <span class="s2">&#34;OU=Worldskills,OU=Utilisateurs,OU=auto,DC=lyon2024,DC=intra&#34;</span> <span class="n">-UserPrincipalName</span> <span class="nv">$id</span> <span class="n">-AccountPassword</span> <span class="nv">$pass</span> <span class="n">-Enabled</span> <span class="vm">$true</span> <span class="n">-MailAddress</span> <span class="nv">$mail</span> <span class="n">-City</span> <span class="nv">$city</span> <span class="n">-Company</span> <span class="nv">$company</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">Add-ADGroupMember</span> <span class="n">-identity</span> <span class="s2">&#34;Finances&#34;</span> <span class="n">-Members</span> <span class="nv">$idSaAM</span>
+</span></span></code></pre></div><hr>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="chapter">
+<div class="article-subheading">Exemple 4</div>
+<h1 id="stage-cefim">Stage Cefim</h1>
+
+<hr>
+<h2 id="présentation"><strong>Présentation</strong></h2>
+<p>Projet de simplification et rationnalisation de l&rsquo;utilisation des vouchers pour le réseau Wifi CEFIM_PEDAGO réalisé sur Google Workspace avec Apps Script :</p>
+<p>Voir : <a href="../../at2/at2e2/stage-cefim/">Sécuriser les accès à Internet - Stage Cefim</a></p>
+<hr>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+          <article class="chapter">
+<div class="article-subheading">Exemple 5</div>
+<h1 id="python">Python</h1>
+
+<hr>
+<h2 id="scripts-python"><strong>Scripts python</strong></h2>
+<hr>
+
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Information</div>
+  <div class="box-content">
+<p>Le projet &ldquo;ScrapPy&rdquo; est disponible et documenté sur
+<span class="btn cstyle transparent">
+<a href="https://github.com/oliduha/scrappy/" target="_blank">
+github
+</a>
+</span></p>
+  </div>
+</div>
+<p>Voici le contenu du module scrapper.py contenant les diverses fonctions appelées depuis le code principal (main.py).</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">import</span> <span class="nn">requests</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">import</span> <span class="nn">bs4</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">import</span> <span class="nn">json</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">import</span> <span class="nn">csv</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Erreur d&#39;import : &#34;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">import</span> <span class="nn">requests</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">import</span> <span class="nn">bs4</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">import</span> <span class="nn">json</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">import</span> <span class="nn">csv</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># cf : https://stackoverflow.com/questions/287871/how-do-i-print-colored-text-to-the-terminal</span>
+</span></span><span class="line"><span class="cl"><span class="n">col_red</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\033</span><span class="s1">[91m&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">col_green</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\33</span><span class="s1">[92m&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">col_yellow</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\033</span><span class="s1">[93m&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">col_end</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\033</span><span class="s1">[0m&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">scrap</span><span class="p">(</span><span class="n">links</span><span class="p">,</span> <span class="n">make_csv</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">make_json</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">aio</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">list_titre</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">list_a</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">list_csv</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dict_json</span> <span class="o">=</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">file_name</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">links</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">file_name</span> <span class="o">=</span> <span class="n">links</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="n">link</span> <span class="o">=</span> <span class="n">links</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># On récupère le contenu de la page en cours</span>
+</span></span><span class="line"><span class="cl">        <span class="n">req_scrap</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">col_yellow</span> <span class="o">+</span> <span class="s2">&#34;Lecture de la page : &#34;</span> <span class="o">+</span> <span class="n">col_end</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2"> [</span><span class="si">{</span><span class="n">links</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">]&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># On parse le html avec BeautifulSoup</span>
+</span></span><span class="line"><span class="cl">        <span class="n">table</span> <span class="o">=</span> <span class="n">bs4</span><span class="o">.</span><span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">req_scrap</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s2">&#34;html.parser&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&#34;table&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">list_b</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>  <span class="c1"># On récupère tous les &lt;b&gt; de la table</span>
+</span></span><span class="line"><span class="cl">        <span class="n">list_tr</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s1">&#39;tr&#39;</span><span class="p">)</span>  <span class="c1"># On récupère tous les &lt;tr&gt; de la table</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># On ajoute le texte des &lt;b&gt; dans la liste</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">list_b</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">list_titre</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># Pour chaque ligne</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">tr</span> <span class="ow">in</span> <span class="n">list_tr</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">list_td</span> <span class="o">=</span> <span class="n">tr</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s1">&#39;td&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="n">td</span> <span class="ow">in</span> <span class="n">list_td</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">list_p</span> <span class="o">=</span> <span class="n">td</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">list_p</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="c1"># Si le contenu n&#39;est pas un \n</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">if</span> <span class="n">p</span> <span class="o">!=</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                        <span class="c1"># Si &lt;a&gt; est présent</span>
+</span></span><span class="line"><span class="cl">                        <span class="k">if</span> <span class="n">td</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">                            <span class="n">list_a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">                        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                            <span class="n">list_a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">make_csv</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="n">col_yellow</span> <span class="o">+</span> <span class="s2">&#34;Préparation des donnée csv...&#34;</span> <span class="o">+</span> <span class="n">col_end</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">list_csv</span> <span class="o">=</span> <span class="p">[</span><span class="n">list_titre</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">aio</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">list_csv</span> <span class="o">+=</span> <span class="n">prepare_scv</span><span class="p">(</span><span class="n">list_a</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">file_name</span> <span class="o">=</span> <span class="s2">&#34;Port de 0 à 65535&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">list_csv</span> <span class="o">=</span> <span class="p">[</span><span class="n">list_titre</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">                <span class="n">list_csv</span> <span class="o">+=</span> <span class="n">prepare_scv</span><span class="p">(</span><span class="n">list_a</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">make_json</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="n">col_yellow</span> <span class="o">+</span> <span class="s2">&#34;Préparation des donnée json...&#34;</span> <span class="o">+</span> <span class="n">col_end</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">aio</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">dict_json</span> <span class="o">=</span> <span class="p">{</span><span class="o">**</span><span class="n">dict_json</span><span class="p">,</span> <span class="o">**</span><span class="n">prepare_json</span><span class="p">(</span><span class="n">list_tr</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)}</span>
+</span></span><span class="line"><span class="cl">                <span class="n">file_name</span> <span class="o">=</span> <span class="s2">&#34;Port de 0 à 65535&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">dict_json</span> <span class="o">=</span> <span class="n">prepare_json</span><span class="p">(</span><span class="n">list_tr</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">make_csv</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">create_scv</span><span class="p">(</span><span class="n">list_csv</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">make_json</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">create_json</span><span class="p">(</span><span class="n">dict_json</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">prepare_scv</span><span class="p">(</span><span class="n">lst_a</span><span class="p">,</span> <span class="n">csv_file_name</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># CSV FILE #######################</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">col_yellow</span><span class="si">}</span><span class="s2">Traitement des données de </span><span class="si">{</span><span class="n">csv_file_name</span><span class="si">}</span><span class="s2"> pour csv...</span><span class="si">{</span><span class="n">col_end</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># On supprime les 4 premiers éléments (les titres) de la liste</span>
+</span></span><span class="line"><span class="cl">    <span class="n">list_elem</span> <span class="o">=</span> <span class="n">lst_a</span><span class="p">[</span><span class="mi">4</span><span class="p">:]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">list_csv</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">list_elem</span><span class="p">),</span> <span class="mi">4</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">list_csv</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">list_elem</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span> <span class="o">+</span> <span class="mi">4</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># On vérifie l&#39;existence de l&#39;arborescence et on la crée si besoin</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s2">&#34;exports/csv&#34;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s2">&#34;exports/csv&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">list_csv</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">create_scv</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">csv_file_name</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">csv_file_name</span> <span class="o">=</span> <span class="n">csv_file_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">,</span> <span class="s2">&#34;_&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># On écrit dans le fichier csv les éléments de chaque ligne</span>
+</span></span><span class="line"><span class="cl">    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;exports/csv/&#34;</span> <span class="o">+</span> <span class="n">csv_file_name</span> <span class="o">+</span> <span class="s1">&#39;.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">csvfile</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">col_green</span> <span class="o">+</span> <span class="s2">&#34;Fichier &#34;</span> <span class="o">+</span> <span class="n">csv_file_name</span> <span class="o">+</span> <span class="s2">&#34;.csv créé !&#34;</span> <span class="o">+</span> <span class="n">col_end</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">prepare_json</span><span class="p">(</span><span class="n">list_tr</span><span class="p">,</span> <span class="n">json_file_name</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># JSON FILE ##########################</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">col_yellow</span><span class="si">}</span><span class="s2">Traitement des données de </span><span class="si">{</span><span class="n">json_file_name</span><span class="si">}</span><span class="s2"> pour json...</span><span class="si">{</span><span class="n">col_end</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Suppression des titres</span>
+</span></span><span class="line"><span class="cl">    <span class="n">lines_soups</span> <span class="o">=</span> <span class="n">list_tr</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 3. Structurer les données</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dict_json</span> <span class="o">=</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">line_soup</span> <span class="ow">in</span> <span class="n">lines_soups</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">columns_soups</span> <span class="o">=</span> <span class="n">line_soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&#34;p&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">port_name</span> <span class="o">=</span> <span class="n">columns_soups</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">string</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">port_number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">columns_soups</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&#34;a&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">string</span><span class="p">)</span>  <span class="c1"># Ajout du parsing</span>
+</span></span><span class="line"><span class="cl">        <span class="n">port_protocol</span> <span class="o">=</span> <span class="n">columns_soups</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&#34;a&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">string</span>
+</span></span><span class="line"><span class="cl">        <span class="n">port_description</span> <span class="o">=</span> <span class="n">columns_soups</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">string</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">port_number</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">dict_json</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">dict_json</span><span class="p">[</span><span class="n">port_number</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">port_protocol</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">dict_json</span><span class="p">[</span><span class="n">port_number</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">dict_json</span><span class="p">[</span><span class="n">port_number</span><span class="p">][</span><span class="n">port_protocol</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">dict_json</span><span class="p">[</span><span class="n">port_number</span><span class="p">][</span><span class="n">port_protocol</span><span class="p">][</span><span class="n">port_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">port_description</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">dict_json</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">create_json</span><span class="p">(</span><span class="n">dict_json</span><span class="p">,</span> <span class="n">json_file_name</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">json_file_name</span> <span class="o">=</span> <span class="n">json_file_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">,</span> <span class="s2">&#34;_&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># On vérifie l&#39;existence de l&#39;arborescence</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s2">&#34;exports/json&#34;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># Et on la crée si besoin</span>
+</span></span><span class="line"><span class="cl">        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s2">&#34;exports/json&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># On écrit dans le fichier json les éléments de dict_json</span>
+</span></span><span class="line"><span class="cl">    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;exports/json/&#34;</span> <span class="o">+</span> <span class="n">json_file_name</span> <span class="o">+</span> <span class="s1">&#39;.json&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">jsonfile</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">dict_json</span><span class="p">,</span> <span class="n">jsonfile</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">col_green</span> <span class="o">+</span> <span class="s2">&#34;Fichier &#34;</span> <span class="o">+</span> <span class="n">json_file_name</span> <span class="o">+</span> <span class="s2">&#34;.json créé !&#34;</span> <span class="o">+</span> <span class="n">col_end</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">test_cnx</span><span class="p">(</span><span class="n">url_cnx</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># On récupère le contenu de la page en cours avec gestion des erreurs</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">req_test</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url_cnx</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">ConnectionError</span> <span class="k">as</span> <span class="n">er</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">col_red</span> <span class="o">+</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Erreur : Vérifiez votre connexion à Internet.&#34;</span> <span class="o">+</span> <span class="n">col_end</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">er</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">Timeout</span> <span class="k">as</span> <span class="n">er</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">col_red</span> <span class="o">+</span> <span class="s2">&#34;Erreur : Timeout.&#34;</span> <span class="o">+</span> <span class="n">col_end</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">er</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">RequestException</span> <span class="k">as</span> <span class="n">er</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">col_red</span> <span class="o">+</span> <span class="s2">&#34;Erreur générale.&#34;</span> <span class="o">+</span> <span class="n">col_end</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">er</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">col_yellow</span> <span class="o">+</span> <span class="s2">&#34;Le programme a été fermé&#34;</span><span class="p">,</span> <span class="n">col_end</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">req_test</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>  <span class="c1"># Si le site est en ligne</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">col_green</span> <span class="o">+</span> <span class="s1">&#39;OK, la page est en ligne !&#39;</span><span class="p">,</span> <span class="n">col_end</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># Si le site est en maintenance ou hors ligne</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">col_red</span> <span class="o">+</span> <span class="s2">&#34;Erreur : La page renvoi le code d&#39;état&#34;</span><span class="p">,</span> <span class="n">req_test</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="n">col_end</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">read_headers</span><span class="p">(</span><span class="n">url_h</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">req_h</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url_h</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">col_yellow</span> <span class="o">+</span> <span class="s2">&#34;Headers :&#34;</span> <span class="o">+</span> <span class="n">col_end</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">header</span> <span class="ow">in</span> <span class="n">req_h</span><span class="o">.</span><span class="n">headers</span><span class="p">:</span>  <span class="c1"># On affiche les headers</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">header</span><span class="p">,</span> <span class="n">req_h</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="n">header</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">req_h</span><span class="o">.</span><span class="n">headers</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">cookies</span><span class="p">(</span><span class="n">url_c</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">col_yellow</span><span class="si">}</span><span class="s2">Cookies : </span><span class="si">{</span><span class="n">col_end</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># On récupère la session</span>
+</span></span><span class="line"><span class="cl">    <span class="k">with</span> <span class="n">requests</span><span class="o">.</span><span class="n">session</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">req_c</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url_c</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">cok</span> <span class="ow">in</span> <span class="n">req_c</span><span class="o">.</span><span class="n">cookies</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">cok</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">req_c</span><span class="o">.</span><span class="n">cookies</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">all_links</span><span class="p">(</span><span class="n">url_l</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">req_l</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url_l</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">ConnectionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">col_red</span><span class="si">}</span><span class="se">\n</span><span class="s2">Erreur ! Vérifiez l&#39;URL saisie :</span><span class="si">{</span><span class="n">col_end</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">{</span><span class="s2">&#34;ERREUR&#34;</span><span class="p">:</span> <span class="s2">&#34;Vérifiez l&#39;URL saisie&#34;</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">Timeout</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">col_red</span><span class="si">}</span><span class="se">\n</span><span class="s2">Erreur ! Timeout :</span><span class="si">{</span><span class="n">col_end</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">{</span><span class="s2">&#34;ERREUR&#34;</span><span class="p">:</span> <span class="s2">&#34;Timeout&#34;</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">RequestException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">col_red</span><span class="si">}</span><span class="se">\n</span><span class="s2">Erreur générale :</span><span class="si">{</span><span class="n">col_end</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">{</span><span class="s2">&#34;ERREUR&#34;</span><span class="p">:</span> <span class="s2">&#34;Générale&#34;</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">col_yellow</span><span class="si">}</span><span class="se">\n</span><span class="s2">Le programme a été fermé</span><span class="si">{</span><span class="n">col_end</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">{</span><span class="s2">&#34;ERREUR&#34;</span><span class="p">:</span> <span class="s2">&#34;Le programme a été fermé&#34;</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Erreur inconnue !&#34;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">{</span><span class="s2">&#34;ERREUR&#34;</span><span class="p">:</span> <span class="s2">&#34;inconnue&#34;</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">col_yellow</span><span class="si">}</span><span class="s2">Liens : </span><span class="si">{</span><span class="n">col_end</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dict_links</span> <span class="o">=</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># On parse le html avec BeautifulSoup</span>
+</span></span><span class="line"><span class="cl">    <span class="n">page</span> <span class="o">=</span> <span class="n">bs4</span><span class="o">.</span><span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">req_l</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s2">&#34;html.parser&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&#34;body&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">list_links</span> <span class="o">=</span> <span class="n">page</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>  <span class="c1"># On récupère toutes les balises &lt;a&gt; de la page</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">list_links</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">url_pattern</span> <span class="o">=</span> <span class="s2">&#34;^https?:</span><span class="se">\\</span><span class="s2">/</span><span class="se">\\</span><span class="s2">/(?:www</span><span class="se">\\</span><span class="s2">.)?[-a-zA-Z0-9@:%._</span><span class="se">\\</span><span class="s2">+~#=]{1,256}</span><span class="se">\\</span><span class="s2">.[a-zA-Z0-9()]{1,6}</span><span class="se">\\</span><span class="s2">b(?:[-a-zA-Z0-9() </span><span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span><span class="s2">                  @:%_</span><span class="se">\\</span><span class="s2">+.~#?&amp;</span><span class="se">\\</span><span class="s2">/=]*)$&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">link</span><span class="o">.</span><span class="n">string</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">link</span><span class="o">.</span><span class="n">string</span> <span class="o">=</span> <span class="s2">&#34;N.A.&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># On vérifie si URL est correcte</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">url_pattern</span><span class="p">,</span> <span class="n">link</span><span class="p">[</span><span class="s2">&#34;href&#34;</span><span class="p">]):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">dict_links</span><span class="p">[</span><span class="n">link</span><span class="o">.</span><span class="n">string</span><span class="p">]</span> <span class="o">=</span> <span class="n">link</span><span class="p">[</span><span class="s2">&#34;href&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">nbl</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">dict_links</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">nbl</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">nbl</span><span class="si">}</span><span class="s2">-[</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">] </span><span class="si">{</span><span class="n">dict_links</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">dict_links</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Oli ############</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># print(__name__)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># url = &#34;https://www.frameip.com/liste-des-ports.php/?plage=1&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">url</span> <span class="o">=</span> <span class="s2">&#34;https://www.google.com&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># scrap(url)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># read_headers(url)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cookies</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">##################</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Bryan ##########</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># print(__name__)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># if __name__ == &#34;__main__&#34;:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     url = &#34;https://www.frameip.com/liste-des-ports.php&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     scrap(url)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     read_headers(url)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     cookies(url)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">##################</span>
+</span></span></code></pre></div>
+            <footer class="footline">
+            </footer>
+          </article>
+
+          </section>        </div>
+      </main>
+    </div>
+    <script src="../../js/clipboard.min.js" defer></script>
+    <script src="../../js/perfect-scrollbar.min.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+  </body>
+</html>

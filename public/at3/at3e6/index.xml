@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Assurer sa veille technologique on TSSOC</title>
+    <link>https://www.tssoc.oliduha.fr/at3/at3e6/index.html</link>
+    <description>Recent content in Assurer sa veille technologique on TSSOC</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language><atom:link href="https://www.tssoc.oliduha.fr/at3/at3e6/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Feedly</title>
+      <link>https://www.tssoc.oliduha.fr/at3/at3e6/feedly/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.tssoc.oliduha.fr/at3/at3e6/feedly/index.html</guid>
+      <description>Agrégation RSS avec Feedly Feedly permet de s&amp;rsquo;abonner aux flux RSS de tout site web dont on souhaite suivre l&amp;rsquo;actualité, ce qui en fait un outil efficace pour effectuer sa veille technologique.
+Personnellement je suis abonné aux flux suivants répartis en 3 catégories (limite d&amp;rsquo;un compte gratuit) :
+Cybersecurité : Le Monde Informatique - Actualités CERT-FR Mitre ATT&amp;amp;CK NIST - National Vulnerability Database Newest CVEs from Tenable 01.net - Sécurité Le Monde - Sécurité Informatique zataz Developpement : developpez.</description>
+    </item>
+  </channel>
+</rss>

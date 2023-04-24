@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Maintenir, exploiter et sécuriser une infrastructure centralisée on TSSOC</title>
+    <link>https://www.tssoc.oliduha.fr/at2/index.html</link>
+    <description>Recent content in Maintenir, exploiter et sécuriser une infrastructure centralisée on TSSOC</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language><atom:link href="https://www.tssoc.oliduha.fr/at2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Maintenir et exploiter le réseau local et la téléphonie</title>
+      <link>https://www.tssoc.oliduha.fr/at2/at2e1/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.tssoc.oliduha.fr/at2/at2e1/index.html</guid>
+      <description> 1. Réseau local </description>
+    </item>
+    <item>
+      <title>Sécuriser les accès à Internet</title>
+      <link>https://www.tssoc.oliduha.fr/at2/at2e2/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.tssoc.oliduha.fr/at2/at2e2/index.html</guid>
+      <description> 1. Stage Cefim </description>
+    </item>
+    <item>
+      <title>Maintenir et exploiter un serveur Linux</title>
+      <link>https://www.tssoc.oliduha.fr/at2/at2e3/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.tssoc.oliduha.fr/at2/at2e3/index.html</guid>
+      <description> 1. Serveur LAMPS </description>
+    </item>
+    <item>
+      <title>Maintenir et exploiter un environnement virtualisé</title>
+      <link>https://www.tssoc.oliduha.fr/at2/at2e4/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.tssoc.oliduha.fr/at2/at2e4/index.html</guid>
+      <description> 1. TP Infra </description>
+    </item>
+    <item>
+      <title>Maintenir et exploiter un domaine Active Directory et les serveurs Windows</title>
+      <link>https://www.tssoc.oliduha.fr/at2/at2e5/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.tssoc.oliduha.fr/at2/at2e5/index.html</guid>
+      <description> 1. Migration AD </description>
+    </item>
+  </channel>
+</rss>

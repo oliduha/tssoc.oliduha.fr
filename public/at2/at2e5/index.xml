@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Maintenir et exploiter un domaine Active Directory et les serveurs Windows on TSSOC</title>
+    <link>https://www.tssoc.oliduha.fr/at2/at2e5/index.html</link>
+    <description>Recent content in Maintenir et exploiter un domaine Active Directory et les serveurs Windows on TSSOC</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language><atom:link href="https://www.tssoc.oliduha.fr/at2/at2e5/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Migrations Active Directory</title>
+      <link>https://www.tssoc.oliduha.fr/at2/at2e5/ad/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.tssoc.oliduha.fr/at2/at2e5/ad/index.html</guid>
+      <description>Introduction Entreprise : 2 DNS : interne et externe
+L&amp;rsquo;AD et le DNS sont fusionnés en entreprise.
+L&amp;rsquo;AD est le rôle principal dans une entreprise, il permet la sécurité, l&amp;rsquo;authentification utilisateur. On y retrouve les comptes, les mdp, les groupes, les serveurs.
+C&amp;rsquo;est le noyau d&amp;rsquo;une infrastructure système. Tout tourne autour de lui.
+C&amp;rsquo;est grâce à l&amp;rsquo;AD qu&amp;rsquo;on peut faire du SSO (jeton pour la &amp;ldquo;journée&amp;rdquo; d&amp;rsquo;authentification).
+DNS DNS exterieur DNS interne lié à l&amp;rsquo;AD (1) FAI &amp;gt; pool IP publique + ligne internet (1)Onglet redirecteur : les 2 IP publique des DNS externes (pour rebalancer si non connnu en interne) NAT IP internet vers IP publique (2) Fournisseur nom de domaine &amp;gt; DNS public + zone DNS exterieure Mep lien DNS publique sur IP publique mep lien vers IP privées/internes sur enregistrements et noms A (nom&amp;gt;ip), TXT, MX (mail), PTR (reverse A ; pas de pointeurs dans un server DNS publique), NS (server DNS), SOA (enr principal dns), CNAME (autre nom) Idem : A, TXT, MX, PTR, NS, SOA, CNAME Zone DNS ext = on fait pointer IP publique vers ex.</description>
+    </item>
+  </channel>
+</rss>

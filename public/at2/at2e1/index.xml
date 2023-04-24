@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Maintenir et exploiter le réseau local et la téléphonie on TSSOC</title>
+    <link>https://www.tssoc.oliduha.fr/at2/at2e1/index.html</link>
+    <description>Recent content in Maintenir et exploiter le réseau local et la téléphonie on TSSOC</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language><atom:link href="https://www.tssoc.oliduha.fr/at2/at2e1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Réseau local</title>
+      <link>https://www.tssoc.oliduha.fr/at2/at2e1/reseau-local/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.tssoc.oliduha.fr/at2/at2e1/reseau-local/index.html</guid>
+      <description>Pi-Hole Une capture d&amp;rsquo;écran après plusieurs mois d&amp;rsquo;utilisation : FwKnop L&amp;rsquo;interface utilisateur sous Windows : Ouverture et fermeture du port ssh par FwKnop dans iptables : Il faut initier la connexion ssh pendant que le port est ouvert, FxKnop refermant le port automatiquement à la fin du timeout défini. Si la connexion est effective, elle le reste une fois le port refermé.
+Lynis Audit, renforcement des systèmes, tests de conformité</description>
+    </item>
+  </channel>
+</rss>
